@@ -4,22 +4,6 @@ Anonymous repository: https://anonymous.4open.science/r/CrystalReasoner/
 
 CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal structures from natural language instructions. It uses supervised fine-tuning (SFT) to teach crystal-structure generation, optional thinking traces to introduce crystallographic and physical priors before coordinates, and reinforcement learning (RL) with verifiable rewards to improve validity, stability, and property conditioning.
 
-## Repository Layout
-
-```text
-crysreas/
-  data/              Data download, split generation, and dataset utilities.
-  trainer/           SFT, RL/GRPO, generation, and Verl-based training entrypoints.
-  metric_process/    DataFrame-based metric pipeline used for evaluation.
-  mlip/              MatterSim/MatterGen-backed relaxation, energy, elastic, and coefficient of thermal expansion (CTE) utilities.
-  experiment/        Plotting, result export, and paper-figure generation scripts.
-  utils/             Crystal serialization, parsing, and basic evaluation helpers.
-scripts/
-  run.py             Unified experiment runner.
-  config.py          Registry of SFT, RL, generation, merge, and metric jobs.
-doc/                 Installation, dataset, metric, and experiment documentation.
-```
-
 ## Installation
 
 ### Python Environment
@@ -152,6 +136,33 @@ Representative registered jobs include:
 
 See [`doc/TRAINING.md`](doc/TRAINING.md) for training details.
 
+## Hardware Notes
+
+The default configuration assumes:
+
+- At least 1 GPU for SFT.
+- At least 2 GPUs for RL/GRPO jobs.
+- At least 1 GPU for MLIP-backed reward or metric calculations.
+- At least 4 CPUs cores for typical training and evaluation jobs.
+
+Some registered jobs request more CPU memory and CPU cores in [`scripts/config.py`](scripts/config.py), especially elastic and CTE tasks.
+
+## Repository Layout
+
+```text
+crysreas/
+  data/              Data download, split generation, and dataset utilities.
+  trainer/           SFT, RL/GRPO, generation, and Verl-based training entrypoints.
+  metric_process/    DataFrame-based metric pipeline used for evaluation.
+  mlip/              MatterSim/MatterGen-backed relaxation, energy, elastic, and coefficient of thermal expansion (CTE) utilities.
+  experiment/        Plotting, result export, and paper-figure generation scripts.
+  utils/             Crystal serialization, parsing, and basic evaluation helpers.
+scripts/
+  run.py             Unified experiment runner.
+  config.py          Registry of SFT, RL, generation, merge, and metric jobs.
+doc/                 Installation, dataset, metric, and experiment documentation.
+```
+
 ## Metrics
 
 The preferred evaluation path is `crysreas.metric_process`. `python scripts/run.py run_metric ` is a copy of this command. It is a DataFrame-based pipeline with named metrics, cache-like `ensure_*` helpers, optional multiprocessing for CPU metrics, and serialization helpers for Parquet files containing structures.
@@ -215,14 +226,3 @@ python crysreas/experiment/assets/build_e_hull.py
 ```
 
 The DFT energy-above-hull analysis used by the paper is stored under `crysreas/experiment/DFT_new`.
-
-## Hardware Notes
-
-The default configuration assumes:
-
-- At least 1 GPU for SFT.
-- At least 2 GPUs for RL/GRPO jobs.
-- At least 1 GPU for MLIP-backed reward or metric calculations.
-- At least 4 CPUs cores for typical training and evaluation jobs.
-
-Some registered jobs request more CPU memory and CPU cores in [`scripts/config.py`](scripts/config.py), especially elastic and CTE tasks.
