@@ -136,16 +136,20 @@ Representative registered jobs include:
 
 See [`doc/TRAINING.md`](doc/TRAINING.md) for training details.
 
-## Hardware Notes
+## Figures and Paper Assets
 
-The default configuration assumes:
+Paper figures and result summaries are generated from `crysreas/experiment/`.
 
-- At least 1 GPU for SFT.
-- At least 2 GPUs for RL/GRPO jobs.
-- At least 1 GPU for MLIP-backed reward or metric calculations.
-- At least 4 CPUs cores for typical training and evaluation jobs.
+```bash
+# Generate .csv comparison for different experiments
+python crysreas/experiment/make_graph.py
 
-Some registered jobs request more CPU memory and CPU cores in [`scripts/config.py`](scripts/config.py), especially elastic and CTE tasks.
+# Make figures from parquets in checkpoints_merged/
+python crysreas/experiment/assets/build_assets.py
+python crysreas/experiment/assets/build_e_hull.py
+```
+
+The DFT energy-above-hull analysis used by the paper is stored under `crysreas/experiment/DFT_new`.
 
 ## Repository Layout
 
@@ -212,17 +216,13 @@ https://nyu.app.box.com/folder/361279226287?s=8ufevmo5jlhj4gfwjgzgowo56mftj87g
 
 See more in [`doc/CHECKPOINTS.md`](doc/CHECKPOINTS.md).
 
-## Figures and Paper Assets
+## Hardware Notes
 
-Paper figures and result summaries are generated from `crysreas/experiment/`.
+The default configuration assumes:
 
-```bash
-# Generate .csv comparison for different experiments
-python crysreas/experiment/make_graph.py
+- At least 1 GPU for SFT.
+- At least 2 GPUs for RL/GRPO jobs.
+- At least 1 GPU for MLIP-backed reward or metric calculations.
+- At least 4 CPUs cores for typical training and evaluation jobs.
 
-# Make figures from parquets in checkpoints_merged/
-python crysreas/experiment/assets/build_assets.py
-python crysreas/experiment/assets/build_e_hull.py
-```
-
-The DFT energy-above-hull analysis used by the paper is stored under `crysreas/experiment/DFT_new`.
+Some registered jobs request more CPU memory and CPU cores in [`scripts/config.py`](scripts/config.py), especially elastic and CTE tasks.
