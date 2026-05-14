@@ -1,0 +1,199 @@
+[project]
+name = "torch-sim-atomistic"
+version = "0.5.1"
+description = "A pytorch toolkit for calculating material properties using MLIPs"
+authors = [
+    { name = "Abhijeet Gangan", email = "abhijeetgangan@g.ucla.edu" },
+    { name = "Janosh Riebesell", email = "janosh.riebesell@gmail.com" },
+    { name = "Orion Cohen", email = "orioncohen@berkeley.edu" },
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = [
+    "chemistry",
+    "interatomic-potentials",
+    "machine-learning",
+    "materials-science",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "h5py>=3.12.1",
+    "nvalchemi-toolkit-ops>=0.2.0",
+    "numpy>=1.26,<3",
+    "tables>=3.10.2",
+    "torch>=2",
+    "tqdm>=4.67",
+]
+
+[project.optional-dependencies]
+test = [
+    "ase>=3.26",
+    "phonopy>=2.37.0",
+    "platformdirs>=4.0.0",
+    "psutil>=7.0.0",
+    "pymatgen>=2025.6.14",
+    "pytest-cov>=6",
+    "pytest>=8",
+    "moyopy>=0.3",
+    "spglib>=2.6",
+]
+io = ["ase>=3.26", "phonopy>=2.37.0", "pymatgen>=2025.6.14"]
+symmetry = ["moyopy>=0.3"]
+mace = ["mace-torch>=0.3.14"]
+mattersim = ["mattersim>=0.1.2"]
+metatomic = ["metatomic-torch>=0.1.3", "metatrain[pet]>=2025.12"]
+orb = ["orb-models>=0.5.2"]
+sevenn = ["sevenn>=0.11.0"]
+graphpes = ["graph-pes>=0.1", "mace-torch>=0.3.12"]
+nequip = ["nequip>=0.16.2"]
+fairchem = ["fairchem-core>=2.7", "scipy<1.17.0"]
+docs = [
+    "autodoc_pydantic==2.2.0",
+    "furo==2024.8.6",
+    "ipython==8.34.0",
+    "ipykernel==6.30.1",
+    "jsonschema[format]",
+    "jupyterlab==4.3.4",
+    "jupyter-core==5.8.1",
+    "jupytext==1.16.7",
+    "myst_parser==4.0.0",
+    "nbsphinx>=0.9.7",
+    "numpydoc==1.8.0",
+    "sphinx-copybutton==0.5.2",
+    "sphinx==8.1.3",
+    "sphinx_design==0.6.1",
+]
+
+[project.urls]
+Repo = "https://github.com/torchsim/torch-sim"
+
+[build-system]
+requires = ["uv_build>=0.7.12"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "torch_sim"
+module-root = ""
+
+[tool.ruff]
+target-version = "py312"
+line-length = 90
+output-format = "concise"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "ANN002",  # Checks that *args arguments have type annotations.
+    "ANN003",  # Checks that **kwargs arguments have type annotations.
+    "ANN401",  # Allow use of type Any for function argument {name}
+    "C408",    # Unnecessary {obj_type} call (rewrite as a literal)
+    "COM812",  # missing-trailing-comma
+    "D205",    # 1 blank line required between summary line and description
+    "EM101",   # Exception must not use a string literal, assign to variable first
+    "EM102",   # Exception must not use an f-string literal, assign to variable first
+    "ERA001",  # Found commented-out code
+    "FIX002",  # Line contains TODO, consider resolving the issue
+    "N803",    # Variable name should be lowercase
+    "N806",    # Uppercase letters in variable names
+    "PLC0415", # import should be at the top-level of a file
+    "PLR0912", # too many branches
+    "PLR0913", # too many function arguments
+    "PLR2004", # Magic value used in comparison, consider replacing {value} with a constant variable
+    "PLW2901", # Outer for loop variable overwritten by inner assignment target
+    "PTH",     # flake8-use-pathlib
+    "S301",    # pickle and modules that wrap it can be unsafe, possible security issue
+    "S311",    # Standard pseudo-random generators are not suitable for cryptographic purposes
+    "SIM105",  # Use contextlib.suppress instead of try-except-pass
+    "TD",      # flake8-todos
+    "TRY003",  # Avoid specifying long messages outside the exception class
+]
+pydocstyle.convention = "google"
+isort.split-on-trailing-comma = false
+isort.lines-after-imports = 2
+pep8-naming.ignore-names = ["get_kT", "kT"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/*" = ["ANN201", "D", "INP001", "S101"]
+"examples/**/*" = ["B018", "T201"]
+"examples/tutorials/**/*" = ["ALL"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.codespell]
+check-filenames = true
+ignore-words-list = ["convertor"]
+
+[tool.pytest.ini_options]
+addopts = ["-p no:warnings"]
+testpaths = ["tests"]
+
+[tool.uv]
+# make these dependencies mutually exclusive since they use incompatible e3nn versions
+# see https://docs.astral.sh/uv/concepts/projects/config/#conflicting-dependencies for more details
+conflicts = [
+    [
+        { extra = "fairchem" },
+        { extra = "graphpes" },
+    ],
+    [
+        { extra = "fairchem" },
+        { extra = "mace" },
+    ],
+    [
+        { extra = "graphpes" },
+        { extra = "mattersim" },
+    ],
+    [
+        { extra = "graphpes" },
+        { extra = "sevenn" },
+    ],
+    [
+        { extra = "graphpes" },
+        { extra = "fairchem" },
+    ],
+    [
+        { extra = "graphpes" },
+        { extra = "nequip" },
+    ],
+    [
+        { extra = "fairchem" },
+        { extra = "mace" },
+    ],
+    [
+        { extra = "mace" },
+        { extra = "mattersim" },
+    ],
+    [
+        { extra = "mace" },
+        { extra = "nequip" },
+    ],
+    [
+        { extra = "mace" },
+        { extra = "sevenn" },
+    ],
+]
+
+[dependency-groups]
+dev = ["prek>=0.2.0", "ty>=0.0.1a20"]
+
+[tool.ty.rules]
+# TODO: Unable to work with **kwargs: https://github.com/astral-sh/ty/issues/247
+missing-argument = "ignore"
+
+[[tool.ty.overrides]]
+include = ["tests/models/**/*.py", "torch_sim/models/**/*.py"]
+
+# TODO would be nice to only ignore unresolved model imports but fail on all other packages
+[tool.ty.overrides.rules]
+unresolved-import = "ignore"

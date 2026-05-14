@@ -1,0 +1,81 @@
+defaults:
+  - optim: fsdp
+  - _self_
+
+data:
+  train_batch_size: 16
+  micro_batch_size: null
+  micro_batch_size_per_gpu: 1
+  train_files: checkpoints_merged/plaid_wyckoff/dpo_pairs_train.parquet
+  val_files: ${data.train_files}
+  train_max_samples: -1
+  val_max_samples: -1
+  prompt_key: prompt
+  chosen_key: chosen
+  rejected_key: rejected
+  max_length: 4096
+  truncation: right
+  add_eos: true
+  apply_chat_template: true
+  apply_chat_template_kwargs: {}
+  custom_data:
+    prompt_type: plaid_wyckoff_train+no_thinking
+  shuffle: false
+  seed: 1
+
+algorithm:
+  beta: 0.1
+  loss_type: sigmoid
+  label_smoothing: 0.0
+  reference_free: false
+
+model:
+  partial_pretrain: checkpoints_merged/plaid_wyckoff
+  reference_pretrain: checkpoints_merged/plaid_wyckoff
+  use_shm: false
+  fsdp_config:
+    model_dtype: bf16
+    wrap_policy:
+      min_num_params: 0
+    cpu_offload: false
+    offload_params: false
+  external_lib: null
+  enable_gradient_checkpointing: true
+  trust_remote_code: false
+  lora_rank: 0
+  lora_alpha: 16
+  target_modules: all-linear
+  use_liger: false
+  strategy: fsdp2
+
+optim:
+  lr: 1e-6
+  betas: [0.9, 0.95]
+  weight_decay: 0.01
+  lr_warmup_steps_ratio: 0.1
+  clip_grad: 1.0
+  lr_scheduler: cosine
+
+ulysses_sequence_parallel_size: 1
+use_remove_padding: false
+
+trainer:
+  default_local_dir: checkpoints/${trainer.project_name}/${trainer.experiment_name}
+  default_hdfs_dir: null
+  project_name: crystal-dpo
+  experiment_name: dpo_plaid_wyckoff
+  total_epochs: 1
+  total_training_steps: null
+  logger: [ 'console', 'swanlab' ]
+  seed: 1
+  save_freq: 800
+  test_freq: 40
+  nnodes: 1
+  n_gpus_per_node: 1
+  max_ckpt_to_keep: null
+  resume_mode: auto
+  resume_from_path: null
+  checkpoint:
+    save_contents: ["model", "optimizer", "extra"]
+    load_contents: ${trainer.checkpoint.save_contents}
+  device: cuda

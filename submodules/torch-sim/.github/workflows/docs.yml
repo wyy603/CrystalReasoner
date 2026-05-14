@@ -1,0 +1,70 @@
+name: Build docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+
+# set GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pandoc
+        run: sudo apt-get install pandoc
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install dependencies
+        run: |
+          uv pip install ".[test,docs]" --system
+
+      - name: Install extras for tutorial generation
+        run: uv pip install ".[graphpes,mace,metatomic]" --system
+
+      - name: Copy tutorials
+        run: |
+          cp -r examples/tutorials docs/
+          jupytext --set-formats "py:percent,ipynb" docs/tutorials/*.py
+          jupytext --set-kernel python3 docs/tutorials/*.py
+          jupytext --to notebook --execute docs/tutorials/*.py
+          rm docs/tutorials/*.py
+          rm docs/tutorials/*.h5*
+          rm docs/tutorials/*.traj*
+
+      - name: Generate package treemap
+        run: uv run docs/_static/draw_pkg_treemap.py
+
+      - name: Build
+        run: sphinx-build docs docs_build
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs_build
+
+  deploy:
+    if: github.repository_owner == 'TorchSim' && github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build-docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

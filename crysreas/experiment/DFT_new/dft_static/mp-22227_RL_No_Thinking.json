@@ -1,0 +1,5021 @@
+{
+    "nsites": 12,
+    "elements": [
+        "Mn",
+        "Si",
+        "Zr"
+    ],
+    "nelements": 3,
+    "composition": {
+        "Zr": 4.0,
+        "Mn": 4.0,
+        "Si": 4.0
+    },
+    "composition_reduced": {
+        "Zr": 1.0,
+        "Mn": 1.0,
+        "Si": 1.0
+    },
+    "formula_pretty": "ZrMnSi",
+    "formula_anonymous": "ABC",
+    "chemsys": "Mn-Si-Zr",
+    "volume": 202.81478764223579,
+    "density": 5.706583025815623,
+    "density_atomic": 16.90123230351965,
+    "symmetry": {
+        "crystal_system": "Orthorhombic",
+        "symbol": "Pnma",
+        "hall": "-P 2ac 2n",
+        "number": 62,
+        "point_group": "mmm",
+        "symprec": 0.1,
+        "angle_tolerance": 5.0,
+        "version": "2.6.0"
+    },
+    "calc_type": "PBE Static",
+    "completed_at": "2026-03-25T00:35:28.270005+00:00",
+    "dir_name": "stefano-atlas-dft-3c9c2-gpu-1-worker-9d74s:/tmp/ray/a78ed138b8f3b183ffffffffffffffffffffffff1c000000_1774423625/job_2026-03-25-07-27-06-912220-28133",
+    "input": {
+        "incar": {
+            "PREC": "Accurate",
+            "ALGO": "All",
+            "ISPIN": 2,
+            "AMIX": 0.4,
+            "NELM": 200,
+            "IBRION": -1,
+            "EDIFF": 1e-05,
+            "EDIFFG": -0.02,
+            "NSW": 0,
+            "ENCUT": 700.0,
+            "ENAUG": 1360.0,
+            "MAGMOM": [
+                0.6,
+                0.6,
+                0.6,
+                0.6,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                0.6,
+                0.6,
+                0.6,
+                0.6
+            ],
+            "LREAL": false,
+            "ISMEAR": 2,
+            "SIGMA": 0.2,
+            "KSPACING": 0.2,
+            "LMAXMIX": 4,
+            "LWAVE": false,
+            "LCHARG": true,
+            "LVTOT": true,
+            "LORBIT": 11,
+            "LELF": false,
+            "LASPH": true,
+            "LAECHG": true,
+            "GGA": "Pe",
+            "LMIXTAU": true
+        },
+        "kpoints": {
+            "@module": "pymatgen.io.vasp.inputs",
+            "@class": "Kpoints",
+            "comment": "Kpoints from vasprun.xml",
+            "nkpoints": 0,
+            "generation_style": "Gamma",
+            "kpoints": [
+                [
+                    5,
+                    9,
+                    5
+                ]
+            ],
+            "usershift": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "kpts_weights": null,
+            "coord_type": null,
+            "labels": null,
+            "tet_number": 0,
+            "tet_weight": 0,
+            "tet_connections": null
+        },
+        "nkpoints": 45,
+        "potcar_spec": [
+            {
+                "titel": "PAW_PBE Zr_sv 04Jan2005",
+                "hash": "3a6dbcd168e0eefaaec1a20726e51ddb",
+                "summary_stats": {
+                    "keywords": {
+                        "header": [
+                            "copyr",
+                            "dexc",
+                            "eatom",
+                            "eaug",
+                            "enmax",
+                            "enmin",
+                            "icore",
+                            "iunscr",
+                            "lcor",
+                            "lexch",
+                            "lpaw",
+                            "lultra",
+                            "ndata",
+                            "orbitaldescriptions",
+                            "orbitals",
+                            "pomass",
+                            "raug",
+                            "rcore",
+                            "rdep",
+                            "rdept",
+                            "rmax",
+                            "rpacor",
+                            "rrkj",
+                            "rwigs",
+                            "sha256",
+                            "step",
+                            "titel",
+                            "vrhfin",
+                            "zval",
+                            "nentries"
+                        ],
+                        "data": [
+                            "localpart",
+                            "gradientcorrectionsusedforxc",
+                            "corecharge-density(partial)",
+                            "kineticenergydensity(partial)",
+                            "atomicpseudocharge-density",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "pawradialsets",
+                            "(5e20.12)",
+                            "augmentationcharges(nonsperical)",
+                            "uccopanciesinatom",
+                            "grid",
+                            "aepotential",
+                            "corecharge-density",
+                            "kineticenergy-density",
+                            "mkineticenergy-densitypseudized",
+                            "localpseudopotentialcore",
+                            "pspotentialvalenceonly",
+                            "corecharge-density(pseudized)",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "endofdataset"
+                        ]
+                    },
+                    "stats": {
+                        "header": {
+                            "MEAN": 64.31634226747968,
+                            "ABSMEAN": 64.31634226747968,
+                            "VAR": 24806.36000601945,
+                            "MIN": 0.0,
+                            "MAX": 1284.2219
+                        },
+                        "data": {
+                            "MEAN": 4130.908584214487,
+                            "ABSMEAN": 4164.655369203883,
+                            "VAR": 1860728517.6017377,
+                            "MIN": -341.326325372,
+                            "MAX": 712254.18498
+                        }
+                    }
+                }
+            },
+            {
+                "titel": "PAW_PBE Mn_pv 02Aug2007",
+                "hash": "9fc2da19948217b93232c1ff13eec3a6",
+                "summary_stats": {
+                    "keywords": {
+                        "header": [
+                            "copyr",
+                            "dexc",
+                            "eatom",
+                            "eaug",
+                            "enmax",
+                            "enmin",
+                            "icore",
+                            "iunscr",
+                            "lcor",
+                            "lexch",
+                            "lpaw",
+                            "lultra",
+                            "ndata",
+                            "orbitaldescriptions",
+                            "orbitals",
+                            "pomass",
+                            "raug",
+                            "rcore",
+                            "rdep",
+                            "rdept",
+                            "rmax",
+                            "rpacor",
+                            "rrkj",
+                            "rwigs",
+                            "sha256",
+                            "step",
+                            "titel",
+                            "vrhfin",
+                            "zval",
+                            "nentries"
+                        ],
+                        "data": [
+                            "localpart",
+                            "gradientcorrectionsusedforxc",
+                            "corecharge-density(partial)",
+                            "kineticenergydensity(partial)",
+                            "atomicpseudocharge-density",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "pawradialsets",
+                            "(5e20.12)",
+                            "augmentationcharges(nonsperical)",
+                            "uccopanciesinatom",
+                            "grid",
+                            "aepotential",
+                            "corecharge-density",
+                            "kineticenergy-density",
+                            "mkineticenergy-densitypseudized",
+                            "localpseudopotentialcore",
+                            "pspotentialvalenceonly",
+                            "corecharge-density(pseudized)",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "endofdataset"
+                        ]
+                    },
+                    "stats": {
+                        "header": {
+                            "MEAN": 65.38464134796749,
+                            "ABSMEAN": 65.38464134796749,
+                            "VAR": 42551.28880004816,
+                            "MIN": 0.0,
+                            "MAX": 2025.2664
+                        },
+                        "data": {
+                            "MEAN": 824.6083694305902,
+                            "ABSMEAN": 874.1024204636116,
+                            "VAR": 81144769.66615322,
+                            "MIN": -455.101435308,
+                            "MAX": 152730.15192
+                        }
+                    }
+                }
+            },
+            {
+                "titel": "PAW_PBE Si 05Jan2001",
+                "hash": "c27340a9c98542122fbad458bbb5d441",
+                "summary_stats": {
+                    "keywords": {
+                        "header": [
+                            "copyr",
+                            "dexc",
+                            "eatom",
+                            "eaug",
+                            "enmax",
+                            "enmin",
+                            "icore",
+                            "iunscr",
+                            "lcor",
+                            "lexch",
+                            "lpaw",
+                            "lultra",
+                            "ndata",
+                            "orbitaldescriptions",
+                            "orbitals",
+                            "pomass",
+                            "raug",
+                            "rcore",
+                            "rdep",
+                            "rdept",
+                            "rmax",
+                            "rpacor",
+                            "rrkj",
+                            "rwigs",
+                            "sha256",
+                            "step",
+                            "titel",
+                            "vrhfin",
+                            "zval",
+                            "nentries"
+                        ],
+                        "data": [
+                            "localpart",
+                            "gradientcorrectionsusedforxc",
+                            "corecharge-density(partial)",
+                            "kineticenergydensity(partial)",
+                            "atomicpseudocharge-density",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "pawradialsets",
+                            "(5e20.12)",
+                            "augmentationcharges(nonsperical)",
+                            "uccopanciesinatom",
+                            "grid",
+                            "aepotential",
+                            "corecharge-density",
+                            "kineticenergy-density",
+                            "mkineticenergy-densitypseudized",
+                            "localpseudopotentialcore",
+                            "pspotentialvalenceonly",
+                            "corecharge-density(pseudized)",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "endofdataset"
+                        ]
+                    },
+                    "stats": {
+                        "header": {
+                            "MEAN": 9.198469218699186,
+                            "ABSMEAN": 9.198469218699186,
+                            "VAR": 1790.7147656424072,
+                            "MIN": 0.0,
+                            "MAX": 322.069
+                        },
+                        "data": {
+                            "MEAN": 215.16613596661992,
+                            "ABSMEAN": 237.95076292821147,
+                            "VAR": 3381771.445249609,
+                            "MIN": -872.57185,
+                            "MAX": 24929.6947974
+                        }
+                    }
+                }
+            }
+        ],
+        "potcar": [
+            "Zr_sv",
+            "Mn_pv",
+            "Si"
+        ],
+        "potcar_type": [
+            "PAW_PBE",
+            "PAW_PBE",
+            "PAW_PBE"
+        ],
+        "parameters": {
+            "SYSTEM": "unknown system",
+            "LCOMPAT": false,
+            "PREC": "Accura",
+            "ENMAX": 700.0,
+            "ENAUG": 1360.0,
+            "EDIFF": 1e-05,
+            "IALGO": 58,
+            "IWAVPR": 10,
+            "NBANDS": 81,
+            "NBANDSLOW": -1,
+            "NBANDSHIGH": -1,
+            "NELECT": 116.0,
+            "TURBO": 0,
+            "IRESTART": 0,
+            "NREBOOT": 0,
+            "NMIN": 0,
+            "EREF": 0.0,
+            "ISMEAR": 2,
+            "SIGMA": 0.2,
+            "KSPACING": 0.2,
+            "KGAMMA": true,
+            "KBLOWUP": true,
+            "LREAL": false,
+            "ROPT": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "LMAXPAW": -100,
+            "LMAXMIX": 4,
+            "NLSPLINE": false,
+            "ISTART": 0,
+            "ICHARG": 2,
+            "INIWAV": 1,
+            "ISPIN": 2,
+            "LNONCOLLINEAR": false,
+            "MAGMOM": [
+                0.6,
+                0.6,
+                0.6,
+                0.6,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                0.6,
+                0.6,
+                0.6,
+                0.6
+            ],
+            "NUPDOWN": -1.0,
+            "LSORBIT": false,
+            "SAXIS": [
+                0.0,
+                0.0,
+                1.0
+            ],
+            "LSPIRAL": false,
+            "QSPIRAL": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "LZEROZ": false,
+            "LASPH": true,
+            "NELM": 200,
+            "NELMDL": -5,
+            "NELMIN": 2,
+            "ENINI": 700.0,
+            "LDIAG": true,
+            "LSUBROT": false,
+            "WEIMIN": 0.0,
+            "EBREAK": 3e-08,
+            "DEPER": 0.3,
+            "NRMM": 4,
+            "TIME": 0.4,
+            "AMIX": 0.4,
+            "BMIX": 1.0,
+            "AMIN": 0.1,
+            "AMIX_MAG": 1.6,
+            "BMIX_MAG": 1.0,
+            "IMIX": 4,
+            "MIXFIRST": false,
+            "MAXMIX": -45,
+            "WC": 100.0,
+            "INIMIX": 1,
+            "MIXPRE": 1,
+            "MREMOVE": 5,
+            "LDIPOL": false,
+            "LMONO": false,
+            "IDIPOL": 0,
+            "EPSILON": 1.0,
+            "DIPOL": [
+                -100.0,
+                -100.0,
+                -100.0
+            ],
+            "EFIELD": 0.0,
+            "LVACPOTAV": false,
+            "NGX": 60,
+            "NGY": 36,
+            "NGZ": 70,
+            "NGXF": 120,
+            "NGYF": 72,
+            "NGZF": 140,
+            "ADDGRID": false,
+            "NSW": 0,
+            "IBRION": -1,
+            "MDALGO": 0,
+            "ISIF": 2,
+            "PSTRESS": 0.0,
+            "EDIFFG": -0.02,
+            "NFREE": 0,
+            "POTIM": 0.5,
+            "SMASS": -3.0,
+            "SCALEE": 1.0,
+            "TEBEG": 0.0001,
+            "TEEND": 0.0001,
+            "NBLOCK": 1,
+            "KBLOCK": 1,
+            "NPACO": 256,
+            "APACO": 10.0,
+            "ISYM": 2,
+            "SYMPREC": 1e-05,
+            "LORBIT": 11,
+            "RWIGS": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "NEDOS": 301,
+            "EMIN": 10.0,
+            "EMAX": -10.0,
+            "EFERMI": 0.0,
+            "NWRITE": 2,
+            "LWAVE": false,
+            "LDOWNSAMPLE": false,
+            "LCHARG": true,
+            "LPARD": false,
+            "LVTOT": true,
+            "LVHAR": false,
+            "LELF": false,
+            "LOPTICS": false,
+            "STM": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "NPAR": 1,
+            "NSIM": 4,
+            "NBLK": -1,
+            "LPLANE": true,
+            "LSCALAPACK": true,
+            "LSCAAWARE": false,
+            "LSCALU": false,
+            "LASYNC": false,
+            "LORBITALREAL": false,
+            "IDIOT": 3,
+            "PHON_NSTRUCT": -1,
+            "LMUSIC": false,
+            "POMASS": [
+                91.224,
+                54.938,
+                28.085
+            ],
+            "DARWINR": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "DARWINV": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "LCORR": true,
+            "GGA_COMPAT": true,
+            "LBERRY": false,
+            "ICORELEVEL": 0,
+            "LDAU": false,
+            "I_CONSTRAINED_M": 0,
+            "GGA": "Pe",
+            "XC_C": 1,
+            "VOSKOWN": 0,
+            "LHFCALC": false,
+            "PRECFOCK": "",
+            "LSYMGRAD": false,
+            "LHFONE": false,
+            "LRHFCALC": false,
+            "LTHOMAS": false,
+            "LMODELHF": false,
+            "LFOCKACE": false,
+            "ENCUT4O": -1.0,
+            "EXXOEP": 0,
+            "FOURORBIT": 0,
+            "AEXX": 0.0,
+            "HFALPHA": 0.0,
+            "MCALPHA": 0.0,
+            "ALDAX": 1.0,
+            "AGGAX": 1.0,
+            "AMGGAX": 1.0,
+            "ALDAC": 1.0,
+            "AGGAC": 1.0,
+            "AMGGAC": 1.0,
+            "NKREDX": 1,
+            "NKREDY": 1,
+            "NKREDZ": 1,
+            "SHIFTRED": false,
+            "ODDONLY": false,
+            "EVENONLY": false,
+            "LMAXFOCK": 0,
+            "NMAXFOCKAE": 0,
+            "LFOCKAEDFT": false,
+            "HFSCREEN": 0.0,
+            "HFSCREENC": 0.0,
+            "NBANDSGWLOW": 0,
+            "LUSE_VDW": false,
+            "IVDW_NL": -1,
+            "LSPIN_VDW": false,
+            "ZAB_VDW": -0.8491,
+            "GAMMA_VDW": 1.3962634,
+            "ALPHA_VDW": 0.0,
+            "PARAM1": 0.1234,
+            "PARAM2": 1.0,
+            "BPARAM": 6.3,
+            "CPARAM": 0.0093,
+            "MODEL_GW": 0,
+            "MODEL_EPS0": 10.14073938,
+            "MODEL_ALPHA": 1.0,
+            "LEPSILON": false,
+            "LRPA": false,
+            "LNABLA": false,
+            "LVEL": false,
+            "CSHIFT": 0.1,
+            "OMEGAMAX": -1.0,
+            "DEG_THRESHOLD": 0.002,
+            "RTIME": -0.1,
+            "WPLASMAI": 0.0,
+            "DFIELD": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "WPLASMA": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "NUCIND": false,
+            "MAGPOS": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "LNICSALL": true,
+            "ORBITALMAG": false,
+            "LMAGBLOCH": false,
+            "LCHIMAG": false,
+            "LGAUGE": true,
+            "MAGATOM": 0,
+            "MAGDIPOL": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "AVECCONST": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "LALL_IN_ONE": false,
+            "IALL_IN_ONE": -1,
+            "NBANDS_WAVE": -1,
+            "LFINITE_TEMPERATURE": false,
+            "LADDER": false,
+            "LRPAFORCE": false,
+            "LFXC": false,
+            "LHARTREE": true,
+            "IBSE": 0,
+            "KPOINT": [
+                -1,
+                0,
+                0,
+                0
+            ],
+            "LTCTC": false,
+            "LTCTE": false,
+            "LTETE": false,
+            "LTRIPLET": false,
+            "LFXCEPS": false,
+            "LFXHEG": false,
+            "NATURALO": 2,
+            "LHOLEGF": false,
+            "L2ORDER": false,
+            "LDMP1": false,
+            "LMP2LT": false,
+            "LSMP2LT": false,
+            "LGWLF": false,
+            "ENCUTGW": -1.60000002,
+            "ENCUTGWSOFT": -1.60000002,
+            "ENCUTLF": -1.0,
+            "ESF_SPLINES": false,
+            "ESF_CONV": 0.01,
+            "ESF_NINTER": 15,
+            "LMAXMP2": -1,
+            "SCISSOR": 0.0,
+            "NOMEGA": 0,
+            "NOMEGAR": 0,
+            "NBANDSGW": -1,
+            "NBANDSO": -1,
+            "NBANDSV": -1,
+            "NELMGW": 1,
+            "NELMHF": 1,
+            "DIM": 3,
+            "IESPILON": 4,
+            "ANTIRES": 0,
+            "OMEGAMIN": -30.0,
+            "OMEGATL": -200.0,
+            "OMEGAGRID": 0,
+            "LSELFENERGY": false,
+            "LSPECTRAL": false,
+            "LSPECTRALGW": false,
+            "LSINGLES": false,
+            "LFERMIGW": false,
+            "ODDONLYGW": false,
+            "EVENONLYGW": false,
+            "NKREDLFX": 1,
+            "NKREDLFY": 1,
+            "NKREDLFZ": 1,
+            "MAXMEM": 2800,
+            "TELESCOPE": 0,
+            "NTAUPAR": -1,
+            "NOMEGAPAR": -1,
+            "DAMP_NEWTON": 0.80000001,
+            "LAMBDA": 1.0,
+            "OFIELD_KAPPA": 0.0,
+            "OFIELD_K": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "OFIELD_Q6_NEAR": 0.0,
+            "OFIELD_Q6_FAR": 0.0,
+            "OFIELD_A": 0.0,
+            "KPOINTS_OPT_MODE": 1,
+            "LKPOINTS_OPT": false
+        },
+        "lattice_rec": {
+            "@module": "pymatgen.core.lattice",
+            "@class": "Lattice",
+            "matrix": [
+                [
+                    0.9183455815963586,
+                    0.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    1.6087254971947083,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0,
+                    0.8278504743890744
+                ]
+            ],
+            "pbc": [
+                true,
+                true,
+                true
+            ]
+        },
+        "structure": {
+            "@module": "pymatgen.core.structure",
+            "@class": "Structure",
+            "charge": 0.0,
+            "lattice": {
+                "matrix": [
+                    [
+                        6.84185282,
+                        0.0,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        3.90569138,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        0.0,
+                        7.58975866
+                    ]
+                ],
+                "pbc": [
+                    true,
+                    true,
+                    true
+                ],
+                "a": 6.84185282,
+                "b": 3.90569138,
+                "c": 7.58975866,
+                "alpha": 90.0,
+                "beta": 90.0,
+                "gamma": 90.0,
+                "volume": 202.81478764223579
+            },
+            "properties": {},
+            "sites": [
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.02789173,
+                        0.25,
+                        0.82053265
+                    ],
+                    "properties": {},
+                    "label": "Zr",
+                    "xyz": [
+                        0.1908311115551786,
+                        0.976422845,
+                        6.227644786150249
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.97210827,
+                        0.75,
+                        0.17946735
+                    ],
+                    "properties": {},
+                    "label": "Zr",
+                    "xyz": [
+                        6.651021708444821,
+                        2.929268535,
+                        1.362113873849751
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.47210827,
+                        0.75,
+                        0.32053265
+                    ],
+                    "properties": {},
+                    "label": "Zr",
+                    "xyz": [
+                        3.2300952984448212,
+                        2.929268535,
+                        2.432765456150249
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.52789173,
+                        0.25,
+                        0.67946735
+                    ],
+                    "properties": {},
+                    "label": "Zr",
+                    "xyz": [
+                        3.6117575215551785,
+                        0.976422845,
+                        5.156993203849751
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.13504685,
+                        0.25,
+                        0.43643905
+                    ],
+                    "properties": {},
+                    "label": "Mn",
+                    "xyz": [
+                        0.923970671504617,
+                        0.976422845,
+                        3.312467059299673
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.86495315,
+                        0.75,
+                        0.56356095
+                    ],
+                    "properties": {},
+                    "label": "Mn",
+                    "xyz": [
+                        5.917882148495383,
+                        2.929268535,
+                        4.277291600700327
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.36495315,
+                        0.75,
+                        0.93643905
+                    ],
+                    "properties": {},
+                    "label": "Mn",
+                    "xyz": [
+                        2.496955738495383,
+                        2.929268535,
+                        7.107346389299674
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.63504685,
+                        0.25,
+                        0.06356095
+                    ],
+                    "properties": {},
+                    "label": "Mn",
+                    "xyz": [
+                        4.344897081504617,
+                        0.976422845,
+                        0.48241227070032705
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.23523597,
+                        0.75,
+                        0.62191722
+                    ],
+                    "properties": {},
+                    "label": "Si",
+                    "xyz": [
+                        1.6094498847099352,
+                        2.929268535,
+                        4.720201606298126
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.76476403,
+                        0.25,
+                        0.37808278
+                    ],
+                    "properties": {},
+                    "label": "Si",
+                    "xyz": [
+                        5.2324029352900645,
+                        0.976422845,
+                        2.869557053701875
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.26476403,
+                        0.25,
+                        0.12191722
+                    ],
+                    "properties": {},
+                    "label": "Si",
+                    "xyz": [
+                        1.8114765252900644,
+                        0.976422845,
+                        0.9253222762981252
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.73523597,
+                        0.75,
+                        0.87808278
+                    ],
+                    "properties": {},
+                    "label": "Si",
+                    "xyz": [
+                        5.030376294709935,
+                        2.929268535,
+                        6.664436383701875
+                    ]
+                }
+            ]
+        },
+        "is_hubbard": false,
+        "hubbards": {}
+    },
+    "last_updated": "2026-03-25T07:35:39.693536+00:00",
+    "orig_inputs": {
+        "incar": {
+            "ALGO": "All",
+            "AMIX": 0.4,
+            "EDIFF": 1e-05,
+            "EDIFFG": -0.02,
+            "ENAUG": 1360,
+            "ENCUT": 700.0,
+            "GGA": "Pe",
+            "IBRION": -1,
+            "ISEARCH": 1,
+            "ISMEAR": 2,
+            "ISPIN": 2,
+            "KSPACING": 0.2,
+            "LAECHG": true,
+            "LASPH": true,
+            "LCHARG": true,
+            "LELF": false,
+            "LMAXMIX": 4,
+            "LMIXTAU": true,
+            "LORBIT": 11,
+            "LREAL": false,
+            "LVTOT": true,
+            "LWAVE": false,
+            "MAGMOM": [
+                0.6,
+                0.6,
+                0.6,
+                0.6,
+                5.0,
+                5.0,
+                5.0,
+                5.0,
+                0.6,
+                0.6,
+                0.6,
+                0.6
+            ],
+            "NELM": 200,
+            "NSW": 0,
+            "PREC": "Accurate",
+            "SIGMA": 0.2
+        },
+        "potcar_spec": [
+            {
+                "titel": "PAW_PBE Zr_sv 04Jan2005",
+                "hash": "3a6dbcd168e0eefaaec1a20726e51ddb",
+                "summary_stats": {
+                    "keywords": {
+                        "header": [
+                            "copyr",
+                            "dexc",
+                            "eatom",
+                            "eaug",
+                            "enmax",
+                            "enmin",
+                            "icore",
+                            "iunscr",
+                            "lcor",
+                            "lexch",
+                            "lpaw",
+                            "lultra",
+                            "ndata",
+                            "orbitaldescriptions",
+                            "orbitals",
+                            "pomass",
+                            "raug",
+                            "rcore",
+                            "rdep",
+                            "rdept",
+                            "rmax",
+                            "rpacor",
+                            "rrkj",
+                            "rwigs",
+                            "sha256",
+                            "step",
+                            "titel",
+                            "vrhfin",
+                            "zval",
+                            "nentries"
+                        ],
+                        "data": [
+                            "localpart",
+                            "gradientcorrectionsusedforxc",
+                            "corecharge-density(partial)",
+                            "kineticenergydensity(partial)",
+                            "atomicpseudocharge-density",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "pawradialsets",
+                            "(5e20.12)",
+                            "augmentationcharges(nonsperical)",
+                            "uccopanciesinatom",
+                            "grid",
+                            "aepotential",
+                            "corecharge-density",
+                            "kineticenergy-density",
+                            "mkineticenergy-densitypseudized",
+                            "localpseudopotentialcore",
+                            "pspotentialvalenceonly",
+                            "corecharge-density(pseudized)",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "endofdataset"
+                        ]
+                    },
+                    "stats": {
+                        "header": {
+                            "MEAN": 64.31634226747968,
+                            "ABSMEAN": 64.31634226747968,
+                            "VAR": 24806.36000601945,
+                            "MIN": 0.0,
+                            "MAX": 1284.2219
+                        },
+                        "data": {
+                            "MEAN": 4130.908584214487,
+                            "ABSMEAN": 4164.655369203883,
+                            "VAR": 1860728517.6017377,
+                            "MIN": -341.326325372,
+                            "MAX": 712254.18498
+                        }
+                    }
+                }
+            },
+            {
+                "titel": "PAW_PBE Mn_pv 02Aug2007",
+                "hash": "9fc2da19948217b93232c1ff13eec3a6",
+                "summary_stats": {
+                    "keywords": {
+                        "header": [
+                            "copyr",
+                            "dexc",
+                            "eatom",
+                            "eaug",
+                            "enmax",
+                            "enmin",
+                            "icore",
+                            "iunscr",
+                            "lcor",
+                            "lexch",
+                            "lpaw",
+                            "lultra",
+                            "ndata",
+                            "orbitaldescriptions",
+                            "orbitals",
+                            "pomass",
+                            "raug",
+                            "rcore",
+                            "rdep",
+                            "rdept",
+                            "rmax",
+                            "rpacor",
+                            "rrkj",
+                            "rwigs",
+                            "sha256",
+                            "step",
+                            "titel",
+                            "vrhfin",
+                            "zval",
+                            "nentries"
+                        ],
+                        "data": [
+                            "localpart",
+                            "gradientcorrectionsusedforxc",
+                            "corecharge-density(partial)",
+                            "kineticenergydensity(partial)",
+                            "atomicpseudocharge-density",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "pawradialsets",
+                            "(5e20.12)",
+                            "augmentationcharges(nonsperical)",
+                            "uccopanciesinatom",
+                            "grid",
+                            "aepotential",
+                            "corecharge-density",
+                            "kineticenergy-density",
+                            "mkineticenergy-densitypseudized",
+                            "localpseudopotentialcore",
+                            "pspotentialvalenceonly",
+                            "corecharge-density(pseudized)",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "endofdataset"
+                        ]
+                    },
+                    "stats": {
+                        "header": {
+                            "MEAN": 65.38464134796749,
+                            "ABSMEAN": 65.38464134796749,
+                            "VAR": 42551.28880004816,
+                            "MIN": 0.0,
+                            "MAX": 2025.2664
+                        },
+                        "data": {
+                            "MEAN": 824.6083694305902,
+                            "ABSMEAN": 874.1024204636116,
+                            "VAR": 81144769.66615322,
+                            "MIN": -455.101435308,
+                            "MAX": 152730.15192
+                        }
+                    }
+                }
+            },
+            {
+                "titel": "PAW_PBE Si 05Jan2001",
+                "hash": "c27340a9c98542122fbad458bbb5d441",
+                "summary_stats": {
+                    "keywords": {
+                        "header": [
+                            "copyr",
+                            "dexc",
+                            "eatom",
+                            "eaug",
+                            "enmax",
+                            "enmin",
+                            "icore",
+                            "iunscr",
+                            "lcor",
+                            "lexch",
+                            "lpaw",
+                            "lultra",
+                            "ndata",
+                            "orbitaldescriptions",
+                            "orbitals",
+                            "pomass",
+                            "raug",
+                            "rcore",
+                            "rdep",
+                            "rdept",
+                            "rmax",
+                            "rpacor",
+                            "rrkj",
+                            "rwigs",
+                            "sha256",
+                            "step",
+                            "titel",
+                            "vrhfin",
+                            "zval",
+                            "nentries"
+                        ],
+                        "data": [
+                            "localpart",
+                            "gradientcorrectionsusedforxc",
+                            "corecharge-density(partial)",
+                            "kineticenergydensity(partial)",
+                            "atomicpseudocharge-density",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "nonlocalpart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "reciprocalspacepart",
+                            "realspacepart",
+                            "pawradialsets",
+                            "(5e20.12)",
+                            "augmentationcharges(nonsperical)",
+                            "uccopanciesinatom",
+                            "grid",
+                            "aepotential",
+                            "corecharge-density",
+                            "kineticenergy-density",
+                            "mkineticenergy-densitypseudized",
+                            "localpseudopotentialcore",
+                            "pspotentialvalenceonly",
+                            "corecharge-density(pseudized)",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "pseudowavefunction",
+                            "aewavefunction",
+                            "endofdataset"
+                        ]
+                    },
+                    "stats": {
+                        "header": {
+                            "MEAN": 9.198469218699186,
+                            "ABSMEAN": 9.198469218699186,
+                            "VAR": 1790.7147656424072,
+                            "MIN": 0.0,
+                            "MAX": 322.069
+                        },
+                        "data": {
+                            "MEAN": 215.16613596661992,
+                            "ABSMEAN": 237.95076292821147,
+                            "VAR": 3381771.445249609,
+                            "MIN": -872.57185,
+                            "MAX": 24929.6947974
+                        }
+                    }
+                }
+            }
+        ],
+        "potcar": [
+            "Zr_sv",
+            "Mn_pv",
+            "Si"
+        ],
+        "parameters": {},
+        "is_hubbard": false
+    },
+    "output": {
+        "structure": {
+            "@module": "pymatgen.core.structure",
+            "@class": "Structure",
+            "charge": 0.0,
+            "lattice": {
+                "matrix": [
+                    [
+                        6.84185282,
+                        0.0,
+                        4e-16
+                    ],
+                    [
+                        6e-16,
+                        3.90569138,
+                        2e-16
+                    ],
+                    [
+                        0.0,
+                        0.0,
+                        7.58975866
+                    ]
+                ],
+                "pbc": [
+                    true,
+                    true,
+                    true
+                ],
+                "a": 6.84185282,
+                "b": 3.90569138,
+                "c": 7.58975866,
+                "alpha": 90.0,
+                "beta": 90.0,
+                "gamma": 90.0,
+                "volume": 202.81478764223579
+            },
+            "properties": {},
+            "sites": [
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.0278917300000003,
+                        0.25,
+                        0.820532649999997
+                    ],
+                    "properties": {
+                        "magmom": -0.096
+                    },
+                    "label": "Zr",
+                    "xyz": [
+                        0.19083111155518076,
+                        0.976422845,
+                        6.227644786150226
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.9721082699999997,
+                        0.75,
+                        0.179467350000003
+                    ],
+                    "properties": {
+                        "magmom": -0.096
+                    },
+                    "label": "Zr",
+                    "xyz": [
+                        6.651021708444819,
+                        2.929268535,
+                        1.3621138738497742
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.4721082699999997,
+                        0.75,
+                        0.320532649999997
+                    ],
+                    "properties": {
+                        "magmom": -0.096
+                    },
+                    "label": "Zr",
+                    "xyz": [
+                        3.23009529844482,
+                        2.929268535,
+                        2.4327654561502263
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Zr",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.5278917300000003,
+                        0.25,
+                        0.679467350000003
+                    ],
+                    "properties": {
+                        "magmom": -0.096
+                    },
+                    "label": "Zr",
+                    "xyz": [
+                        3.6117575215551807,
+                        0.976422845,
+                        5.156993203849774
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.1350468500000019,
+                        0.25,
+                        0.4364390499999971
+                    ],
+                    "properties": {
+                        "magmom": 2.723
+                    },
+                    "label": "Mn",
+                    "xyz": [
+                        0.9239706715046302,
+                        0.976422845,
+                        3.3124670592996512
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.8649531499999981,
+                        0.75,
+                        0.563560950000003
+                    ],
+                    "properties": {
+                        "magmom": 2.723
+                    },
+                    "label": "Mn",
+                    "xyz": [
+                        5.91788214849537,
+                        2.929268535,
+                        4.27729160070035
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.3649531499999981,
+                        0.75,
+                        0.936439049999997
+                    ],
+                    "properties": {
+                        "magmom": 2.723
+                    },
+                    "label": "Mn",
+                    "xyz": [
+                        2.4969557384953704,
+                        2.929268535,
+                        7.107346389299651
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Mn",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.6350468500000019,
+                        0.25,
+                        0.0635609500000029
+                    ],
+                    "properties": {
+                        "magmom": 2.723
+                    },
+                    "label": "Mn",
+                    "xyz": [
+                        4.34489708150463,
+                        0.976422845,
+                        0.48241227070034937
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.235235969999998,
+                        0.75,
+                        0.6219172200000003
+                    ],
+                    "properties": {
+                        "magmom": -0.042
+                    },
+                    "label": "Si",
+                    "xyz": [
+                        1.6094498847099221,
+                        2.929268535,
+                        4.720201606298128
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.764764030000002,
+                        0.25,
+                        0.3780827799999997
+                    ],
+                    "properties": {
+                        "magmom": -0.042
+                    },
+                    "label": "Si",
+                    "xyz": [
+                        5.232402935290079,
+                        0.976422845,
+                        2.8695570537018726
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.264764030000002,
+                        0.25,
+                        0.1219172200000003
+                    ],
+                    "properties": {
+                        "magmom": -0.042
+                    },
+                    "label": "Si",
+                    "xyz": [
+                        1.8114765252900784,
+                        0.976422845,
+                        0.9253222762981277
+                    ]
+                },
+                {
+                    "species": [
+                        {
+                            "element": "Si",
+                            "occu": 1
+                        }
+                    ],
+                    "abc": [
+                        0.735235969999998,
+                        0.75,
+                        0.8780827799999997
+                    ],
+                    "properties": {
+                        "magmom": -0.042
+                    },
+                    "label": "Si",
+                    "xyz": [
+                        5.030376294709922,
+                        2.929268535,
+                        6.664436383701873
+                    ]
+                }
+            ]
+        },
+        "density": 5.706583025815623,
+        "energy": -99.49631044,
+        "forces": [
+            [
+                -0.0968417,
+                0.0,
+                -0.17960362
+            ],
+            [
+                0.0968417,
+                -0.0,
+                0.17960362
+            ],
+            [
+                0.0968417,
+                -0.0,
+                -0.17960362
+            ],
+            [
+                -0.0968417,
+                -0.0,
+                0.17960362
+            ],
+            [
+                -0.0901544,
+                -0.0,
+                0.33754298
+            ],
+            [
+                0.0901544,
+                -0.0,
+                -0.33754298
+            ],
+            [
+                0.0901544,
+                -0.0,
+                0.33754298
+            ],
+            [
+                -0.0901544,
+                -0.0,
+                -0.33754298
+            ],
+            [
+                -0.1854831,
+                -0.0,
+                -0.05466586
+            ],
+            [
+                0.1854831,
+                -0.0,
+                0.05466586
+            ],
+            [
+                0.1854831,
+                -0.0,
+                -0.05466586
+            ],
+            [
+                -0.1854831,
+                0.0,
+                0.05466586
+            ]
+        ],
+        "stress": [
+            [
+                -98.0823046,
+                -0.0,
+                -0.0
+            ],
+            [
+                -0.0,
+                -99.46104308,
+                -0.0
+            ],
+            [
+                -0.0,
+                -0.0,
+                -28.11556606
+            ]
+        ],
+        "energy_per_atom": -8.291359203333334,
+        "bandgap": 0.0
+    },
+    "run_type": "PBE",
+    "structure": {
+        "@module": "pymatgen.core.structure",
+        "@class": "Structure",
+        "charge": 0.0,
+        "lattice": {
+            "matrix": [
+                [
+                    6.84185282,
+                    0.0,
+                    4e-16
+                ],
+                [
+                    6e-16,
+                    3.90569138,
+                    2e-16
+                ],
+                [
+                    0.0,
+                    0.0,
+                    7.58975866
+                ]
+            ],
+            "pbc": [
+                true,
+                true,
+                true
+            ],
+            "a": 6.84185282,
+            "b": 3.90569138,
+            "c": 7.58975866,
+            "alpha": 90.0,
+            "beta": 90.0,
+            "gamma": 90.0,
+            "volume": 202.81478764223579
+        },
+        "properties": {},
+        "sites": [
+            {
+                "species": [
+                    {
+                        "element": "Zr",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.0278917300000003,
+                    0.25,
+                    0.820532649999997
+                ],
+                "properties": {
+                    "magmom": -0.096
+                },
+                "label": "Zr",
+                "xyz": [
+                    0.19083111155518076,
+                    0.976422845,
+                    6.227644786150226
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Zr",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.9721082699999997,
+                    0.75,
+                    0.179467350000003
+                ],
+                "properties": {
+                    "magmom": -0.096
+                },
+                "label": "Zr",
+                "xyz": [
+                    6.651021708444819,
+                    2.929268535,
+                    1.3621138738497742
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Zr",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.4721082699999997,
+                    0.75,
+                    0.320532649999997
+                ],
+                "properties": {
+                    "magmom": -0.096
+                },
+                "label": "Zr",
+                "xyz": [
+                    3.23009529844482,
+                    2.929268535,
+                    2.4327654561502263
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Zr",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.5278917300000003,
+                    0.25,
+                    0.679467350000003
+                ],
+                "properties": {
+                    "magmom": -0.096
+                },
+                "label": "Zr",
+                "xyz": [
+                    3.6117575215551807,
+                    0.976422845,
+                    5.156993203849774
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Mn",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.1350468500000019,
+                    0.25,
+                    0.4364390499999971
+                ],
+                "properties": {
+                    "magmom": 2.723
+                },
+                "label": "Mn",
+                "xyz": [
+                    0.9239706715046302,
+                    0.976422845,
+                    3.3124670592996512
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Mn",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.8649531499999981,
+                    0.75,
+                    0.563560950000003
+                ],
+                "properties": {
+                    "magmom": 2.723
+                },
+                "label": "Mn",
+                "xyz": [
+                    5.91788214849537,
+                    2.929268535,
+                    4.27729160070035
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Mn",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.3649531499999981,
+                    0.75,
+                    0.936439049999997
+                ],
+                "properties": {
+                    "magmom": 2.723
+                },
+                "label": "Mn",
+                "xyz": [
+                    2.4969557384953704,
+                    2.929268535,
+                    7.107346389299651
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Mn",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.6350468500000019,
+                    0.25,
+                    0.0635609500000029
+                ],
+                "properties": {
+                    "magmom": 2.723
+                },
+                "label": "Mn",
+                "xyz": [
+                    4.34489708150463,
+                    0.976422845,
+                    0.48241227070034937
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Si",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.235235969999998,
+                    0.75,
+                    0.6219172200000003
+                ],
+                "properties": {
+                    "magmom": -0.042
+                },
+                "label": "Si",
+                "xyz": [
+                    1.6094498847099221,
+                    2.929268535,
+                    4.720201606298128
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Si",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.764764030000002,
+                    0.25,
+                    0.3780827799999997
+                ],
+                "properties": {
+                    "magmom": -0.042
+                },
+                "label": "Si",
+                "xyz": [
+                    5.232402935290079,
+                    0.976422845,
+                    2.8695570537018726
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Si",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.264764030000002,
+                    0.25,
+                    0.1219172200000003
+                ],
+                "properties": {
+                    "magmom": -0.042
+                },
+                "label": "Si",
+                "xyz": [
+                    1.8114765252900784,
+                    0.976422845,
+                    0.9253222762981277
+                ]
+            },
+            {
+                "species": [
+                    {
+                        "element": "Si",
+                        "occu": 1
+                    }
+                ],
+                "abc": [
+                    0.735235969999998,
+                    0.75,
+                    0.8780827799999997
+                ],
+                "properties": {
+                    "magmom": -0.042
+                },
+                "label": "Si",
+                "xyz": [
+                    5.030376294709922,
+                    2.929268535,
+                    6.664436383701873
+                ]
+            }
+        ]
+    },
+    "task_type": "Static",
+    "transformations": {},
+    "vasp_objects": {},
+    "additional_json": {},
+    "analysis": {
+        "delta_volume": 0.0,
+        "delta_volume_percent": 0.0,
+        "max_force": 0.3493752698555529,
+        "warnings": [],
+        "errors": []
+    },
+    "calcs_reversed": [
+        {
+            "dir_name": "/tmp/ray/a78ed138b8f3b183ffffffffffffffffffffffff1c000000_1774423625/job_2026-03-25-07-27-06-912220-28133",
+            "vasp_version": "6.4.3",
+            "has_vasp_completed": "successful",
+            "input": {
+                "incar": {
+                    "PREC": "Accurate",
+                    "ALGO": "All",
+                    "ISPIN": 2,
+                    "AMIX": 0.4,
+                    "NELM": 200,
+                    "IBRION": -1,
+                    "EDIFF": 1e-05,
+                    "EDIFFG": -0.02,
+                    "NSW": 0,
+                    "ENCUT": 700.0,
+                    "ENAUG": 1360.0,
+                    "MAGMOM": [
+                        0.6,
+                        0.6,
+                        0.6,
+                        0.6,
+                        5.0,
+                        5.0,
+                        5.0,
+                        5.0,
+                        0.6,
+                        0.6,
+                        0.6,
+                        0.6
+                    ],
+                    "LREAL": false,
+                    "ISMEAR": 2,
+                    "SIGMA": 0.2,
+                    "KSPACING": 0.2,
+                    "LMAXMIX": 4,
+                    "LWAVE": false,
+                    "LCHARG": true,
+                    "LVTOT": true,
+                    "LORBIT": 11,
+                    "LELF": false,
+                    "LASPH": true,
+                    "LAECHG": true,
+                    "GGA": "Pe",
+                    "LMIXTAU": true
+                },
+                "kpoints": {
+                    "@module": "pymatgen.io.vasp.inputs",
+                    "@class": "Kpoints",
+                    "comment": "Kpoints from vasprun.xml",
+                    "nkpoints": 0,
+                    "generation_style": "Gamma",
+                    "kpoints": [
+                        [
+                            5,
+                            9,
+                            5
+                        ]
+                    ],
+                    "usershift": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "kpts_weights": null,
+                    "coord_type": null,
+                    "labels": null,
+                    "tet_number": 0,
+                    "tet_weight": 0,
+                    "tet_connections": null
+                },
+                "nkpoints": 45,
+                "potcar_spec": [
+                    {
+                        "titel": "PAW_PBE Zr_sv 04Jan2005",
+                        "hash": "3a6dbcd168e0eefaaec1a20726e51ddb",
+                        "summary_stats": {
+                            "keywords": {
+                                "header": [
+                                    "copyr",
+                                    "dexc",
+                                    "eatom",
+                                    "eaug",
+                                    "enmax",
+                                    "enmin",
+                                    "icore",
+                                    "iunscr",
+                                    "lcor",
+                                    "lexch",
+                                    "lpaw",
+                                    "lultra",
+                                    "ndata",
+                                    "orbitaldescriptions",
+                                    "orbitals",
+                                    "pomass",
+                                    "raug",
+                                    "rcore",
+                                    "rdep",
+                                    "rdept",
+                                    "rmax",
+                                    "rpacor",
+                                    "rrkj",
+                                    "rwigs",
+                                    "sha256",
+                                    "step",
+                                    "titel",
+                                    "vrhfin",
+                                    "zval",
+                                    "nentries"
+                                ],
+                                "data": [
+                                    "localpart",
+                                    "gradientcorrectionsusedforxc",
+                                    "corecharge-density(partial)",
+                                    "kineticenergydensity(partial)",
+                                    "atomicpseudocharge-density",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "pawradialsets",
+                                    "(5e20.12)",
+                                    "augmentationcharges(nonsperical)",
+                                    "uccopanciesinatom",
+                                    "grid",
+                                    "aepotential",
+                                    "corecharge-density",
+                                    "kineticenergy-density",
+                                    "mkineticenergy-densitypseudized",
+                                    "localpseudopotentialcore",
+                                    "pspotentialvalenceonly",
+                                    "corecharge-density(pseudized)",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "endofdataset"
+                                ]
+                            },
+                            "stats": {
+                                "header": {
+                                    "MEAN": 64.31634226747968,
+                                    "ABSMEAN": 64.31634226747968,
+                                    "VAR": 24806.36000601945,
+                                    "MIN": 0.0,
+                                    "MAX": 1284.2219
+                                },
+                                "data": {
+                                    "MEAN": 4130.908584214487,
+                                    "ABSMEAN": 4164.655369203883,
+                                    "VAR": 1860728517.6017377,
+                                    "MIN": -341.326325372,
+                                    "MAX": 712254.18498
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "titel": "PAW_PBE Mn_pv 02Aug2007",
+                        "hash": "9fc2da19948217b93232c1ff13eec3a6",
+                        "summary_stats": {
+                            "keywords": {
+                                "header": [
+                                    "copyr",
+                                    "dexc",
+                                    "eatom",
+                                    "eaug",
+                                    "enmax",
+                                    "enmin",
+                                    "icore",
+                                    "iunscr",
+                                    "lcor",
+                                    "lexch",
+                                    "lpaw",
+                                    "lultra",
+                                    "ndata",
+                                    "orbitaldescriptions",
+                                    "orbitals",
+                                    "pomass",
+                                    "raug",
+                                    "rcore",
+                                    "rdep",
+                                    "rdept",
+                                    "rmax",
+                                    "rpacor",
+                                    "rrkj",
+                                    "rwigs",
+                                    "sha256",
+                                    "step",
+                                    "titel",
+                                    "vrhfin",
+                                    "zval",
+                                    "nentries"
+                                ],
+                                "data": [
+                                    "localpart",
+                                    "gradientcorrectionsusedforxc",
+                                    "corecharge-density(partial)",
+                                    "kineticenergydensity(partial)",
+                                    "atomicpseudocharge-density",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "pawradialsets",
+                                    "(5e20.12)",
+                                    "augmentationcharges(nonsperical)",
+                                    "uccopanciesinatom",
+                                    "grid",
+                                    "aepotential",
+                                    "corecharge-density",
+                                    "kineticenergy-density",
+                                    "mkineticenergy-densitypseudized",
+                                    "localpseudopotentialcore",
+                                    "pspotentialvalenceonly",
+                                    "corecharge-density(pseudized)",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "endofdataset"
+                                ]
+                            },
+                            "stats": {
+                                "header": {
+                                    "MEAN": 65.38464134796749,
+                                    "ABSMEAN": 65.38464134796749,
+                                    "VAR": 42551.28880004816,
+                                    "MIN": 0.0,
+                                    "MAX": 2025.2664
+                                },
+                                "data": {
+                                    "MEAN": 824.6083694305902,
+                                    "ABSMEAN": 874.1024204636116,
+                                    "VAR": 81144769.66615322,
+                                    "MIN": -455.101435308,
+                                    "MAX": 152730.15192
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "titel": "PAW_PBE Si 05Jan2001",
+                        "hash": "c27340a9c98542122fbad458bbb5d441",
+                        "summary_stats": {
+                            "keywords": {
+                                "header": [
+                                    "copyr",
+                                    "dexc",
+                                    "eatom",
+                                    "eaug",
+                                    "enmax",
+                                    "enmin",
+                                    "icore",
+                                    "iunscr",
+                                    "lcor",
+                                    "lexch",
+                                    "lpaw",
+                                    "lultra",
+                                    "ndata",
+                                    "orbitaldescriptions",
+                                    "orbitals",
+                                    "pomass",
+                                    "raug",
+                                    "rcore",
+                                    "rdep",
+                                    "rdept",
+                                    "rmax",
+                                    "rpacor",
+                                    "rrkj",
+                                    "rwigs",
+                                    "sha256",
+                                    "step",
+                                    "titel",
+                                    "vrhfin",
+                                    "zval",
+                                    "nentries"
+                                ],
+                                "data": [
+                                    "localpart",
+                                    "gradientcorrectionsusedforxc",
+                                    "corecharge-density(partial)",
+                                    "kineticenergydensity(partial)",
+                                    "atomicpseudocharge-density",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "nonlocalpart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "reciprocalspacepart",
+                                    "realspacepart",
+                                    "pawradialsets",
+                                    "(5e20.12)",
+                                    "augmentationcharges(nonsperical)",
+                                    "uccopanciesinatom",
+                                    "grid",
+                                    "aepotential",
+                                    "corecharge-density",
+                                    "kineticenergy-density",
+                                    "mkineticenergy-densitypseudized",
+                                    "localpseudopotentialcore",
+                                    "pspotentialvalenceonly",
+                                    "corecharge-density(pseudized)",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "pseudowavefunction",
+                                    "aewavefunction",
+                                    "endofdataset"
+                                ]
+                            },
+                            "stats": {
+                                "header": {
+                                    "MEAN": 9.198469218699186,
+                                    "ABSMEAN": 9.198469218699186,
+                                    "VAR": 1790.7147656424072,
+                                    "MIN": 0.0,
+                                    "MAX": 322.069
+                                },
+                                "data": {
+                                    "MEAN": 215.16613596661992,
+                                    "ABSMEAN": 237.95076292821147,
+                                    "VAR": 3381771.445249609,
+                                    "MIN": -872.57185,
+                                    "MAX": 24929.6947974
+                                }
+                            }
+                        }
+                    }
+                ],
+                "potcar": [
+                    "Zr_sv",
+                    "Mn_pv",
+                    "Si"
+                ],
+                "potcar_type": [
+                    "PAW_PBE",
+                    "PAW_PBE",
+                    "PAW_PBE"
+                ],
+                "parameters": {
+                    "SYSTEM": "unknown system",
+                    "LCOMPAT": false,
+                    "PREC": "Accura",
+                    "ENMAX": 700.0,
+                    "ENAUG": 1360.0,
+                    "EDIFF": 1e-05,
+                    "IALGO": 58,
+                    "IWAVPR": 10,
+                    "NBANDS": 81,
+                    "NBANDSLOW": -1,
+                    "NBANDSHIGH": -1,
+                    "NELECT": 116.0,
+                    "TURBO": 0,
+                    "IRESTART": 0,
+                    "NREBOOT": 0,
+                    "NMIN": 0,
+                    "EREF": 0.0,
+                    "ISMEAR": 2,
+                    "SIGMA": 0.2,
+                    "KSPACING": 0.2,
+                    "KGAMMA": true,
+                    "KBLOWUP": true,
+                    "LREAL": false,
+                    "ROPT": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "LMAXPAW": -100,
+                    "LMAXMIX": 4,
+                    "NLSPLINE": false,
+                    "ISTART": 0,
+                    "ICHARG": 2,
+                    "INIWAV": 1,
+                    "ISPIN": 2,
+                    "LNONCOLLINEAR": false,
+                    "MAGMOM": [
+                        0.6,
+                        0.6,
+                        0.6,
+                        0.6,
+                        5.0,
+                        5.0,
+                        5.0,
+                        5.0,
+                        0.6,
+                        0.6,
+                        0.6,
+                        0.6
+                    ],
+                    "NUPDOWN": -1.0,
+                    "LSORBIT": false,
+                    "SAXIS": [
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "LSPIRAL": false,
+                    "QSPIRAL": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "LZEROZ": false,
+                    "LASPH": true,
+                    "NELM": 200,
+                    "NELMDL": -5,
+                    "NELMIN": 2,
+                    "ENINI": 700.0,
+                    "LDIAG": true,
+                    "LSUBROT": false,
+                    "WEIMIN": 0.0,
+                    "EBREAK": 3e-08,
+                    "DEPER": 0.3,
+                    "NRMM": 4,
+                    "TIME": 0.4,
+                    "AMIX": 0.4,
+                    "BMIX": 1.0,
+                    "AMIN": 0.1,
+                    "AMIX_MAG": 1.6,
+                    "BMIX_MAG": 1.0,
+                    "IMIX": 4,
+                    "MIXFIRST": false,
+                    "MAXMIX": -45,
+                    "WC": 100.0,
+                    "INIMIX": 1,
+                    "MIXPRE": 1,
+                    "MREMOVE": 5,
+                    "LDIPOL": false,
+                    "LMONO": false,
+                    "IDIPOL": 0,
+                    "EPSILON": 1.0,
+                    "DIPOL": [
+                        -100.0,
+                        -100.0,
+                        -100.0
+                    ],
+                    "EFIELD": 0.0,
+                    "LVACPOTAV": false,
+                    "NGX": 60,
+                    "NGY": 36,
+                    "NGZ": 70,
+                    "NGXF": 120,
+                    "NGYF": 72,
+                    "NGZF": 140,
+                    "ADDGRID": false,
+                    "NSW": 0,
+                    "IBRION": -1,
+                    "MDALGO": 0,
+                    "ISIF": 2,
+                    "PSTRESS": 0.0,
+                    "EDIFFG": -0.02,
+                    "NFREE": 0,
+                    "POTIM": 0.5,
+                    "SMASS": -3.0,
+                    "SCALEE": 1.0,
+                    "TEBEG": 0.0001,
+                    "TEEND": 0.0001,
+                    "NBLOCK": 1,
+                    "KBLOCK": 1,
+                    "NPACO": 256,
+                    "APACO": 10.0,
+                    "ISYM": 2,
+                    "SYMPREC": 1e-05,
+                    "LORBIT": 11,
+                    "RWIGS": [
+                        -1.0,
+                        -1.0,
+                        -1.0
+                    ],
+                    "NEDOS": 301,
+                    "EMIN": 10.0,
+                    "EMAX": -10.0,
+                    "EFERMI": 0.0,
+                    "NWRITE": 2,
+                    "LWAVE": false,
+                    "LDOWNSAMPLE": false,
+                    "LCHARG": true,
+                    "LPARD": false,
+                    "LVTOT": true,
+                    "LVHAR": false,
+                    "LELF": false,
+                    "LOPTICS": false,
+                    "STM": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "NPAR": 1,
+                    "NSIM": 4,
+                    "NBLK": -1,
+                    "LPLANE": true,
+                    "LSCALAPACK": true,
+                    "LSCAAWARE": false,
+                    "LSCALU": false,
+                    "LASYNC": false,
+                    "LORBITALREAL": false,
+                    "IDIOT": 3,
+                    "PHON_NSTRUCT": -1,
+                    "LMUSIC": false,
+                    "POMASS": [
+                        91.224,
+                        54.938,
+                        28.085
+                    ],
+                    "DARWINR": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "DARWINV": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "LCORR": true,
+                    "GGA_COMPAT": true,
+                    "LBERRY": false,
+                    "ICORELEVEL": 0,
+                    "LDAU": false,
+                    "I_CONSTRAINED_M": 0,
+                    "GGA": "Pe",
+                    "XC_C": 1,
+                    "VOSKOWN": 0,
+                    "LHFCALC": false,
+                    "PRECFOCK": "",
+                    "LSYMGRAD": false,
+                    "LHFONE": false,
+                    "LRHFCALC": false,
+                    "LTHOMAS": false,
+                    "LMODELHF": false,
+                    "LFOCKACE": false,
+                    "ENCUT4O": -1.0,
+                    "EXXOEP": 0,
+                    "FOURORBIT": 0,
+                    "AEXX": 0.0,
+                    "HFALPHA": 0.0,
+                    "MCALPHA": 0.0,
+                    "ALDAX": 1.0,
+                    "AGGAX": 1.0,
+                    "AMGGAX": 1.0,
+                    "ALDAC": 1.0,
+                    "AGGAC": 1.0,
+                    "AMGGAC": 1.0,
+                    "NKREDX": 1,
+                    "NKREDY": 1,
+                    "NKREDZ": 1,
+                    "SHIFTRED": false,
+                    "ODDONLY": false,
+                    "EVENONLY": false,
+                    "LMAXFOCK": 0,
+                    "NMAXFOCKAE": 0,
+                    "LFOCKAEDFT": false,
+                    "HFSCREEN": 0.0,
+                    "HFSCREENC": 0.0,
+                    "NBANDSGWLOW": 0,
+                    "LUSE_VDW": false,
+                    "IVDW_NL": -1,
+                    "LSPIN_VDW": false,
+                    "ZAB_VDW": -0.8491,
+                    "GAMMA_VDW": 1.3962634,
+                    "ALPHA_VDW": 0.0,
+                    "PARAM1": 0.1234,
+                    "PARAM2": 1.0,
+                    "BPARAM": 6.3,
+                    "CPARAM": 0.0093,
+                    "MODEL_GW": 0,
+                    "MODEL_EPS0": 10.14073938,
+                    "MODEL_ALPHA": 1.0,
+                    "LEPSILON": false,
+                    "LRPA": false,
+                    "LNABLA": false,
+                    "LVEL": false,
+                    "CSHIFT": 0.1,
+                    "OMEGAMAX": -1.0,
+                    "DEG_THRESHOLD": 0.002,
+                    "RTIME": -0.1,
+                    "WPLASMAI": 0.0,
+                    "DFIELD": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "WPLASMA": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "NUCIND": false,
+                    "MAGPOS": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "LNICSALL": true,
+                    "ORBITALMAG": false,
+                    "LMAGBLOCH": false,
+                    "LCHIMAG": false,
+                    "LGAUGE": true,
+                    "MAGATOM": 0,
+                    "MAGDIPOL": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "AVECCONST": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "LALL_IN_ONE": false,
+                    "IALL_IN_ONE": -1,
+                    "NBANDS_WAVE": -1,
+                    "LFINITE_TEMPERATURE": false,
+                    "LADDER": false,
+                    "LRPAFORCE": false,
+                    "LFXC": false,
+                    "LHARTREE": true,
+                    "IBSE": 0,
+                    "KPOINT": [
+                        -1,
+                        0,
+                        0,
+                        0
+                    ],
+                    "LTCTC": false,
+                    "LTCTE": false,
+                    "LTETE": false,
+                    "LTRIPLET": false,
+                    "LFXCEPS": false,
+                    "LFXHEG": false,
+                    "NATURALO": 2,
+                    "LHOLEGF": false,
+                    "L2ORDER": false,
+                    "LDMP1": false,
+                    "LMP2LT": false,
+                    "LSMP2LT": false,
+                    "LGWLF": false,
+                    "ENCUTGW": -1.60000002,
+                    "ENCUTGWSOFT": -1.60000002,
+                    "ENCUTLF": -1.0,
+                    "ESF_SPLINES": false,
+                    "ESF_CONV": 0.01,
+                    "ESF_NINTER": 15,
+                    "LMAXMP2": -1,
+                    "SCISSOR": 0.0,
+                    "NOMEGA": 0,
+                    "NOMEGAR": 0,
+                    "NBANDSGW": -1,
+                    "NBANDSO": -1,
+                    "NBANDSV": -1,
+                    "NELMGW": 1,
+                    "NELMHF": 1,
+                    "DIM": 3,
+                    "IESPILON": 4,
+                    "ANTIRES": 0,
+                    "OMEGAMIN": -30.0,
+                    "OMEGATL": -200.0,
+                    "OMEGAGRID": 0,
+                    "LSELFENERGY": false,
+                    "LSPECTRAL": false,
+                    "LSPECTRALGW": false,
+                    "LSINGLES": false,
+                    "LFERMIGW": false,
+                    "ODDONLYGW": false,
+                    "EVENONLYGW": false,
+                    "NKREDLFX": 1,
+                    "NKREDLFY": 1,
+                    "NKREDLFZ": 1,
+                    "MAXMEM": 2800,
+                    "TELESCOPE": 0,
+                    "NTAUPAR": -1,
+                    "NOMEGAPAR": -1,
+                    "DAMP_NEWTON": 0.80000001,
+                    "LAMBDA": 1.0,
+                    "OFIELD_KAPPA": 0.0,
+                    "OFIELD_K": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "OFIELD_Q6_NEAR": 0.0,
+                    "OFIELD_Q6_FAR": 0.0,
+                    "OFIELD_A": 0.0,
+                    "KPOINTS_OPT_MODE": 1,
+                    "LKPOINTS_OPT": false
+                },
+                "lattice_rec": {
+                    "@module": "pymatgen.core.lattice",
+                    "@class": "Lattice",
+                    "matrix": [
+                        [
+                            0.9183455815963586,
+                            0.0,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            1.6087254971947083,
+                            0.0
+                        ],
+                        [
+                            0.0,
+                            0.0,
+                            0.8278504743890744
+                        ]
+                    ],
+                    "pbc": [
+                        true,
+                        true,
+                        true
+                    ]
+                },
+                "structure": {
+                    "@module": "pymatgen.core.structure",
+                    "@class": "Structure",
+                    "charge": 0.0,
+                    "lattice": {
+                        "matrix": [
+                            [
+                                6.84185282,
+                                0.0,
+                                0.0
+                            ],
+                            [
+                                0.0,
+                                3.90569138,
+                                0.0
+                            ],
+                            [
+                                0.0,
+                                0.0,
+                                7.58975866
+                            ]
+                        ],
+                        "pbc": [
+                            true,
+                            true,
+                            true
+                        ],
+                        "a": 6.84185282,
+                        "b": 3.90569138,
+                        "c": 7.58975866,
+                        "alpha": 90.0,
+                        "beta": 90.0,
+                        "gamma": 90.0,
+                        "volume": 202.81478764223579
+                    },
+                    "properties": {},
+                    "sites": [
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.02789173,
+                                0.25,
+                                0.82053265
+                            ],
+                            "properties": {},
+                            "label": "Zr",
+                            "xyz": [
+                                0.1908311115551786,
+                                0.976422845,
+                                6.227644786150249
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.97210827,
+                                0.75,
+                                0.17946735
+                            ],
+                            "properties": {},
+                            "label": "Zr",
+                            "xyz": [
+                                6.651021708444821,
+                                2.929268535,
+                                1.362113873849751
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.47210827,
+                                0.75,
+                                0.32053265
+                            ],
+                            "properties": {},
+                            "label": "Zr",
+                            "xyz": [
+                                3.2300952984448212,
+                                2.929268535,
+                                2.432765456150249
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.52789173,
+                                0.25,
+                                0.67946735
+                            ],
+                            "properties": {},
+                            "label": "Zr",
+                            "xyz": [
+                                3.6117575215551785,
+                                0.976422845,
+                                5.156993203849751
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.13504685,
+                                0.25,
+                                0.43643905
+                            ],
+                            "properties": {},
+                            "label": "Mn",
+                            "xyz": [
+                                0.923970671504617,
+                                0.976422845,
+                                3.312467059299673
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.86495315,
+                                0.75,
+                                0.56356095
+                            ],
+                            "properties": {},
+                            "label": "Mn",
+                            "xyz": [
+                                5.917882148495383,
+                                2.929268535,
+                                4.277291600700327
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.36495315,
+                                0.75,
+                                0.93643905
+                            ],
+                            "properties": {},
+                            "label": "Mn",
+                            "xyz": [
+                                2.496955738495383,
+                                2.929268535,
+                                7.107346389299674
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.63504685,
+                                0.25,
+                                0.06356095
+                            ],
+                            "properties": {},
+                            "label": "Mn",
+                            "xyz": [
+                                4.344897081504617,
+                                0.976422845,
+                                0.48241227070032705
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.23523597,
+                                0.75,
+                                0.62191722
+                            ],
+                            "properties": {},
+                            "label": "Si",
+                            "xyz": [
+                                1.6094498847099352,
+                                2.929268535,
+                                4.720201606298126
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.76476403,
+                                0.25,
+                                0.37808278
+                            ],
+                            "properties": {},
+                            "label": "Si",
+                            "xyz": [
+                                5.2324029352900645,
+                                0.976422845,
+                                2.869557053701875
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.26476403,
+                                0.25,
+                                0.12191722
+                            ],
+                            "properties": {},
+                            "label": "Si",
+                            "xyz": [
+                                1.8114765252900644,
+                                0.976422845,
+                                0.9253222762981252
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.73523597,
+                                0.75,
+                                0.87808278
+                            ],
+                            "properties": {},
+                            "label": "Si",
+                            "xyz": [
+                                5.030376294709935,
+                                2.929268535,
+                                6.664436383701875
+                            ]
+                        }
+                    ]
+                },
+                "is_hubbard": false,
+                "hubbards": {}
+            },
+            "output": {
+                "bandgap": 0.0,
+                "direct_gap": 0.0,
+                "dos_properties": {
+                    "Zr": {
+                        "s": {
+                            "filling": 0.9593620218520271,
+                            "center": -42.942392583448594,
+                            "bandwidth": 15.30050462846444,
+                            "skewness": 2.397145008001908,
+                            "kurtosis": 6.839903124561983,
+                            "upper_edge": -48.282068609999996
+                        },
+                        "p": {
+                            "filling": 0.9891829507488223,
+                            "center": -25.63575962030089,
+                            "bandwidth": 4.8483615211809665,
+                            "skewness": 4.967332272187014,
+                            "kurtosis": 26.183954497911607,
+                            "upper_edge": -26.330068609999998
+                        },
+                        "d": {
+                            "filling": 0.25168038768497464,
+                            "center": 1.6017951379214561,
+                            "bandwidth": 2.490237688117654,
+                            "skewness": -0.9168561634169594,
+                            "kurtosis": 3.798798635238651,
+                            "upper_edge": 3.67763139
+                        }
+                    },
+                    "Mn": {
+                        "s": {
+                            "filling": 0.7552302894886415,
+                            "center": -2.6460929406269194,
+                            "bandwidth": 4.3373115460985066,
+                            "skewness": 0.2879625821838694,
+                            "kurtosis": 3.2568560716198807,
+                            "upper_edge": -3.773868610000001
+                        },
+                        "p": {
+                            "filling": 0.9758023092725707,
+                            "center": -44.18710664460748,
+                            "bandwidth": 12.204959951579411,
+                            "skewness": 3.2441843183751136,
+                            "kurtosis": 11.783172231230825,
+                            "upper_edge": -45.86536861
+                        },
+                        "d": {
+                            "filling": 0.5365248561372798,
+                            "center": -0.17981239744115207,
+                            "bandwidth": 2.187037680694726,
+                            "skewness": 0.004092866094925655,
+                            "kurtosis": 4.505783096627334,
+                            "upper_edge": 1.6637313899999988
+                        }
+                    },
+                    "Si": {
+                        "s": {
+                            "filling": 0.8072580311808787,
+                            "center": -5.273494915426147,
+                            "bandwidth": 4.838371089448523,
+                            "skewness": 1.1592796193299635,
+                            "kurtosis": 4.033787712471787,
+                            "upper_edge": -7.197568610000001
+                        },
+                        "p": {
+                            "filling": 0.7153845011927503,
+                            "center": -1.0422360560910084,
+                            "bandwidth": 3.0850823456143828,
+                            "skewness": -0.24428458954325324,
+                            "kurtosis": 12.591883750086772,
+                            "upper_edge": -1.7599686100000005
+                        }
+                    }
+                },
+                "efermi": 8.74576861,
+                "energy": -99.49631044,
+                "energy_per_atom": -8.291359203333334,
+                "is_gap_direct": false,
+                "is_metal": true,
+                "locpot": {
+                    "0": [
+                        -13.65730776967346,
+                        -13.648807558586151,
+                        -13.63137559225299,
+                        -13.5938133794234,
+                        -13.515550681589916,
+                        -13.381168256709152,
+                        -13.188575748531155,
+                        -12.946295883045307,
+                        -12.658030897092301,
+                        -12.328678657421024,
+                        -11.968786087854738,
+                        -11.584780308939978,
+                        -11.180629010441196,
+                        -10.784680676333032,
+                        -10.42938428412568,
+                        -10.127801530849602,
+                        -9.894961946947326,
+                        -9.757906931115079,
+                        -9.728804076973377,
+                        -9.803869197877926,
+                        -9.9634088525343,
+                        -10.197667011544176,
+                        -10.49984000908307,
+                        -10.840274520704336,
+                        -11.182293338961273,
+                        -11.500818897787964,
+                        -11.774295739910919,
+                        -11.982463941568575,
+                        -12.123233378398584,
+                        -12.204350678528462,
+                        -12.231488127451296,
+                        -12.204350678528352,
+                        -12.123233378398911,
+                        -11.982463941569705,
+                        -11.774295739911256,
+                        -11.500818897789152,
+                        -11.182293338962072,
+                        -10.840274520705531,
+                        -10.499840009083941,
+                        -10.197667011545718,
+                        -9.963408852535709,
+                        -9.803869197879282,
+                        -9.72880407697524,
+                        -9.757906931116318,
+                        -9.894961946949046,
+                        -10.127801530851137,
+                        -10.42938428412699,
+                        -10.784680676334375,
+                        -11.180629010442383,
+                        -11.58478030894147,
+                        -11.968786087856987,
+                        -12.32867865742164,
+                        -12.658030897093765,
+                        -12.946295883046487,
+                        -13.188575748532232,
+                        -13.381168256710017,
+                        -13.515550681590454,
+                        -13.593813379423825,
+                        -13.63137559225281,
+                        -13.648807558585755,
+                        -13.657307769672977,
+                        -13.648807558585204,
+                        -13.631375592252363,
+                        -13.59381337942347,
+                        -13.515550681589968,
+                        -13.381168256707973,
+                        -13.188575748531026,
+                        -12.946295883045412,
+                        -12.658030897092226,
+                        -12.328678657420323,
+                        -11.96878608785502,
+                        -11.584780308939706,
+                        -11.180629010441322,
+                        -10.784680676333029,
+                        -10.42938428412632,
+                        -10.127801530849705,
+                        -9.894961946947198,
+                        -9.75790693111557,
+                        -9.728804076973724,
+                        -9.803869197877937,
+                        -9.9634088525345,
+                        -10.197667011544059,
+                        -10.499840009083028,
+                        -10.840274520705002,
+                        -11.182293338961653,
+                        -11.500818897788815,
+                        -11.774295739911343,
+                        -11.982463941569204,
+                        -12.12323337839943,
+                        -12.204350678528868,
+                        -12.231488127451858,
+                        -12.204350678529032,
+                        -12.12323337839939,
+                        -11.982463941570026,
+                        -11.774295739912239,
+                        -11.500818897789967,
+                        -11.182293338962591,
+                        -10.84027452070601,
+                        -10.49984000908455,
+                        -10.197667011546455,
+                        -9.963408852536208,
+                        -9.803869197880005,
+                        -9.728804076975806,
+                        -9.75790693111722,
+                        -9.894961946949447,
+                        -10.127801530851087,
+                        -10.429384284128062,
+                        -10.784680676334972,
+                        -11.18062901044322,
+                        -11.584780308942106,
+                        -11.968786087856694,
+                        -12.32867865742216,
+                        -12.658030897093644,
+                        -12.946295883046739,
+                        -13.188575748532426,
+                        -13.381168256710069,
+                        -13.515550681591211,
+                        -13.593813379424601,
+                        -13.631375592253226,
+                        -13.648807558586293
+                    ],
+                    "1": [
+                        -3.9912136603833575,
+                        -4.103018577123898,
+                        -4.454174689358342,
+                        -5.050703269419647,
+                        -5.86307254498754,
+                        -6.849498386315653,
+                        -7.9717598900332325,
+                        -9.186831024742938,
+                        -10.464068463929296,
+                        -11.76950200789543,
+                        -13.061614646675343,
+                        -14.304032111109324,
+                        -15.45933390605303,
+                        -16.49613844748192,
+                        -17.384646736279716,
+                        -18.10172736803435,
+                        -18.627446333881192,
+                        -18.9487256764571,
+                        -19.056532208523507,
+                        -18.948725676456952,
+                        -18.627446333880975,
+                        -18.101727368034073,
+                        -17.384646736279674,
+                        -16.49613844748164,
+                        -15.45933390605273,
+                        -14.304032111108917,
+                        -13.061614646674863,
+                        -11.769502007894737,
+                        -10.464068463928816,
+                        -9.186831024742414,
+                        -7.971759890032698,
+                        -6.849498386314902,
+                        -5.863072544986725,
+                        -5.05070326941881,
+                        -4.45417468935759,
+                        -4.103018577123143,
+                        -3.991213660382668,
+                        -4.103018577123129,
+                        -4.454174689357715,
+                        -5.0507032694190075,
+                        -5.863072544986612,
+                        -6.849498386314675,
+                        -7.971759890032915,
+                        -9.186831024742336,
+                        -10.464068463929019,
+                        -11.769502007895124,
+                        -13.061614646674803,
+                        -14.304032111109215,
+                        -15.459333906052672,
+                        -16.496138447482068,
+                        -17.38464673627944,
+                        -18.101727368034535,
+                        -18.62744633388114,
+                        -18.948725676456792,
+                        -19.056532208523247,
+                        -18.948725676456835,
+                        -18.62744633388132,
+                        -18.101727368034787,
+                        -17.38464673627949,
+                        -16.496138447482362,
+                        -15.459333906052828,
+                        -14.304032111109667,
+                        -13.061614646675283,
+                        -11.769502007895557,
+                        -10.464068463929586,
+                        -9.186831024742796,
+                        -7.971759890033334,
+                        -6.849498386315515,
+                        -5.8630725449871655,
+                        -5.050703269419752,
+                        -4.454174689358471,
+                        -4.103018577123685
+                    ],
+                    "2": [
+                        -7.851980900669984,
+                        -7.865692461697446,
+                        -7.903193844494688,
+                        -7.997574235863019,
+                        -8.184167989494991,
+                        -8.478588250455141,
+                        -8.891692779941156,
+                        -9.42033623862443,
+                        -10.05157382387555,
+                        -10.749908471902835,
+                        -11.486507021837847,
+                        -12.226350189448407,
+                        -12.93065884684272,
+                        -13.560061221527533,
+                        -14.084636954246557,
+                        -14.49376516434502,
+                        -14.780230958402333,
+                        -14.93556253213546,
+                        -14.960438748493223,
+                        -14.857074006456234,
+                        -14.636549355162714,
+                        -14.30519631997712,
+                        -13.87450339059035,
+                        -13.380410489191899,
+                        -12.864574796044208,
+                        -12.368616760587672,
+                        -11.919059387453489,
+                        -11.528581383510762,
+                        -11.213859472493601,
+                        -10.977799154125792,
+                        -10.813167813529851,
+                        -10.705443364927042,
+                        -10.642864900651949,
+                        -10.623573576169948,
+                        -10.633780442888593,
+                        -10.645568793250028,
+                        -10.63378044288809,
+                        -10.623573576169994,
+                        -10.642864900651949,
+                        -10.705443364926541,
+                        -10.813167813529924,
+                        -10.977799154125417,
+                        -11.213859472492874,
+                        -11.52858138350976,
+                        -11.919059387452528,
+                        -12.368616760586946,
+                        -12.864574796043172,
+                        -13.380410489190847,
+                        -13.874503390589389,
+                        -14.30519631997512,
+                        -14.636549355160732,
+                        -14.857074006453395,
+                        -14.960438748490771,
+                        -14.935562532133698,
+                        -14.780230958400473,
+                        -14.49376516434322,
+                        -14.08463695424485,
+                        -13.560061221525958,
+                        -12.930658846840736,
+                        -12.226350189446329,
+                        -11.486507021835909,
+                        -10.749908471900842,
+                        -10.051573823873309,
+                        -9.420336238621854,
+                        -8.891692779938428,
+                        -8.47858825045311,
+                        -8.184167989492995,
+                        -7.997574235860905,
+                        -7.90319384449327,
+                        -7.865692461695584,
+                        -7.8519809006686865,
+                        -7.865692461694918,
+                        -7.903193844493425,
+                        -7.997574235861546,
+                        -8.184167989493584,
+                        -8.478588250453736,
+                        -8.891692779940039,
+                        -9.420336238622896,
+                        -10.051573823874072,
+                        -10.749908471902168,
+                        -11.48650702183689,
+                        -12.226350189447121,
+                        -12.930658846841775,
+                        -13.560061221526617,
+                        -14.08463695424583,
+                        -14.493765164344204,
+                        -14.780230958401294,
+                        -14.935562532134595,
+                        -14.960438748492136,
+                        -14.85707400645575,
+                        -14.636549355162364,
+                        -14.305196319976355,
+                        -13.874503390590625,
+                        -13.380410489192188,
+                        -12.864574796044659,
+                        -12.368616760587345,
+                        -11.91905938745398,
+                        -11.528581383510883,
+                        -11.213859472493775,
+                        -10.977799154126153,
+                        -10.81316781353094,
+                        -10.705443364927454,
+                        -10.642864900652622,
+                        -10.623573576170084,
+                        -10.633780442889387,
+                        -10.64556879325052,
+                        -10.633780442889298,
+                        -10.623573576169914,
+                        -10.642864900652546,
+                        -10.705443364927696,
+                        -10.813167813530953,
+                        -10.977799154125984,
+                        -11.213859472493827,
+                        -11.528581383511035,
+                        -11.91905938745391,
+                        -12.368616760587422,
+                        -12.864574796044426,
+                        -13.380410489192123,
+                        -13.874503390590464,
+                        -14.305196319976375,
+                        -14.636549355162126,
+                        -14.857074006455617,
+                        -14.960438748492415,
+                        -14.935562532135371,
+                        -14.780230958401773,
+                        -14.493765164344612,
+                        -14.08463695424628,
+                        -13.560061221527,
+                        -12.930658846842716,
+                        -12.226350189448212,
+                        -11.48650702183753,
+                        -10.749908471903096,
+                        -10.051573823875069,
+                        -9.420336238623815,
+                        -8.891692779940588,
+                        -8.478588250454793,
+                        -8.184167989494284,
+                        -7.9975742358625705,
+                        -7.903193844494845,
+                        -7.8656924616972175
+                    ]
+                },
+                "mag_density": 0.05197692447651048,
+                "outcar": {
+                    "@module": "pymatgen.io.vasp.outputs",
+                    "@class": "Outcar",
+                    "efermi": 8.7462,
+                    "magnetization": [
+                        {
+                            "s": -0.008,
+                            "p": -0.002,
+                            "d": -0.086,
+                            "tot": -0.096
+                        },
+                        {
+                            "s": -0.008,
+                            "p": -0.002,
+                            "d": -0.086,
+                            "tot": -0.096
+                        },
+                        {
+                            "s": -0.008,
+                            "p": -0.002,
+                            "d": -0.086,
+                            "tot": -0.096
+                        },
+                        {
+                            "s": -0.008,
+                            "p": -0.002,
+                            "d": -0.086,
+                            "tot": -0.096
+                        },
+                        {
+                            "s": 0.019,
+                            "p": 0.031,
+                            "d": 2.673,
+                            "tot": 2.723
+                        },
+                        {
+                            "s": 0.019,
+                            "p": 0.031,
+                            "d": 2.673,
+                            "tot": 2.723
+                        },
+                        {
+                            "s": 0.019,
+                            "p": 0.031,
+                            "d": 2.673,
+                            "tot": 2.723
+                        },
+                        {
+                            "s": 0.019,
+                            "p": 0.031,
+                            "d": 2.673,
+                            "tot": 2.723
+                        },
+                        {
+                            "s": -0.008,
+                            "p": -0.035,
+                            "d": 0.0,
+                            "tot": -0.042
+                        },
+                        {
+                            "s": -0.008,
+                            "p": -0.035,
+                            "d": 0.0,
+                            "tot": -0.042
+                        },
+                        {
+                            "s": -0.008,
+                            "p": -0.035,
+                            "d": 0.0,
+                            "tot": -0.042
+                        },
+                        {
+                            "s": -0.008,
+                            "p": -0.035,
+                            "d": 0.0,
+                            "tot": -0.042
+                        }
+                    ],
+                    "charge": [
+                        {
+                            "s": 2.164,
+                            "p": 5.987,
+                            "d": 1.577,
+                            "tot": 9.728
+                        },
+                        {
+                            "s": 2.164,
+                            "p": 5.987,
+                            "d": 1.577,
+                            "tot": 9.728
+                        },
+                        {
+                            "s": 2.164,
+                            "p": 5.987,
+                            "d": 1.577,
+                            "tot": 9.728
+                        },
+                        {
+                            "s": 2.164,
+                            "p": 5.987,
+                            "d": 1.577,
+                            "tot": 9.728
+                        },
+                        {
+                            "s": 0.312,
+                            "p": 6.291,
+                            "d": 5.029,
+                            "tot": 11.631
+                        },
+                        {
+                            "s": 0.312,
+                            "p": 6.291,
+                            "d": 5.029,
+                            "tot": 11.631
+                        },
+                        {
+                            "s": 0.312,
+                            "p": 6.291,
+                            "d": 5.029,
+                            "tot": 11.631
+                        },
+                        {
+                            "s": 0.312,
+                            "p": 6.291,
+                            "d": 5.029,
+                            "tot": 11.631
+                        },
+                        {
+                            "s": 0.746,
+                            "p": 0.933,
+                            "d": 0.0,
+                            "tot": 1.679
+                        },
+                        {
+                            "s": 0.746,
+                            "p": 0.933,
+                            "d": 0.0,
+                            "tot": 1.679
+                        },
+                        {
+                            "s": 0.746,
+                            "p": 0.933,
+                            "d": 0.0,
+                            "tot": 1.679
+                        },
+                        {
+                            "s": 0.746,
+                            "p": 0.933,
+                            "d": 0.0,
+                            "tot": 1.679
+                        }
+                    ],
+                    "total_magnetization": 10.5416889,
+                    "nelect": 115.9999979,
+                    "is_stopped": false,
+                    "drift": [
+                        [
+                            0.0,
+                            0.0,
+                            0.0
+                        ]
+                    ],
+                    "ngf": [
+                        120,
+                        72,
+                        140
+                    ],
+                    "sampling_radii": [
+                        1.0638,
+                        0.9577,
+                        0.9892
+                    ],
+                    "electrostatic_potential": [
+                        -74.8407,
+                        -74.8407,
+                        -74.8407,
+                        -74.8407,
+                        -65.7496,
+                        -65.7496,
+                        -65.7496,
+                        -65.7496,
+                        -79.8832,
+                        -79.8832,
+                        -79.8832,
+                        -79.8832
+                    ]
+                },
+                "structure": {
+                    "@module": "pymatgen.core.structure",
+                    "@class": "Structure",
+                    "charge": 0.0,
+                    "lattice": {
+                        "matrix": [
+                            [
+                                6.84185282,
+                                0.0,
+                                4e-16
+                            ],
+                            [
+                                6e-16,
+                                3.90569138,
+                                2e-16
+                            ],
+                            [
+                                0.0,
+                                0.0,
+                                7.58975866
+                            ]
+                        ],
+                        "pbc": [
+                            true,
+                            true,
+                            true
+                        ],
+                        "a": 6.84185282,
+                        "b": 3.90569138,
+                        "c": 7.58975866,
+                        "alpha": 90.0,
+                        "beta": 90.0,
+                        "gamma": 90.0,
+                        "volume": 202.81478764223579
+                    },
+                    "properties": {},
+                    "sites": [
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.0278917300000003,
+                                0.25,
+                                0.820532649999997
+                            ],
+                            "properties": {
+                                "magmom": -0.096
+                            },
+                            "label": "Zr",
+                            "xyz": [
+                                0.19083111155518076,
+                                0.976422845,
+                                6.227644786150226
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.9721082699999997,
+                                0.75,
+                                0.179467350000003
+                            ],
+                            "properties": {
+                                "magmom": -0.096
+                            },
+                            "label": "Zr",
+                            "xyz": [
+                                6.651021708444819,
+                                2.929268535,
+                                1.3621138738497742
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.4721082699999997,
+                                0.75,
+                                0.320532649999997
+                            ],
+                            "properties": {
+                                "magmom": -0.096
+                            },
+                            "label": "Zr",
+                            "xyz": [
+                                3.23009529844482,
+                                2.929268535,
+                                2.4327654561502263
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Zr",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.5278917300000003,
+                                0.25,
+                                0.679467350000003
+                            ],
+                            "properties": {
+                                "magmom": -0.096
+                            },
+                            "label": "Zr",
+                            "xyz": [
+                                3.6117575215551807,
+                                0.976422845,
+                                5.156993203849774
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.1350468500000019,
+                                0.25,
+                                0.4364390499999971
+                            ],
+                            "properties": {
+                                "magmom": 2.723
+                            },
+                            "label": "Mn",
+                            "xyz": [
+                                0.9239706715046302,
+                                0.976422845,
+                                3.3124670592996512
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.8649531499999981,
+                                0.75,
+                                0.563560950000003
+                            ],
+                            "properties": {
+                                "magmom": 2.723
+                            },
+                            "label": "Mn",
+                            "xyz": [
+                                5.91788214849537,
+                                2.929268535,
+                                4.27729160070035
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.3649531499999981,
+                                0.75,
+                                0.936439049999997
+                            ],
+                            "properties": {
+                                "magmom": 2.723
+                            },
+                            "label": "Mn",
+                            "xyz": [
+                                2.4969557384953704,
+                                2.929268535,
+                                7.107346389299651
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Mn",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.6350468500000019,
+                                0.25,
+                                0.0635609500000029
+                            ],
+                            "properties": {
+                                "magmom": 2.723
+                            },
+                            "label": "Mn",
+                            "xyz": [
+                                4.34489708150463,
+                                0.976422845,
+                                0.48241227070034937
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.235235969999998,
+                                0.75,
+                                0.6219172200000003
+                            ],
+                            "properties": {
+                                "magmom": -0.042
+                            },
+                            "label": "Si",
+                            "xyz": [
+                                1.6094498847099221,
+                                2.929268535,
+                                4.720201606298128
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.764764030000002,
+                                0.25,
+                                0.3780827799999997
+                            ],
+                            "properties": {
+                                "magmom": -0.042
+                            },
+                            "label": "Si",
+                            "xyz": [
+                                5.232402935290079,
+                                0.976422845,
+                                2.8695570537018726
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.264764030000002,
+                                0.25,
+                                0.1219172200000003
+                            ],
+                            "properties": {
+                                "magmom": -0.042
+                            },
+                            "label": "Si",
+                            "xyz": [
+                                1.8114765252900784,
+                                0.976422845,
+                                0.9253222762981277
+                            ]
+                        },
+                        {
+                            "species": [
+                                {
+                                    "element": "Si",
+                                    "occu": 1
+                                }
+                            ],
+                            "abc": [
+                                0.735235969999998,
+                                0.75,
+                                0.8780827799999997
+                            ],
+                            "properties": {
+                                "magmom": -0.042
+                            },
+                            "label": "Si",
+                            "xyz": [
+                                5.030376294709922,
+                                2.929268535,
+                                6.664436383701873
+                            ]
+                        }
+                    ]
+                },
+                "ionic_steps": [
+                    {
+                        "e_fr_energy": -99.49897643,
+                        "e_wo_entrp": -99.48831247,
+                        "e_0_energy": -99.49631044,
+                        "forces": [
+                            [
+                                -0.0968417,
+                                0.0,
+                                -0.17960362
+                            ],
+                            [
+                                0.0968417,
+                                -0.0,
+                                0.17960362
+                            ],
+                            [
+                                0.0968417,
+                                -0.0,
+                                -0.17960362
+                            ],
+                            [
+                                -0.0968417,
+                                -0.0,
+                                0.17960362
+                            ],
+                            [
+                                -0.0901544,
+                                -0.0,
+                                0.33754298
+                            ],
+                            [
+                                0.0901544,
+                                -0.0,
+                                -0.33754298
+                            ],
+                            [
+                                0.0901544,
+                                -0.0,
+                                0.33754298
+                            ],
+                            [
+                                -0.0901544,
+                                -0.0,
+                                -0.33754298
+                            ],
+                            [
+                                -0.1854831,
+                                -0.0,
+                                -0.05466586
+                            ],
+                            [
+                                0.1854831,
+                                -0.0,
+                                0.05466586
+                            ],
+                            [
+                                0.1854831,
+                                -0.0,
+                                -0.05466586
+                            ],
+                            [
+                                -0.1854831,
+                                0.0,
+                                0.05466586
+                            ]
+                        ],
+                        "stress": [
+                            [
+                                -98.0823046,
+                                -0.0,
+                                -0.0
+                            ],
+                            [
+                                -0.0,
+                                -99.46104308,
+                                -0.0
+                            ],
+                            [
+                                -0.0,
+                                -0.0,
+                                -28.11556606
+                            ]
+                        ],
+                        "electronic_steps": [
+                            {
+                                "alphaZ": 484.7785763,
+                                "ewald": -9907.79188266,
+                                "hartreedc": -3575.41964716,
+                                "XCdc": 448.81559475,
+                                "pawpsdc": 10944.59551101,
+                                "pawaedc": -11000.35359809,
+                                "eentropy": -0.00357165,
+                                "bandstr": 594.15629973,
+                                "atom": 13650.20735717,
+                                "e_fr_energy": 1638.98463939,
+                                "e_wo_entrp": 1638.98821103,
+                                "e_0_energy": 1638.9855323
+                            },
+                            {
+                                "e_fr_energy": 53.15692323,
+                                "e_wo_entrp": 53.15983079,
+                                "e_0_energy": 53.15765012
+                            },
+                            {
+                                "e_fr_energy": -94.74574728,
+                                "e_wo_entrp": -94.75604127,
+                                "e_0_energy": -94.74832078
+                            },
+                            {
+                                "e_fr_energy": -106.18934483,
+                                "e_wo_entrp": -106.19722793,
+                                "e_0_energy": -106.1913156
+                            },
+                            {
+                                "e_fr_energy": -106.92979719,
+                                "e_wo_entrp": -106.9377634,
+                                "e_0_energy": -106.93178874
+                            },
+                            {
+                                "e_fr_energy": -50.57270176,
+                                "e_wo_entrp": -50.57825098,
+                                "e_0_energy": -50.57408907
+                            },
+                            {
+                                "e_fr_energy": -92.47579321,
+                                "e_wo_entrp": -92.48644828,
+                                "e_0_energy": -92.47845698
+                            },
+                            {
+                                "e_fr_energy": -97.22593737,
+                                "e_wo_entrp": -97.23977521,
+                                "e_0_energy": -97.22939683
+                            },
+                            {
+                                "e_fr_energy": -98.37933067,
+                                "e_wo_entrp": -98.39173592,
+                                "e_0_energy": -98.38243199
+                            },
+                            {
+                                "e_fr_energy": -99.0465162,
+                                "e_wo_entrp": -99.05291192,
+                                "e_0_energy": -99.04811513
+                            },
+                            {
+                                "e_fr_energy": -99.30663627,
+                                "e_wo_entrp": -99.31022494,
+                                "e_0_energy": -99.30753343
+                            },
+                            {
+                                "e_fr_energy": -99.37746066,
+                                "e_wo_entrp": -99.3775381,
+                                "e_0_energy": -99.37748002
+                            },
+                            {
+                                "e_fr_energy": -99.42266993,
+                                "e_wo_entrp": -99.41747401,
+                                "e_0_energy": -99.42137095
+                            },
+                            {
+                                "e_fr_energy": -99.46015649,
+                                "e_wo_entrp": -99.45158539,
+                                "e_0_energy": -99.45801372
+                            },
+                            {
+                                "e_fr_energy": -99.48014917,
+                                "e_wo_entrp": -99.47049643,
+                                "e_0_energy": -99.47773598
+                            },
+                            {
+                                "e_fr_energy": -99.48945674,
+                                "e_wo_entrp": -99.47941924,
+                                "e_0_energy": -99.48694736
+                            },
+                            {
+                                "e_fr_energy": -99.49259099,
+                                "e_wo_entrp": -99.4822763,
+                                "e_0_energy": -99.49001231
+                            },
+                            {
+                                "e_fr_energy": -99.49599879,
+                                "e_wo_entrp": -99.48551323,
+                                "e_0_energy": -99.4933774
+                            },
+                            {
+                                "e_fr_energy": -99.49767584,
+                                "e_wo_entrp": -99.48715555,
+                                "e_0_energy": -99.49504577
+                            },
+                            {
+                                "e_fr_energy": -99.49823676,
+                                "e_wo_entrp": -99.48764987,
+                                "e_0_energy": -99.49559004
+                            },
+                            {
+                                "e_fr_energy": -99.49864572,
+                                "e_wo_entrp": -99.48802635,
+                                "e_0_energy": -99.49599088
+                            },
+                            {
+                                "e_fr_energy": -99.49887249,
+                                "e_wo_entrp": -99.48823094,
+                                "e_0_energy": -99.49621211
+                            },
+                            {
+                                "e_fr_energy": -99.49894667,
+                                "e_wo_entrp": -99.48829704,
+                                "e_0_energy": -99.49628426
+                            },
+                            {
+                                "e_fr_energy": -99.49896851,
+                                "e_wo_entrp": -99.4883103,
+                                "e_0_energy": -99.49630396
+                            },
+                            {
+                                "alphaZ": 484.7785763,
+                                "ewald": -9907.79188266,
+                                "hartreedc": -3357.19112146,
+                                "XCdc": 433.82089221,
+                                "pawpsdc": 14632.06774977,
+                                "pawaedc": -14703.42548867,
+                                "eentropy": -0.01066396,
+                                "bandstr": -1331.95440088,
+                                "atom": 13650.20735717,
+                                "e_fr_energy": -99.49897643,
+                                "e_wo_entrp": -99.48831247,
+                                "e_0_energy": -99.49631044
+                            }
+                        ],
+                        "num_electronic_steps": 25,
+                        "structure": {
+                            "@module": "pymatgen.core.structure",
+                            "@class": "Structure",
+                            "charge": 0.0,
+                            "lattice": {
+                                "matrix": [
+                                    [
+                                        6.84185282,
+                                        0.0,
+                                        0.0
+                                    ],
+                                    [
+                                        0.0,
+                                        3.90569138,
+                                        0.0
+                                    ],
+                                    [
+                                        0.0,
+                                        0.0,
+                                        7.58975866
+                                    ]
+                                ],
+                                "pbc": [
+                                    true,
+                                    true,
+                                    true
+                                ],
+                                "a": 6.84185282,
+                                "b": 3.90569138,
+                                "c": 7.58975866,
+                                "alpha": 90.0,
+                                "beta": 90.0,
+                                "gamma": 90.0,
+                                "volume": 202.81478764223579
+                            },
+                            "properties": {},
+                            "sites": [
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Zr",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.02789173,
+                                        0.25,
+                                        0.82053265
+                                    ],
+                                    "properties": {},
+                                    "label": "Zr",
+                                    "xyz": [
+                                        0.1908311115551786,
+                                        0.976422845,
+                                        6.227644786150249
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Zr",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.97210827,
+                                        0.75,
+                                        0.17946735
+                                    ],
+                                    "properties": {},
+                                    "label": "Zr",
+                                    "xyz": [
+                                        6.651021708444821,
+                                        2.929268535,
+                                        1.362113873849751
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Zr",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.47210827,
+                                        0.75,
+                                        0.32053265
+                                    ],
+                                    "properties": {},
+                                    "label": "Zr",
+                                    "xyz": [
+                                        3.2300952984448212,
+                                        2.929268535,
+                                        2.432765456150249
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Zr",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.52789173,
+                                        0.25,
+                                        0.67946735
+                                    ],
+                                    "properties": {},
+                                    "label": "Zr",
+                                    "xyz": [
+                                        3.6117575215551785,
+                                        0.976422845,
+                                        5.156993203849751
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Mn",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.13504685,
+                                        0.25,
+                                        0.43643905
+                                    ],
+                                    "properties": {},
+                                    "label": "Mn",
+                                    "xyz": [
+                                        0.923970671504617,
+                                        0.976422845,
+                                        3.312467059299673
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Mn",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.86495315,
+                                        0.75,
+                                        0.56356095
+                                    ],
+                                    "properties": {},
+                                    "label": "Mn",
+                                    "xyz": [
+                                        5.917882148495383,
+                                        2.929268535,
+                                        4.277291600700327
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Mn",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.36495315,
+                                        0.75,
+                                        0.93643905
+                                    ],
+                                    "properties": {},
+                                    "label": "Mn",
+                                    "xyz": [
+                                        2.496955738495383,
+                                        2.929268535,
+                                        7.107346389299674
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Mn",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.63504685,
+                                        0.25,
+                                        0.06356095
+                                    ],
+                                    "properties": {},
+                                    "label": "Mn",
+                                    "xyz": [
+                                        4.344897081504617,
+                                        0.976422845,
+                                        0.48241227070032705
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Si",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.23523597,
+                                        0.75,
+                                        0.62191722
+                                    ],
+                                    "properties": {},
+                                    "label": "Si",
+                                    "xyz": [
+                                        1.6094498847099352,
+                                        2.929268535,
+                                        4.720201606298126
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Si",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.76476403,
+                                        0.25,
+                                        0.37808278
+                                    ],
+                                    "properties": {},
+                                    "label": "Si",
+                                    "xyz": [
+                                        5.2324029352900645,
+                                        0.976422845,
+                                        2.869557053701875
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Si",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.26476403,
+                                        0.25,
+                                        0.12191722
+                                    ],
+                                    "properties": {},
+                                    "label": "Si",
+                                    "xyz": [
+                                        1.8114765252900644,
+                                        0.976422845,
+                                        0.9253222762981252
+                                    ]
+                                },
+                                {
+                                    "species": [
+                                        {
+                                            "element": "Si",
+                                            "occu": 1
+                                        }
+                                    ],
+                                    "abc": [
+                                        0.73523597,
+                                        0.75,
+                                        0.87808278
+                                    ],
+                                    "properties": {},
+                                    "label": "Si",
+                                    "xyz": [
+                                        5.030376294709935,
+                                        2.929268535,
+                                        6.664436383701875
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "num_electronic_steps": [
+                    25
+                ],
+                "run_stats": {
+                    "average_memory": 0.0,
+                    "max_memory": 5081464.0,
+                    "elapsed_time": 501.041,
+                    "system_time": 7.845,
+                    "user_time": 493.267,
+                    "total_time": 501.112,
+                    "cores": 1
+                }
+            },
+            "completed_at": "2026-03-25 00:35:28.270005",
+            "task_name": "standard",
+            "output_file_paths": {
+                "chgcar": "/tmp/ray/a78ed138b8f3b183ffffffffffffffffffffffff1c000000_1774423625/job_2026-03-25-07-27-06-912220-28133/CHGCAR",
+                "aeccar0": "/tmp/ray/a78ed138b8f3b183ffffffffffffffffffffffff1c000000_1774423625/job_2026-03-25-07-27-06-912220-28133/AECCAR0",
+                "aeccar1": "/tmp/ray/a78ed138b8f3b183ffffffffffffffffffffffff1c000000_1774423625/job_2026-03-25-07-27-06-912220-28133/AECCAR1",
+                "aeccar2": "/tmp/ray/a78ed138b8f3b183ffffffffffffffffffffffff1c000000_1774423625/job_2026-03-25-07-27-06-912220-28133/AECCAR2",
+                "locpot": "/tmp/ray/a78ed138b8f3b183ffffffffffffffffffffffff1c000000_1774423625/job_2026-03-25-07-27-06-912220-28133/LOCPOT"
+            },
+            "run_type": "PBE",
+            "task_type": "Static",
+            "calc_type": "PBE Static"
+        }
+    ],
+    "custodian": [
+        {
+            "corrections": [],
+            "job": {
+                "@module": "custodian.vasp.jobs",
+                "@class": "VaspJob",
+                "@version": "2025.8.13",
+                "vasp_cmd": [
+                    "mpirun",
+                    "--oversubscribe",
+                    "--bind-to",
+                    "none",
+                    "-np",
+                    "1",
+                    "vasp_std_gpu"
+                ],
+                "output_file": "vasp.out",
+                "stderr_file": "std_err.txt",
+                "suffix": "",
+                "final": true,
+                "backup": true,
+                "auto_npar": false,
+                "auto_gamma": true,
+                "settings_override": null,
+                "gamma_vasp_cmd": [
+                    "vasp_gam"
+                ],
+                "copy_magmom": false,
+                "auto_continue": false,
+                "update_incar": false
+            }
+        }
+    ],
+    "entry": {
+        "@module": "pymatgen.entries.computed_entries",
+        "@class": "ComputedEntry",
+        "energy": -99.49631044,
+        "composition": {
+            "Zr": 4.0,
+            "Mn": 4.0,
+            "Si": 4.0
+        },
+        "entry_id": null,
+        "correction": 0.0,
+        "energy_adjustments": [],
+        "parameters": {
+            "potcar_spec": [
+                {
+                    "titel": "PAW_PBE Zr_sv 04Jan2005",
+                    "hash": "3a6dbcd168e0eefaaec1a20726e51ddb",
+                    "summary_stats": {
+                        "keywords": {
+                            "header": [
+                                "copyr",
+                                "dexc",
+                                "eatom",
+                                "eaug",
+                                "enmax",
+                                "enmin",
+                                "icore",
+                                "iunscr",
+                                "lcor",
+                                "lexch",
+                                "lpaw",
+                                "lultra",
+                                "ndata",
+                                "orbitaldescriptions",
+                                "orbitals",
+                                "pomass",
+                                "raug",
+                                "rcore",
+                                "rdep",
+                                "rdept",
+                                "rmax",
+                                "rpacor",
+                                "rrkj",
+                                "rwigs",
+                                "sha256",
+                                "step",
+                                "titel",
+                                "vrhfin",
+                                "zval",
+                                "nentries"
+                            ],
+                            "data": [
+                                "localpart",
+                                "gradientcorrectionsusedforxc",
+                                "corecharge-density(partial)",
+                                "kineticenergydensity(partial)",
+                                "atomicpseudocharge-density",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "pawradialsets",
+                                "(5e20.12)",
+                                "augmentationcharges(nonsperical)",
+                                "uccopanciesinatom",
+                                "grid",
+                                "aepotential",
+                                "corecharge-density",
+                                "kineticenergy-density",
+                                "mkineticenergy-densitypseudized",
+                                "localpseudopotentialcore",
+                                "pspotentialvalenceonly",
+                                "corecharge-density(pseudized)",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "endofdataset"
+                            ]
+                        },
+                        "stats": {
+                            "header": {
+                                "MEAN": 64.31634226747968,
+                                "ABSMEAN": 64.31634226747968,
+                                "VAR": 24806.36000601945,
+                                "MIN": 0.0,
+                                "MAX": 1284.2219
+                            },
+                            "data": {
+                                "MEAN": 4130.908584214487,
+                                "ABSMEAN": 4164.655369203883,
+                                "VAR": 1860728517.6017377,
+                                "MIN": -341.326325372,
+                                "MAX": 712254.18498
+                            }
+                        }
+                    }
+                },
+                {
+                    "titel": "PAW_PBE Mn_pv 02Aug2007",
+                    "hash": "9fc2da19948217b93232c1ff13eec3a6",
+                    "summary_stats": {
+                        "keywords": {
+                            "header": [
+                                "copyr",
+                                "dexc",
+                                "eatom",
+                                "eaug",
+                                "enmax",
+                                "enmin",
+                                "icore",
+                                "iunscr",
+                                "lcor",
+                                "lexch",
+                                "lpaw",
+                                "lultra",
+                                "ndata",
+                                "orbitaldescriptions",
+                                "orbitals",
+                                "pomass",
+                                "raug",
+                                "rcore",
+                                "rdep",
+                                "rdept",
+                                "rmax",
+                                "rpacor",
+                                "rrkj",
+                                "rwigs",
+                                "sha256",
+                                "step",
+                                "titel",
+                                "vrhfin",
+                                "zval",
+                                "nentries"
+                            ],
+                            "data": [
+                                "localpart",
+                                "gradientcorrectionsusedforxc",
+                                "corecharge-density(partial)",
+                                "kineticenergydensity(partial)",
+                                "atomicpseudocharge-density",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "pawradialsets",
+                                "(5e20.12)",
+                                "augmentationcharges(nonsperical)",
+                                "uccopanciesinatom",
+                                "grid",
+                                "aepotential",
+                                "corecharge-density",
+                                "kineticenergy-density",
+                                "mkineticenergy-densitypseudized",
+                                "localpseudopotentialcore",
+                                "pspotentialvalenceonly",
+                                "corecharge-density(pseudized)",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "endofdataset"
+                            ]
+                        },
+                        "stats": {
+                            "header": {
+                                "MEAN": 65.38464134796749,
+                                "ABSMEAN": 65.38464134796749,
+                                "VAR": 42551.28880004816,
+                                "MIN": 0.0,
+                                "MAX": 2025.2664
+                            },
+                            "data": {
+                                "MEAN": 824.6083694305902,
+                                "ABSMEAN": 874.1024204636116,
+                                "VAR": 81144769.66615322,
+                                "MIN": -455.101435308,
+                                "MAX": 152730.15192
+                            }
+                        }
+                    }
+                },
+                {
+                    "titel": "PAW_PBE Si 05Jan2001",
+                    "hash": "c27340a9c98542122fbad458bbb5d441",
+                    "summary_stats": {
+                        "keywords": {
+                            "header": [
+                                "copyr",
+                                "dexc",
+                                "eatom",
+                                "eaug",
+                                "enmax",
+                                "enmin",
+                                "icore",
+                                "iunscr",
+                                "lcor",
+                                "lexch",
+                                "lpaw",
+                                "lultra",
+                                "ndata",
+                                "orbitaldescriptions",
+                                "orbitals",
+                                "pomass",
+                                "raug",
+                                "rcore",
+                                "rdep",
+                                "rdept",
+                                "rmax",
+                                "rpacor",
+                                "rrkj",
+                                "rwigs",
+                                "sha256",
+                                "step",
+                                "titel",
+                                "vrhfin",
+                                "zval",
+                                "nentries"
+                            ],
+                            "data": [
+                                "localpart",
+                                "gradientcorrectionsusedforxc",
+                                "corecharge-density(partial)",
+                                "kineticenergydensity(partial)",
+                                "atomicpseudocharge-density",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "nonlocalpart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "reciprocalspacepart",
+                                "realspacepart",
+                                "pawradialsets",
+                                "(5e20.12)",
+                                "augmentationcharges(nonsperical)",
+                                "uccopanciesinatom",
+                                "grid",
+                                "aepotential",
+                                "corecharge-density",
+                                "kineticenergy-density",
+                                "mkineticenergy-densitypseudized",
+                                "localpseudopotentialcore",
+                                "pspotentialvalenceonly",
+                                "corecharge-density(pseudized)",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "pseudowavefunction",
+                                "aewavefunction",
+                                "endofdataset"
+                            ]
+                        },
+                        "stats": {
+                            "header": {
+                                "MEAN": 9.198469218699186,
+                                "ABSMEAN": 9.198469218699186,
+                                "VAR": 1790.7147656424072,
+                                "MIN": 0.0,
+                                "MAX": 322.069
+                            },
+                            "data": {
+                                "MEAN": 215.16613596661992,
+                                "ABSMEAN": 237.95076292821147,
+                                "VAR": 3381771.445249609,
+                                "MIN": -872.57185,
+                                "MAX": 24929.6947974
+                            }
+                        }
+                    }
+                }
+            ],
+            "run_type": "PBE",
+            "is_hubbard": false,
+            "hubbards": {}
+        },
+        "data": {
+            "oxide_type": "None",
+            "aspherical": true,
+            "last_updated": "2026-03-25 07:35:39.693358+00:00"
+        }
+    },
+    "run_stats": {
+        "standard": {
+            "average_memory": 0.0,
+            "max_memory": 5081464.0,
+            "elapsed_time": 501.041,
+            "system_time": 7.845,
+            "user_time": 493.267,
+            "total_time": 501.112,
+            "cores": 1
+        },
+        "overall": {
+            "average_memory": 0.0,
+            "max_memory": 5081464.0,
+            "elapsed_time": 501.041,
+            "system_time": 7.845,
+            "user_time": 493.267,
+            "total_time": 501.112,
+            "cores": 1
+        }
+    },
+    "state": "successful",
+    "task_label": "static"
+}

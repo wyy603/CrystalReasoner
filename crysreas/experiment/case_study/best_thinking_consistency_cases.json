@@ -1,0 +1,3161 @@
+{
+  "source": "/home/wyy603/Projects/crysreas/checkpoints_merged/thinking/conditional+thinking.parquet",
+  "selection_rule": "highest internal-consistency score over thinking response vs final simple CIF",
+  "filters": {
+    "final_cif_total_atoms_gt": 8,
+    "scan_limit": null,
+    "distinct_final_cif_spacegroups": true
+  },
+  "investigated_first_5_records": [
+    {
+      "row_index": 16,
+      "mp_id": "mp-756729",
+      "prompt": "Below is a description of a bulk material. The chemical formula is Li3Mn3SbO8. The formation energy per atom is -2.0695. The spacegroup number is 166. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Li3Mn3SbO8 should have the space group R-3m (id 166). Since for Li, 3=3, for Mn, 3=3, for Sb, 1=1, for O, 2+6=8, 3*(+1)+3*(+4)+1*(+3)+6*(-2)+2*(-2)=0, the structure is like this: Li has 1 sites: one site has 3 atoms, oxidation state +1. Mn has 1 sites: one site has 3 atoms, oxidation state +4. Sb has 1 sites: one site has 1 atoms, oxidation state +3. O has 2 sites: one site has 2 atoms, oxidation state -2, one site has 6 atoms, oxidation state -2. Second, consider band gaps. Li₃Mn₃SbO₈ is Spinel-derived structured and crystallizes in the trigonal R̅3m space group. Li¹⁺ is bonded to four O²⁻ atoms to form LiO₄ tetrahedra that share corners with three equivalent SbO₆ octahedra and corners with nine equivalent MnO₆ octahedra. The corner-sharing octahedral tilt angles range from 57-61°. There is one shorter (1.95 Å) and three longer (2.00 Å) Li-O bond lengths. Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra, edges with two equivalent SbO₆ octahedra, and edges with four equivalent MnO₆ octahedra. There are four shorter (1.93 Å) and two longer (1.94 Å) Mn-O bond lengths. Sb³⁺ is bonded to six equivalent O²⁻ atoms to form SbO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra and edges with six equivalent MnO₆ octahedra. All Sb-O bond lengths are 2.02 Å. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to one Li¹⁺ and three equivalent Mn⁴⁺ atoms to form distorted OLiMn₃ trigonal pyramids that share corners with twelve OLiMn₃ trigonal pyramids and edges with three equivalent OLiMn₂Sb trigonal pyramids. In the second O²⁻ site, O²⁻ is bonded to one Li¹⁺, two equivalent Mn⁴⁺, and one Sb³⁺ atom to form a mixture of distorted corner and edge-sharing OLiMn₂Sb trigonal pyramids. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 150.91 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.056 eV/atom above the convex hull.  The formation energy per atom is -2.070 eV/atom.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 3.36 eV.\n\n## CIF File\n<CIF>P1\n6.00762605 6.00762605 6.00762645\n58.7436 58.7436 58.7436\nLi 1 0.50000000 0.00000000 0.00000000\nLi 1 0.00000000 0.50000000 0.00000000\nLi 1 0.00000000 0.00000000 0.50000000\nMn 1 0.00000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 0.50000000\nMn 1 0.50000000 0.50000000 0.00000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.26220200 0.26220200 0.26220200\nO 1 0.25739500 0.78580100 0.78580100\nO 1 0.78580100 0.25739500 0.78580100\nO 1 0.78580100 0.78580100 0.25739500\nO 1 0.21419900 0.21419900 0.74260500\nO 1 0.21419900 0.74260500 0.21419900\nO 1 0.74260500 0.21419900 0.21419900\nO 1 0.73779800 0.73779800 0.73779800</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.00762605 6.00762605 6.00762645\n58.7436 58.7436 58.7436\nLi 1 0.50000000 0.00000000 0.00000000\nLi 1 0.00000000 0.50000000 0.00000000\nLi 1 0.00000000 0.00000000 0.50000000\nMn 1 0.00000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 0.50000000\nMn 1 0.50000000 0.50000000 0.00000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.26220200 0.26220200 0.26220200\nO 1 0.25739500 0.78580100 0.78580100\nO 1 0.78580100 0.25739500 0.78580100\nO 1 0.78580100 0.78580100 0.25739500\nO 1 0.21419900 0.21419900 0.74260500\nO 1 0.21419900 0.74260500 0.21419900\nO 1 0.74260500 0.21419900 0.21419900\nO 1 0.73779800 0.73779800 0.73779800",
+      "space_group": {
+        "predicted_number": 166,
+        "predicted_symbol": "R-3m",
+        "final_cif_number": 166,
+        "final_cif_symbol": "R-3m",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 150.91,
+        "final_cif": 148.917724,
+        "relative_error_pct": 1.337837,
+        "matched_within_1_pct": false
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Li": [
+            3
+          ],
+          "Mn": [
+            3
+          ],
+          "O": [
+            2,
+            6
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Li": [
+            3
+          ],
+          "Mn": [
+            3
+          ],
+          "O": [
+            2,
+            6
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Li": 1,
+          "Mn": 1,
+          "O": 2,
+          "Sb": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Li": 1,
+          "Mn": 1,
+          "O": 2,
+          "Sb": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Li": 3,
+          "Mn": 3,
+          "O": 8,
+          "Sb": 1
+        },
+        "final_cif_total_atoms": 15
+      },
+      "bond_lengths": [
+        {
+          "pair": "Li-O",
+          "predicted_mean_angstrom": 1.9875,
+          "final_cif_mean_angstrom": 2.286579,
+          "absolute_error_angstrom": 0.299079,
+          "relative_error_pct": 13.079771,
+          "predicted_values_angstrom": [
+            1.95,
+            2.0,
+            2.0,
+            2.0
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.2154,
+            2.2154,
+            2.2154,
+            2.2154,
+            2.2154,
+            2.2154,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222,
+            2.3222
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 2.547677,
+          "matched_within_0_05_angstrom": false
+        },
+        {
+          "pair": "Mn-O",
+          "predicted_mean_angstrom": 1.933333,
+          "final_cif_mean_angstrom": 1.964503,
+          "absolute_error_angstrom": 0.03117,
+          "relative_error_pct": 1.586656,
+          "predicted_values_angstrom": [
+            1.93,
+            1.93,
+            1.93,
+            1.93,
+            1.94,
+            1.94
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            1.9454,
+            2.0026,
+            2.0026,
+            2.0026,
+            2.0026,
+            2.0026,
+            2.0026
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 2.245447,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Sb",
+          "predicted_mean_angstrom": 2.02,
+          "final_cif_mean_angstrom": 1.814249,
+          "absolute_error_angstrom": 0.205751,
+          "relative_error_pct": 11.340848,
+          "predicted_values_angstrom": [
+            2.02
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.8142,
+            1.8142,
+            1.8142,
+            1.8142,
+            1.8142,
+            1.8142
+          ],
+          "final_cif_first_shell_count": 6,
+          "first_shell_cutoff_angstrom": 2.114249,
+          "matched_within_0_05_angstrom": false
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -2.07,
+        "real_from_prompt_eV_per_atom": -2.0695,
+        "absolute_error_eV_per_atom": 0.0005,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.056,
+        "metric_pipeline_eV_per_atom": 0.137406
+      },
+      "fermi_energy": {
+        "predicted_eV": 3.36,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.11299500800776381,
+          "sum_of_information": 69.83091494879804,
+          "token_num": 618
+        },
+        "gt": {
+          "comp": "Li3 Mn3 Sb1 O8",
+          "mp_id": "mp-756729",
+          "spg": 166
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n6.46336717 6.46336616 6.46336680\n57.9477 57.9477 57.9477\nLi 1 0.50000000 -0.00000000 0.00000000\nLi 1 0.00000000 0.50000000 -0.00000000\nLi 1 0.00000000 0.00000000 0.50000000\nMn 1 -0.00000000 0.49999999 0.50000001\nMn 1 0.50000000 0.00000000 0.50000000\nMn 1 0.50000000 0.50000000 0.00000000\nSb 1 0.00000001 0.00000001 -0.00000000\nO 1 0.26089942 0.26089943 0.26089943\nO 1 0.25491939 0.77875593 0.77875593\nO 1 0.77875593 0.25491940 0.77875593\nO 1 0.77875592 0.77875593 0.25491940\nO 1 0.22124407 0.22124406 0.74508060\nO 1 0.22124407 0.74508061 0.22124406\nO 1 0.74508061 0.22124407 0.22124406\nO 1 0.73910057 0.73910057 0.73910057",
+        "energies": -96.50203704833984,
+        "energy_above_hull": 0.13740568444400303,
+        "is_stable": false,
+        "is_novel": false,
+        "is_unique": true,
+        "stable_unique_novel": false
+      },
+      "score": 85.08883
+    },
+    {
+      "row_index": 17,
+      "mp_id": "mp-756729",
+      "prompt": "Below is a description of a bulk material. The chemical formula is Li3Mn3SbO8. The formation energy per atom is -2.0695. The spacegroup number is 166. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Li3Mn3SbO8 should have the space group R-3m (id 166). Since for Li, 3=3, for Mn, 3=3, for Sb, 1=1, for O, 2+6=8, 3*(+1)+3*(+3)+1*(+5)+2*(-2)+6*(-2)=0, the structure is like this: Li has 1 sites: one site has 3 atoms, oxidation state +1. Mn has 1 sites: one site has 3 atoms, oxidation state +3. Sb has 1 sites: one site has 1 atoms, oxidation state +5. O has 2 sites: one site has 2 atoms, oxidation state -2, one site has 6 atoms, oxidation state -2. Second, consider band gaps. Li₃Mn₃SbO₈ is Spinel-derived structured and crystallizes in the trigonal R̅3m space group. Li¹⁺ is bonded to four O²⁻ atoms to form LiO₄ tetrahedra that share corners with six equivalent MnO₆ octahedra and corners with six equivalent SbO₆ octahedra. The corner-sharing octahedral tilt angles range from 56-62°. There is one shorter (1.97 Å) and three longer (2.03 Å) Li-O bond lengths. Mn³⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra, edges with two equivalent SbO₆ octahedra, and edges with four equivalent MnO₆ octahedra. There are two shorter (1.96 Å) and four longer (2.16 Å) Mn-O bond lengths. Sb⁵⁺ is bonded to six equivalent O²⁻ atoms to form SbO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra and edges with six equivalent MnO₆ octahedra. All Sb-O bond lengths are 2.02 Å. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to one Li¹⁺ and three equivalent Mn³⁺ atoms to form distorted OLiMn₃ trigonal pyramids that share corners with three equivalent OLiMn₃ trigonal pyramids, corners with three equivalent SLb₆ octahedra, and edges with three equivalent OLiMn₂Sb trigonal pyramids. The corner-sharing octahedral tilt angles are 59°. In the second O²⁻ site, O²⁻ is bonded to one Li¹⁺, two equivalent Mn³⁺, and one Sb⁵⁺ atom to form a mixture of distorted corner and edge-sharing OLiMn₂Sb trigonal pyramids. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 159.55 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 2.96 eV.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.035 eV/atom above the convex hull.  The formation energy per atom is -2.070 eV/atom.\n\n## CIF File\n<CIF>P1\n6.03751352 6.03751352 6.03751362\n58.7468 58.7468 58.7468\nLi 1 0.00000000 0.50000000 0.50000000\nLi 1 0.50000000 0.00000000 0.50000000\nLi 1 0.50000000 0.50000000 0.00000000\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 0.00000000\nMn 1 0.00000000 0.00000000 0.50000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.26570100 0.26570100 0.26570100\nO 1 0.24492300 0.78411500 0.24492300\nO 1 0.78411500 0.24492300 0.24492300\nO 1 0.24492300 0.24492300 0.78411500\nO 1 0.21588500 0.75507700 0.75507700\nO 1 0.75507700 0.75507700 0.21588500\nO 1 0.75507700 0.21588500 0.75507700\nO 1 0.73429900 0.73429900 0.73429900</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.03751352 6.03751352 6.03751362\n58.7468 58.7468 58.7468\nLi 1 0.00000000 0.50000000 0.50000000\nLi 1 0.50000000 0.00000000 0.50000000\nLi 1 0.50000000 0.50000000 0.00000000\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 0.00000000\nMn 1 0.00000000 0.00000000 0.50000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.26570100 0.26570100 0.26570100\nO 1 0.24492300 0.78411500 0.24492300\nO 1 0.78411500 0.24492300 0.24492300\nO 1 0.24492300 0.24492300 0.78411500\nO 1 0.21588500 0.75507700 0.75507700\nO 1 0.75507700 0.75507700 0.21588500\nO 1 0.75507700 0.21588500 0.75507700\nO 1 0.73429900 0.73429900 0.73429900",
+      "space_group": {
+        "predicted_number": 166,
+        "predicted_symbol": "R-3m",
+        "final_cif_number": 12,
+        "final_cif_symbol": "C2/m",
+        "matched": false
+      },
+      "volume": {
+        "predicted": 159.55,
+        "final_cif": 151.162811,
+        "relative_error_pct": 5.548447,
+        "matched_within_1_pct": false
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Li": [
+            3
+          ],
+          "Mn": [
+            3
+          ],
+          "O": [
+            2,
+            6
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Li": [
+            1,
+            2
+          ],
+          "Mn": [
+            1,
+            2
+          ],
+          "O": [
+            2,
+            2,
+            4
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Li": 1,
+          "Mn": 1,
+          "O": 2,
+          "Sb": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Li": 2,
+          "Mn": 2,
+          "O": 3,
+          "Sb": 1
+        },
+        "matched": false
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Li": 3,
+          "Mn": 3,
+          "O": 8,
+          "Sb": 1
+        },
+        "final_cif_total_atoms": 15
+      },
+      "bond_lengths": [
+        {
+          "pair": "Li-O",
+          "predicted_mean_angstrom": 2.015,
+          "final_cif_mean_angstrom": 2.156832,
+          "absolute_error_angstrom": 0.141832,
+          "relative_error_pct": 6.575949,
+          "predicted_values_angstrom": [
+            1.97,
+            2.03,
+            2.03,
+            2.03
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9856,
+            1.9856,
+            1.9856,
+            1.9856,
+            1.9856,
+            1.9856,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425,
+            2.2425
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 2.285579,
+          "matched_within_0_05_angstrom": false
+        },
+        {
+          "pair": "Mn-O",
+          "predicted_mean_angstrom": 2.093333,
+          "final_cif_mean_angstrom": 2.108536,
+          "absolute_error_angstrom": 0.015203,
+          "relative_error_pct": 0.720999,
+          "predicted_values_angstrom": [
+            1.96,
+            1.96,
+            2.16,
+            2.16,
+            2.16,
+            2.16
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9943,
+            1.9943,
+            1.9943,
+            1.9943,
+            1.9943,
+            1.9943,
+            1.9943,
+            1.9943,
+            2.1598,
+            2.1598,
+            2.1598,
+            2.1598,
+            2.1598,
+            2.1598,
+            2.2602,
+            2.2602,
+            2.2602,
+            2.2602
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 2.294269,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Sb",
+          "predicted_mean_angstrom": 2.02,
+          "final_cif_mean_angstrom": 2.083556,
+          "absolute_error_angstrom": 0.063556,
+          "relative_error_pct": 3.050354,
+          "predicted_values_angstrom": [
+            2.02
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.0836,
+            2.0836,
+            2.0836,
+            2.0836,
+            2.0836,
+            2.0836
+          ],
+          "final_cif_first_shell_count": 6,
+          "first_shell_cutoff_angstrom": 2.396089,
+          "matched_within_0_05_angstrom": false
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -2.07,
+        "real_from_prompt_eV_per_atom": -2.0695,
+        "absolute_error_eV_per_atom": 0.0005,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.035,
+        "metric_pipeline_eV_per_atom": 0.192405
+      },
+      "fermi_energy": {
+        "predicted_eV": 2.96,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.11809600640280991,
+          "sum_of_information": 72.98333195693652,
+          "token_num": 618
+        },
+        "gt": {
+          "comp": "Li3 Mn3 Sb1 O8",
+          "mp_id": "mp-756729",
+          "spg": 166
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": false,
+        "relaxed_structures": "P1\n6.23439799 5.66466341 6.23439812\n64.502 55.978 64.502\nLi 1 -0.00000000 0.50000000 0.50000000\nLi 1 0.50000000 -0.00000000 0.50000000\nLi 1 0.50000000 0.50000000 -0.00000000\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 -0.00000001\nMn 1 0.00000000 -0.00000000 0.50000000\nSb 1 0.00000000 0.00000001 -0.00000001\nO 1 0.26830176 0.24957286 0.26830176\nO 1 0.24147564 0.78212728 0.24147563\nO 1 0.78156224 0.23633761 0.24742622\nO 1 0.24742622 0.23633761 0.78156224\nO 1 0.21843776 0.76366239 0.75257379\nO 1 0.75257378 0.76366239 0.21843777\nO 1 0.75852436 0.21787272 0.75852437\nO 1 0.73169824 0.75042714 0.73169825",
+        "energies": -95.67704772949219,
+        "energy_above_hull": 0.19240497236718035,
+        "is_stable": false,
+        "is_novel": true,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 32.980946
+    },
+    {
+      "row_index": 18,
+      "mp_id": "mp-756729",
+      "prompt": "Below is a description of a bulk material. The chemical formula is Li3Mn3SbO8. The formation energy per atom is -2.0695. The spacegroup number is 166. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Li3Mn3SbO8 should have the space group R-3m (id 166). Since for Li, 3=3, for Mn, 3=3, for Sb, 1=1, for O, 2+6=8, 3*(+1)+3*(+3)+1*(+5)+2*(-2)+6*(-2)=0, the structure is like this: Li has 1 sites: one site has 3 atoms, oxidation state +1. Mn has 1 sites: one site has 3 atoms, oxidation state +3. Sb has 1 sites: one site has 1 atoms, oxidation state +5. O has 2 sites: one site has 2 atoms, oxidation state -2, one site has 6 atoms, oxidation state -2. Second, consider band gaps. Li₃Mn₃SbO₈ is Spinel-derived structured and crystallizes in the trigonal R̅3m space group. Li¹⁺ is bonded to four O²⁻ atoms to form LiO₄ tetrahedra that share corners with six equivalent MnO₆ octahedra and corners with six equivalent SbO₆ octahedra. The corner-sharing octahedral tilt angles range from 56-63°. There are three shorter (1.98 Å) and one longer (2.02 Å) Li-O bond length. Mn³⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra, edges with two equivalent SbO₆ octahedra, and edges with four equivalent MnO₆ octahedra. There are two shorter (1.97 Å) and four longer (2.17 Å) Mn-O bond lengths. Sb⁵⁺ is bonded to six equivalent O²⁻ atoms to form SbO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra and edges with six equivalent MnO₆ octahedra. All Sb-O bond lengths are 2.00 Å. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to one Li¹⁺ and three equivalent Mn³⁺ atoms to form distorted OLiMn₃ trigonal pyramids that share corners with twelve OLiMn₃ trigonal pyramids and edges with three equivalent OLiMn₂Sb trigonal pyramids. In the second O²⁻ site, O²⁻ is bonded to one Li¹⁺, two equivalent Mn³⁺, and one Sb⁵⁺ atom to form a mixture of distorted corner and edge-sharing OLiMn₂Sb trigonal pyramids. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 153.91 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.054 eV/atom above the convex hull.  The formation energy per atom is -2.070 eV/atom.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 3.44 eV.\n\n## CIF File\n<CIF>P1\n6.04291626 6.04291626 6.04291619\n58.4189 58.4189 58.4189\nLi 1 0.00000000 0.00000000 0.50000000\nLi 1 0.00000000 0.50000000 0.00000000\nLi 1 0.50000000 0.00000000 0.00000000\nMn 1 0.50000000 0.50000000 0.00000000\nMn 1 0.50000000 0.00000000 0.50000000\nMn 1 0.00000000 0.50000000 0.50000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.76509600 0.76509600 0.76509600\nO 1 0.74493500 0.74493500 0.29051800\nO 1 0.74493500 0.29051800 0.74493500\nO 1 0.29051800 0.74493500 0.74493500\nO 1 0.25506500 0.25506500 0.70948200\nO 1 0.25506500 0.70948200 0.25506500\nO 1 0.25506500 0.25506500 0.25506500\nO 1 0.70948200 0.25506500 0.25506500</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.04291626 6.04291626 6.04291619\n58.4189 58.4189 58.4189\nLi 1 0.00000000 0.00000000 0.50000000\nLi 1 0.00000000 0.50000000 0.00000000\nLi 1 0.50000000 0.00000000 0.00000000\nMn 1 0.50000000 0.50000000 0.00000000\nMn 1 0.50000000 0.00000000 0.50000000\nMn 1 0.00000000 0.50000000 0.50000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.76509600 0.76509600 0.76509600\nO 1 0.74493500 0.74493500 0.29051800\nO 1 0.74493500 0.29051800 0.74493500\nO 1 0.29051800 0.74493500 0.74493500\nO 1 0.25506500 0.25506500 0.70948200\nO 1 0.25506500 0.70948200 0.25506500\nO 1 0.25506500 0.25506500 0.25506500\nO 1 0.70948200 0.25506500 0.25506500",
+      "space_group": {
+        "predicted_number": 166,
+        "predicted_symbol": "R-3m",
+        "final_cif_number": 160,
+        "final_cif_symbol": "R3m",
+        "matched": false
+      },
+      "volume": {
+        "predicted": 153.91,
+        "final_cif": 150.389741,
+        "relative_error_pct": 2.340757,
+        "matched_within_1_pct": false
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Li": [
+            3
+          ],
+          "Mn": [
+            3
+          ],
+          "O": [
+            2,
+            6
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Li": [
+            3
+          ],
+          "Mn": [
+            3
+          ],
+          "O": [
+            1,
+            1,
+            3,
+            3
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Li": 1,
+          "Mn": 1,
+          "O": 2,
+          "Sb": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Li": 1,
+          "Mn": 1,
+          "O": 4,
+          "Sb": 1
+        },
+        "matched": false
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Li": 3,
+          "Mn": 3,
+          "O": 8,
+          "Sb": 1
+        },
+        "final_cif_total_atoms": 15
+      },
+      "bond_lengths": [
+        {
+          "pair": "Li-O",
+          "predicted_mean_angstrom": 1.99,
+          "final_cif_mean_angstrom": 2.202797,
+          "absolute_error_angstrom": 0.212797,
+          "relative_error_pct": 9.660328,
+          "predicted_values_angstrom": [
+            1.98,
+            1.98,
+            1.98,
+            2.02
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9857,
+            1.9857,
+            1.9857,
+            2.1567,
+            2.1567,
+            2.1567,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686,
+            2.2686
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 2.285747,
+          "matched_within_0_05_angstrom": false
+        },
+        {
+          "pair": "Mn-O",
+          "predicted_mean_angstrom": 2.103333,
+          "final_cif_mean_angstrom": 2.029749,
+          "absolute_error_angstrom": 0.073585,
+          "relative_error_pct": 3.625307,
+          "predicted_values_angstrom": [
+            1.97,
+            1.97,
+            2.17,
+            2.17,
+            2.17,
+            2.17
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            1.9648,
+            2.0671,
+            2.0671,
+            2.0671,
+            2.2521,
+            2.2521,
+            2.2521
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 2.264835,
+          "matched_within_0_05_angstrom": false
+        },
+        {
+          "pair": "O-Sb",
+          "predicted_mean_angstrom": 2.0,
+          "final_cif_mean_angstrom": 2.157172,
+          "absolute_error_angstrom": 0.157172,
+          "relative_error_pct": 7.286023,
+          "predicted_values_angstrom": [
+            2.0
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.1572,
+            2.1572,
+            2.1572,
+            2.1572,
+            2.1572,
+            2.1572
+          ],
+          "final_cif_first_shell_count": 6,
+          "first_shell_cutoff_angstrom": 2.480748,
+          "matched_within_0_05_angstrom": false
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -2.07,
+        "real_from_prompt_eV_per_atom": -2.0695,
+        "absolute_error_eV_per_atom": 0.0005,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.054,
+        "metric_pipeline_eV_per_atom": 0.194645
+      },
+      "fermi_energy": {
+        "predicted_eV": 3.44,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.11623340268383024,
+          "sum_of_information": 71.83224285860709,
+          "token_num": 618
+        },
+        "gt": {
+          "comp": "Li3 Mn3 Sb1 O8",
+          "mp_id": "mp-756729",
+          "spg": 166
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": false,
+        "relaxed_structures": "P1\n6.04471646 6.04471625 6.04471588\n60.7939 60.7939 60.7939\nLi 1 -0.00009070 -0.00009070 0.50049070\nLi 1 -0.00009070 0.50049070 -0.00009070\nLi 1 0.50049070 -0.00009070 -0.00009070\nMn 1 0.50105834 0.50105833 -0.00041389\nMn 1 0.50105833 -0.00041388 0.50105834\nMn 1 -0.00041389 0.50105834 0.50105834\nSb 1 -0.00012752 -0.00012752 -0.00012752\nO 1 0.76399558 0.76399557 0.76399557\nO 1 0.75004178 0.75004179 0.28358910\nO 1 0.75004179 0.28358911 0.75004179\nO 1 0.28358910 0.75004179 0.75004180\nO 1 0.24968238 0.24968238 0.71862901\nO 1 0.24968239 0.71862901 0.24968238\nO 1 0.25261440 0.25261440 0.25261440\nO 1 0.71862901 0.24968239 0.24968238",
+        "energies": -95.64344024658203,
+        "energy_above_hull": 0.19464547122785714,
+        "is_stable": false,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 29.702216
+    },
+    {
+      "row_index": 19,
+      "mp_id": "mp-756729",
+      "prompt": "Below is a description of a bulk material. The chemical formula is Li3Mn3SbO8. The formation energy per atom is -2.0695. The spacegroup number is 166. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Li3Mn3SbO8 should have the space group R-3m (id 166). Since for Li, 3=3, for Mn, 3=3, for Sb, 1=1, for O, 2+6=8, 3*(+1)+3*(+4)+1*(+5)+2*(-2)+6*(-2)=0, the structure is like this: Li has 1 sites: one site has 3 atoms, oxidation state +1. Mn has 1 sites: one site has 3 atoms, oxidation state +4. Sb has 1 sites: one site has 1 atoms, oxidation state +5. O has 2 sites: one site has 2 atoms, oxidation state -2, one site has 6 atoms, oxidation state -2. Second, consider band gaps. Li₃Mn₃SbO₈ is Spinel-derived structured and crystallizes in the trigonal R̅3m space group. Li¹⁺ is bonded to four O²⁻ atoms to form LiO₄ tetrahedra that share corners with three equivalent SbO₆ octahedra and corners with nine equivalent MnO₆ octahedra. The corner-sharing octahedral tilt angles range from 57-62°. There are three shorter (1.97 Å) and one longer (2.02 Å) Li-O bond length. Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra, edges with two equivalent SbO₆ octahedra, and edges with four equivalent MnO₆ octahedra. There are two shorter (1.91 Å) and four longer (1.92 Å) Mn-O bond lengths. Sb⁵⁺ is bonded to six equivalent O²⁻ atoms to form SbO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra and edges with six equivalent MnO₆ octahedra. All Sb-O bond lengths are 2.01 Å. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to one Li¹⁺ and three equivalent Mn⁴⁺ atoms to form distorted OLiMn₃ trigonal pyramids that share corners with twelve OLiMn₃ trigonal pyramids and edges with three equivalent OLiMn₂Sb trigonal pyramids. In the second O²⁻ site, O²⁻ is bonded to one Li¹⁺, two equivalent Mn⁴⁺, and one Sb⁵⁺ atom to form a mixture of distorted corner and edge-sharing OLiMn₂Sb trigonal pyramids. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 155.89 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.040 eV/atom above the convex hull.  The formation energy per atom is -2.070 eV/atom.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 0.929 eV.\n\n## CIF File\n<CIF>P1\n6.00705836 6.00705836 6.00705806\n59.2645 59.2645 59.2645\nLi 1 0.12861600 0.12861600 0.12861600\nLi 1 0.87138400 0.87138400 0.37138400\nLi 1 0.37138400 0.87138400 0.87138400\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 0.50000000\nMn 1 0.00000000 0.50000000 0.50000000\nSb 1 0.50000000 0.50000000 0.00000000\nO 1 0.25686200 0.25686200 0.25686200\nO 1 0.73369300 0.27331100 0.27331100\nO 1 0.27331100 0.27331100 0.73369300\nO 1 0.27331100 0.73369300 0.27331100\nO 1 0.26630700 0.72668900 0.72668900\nO 1 0.72668900 0.72668900 0.26630700\nO 1 0.72668900 0.26630700 0.72668900\nO 1 0.74313800 0.74313800 0.74313800</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.00705836 6.00705836 6.00705806\n59.2645 59.2645 59.2645\nLi 1 0.12861600 0.12861600 0.12861600\nLi 1 0.87138400 0.87138400 0.37138400\nLi 1 0.37138400 0.87138400 0.87138400\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 0.50000000\nMn 1 0.00000000 0.50000000 0.50000000\nSb 1 0.50000000 0.50000000 0.00000000\nO 1 0.25686200 0.25686200 0.25686200\nO 1 0.73369300 0.27331100 0.27331100\nO 1 0.27331100 0.27331100 0.73369300\nO 1 0.27331100 0.73369300 0.27331100\nO 1 0.26630700 0.72668900 0.72668900\nO 1 0.72668900 0.72668900 0.26630700\nO 1 0.72668900 0.26630700 0.72668900\nO 1 0.74313800 0.74313800 0.74313800",
+      "space_group": {
+        "predicted_number": 166,
+        "predicted_symbol": "R-3m",
+        "final_cif_number": 1,
+        "final_cif_symbol": "P1",
+        "matched": false
+      },
+      "volume": {
+        "predicted": 155.89,
+        "final_cif": 150.707224,
+        "relative_error_pct": 3.43897,
+        "matched_within_1_pct": false
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Li": [
+            3
+          ],
+          "Mn": [
+            3
+          ],
+          "O": [
+            2,
+            6
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Li": [
+            1,
+            1,
+            1
+          ],
+          "Mn": [
+            1,
+            1,
+            1
+          ],
+          "O": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Li": 1,
+          "Mn": 1,
+          "O": 2,
+          "Sb": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Li": 3,
+          "Mn": 3,
+          "O": 8,
+          "Sb": 1
+        },
+        "matched": false
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Li": 3,
+          "Mn": 3,
+          "O": 8,
+          "Sb": 1
+        },
+        "final_cif_total_atoms": 15
+      },
+      "bond_lengths": [
+        {
+          "pair": "Li-O",
+          "predicted_mean_angstrom": 1.9825,
+          "final_cif_mean_angstrom": 1.920043,
+          "absolute_error_angstrom": 0.062457,
+          "relative_error_pct": 3.252908,
+          "predicted_values_angstrom": [
+            1.97,
+            1.97,
+            1.97,
+            2.02
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.8065,
+            1.8065,
+            1.8975,
+            1.9224,
+            1.9224,
+            1.9224,
+            1.9502,
+            1.9502,
+            1.9656,
+            1.9656,
+            1.9656,
+            1.9656
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 2.106541,
+          "matched_within_0_05_angstrom": false
+        },
+        {
+          "pair": "Mn-O",
+          "predicted_mean_angstrom": 1.916667,
+          "final_cif_mean_angstrom": 2.051898,
+          "absolute_error_angstrom": 0.135231,
+          "relative_error_pct": 6.590545,
+          "predicted_values_angstrom": [
+            1.91,
+            1.91,
+            1.92,
+            1.92,
+            1.92,
+            1.92
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9149,
+            1.9149,
+            1.9149,
+            1.9149,
+            1.9149,
+            1.9149,
+            2.0544,
+            2.0544,
+            2.0544,
+            2.0544,
+            2.1534,
+            2.1534,
+            2.1534,
+            2.1534,
+            2.1534,
+            2.1534,
+            2.1534,
+            2.1534
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 2.214888,
+          "matched_within_0_05_angstrom": false
+        },
+        {
+          "pair": "O-Sb",
+          "predicted_mean_angstrom": 2.01,
+          "final_cif_mean_angstrom": 2.120403,
+          "absolute_error_angstrom": 0.110403,
+          "relative_error_pct": 5.206694,
+          "predicted_values_angstrom": [
+            2.01
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.0544,
+            2.0544,
+            2.1534,
+            2.1534,
+            2.1534,
+            2.1534
+          ],
+          "final_cif_first_shell_count": 6,
+          "first_shell_cutoff_angstrom": 2.362568,
+          "matched_within_0_05_angstrom": false
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -2.07,
+        "real_from_prompt_eV_per_atom": -2.0695,
+        "absolute_error_eV_per_atom": 0.0005,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.04,
+        "metric_pipeline_eV_per_atom": 0.338956
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.14661402203899757,
+          "sum_of_information": 90.6074656201005,
+          "token_num": 618
+        },
+        "gt": {
+          "comp": "Li3 Mn3 Sb1 O8",
+          "mp_id": "mp-756729",
+          "spg": 166
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": false,
+        "relaxed_structures": "P1\n5.99924712 6.48377492 6.30582132\n57.5157 64.9872 63.5399\nLi 1 0.12759391 0.16484958 0.11709403\nLi 1 0.91224730 0.89015014 0.34014943\nLi 1 0.32740772 0.92454894 0.90989629\nMn 1 0.49403602 0.51431087 0.49528313\nMn 1 0.47282071 0.00033226 0.48220875\nMn 1 0.00904178 0.45014514 0.52264101\nSb 1 0.53447923 0.46021094 -0.01806043\nO 1 0.27024897 0.28105696 0.23441499\nO 1 0.72612136 0.26398298 0.25347184\nO 1 0.27885432 0.25713130 0.71662807\nO 1 0.27142430 0.72011079 0.24873940\nO 1 0.30431003 0.70538679 0.75215102\nO 1 0.72375452 0.71783904 0.31509333\nO 1 0.70850112 0.29451148 0.74997290\nO 1 0.71054271 0.72681678 0.75170024",
+        "energies": -93.4787826538086,
+        "energy_above_hull": 0.33895597741275285,
+        "is_stable": false,
+        "is_novel": true,
+        "is_unique": true,
+        "stable_unique_novel": false
+      },
+      "score": 29.50709
+    },
+    {
+      "row_index": 20,
+      "mp_id": "mp-756729",
+      "prompt": "Below is a description of a bulk material. The chemical formula is Li3Mn3SbO8. The formation energy per atom is -2.0695. The spacegroup number is 166. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Li3Mn3SbO8 should have the space group R-3m (id 166). Since for Li, 3=3, for Mn, 3=3, for Sb, 1=1, for O, 2+6=8, 3*(+1)+3*(+3)+1*(+5)+2*(-2)+6*(-2)=0, the structure is like this: Li has 1 sites: one site has 3 atoms, oxidation state +1. Mn has 1 sites: one site has 3 atoms, oxidation state +3. Sb has 1 sites: one site has 1 atoms, oxidation state +5. O has 2 sites: one site has 2 atoms, oxidation state -2, one site has 6 atoms, oxidation state -2. Second, consider band gaps. Li₃Mn₃SbO₈ is alpha Po-derived structured and crystallizes in the trigonal R̅3m space group. Li¹⁺ is bonded to six O²⁻ atoms to form LiO₆ octahedra that share corners with six equivalent MnO₆ octahedra, edges with two equivalent SbO₆ octahedra, edges with four equivalent MnO₆ octahedra, and edges with six equivalent LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 4-6°. There are two shorter (2.13 Å) and four longer (2.20 Å) Li-O bond lengths. Mn³⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with six equivalent LiO₆ octahedra, edges with two equivalent SbO₆ octahedra, edges with four equivalent MnO₆ octahedra, and edges with six equivalent LiO₆ octahedra. The corner-sharing octahedral tilt angles range from 4-6°. There are four shorter (2.15 Å) and two longer (2.17 Å) Mn-O bond lengths. Sb⁵⁺ is bonded to six equivalent O²⁻ atoms to form SbO₆ octahedra that share edges with six equivalent LiO₆ octahedra and edges with six equivalent MnO₆ octahedra. All Sb-O bond lengths are 2.00 Å. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded to three equivalent Li¹⁺ and three equivalent Mn³⁺ atoms to form OLi₃Mn₃ octahedra that share corners with six equivalent OLi₃Mn₃ octahedra and edges with twelve equivalent OLi₂Mn₃Sb octahedra. The corner-sharing octahedra are not tilted. In the second O²⁻ site, O²⁻ is bonded to two equivalent Li¹⁺, three equivalent Mn³⁺, and one Sb⁵⁺ atom to form OLi₂Mn₃Sb octahedra that share corners with six equivalent OLi₂Mn₃Sb octahedra and edges with twelve OLi₃Mn₃ octahedra. The corner-sharing octahedra are not tilted. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 152.46 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.046 eV/atom above the convex hull.  The formation energy per atom is -2.069 eV/atom.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 0.707 eV.\n\n## CIF File\n<CIF>P1\n6.02894346 6.02894346 6.02894374\n59.7825 59.7825 59.7825\nLi 1 0.50000000 0.00000000 0.50000000\nLi 1 0.00000000 0.50000000 0.50000000\nLi 1 0.50000000 0.50000000 0.00000000\nMn 1 0.00000000 0.50000000 0.00000000\nMn 1 0.50000000 0.00000000 0.00000000\nMn 1 0.00000000 0.00000000 0.50000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.25817900 0.25817900 0.25817900\nO 1 0.74303600 0.24542600 0.24542600\nO 1 0.24542600 0.24542600 0.74303600\nO 1 0.24542600 0.74303600 0.24542600\nO 1 0.74182100 0.74182100 0.74182100\nO 1 0.24542600 0.24542600 0.24542600\nO 1 0.75457400 0.75457400 0.25696400\nO 1 0.75457400 0.25696400 0.75457400</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.02894346 6.02894346 6.02894374\n59.7825 59.7825 59.7825\nLi 1 0.50000000 0.00000000 0.50000000\nLi 1 0.00000000 0.50000000 0.50000000\nLi 1 0.50000000 0.50000000 0.00000000\nMn 1 0.00000000 0.50000000 0.00000000\nMn 1 0.50000000 0.00000000 0.00000000\nMn 1 0.00000000 0.00000000 0.50000000\nSb 1 0.00000000 0.00000000 0.00000000\nO 1 0.25817900 0.25817900 0.25817900\nO 1 0.74303600 0.24542600 0.24542600\nO 1 0.24542600 0.24542600 0.74303600\nO 1 0.24542600 0.74303600 0.24542600\nO 1 0.74182100 0.74182100 0.74182100\nO 1 0.24542600 0.24542600 0.24542600\nO 1 0.75457400 0.75457400 0.25696400\nO 1 0.75457400 0.25696400 0.75457400",
+      "space_group": {
+        "predicted_number": 166,
+        "predicted_symbol": "R-3m",
+        "final_cif_number": 8,
+        "final_cif_symbol": "Cm",
+        "matched": false
+      },
+      "volume": {
+        "predicted": 152.46,
+        "final_cif": 154.190923,
+        "relative_error_pct": 1.122584,
+        "matched_within_1_pct": false
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Li": [
+            3
+          ],
+          "Mn": [
+            3
+          ],
+          "O": [
+            2,
+            6
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Li": [
+            1,
+            2
+          ],
+          "Mn": [
+            1,
+            2
+          ],
+          "O": [
+            1,
+            1,
+            1,
+            1,
+            2,
+            2
+          ],
+          "Sb": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Li": 1,
+          "Mn": 1,
+          "O": 2,
+          "Sb": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Li": 2,
+          "Mn": 2,
+          "O": 6,
+          "Sb": 1
+        },
+        "matched": false
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Li": 3,
+          "Mn": 3,
+          "O": 8,
+          "Sb": 1
+        },
+        "final_cif_total_atoms": 15
+      },
+      "bond_lengths": [
+        {
+          "pair": "Li-O",
+          "predicted_mean_angstrom": 2.176667,
+          "final_cif_mean_angstrom": 2.087465,
+          "absolute_error_angstrom": 0.089202,
+          "relative_error_pct": 4.273202,
+          "predicted_values_angstrom": [
+            2.13,
+            2.13,
+            2.2,
+            2.2,
+            2.2,
+            2.2
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.0603,
+            2.0603,
+            2.0603,
+            2.0603,
+            2.0603,
+            2.0603,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.0796,
+            2.1679,
+            2.1679,
+            2.1679
+          ],
+          "final_cif_first_shell_count": 19,
+          "first_shell_cutoff_angstrom": 2.369382,
+          "matched_within_0_05_angstrom": false
+        },
+        {
+          "pair": "Mn-O",
+          "predicted_mean_angstrom": 2.156667,
+          "final_cif_mean_angstrom": 2.171281,
+          "absolute_error_angstrom": 0.014614,
+          "relative_error_pct": 0.673064,
+          "predicted_values_angstrom": [
+            2.15,
+            2.15,
+            2.15,
+            2.15,
+            2.17,
+            2.17
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.0896,
+            2.0896,
+            2.0896,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.1784,
+            2.2003,
+            2.2003,
+            2.2003,
+            2.2003,
+            2.2003,
+            2.2003
+          ],
+          "final_cif_first_shell_count": 19,
+          "first_shell_cutoff_angstrom": 2.403025,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Sb",
+          "predicted_mean_angstrom": 2.0,
+          "final_cif_mean_angstrom": 2.08995,
+          "absolute_error_angstrom": 0.08995,
+          "relative_error_pct": 4.30394,
+          "predicted_values_angstrom": [
+            2.0
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.09,
+            2.09,
+            2.09,
+            2.09,
+            2.09
+          ],
+          "final_cif_first_shell_count": 5,
+          "first_shell_cutoff_angstrom": 2.403443,
+          "matched_within_0_05_angstrom": false
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -2.069,
+        "real_from_prompt_eV_per_atom": -2.0695,
+        "absolute_error_eV_per_atom": 0.0005,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.046,
+        "metric_pipeline_eV_per_atom": null
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.11618834448098876,
+          "sum_of_information": 71.80439688925105,
+          "token_num": 618
+        },
+        "gt": {
+          "comp": "Li3 Mn3 Sb1 O8",
+          "mp_id": "mp-756729",
+          "spg": 166
+        },
+        "smact_validity": true,
+        "structure_validity": false,
+        "composition_consistency": true,
+        "spacegroup_consistency": null,
+        "relaxed_structures": null,
+        "energies": null,
+        "energy_above_hull": null,
+        "is_stable": null,
+        "is_novel": null,
+        "is_unique": null,
+        "stable_unique_novel": null
+      },
+      "score": 37.585643
+    }
+  ],
+  "selected_records": [
+    {
+      "row_index": 621,
+      "mp_id": "mp-6613",
+      "prompt": "Below is a description of a bulk material. The chemical formula is Ba2YTaO6. The band gap is 3.362. The formation energy per atom is -3.5658. The spacegroup number is 225. The energy above the convex hull is 0.0016. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Ba2YTaO6 should have the space group Fm-3m (id 225). Since for Ba, 2=2, for Y, 1=1, for Ta, 1=1, for O, 6=6, 2*(+2)+1*(+3)+1*(+5)+6*(-2)=0, the structure is like this: Ba has 1 sites: one site has 2 atoms, oxidation state +2. Y has 1 sites: one site has 1 atoms, oxidation state +3. Ta has 1 sites: one site has 1 atoms, oxidation state +5. O has 1 sites: one site has 6 atoms, oxidation state -2. Second, consider band gaps. Ba₂YTaO₆ is (Cubic) Perovskite-derived structured and crystallizes in the cubic Fm̅3m space group. Ba²⁺ is bonded to twelve equivalent O²⁻ atoms to form BaO₁₂ cuboctahedra that share corners with twelve equivalent BaO₁₂ cuboctahedra, faces with six equivalent BaO₁₂ cuboctahedra, faces with four equivalent YO₆ octahedra, and faces with four equivalent TaO₆ octahedra. All Ba-O bond lengths are 3.01 Å. Y³⁺ is bonded to six equivalent O²⁻ atoms to form YO₆ octahedra that share corners with six equivalent TaO₆ octahedra and faces with eight equivalent BaO₁₂ cuboctahedra. The corner-sharing octahedra are not tilted. All Y-O bond lengths are 2.25 Å. Ta⁵⁺ is bonded to six equivalent O²⁻ atoms to form TaO₆ octahedra that share corners with six equivalent YO₆ octahedra and faces with eight equivalent BaO₁₂ cuboctahedra. The corner-sharing octahedra are not tilted. All Ta-O bond lengths are 2.00 Å. O²⁻ is bonded in a distorted linear geometry to four equivalent Ba²⁺, one Y³⁺, and one Ta⁵⁺ atom. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 153.87 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** It is an insulator (wide band gap) with a calculated band gap ($E_g$) of 3.362 eV.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.002 eV/atom above the convex hull.  The formation energy per atom is -3.566 eV/atom.\n\n## CIF File\n<CIF>P1\n6.01490180 6.01490180 6.01490180\n60 60 60\nBa 1 0.25000000 0.25000000 0.25000000\nBa 1 0.75000000 0.75000000 0.75000000\nY 1 0.50000000 0.50000000 0.50000000\nTa 1 0.00000000 0.00000000 0.00000000\nO 1 0.76508300 0.23491700 0.23491700\nO 1 0.23491700 0.76508300 0.76508300\nO 1 0.23491700 0.76508300 0.23491700\nO 1 0.76508300 0.23491700 0.76508300\nO 1 0.23491700 0.23491700 0.76508300\nO 1 0.76508300 0.76508300 0.23491700</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.01490180 6.01490180 6.01490180\n60 60 60\nBa 1 0.25000000 0.25000000 0.25000000\nBa 1 0.75000000 0.75000000 0.75000000\nY 1 0.50000000 0.50000000 0.50000000\nTa 1 0.00000000 0.00000000 0.00000000\nO 1 0.76508300 0.23491700 0.23491700\nO 1 0.23491700 0.76508300 0.76508300\nO 1 0.23491700 0.76508300 0.23491700\nO 1 0.76508300 0.23491700 0.76508300\nO 1 0.23491700 0.23491700 0.76508300\nO 1 0.76508300 0.76508300 0.23491700",
+      "space_group": {
+        "predicted_number": 225,
+        "predicted_symbol": "Fm-3m",
+        "final_cif_number": 225,
+        "final_cif_symbol": "Fm-3m",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 153.87,
+        "final_cif": 153.875907,
+        "relative_error_pct": 0.003839,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Ba": [
+            2
+          ],
+          "O": [
+            6
+          ],
+          "Ta": [
+            1
+          ],
+          "Y": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Ba": [
+            2
+          ],
+          "O": [
+            6
+          ],
+          "Ta": [
+            1
+          ],
+          "Y": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Ba": 1,
+          "O": 1,
+          "Ta": 1,
+          "Y": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Ba": 1,
+          "O": 1,
+          "Ta": 1,
+          "Y": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Ba": 2,
+          "O": 6,
+          "Ta": 1,
+          "Y": 1
+        },
+        "final_cif_total_atoms": 10
+      },
+      "bond_lengths": [
+        {
+          "pair": "Ba-O",
+          "predicted_mean_angstrom": 3.01,
+          "final_cif_mean_angstrom": 3.010186,
+          "absolute_error_angstrom": 0.000186,
+          "relative_error_pct": 0.006192,
+          "predicted_values_angstrom": [
+            3.01
+          ],
+          "final_cif_first_shell_values_sample": [
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102,
+            3.0102
+          ],
+          "final_cif_first_shell_count": 24,
+          "first_shell_cutoff_angstrom": 3.461714,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Ta",
+          "predicted_mean_angstrom": 2.0,
+          "final_cif_mean_angstrom": 1.998288,
+          "absolute_error_angstrom": 0.001712,
+          "relative_error_pct": 0.085695,
+          "predicted_values_angstrom": [
+            2.0
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9983,
+            1.9983,
+            1.9983,
+            1.9983,
+            1.9983,
+            1.9983
+          ],
+          "final_cif_first_shell_count": 6,
+          "first_shell_cutoff_angstrom": 2.298288,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Y",
+          "predicted_mean_angstrom": 2.25,
+          "final_cif_mean_angstrom": 2.25489,
+          "absolute_error_angstrom": 0.00489,
+          "relative_error_pct": 0.216875,
+          "predicted_values_angstrom": [
+            2.25
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.2549,
+            2.2549,
+            2.2549,
+            2.2549,
+            2.2549,
+            2.2549
+          ],
+          "final_cif_first_shell_count": 6,
+          "first_shell_cutoff_angstrom": 2.593124,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -3.566,
+        "real_from_prompt_eV_per_atom": -3.5658,
+        "absolute_error_eV_per_atom": 0.0002,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.002,
+        "metric_pipeline_eV_per_atom": 0.005089
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.06033694631016458,
+          "sum_of_information": 24.979495772408136,
+          "token_num": 414
+        },
+        "gt": {
+          "comp": "Ba2 Y1 Ta1 O6",
+          "mp_id": "mp-6613",
+          "spg": 225
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n6.04115019 6.04115030 6.04114971\n60 60 60\nBa 1 0.25000000 0.25000000 0.25000000\nBa 1 0.75000001 0.74999999 0.74999999\nY 1 0.50000000 0.50000000 0.50000001\nTa 1 0.00000000 0.00000001 -0.00000001\nO 1 0.76460919 0.23539082 0.23539082\nO 1 0.23539082 0.76460919 0.76460918\nO 1 0.23539082 0.76460918 0.23539082\nO 1 0.76460919 0.23539082 0.76460918\nO 1 0.23539081 0.23539082 0.76460918\nO 1 0.76460918 0.76460918 0.23539082",
+        "energies": -83.40325927734375,
+        "energy_above_hull": 0.0050886022656246865,
+        "is_stable": true,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.950908,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_Ba2YTaO6\n_symmetry_space_group_name_H-M   Fm-3m\n_cell_length_a   8.50635570\n_cell_length_b   8.50635570\n_cell_length_c   8.50635570\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   225\n_chemical_formula_structural   Ba2YTaO6\n_chemical_formula_sum   'Ba8 Y4 Ta4 O24'\n_cell_volume   615.50362872\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x, -y, -z'\n  3  '-y, x, z'\n  4  'y, -x, -z'\n  5  '-x, -y, z'\n  6  'x, y, -z'\n  7  'y, -x, z'\n  8  '-y, x, -z'\n  9  'x, -y, -z'\n  10  '-x, y, z'\n  11  '-y, -x, -z'\n  12  'y, x, z'\n  13  '-x, y, -z'\n  14  'x, -y, z'\n  15  'y, x, -z'\n  16  '-y, -x, z'\n  17  'z, x, y'\n  18  '-z, -x, -y'\n  19  'z, -y, x'\n  20  '-z, y, -x'\n  21  'z, -x, -y'\n  22  '-z, x, y'\n  23  'z, y, -x'\n  24  '-z, -y, x'\n  25  '-z, x, -y'\n  26  'z, -x, y'\n  27  '-z, -y, -x'\n  28  'z, y, x'\n  29  '-z, -x, y'\n  30  'z, x, -y'\n  31  '-z, y, x'\n  32  'z, -y, -x'\n  33  'y, z, x'\n  34  '-y, -z, -x'\n  35  'x, z, -y'\n  36  '-x, -z, y'\n  37  '-y, z, -x'\n  38  'y, -z, x'\n  39  '-x, z, y'\n  40  'x, -z, -y'\n  41  '-y, -z, x'\n  42  'y, z, -x'\n  43  '-x, -z, -y'\n  44  'x, z, y'\n  45  'y, -z, -x'\n  46  '-y, z, x'\n  47  'x, -z, y'\n  48  '-x, z, -y'\n  49  'x+1/2, y+1/2, z'\n  50  '-x+1/2, -y+1/2, -z'\n  51  '-y+1/2, x+1/2, z'\n  52  'y+1/2, -x+1/2, -z'\n  53  '-x+1/2, -y+1/2, z'\n  54  'x+1/2, y+1/2, -z'\n  55  'y+1/2, -x+1/2, z'\n  56  '-y+1/2, x+1/2, -z'\n  57  'x+1/2, -y+1/2, -z'\n  58  '-x+1/2, y+1/2, z'\n  59  '-y+1/2, -x+1/2, -z'\n  60  'y+1/2, x+1/2, z'\n  61  '-x+1/2, y+1/2, -z'\n  62  'x+1/2, -y+1/2, z'\n  63  'y+1/2, x+1/2, -z'\n  64  '-y+1/2, -x+1/2, z'\n  65  'z+1/2, x+1/2, y'\n  66  '-z+1/2, -x+1/2, -y'\n  67  'z+1/2, -y+1/2, x'\n  68  '-z+1/2, y+1/2, -x'\n  69  'z+1/2, -x+1/2, -y'\n  70  '-z+1/2, x+1/2, y'\n  71  'z+1/2, y+1/2, -x'\n  72  '-z+1/2, -y+1/2, x'\n  73  '-z+1/2, x+1/2, -y'\n  74  'z+1/2, -x+1/2, y'\n  75  '-z+1/2, -y+1/2, -x'\n  76  'z+1/2, y+1/2, x'\n  77  '-z+1/2, -x+1/2, y'\n  78  'z+1/2, x+1/2, -y'\n  79  '-z+1/2, y+1/2, x'\n  80  'z+1/2, -y+1/2, -x'\n  81  'y+1/2, z+1/2, x'\n  82  '-y+1/2, -z+1/2, -x'\n  83  'x+1/2, z+1/2, -y'\n  84  '-x+1/2, -z+1/2, y'\n  85  '-y+1/2, z+1/2, -x'\n  86  'y+1/2, -z+1/2, x'\n  87  '-x+1/2, z+1/2, y'\n  88  'x+1/2, -z+1/2, -y'\n  89  '-y+1/2, -z+1/2, x'\n  90  'y+1/2, z+1/2, -x'\n  91  '-x+1/2, -z+1/2, -y'\n  92  'x+1/2, z+1/2, y'\n  93  'y+1/2, -z+1/2, -x'\n  94  '-y+1/2, z+1/2, x'\n  95  'x+1/2, -z+1/2, y'\n  96  '-x+1/2, z+1/2, -y'\n  97  'x+1/2, y, z+1/2'\n  98  '-x+1/2, -y, -z+1/2'\n  99  '-y+1/2, x, z+1/2'\n  100  'y+1/2, -x, -z+1/2'\n  101  '-x+1/2, -y, z+1/2'\n  102  'x+1/2, y, -z+1/2'\n  103  'y+1/2, -x, z+1/2'\n  104  '-y+1/2, x, -z+1/2'\n  105  'x+1/2, -y, -z+1/2'\n  106  '-x+1/2, y, z+1/2'\n  107  '-y+1/2, -x, -z+1/2'\n  108  'y+1/2, x, z+1/2'\n  109  '-x+1/2, y, -z+1/2'\n  110  'x+1/2, -y, z+1/2'\n  111  'y+1/2, x, -z+1/2'\n  112  '-y+1/2, -x, z+1/2'\n  113  'z+1/2, x, y+1/2'\n  114  '-z+1/2, -x, -y+1/2'\n  115  'z+1/2, -y, x+1/2'\n  116  '-z+1/2, y, -x+1/2'\n  117  'z+1/2, -x, -y+1/2'\n  118  '-z+1/2, x, y+1/2'\n  119  'z+1/2, y, -x+1/2'\n  120  '-z+1/2, -y, x+1/2'\n  121  '-z+1/2, x, -y+1/2'\n  122  'z+1/2, -x, y+1/2'\n  123  '-z+1/2, -y, -x+1/2'\n  124  'z+1/2, y, x+1/2'\n  125  '-z+1/2, -x, y+1/2'\n  126  'z+1/2, x, -y+1/2'\n  127  '-z+1/2, y, x+1/2'\n  128  'z+1/2, -y, -x+1/2'\n  129  'y+1/2, z, x+1/2'\n  130  '-y+1/2, -z, -x+1/2'\n  131  'x+1/2, z, -y+1/2'\n  132  '-x+1/2, -z, y+1/2'\n  133  '-y+1/2, z, -x+1/2'\n  134  'y+1/2, -z, x+1/2'\n  135  '-x+1/2, z, y+1/2'\n  136  'x+1/2, -z, -y+1/2'\n  137  '-y+1/2, -z, x+1/2'\n  138  'y+1/2, z, -x+1/2'\n  139  '-x+1/2, -z, -y+1/2'\n  140  'x+1/2, z, y+1/2'\n  141  'y+1/2, -z, -x+1/2'\n  142  '-y+1/2, z, x+1/2'\n  143  'x+1/2, -z, y+1/2'\n  144  '-x+1/2, z, -y+1/2'\n  145  'x, y+1/2, z+1/2'\n  146  '-x, -y+1/2, -z+1/2'\n  147  '-y, x+1/2, z+1/2'\n  148  'y, -x+1/2, -z+1/2'\n  149  '-x, -y+1/2, z+1/2'\n  150  'x, y+1/2, -z+1/2'\n  151  'y, -x+1/2, z+1/2'\n  152  '-y, x+1/2, -z+1/2'\n  153  'x, -y+1/2, -z+1/2'\n  154  '-x, y+1/2, z+1/2'\n  155  '-y, -x+1/2, -z+1/2'\n  156  'y, x+1/2, z+1/2'\n  157  '-x, y+1/2, -z+1/2'\n  158  'x, -y+1/2, z+1/2'\n  159  'y, x+1/2, -z+1/2'\n  160  '-y, -x+1/2, z+1/2'\n  161  'z, x+1/2, y+1/2'\n  162  '-z, -x+1/2, -y+1/2'\n  163  'z, -y+1/2, x+1/2'\n  164  '-z, y+1/2, -x+1/2'\n  165  'z, -x+1/2, -y+1/2'\n  166  '-z, x+1/2, y+1/2'\n  167  'z, y+1/2, -x+1/2'\n  168  '-z, -y+1/2, x+1/2'\n  169  '-z, x+1/2, -y+1/2'\n  170  'z, -x+1/2, y+1/2'\n  171  '-z, -y+1/2, -x+1/2'\n  172  'z, y+1/2, x+1/2'\n  173  '-z, -x+1/2, y+1/2'\n  174  'z, x+1/2, -y+1/2'\n  175  '-z, y+1/2, x+1/2'\n  176  'z, -y+1/2, -x+1/2'\n  177  'y, z+1/2, x+1/2'\n  178  '-y, -z+1/2, -x+1/2'\n  179  'x, z+1/2, -y+1/2'\n  180  '-x, -z+1/2, y+1/2'\n  181  '-y, z+1/2, -x+1/2'\n  182  'y, -z+1/2, x+1/2'\n  183  '-x, z+1/2, y+1/2'\n  184  'x, -z+1/2, -y+1/2'\n  185  '-y, -z+1/2, x+1/2'\n  186  'y, z+1/2, -x+1/2'\n  187  '-x, -z+1/2, -y+1/2'\n  188  'x, z+1/2, y+1/2'\n  189  'y, -z+1/2, -x+1/2'\n  190  '-y, z+1/2, x+1/2'\n  191  'x, -z+1/2, y+1/2'\n  192  '-x, z+1/2, -y+1/2'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Ba  Ba0  8  0.25000000  0.25000000  0.25000000  1\n  Y  Y1  4  0.00000000  0.00000000  0.50000000  1\n  Ta  Ta2  4  0.00000000  0.00000000  0.00000000  1\n  O  O3  24  0.00000000  0.00000000  0.23491700  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 14505,
+      "mp_id": "mp-1080489",
+      "prompt": "Below is a description of a bulk material. The chemical formula is HfRuGe. The formation energy per atom is -0.807. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material HfGeRu should have the space group P-62m (id 189). Hf has 1 sites: one site has 3 atoms. Ge has 2 sites: one site has 1 atoms, one site has 2 atoms. Ru has 1 sites: one site has 3 atoms. Second, consider band gaps. HfRuGe crystallizes in the hexagonal P̅62m space group. Hf is bonded in a 11-coordinate geometry to six equivalent Ru and five Ge atoms. There are two shorter (2.91 Å) and four longer (3.07 Å) Hf-Ru bond lengths. There are four shorter (2.75 Å) and one longer (2.76 Å) Hf-Ge bond length. Ru is bonded in a 12-coordinate geometry to six equivalent Hf, two equivalent Ru, and four Ge atoms. Both Ru-Ru bond lengths are 2.80 Å. There are two shorter (2.50 Å) and two longer (2.53 Å) Ru-Ge bond lengths. There are two inequivalent Ge sites. In the first Ge site, Ge is bonded in a 9-coordinate geometry to six equivalent Hf and three equivalent Ru atoms. In the second Ge site, Ge is bonded in a 9-coordinate geometry to three equivalent Hf and six equivalent Ru atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 143.59 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 7.48 eV.\n\n### Stability\n**Thermodynamic Status:** It is predicted to be thermodynamically stable (on the hull). The formation energy per atom is -0.807 eV/atom.\n\n## CIF File\n<CIF>P1\n6.58356040 6.58356040 3.82595900\n90 90 120\nHf 1 0.41799100 0.41799100 0.50000000\nHf 1 0.58200900 0.00000000 0.50000000\nHf 1 0.00000000 0.58200900 0.50000000\nGe 1 0.66666700 0.33333300 0.00000000\nGe 1 0.33333300 0.66666700 0.00000000\nGe 1 0.00000000 0.00000000 0.50000000\nRu 1 0.75204600 0.75204600 0.00000000\nRu 1 0.24795400 0.00000000 0.00000000\nRu 1 0.00000000 0.24795400 0.00000000</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.58356040 6.58356040 3.82595900\n90 90 120\nHf 1 0.41799100 0.41799100 0.50000000\nHf 1 0.58200900 0.00000000 0.50000000\nHf 1 0.00000000 0.58200900 0.50000000\nGe 1 0.66666700 0.33333300 0.00000000\nGe 1 0.33333300 0.66666700 0.00000000\nGe 1 0.00000000 0.00000000 0.50000000\nRu 1 0.75204600 0.75204600 0.00000000\nRu 1 0.24795400 0.00000000 0.00000000\nRu 1 0.00000000 0.24795400 0.00000000",
+      "space_group": {
+        "predicted_number": 189,
+        "predicted_symbol": "P-62m",
+        "final_cif_number": 189,
+        "final_cif_symbol": "P-62m",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 143.59,
+        "final_cif": 143.612616,
+        "relative_error_pct": 0.015748,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Ge": [
+            1,
+            2
+          ],
+          "Hf": [
+            3
+          ],
+          "Ru": [
+            3
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Ge": [
+            1,
+            2
+          ],
+          "Hf": [
+            3
+          ],
+          "Ru": [
+            3
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Ge": 2,
+          "Hf": 1,
+          "Ru": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Ge": 2,
+          "Hf": 1,
+          "Ru": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Ge": 3,
+          "Hf": 3,
+          "Ru": 3
+        },
+        "final_cif_total_atoms": 9
+      },
+      "bond_lengths": [
+        {
+          "pair": "Ge-Hf",
+          "predicted_mean_angstrom": 2.752,
+          "final_cif_mean_angstrom": 2.750437,
+          "absolute_error_angstrom": 0.001563,
+          "relative_error_pct": 0.056832,
+          "predicted_values_angstrom": [
+            2.75,
+            2.75,
+            2.75,
+            2.75,
+            2.76
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7501,
+            2.7519,
+            2.7519,
+            2.7519
+          ],
+          "final_cif_first_shell_count": 15,
+          "first_shell_cutoff_angstrom": 3.162588,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Ge-Ru",
+          "predicted_mean_angstrom": 2.515,
+          "final_cif_mean_angstrom": 2.518895,
+          "absolute_error_angstrom": 0.003895,
+          "relative_error_pct": 0.154645,
+          "predicted_values_angstrom": [
+            2.5,
+            2.5,
+            2.53,
+            2.53
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.5148,
+            2.5148,
+            2.5148,
+            2.5148,
+            2.5148,
+            2.5148,
+            2.523,
+            2.523,
+            2.523,
+            2.523,
+            2.523,
+            2.523
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 2.892035,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Hf-Ru",
+          "predicted_mean_angstrom": 3.016667,
+          "final_cif_mean_angstrom": 3.016103,
+          "absolute_error_angstrom": 0.000564,
+          "relative_error_pct": 0.018695,
+          "predicted_values_angstrom": [
+            2.91,
+            2.91,
+            3.07,
+            3.07,
+            3.07,
+            3.07
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.9148,
+            2.9148,
+            2.9148,
+            2.9148,
+            2.9148,
+            2.9148,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667,
+            3.0667
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 3.352065,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Ru-Ru",
+          "predicted_mean_angstrom": 2.8,
+          "final_cif_mean_angstrom": 2.827435,
+          "absolute_error_angstrom": 0.027435,
+          "relative_error_pct": 0.970301,
+          "predicted_values_angstrom": [
+            2.8
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.8274,
+            2.8274,
+            2.8274
+          ],
+          "final_cif_first_shell_count": 3,
+          "first_shell_cutoff_angstrom": 3.25155,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -0.807,
+        "real_from_prompt_eV_per_atom": -0.807,
+        "absolute_error_eV_per_atom": 0.0,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": null,
+        "metric_pipeline_eV_per_atom": 0.075743
+      },
+      "fermi_energy": {
+        "predicted_eV": 7.48,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.14813766807544174,
+          "sum_of_information": 56.4404515367433,
+          "token_num": 381
+        },
+        "gt": {
+          "comp": "Hf1 Ge1 Ru1",
+          "mp_id": "mp-1080489",
+          "spg": 189
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n6.76345025 6.76345072 3.73522377\n90 90 120\nHf 1 0.41705930 0.41705930 0.50000000\nHf 1 0.58294074 -0.00000004 0.50000000\nHf 1 -0.00000005 0.58294075 0.50000000\nGe 1 0.66666685 0.33333314 -0.00000000\nGe 1 0.33333313 0.66666684 0.00000000\nGe 1 0.00000000 -0.00000000 0.50000000\nRu 1 0.75157317 0.75157317 0.00000000\nRu 1 0.24842678 0.00000007 -0.00000000\nRu 1 0.00000007 0.24842678 -0.00000000",
+        "energies": -77.6430435180664,
+        "energy_above_hull": 0.07574263910373169,
+        "is_stable": true,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.816967,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_HfGeRu\n_symmetry_space_group_name_H-M   P-62m\n_cell_length_a   6.58356040\n_cell_length_b   6.58356040\n_cell_length_c   3.82595900\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   120.00000000\n_symmetry_Int_Tables_number   189\n_chemical_formula_structural   HfGeRu\n_chemical_formula_sum   'Hf3 Ge3 Ru3'\n_cell_volume   143.61261559\n_cell_formula_units_Z   3\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x+y, -x, -z'\n  3  '-y, x-y, z'\n  4  'x, y, -z'\n  5  '-x+y, -x, z'\n  6  '-y, x-y, -z'\n  7  'y, x, z'\n  8  '-x, -x+y, -z'\n  9  'x-y, -y, z'\n  10  'y, x, -z'\n  11  '-x, -x+y, z'\n  12  'x-y, -y, -z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Hf  Hf0  3  0.00000000  0.58200900  0.50000000  1\n  Ge  Ge1  2  0.33333333  0.66666667  0.00000000  1\n  Ge  Ge2  1  0.00000000  0.00000000  0.50000000  1\n  Ru  Ru3  3  0.00000000  0.24795400  0.00000000  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 3105,
+      "mp_id": "mp-14620",
+      "prompt": "Below is a description of a bulk material. The chemical formula is Tm2CdSe4. The band gap is 0.653. The energy above the convex hull is 0.0071. The formation energy per atom is -1.7665. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Tm2CdSe4 should have the space group Fd-3m (id 227). Since for Tm, 4=4, for Cd, 2=2, for Se, 8=8, 4*(+3)+2*(+2)+8*(-2)=0, the structure is like this: Tm has 1 sites: one site has 4 atoms, oxidation state +3. Cd has 1 sites: one site has 2 atoms, oxidation state +2. Se has 1 sites: one site has 8 atoms, oxidation state -2. Second, consider band gaps. Tm₂CdSe₄ is Spinel structured and crystallizes in the cubic Fd̅3m space group. Tm³⁺ is bonded to six equivalent Se²⁻ atoms to form TmSe₆ octahedra that share corners with six equivalent CdSe₄ tetrahedra and edges with six equivalent TmSe₆ octahedra. All Tm-Se bond lengths are 2.82 Å. Cd²⁺ is bonded to four equivalent Se²⁻ atoms to form CdSe₄ tetrahedra that share corners with twelve equivalent TmSe₆ octahedra. The corner-sharing octahedral tilt angles are 56°. All Cd-Se bond lengths are 2.65 Å. Se²⁻ is bonded to three equivalent Tm³⁺ and one Cd²⁺ atom to form a mixture of distorted corner and edge-sharing SeTm₃Cd trigonal pyramids. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 389.31 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 0.653 eV.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.007 eV/atom above the convex hull.  The formation energy per atom is -1.767 eV/atom.\n\n## CIF File\n<CIF>P1\n8.19639567 8.19639567 8.19639567\n60 60 60\nTm 1 0.50000000 0.50000000 0.00000000\nTm 1 0.50000000 0.50000000 0.50000000\nTm 1 0.00000000 0.50000000 0.50000000\nTm 1 0.50000000 0.00000000 0.50000000\nCd 1 0.12500000 0.12500000 0.12500000\nCd 1 0.87500000 0.87500000 0.87500000\nSe 1 0.74238400 0.74238400 0.74238400\nSe 1 0.25761600 0.25761600 0.72623000\nSe 1 0.25761600 0.72623000 0.25761600\nSe 1 0.72623000 0.25761600 0.25761600\nSe 1 0.74238400 0.27377000 0.74238400\nSe 1 0.27377000 0.74238400 0.74238400\nSe 1 0.25761600 0.25761600 0.25761600\nSe 1 0.74238400 0.74238400 0.27377000</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n8.19639567 8.19639567 8.19639567\n60 60 60\nTm 1 0.50000000 0.50000000 0.00000000\nTm 1 0.50000000 0.50000000 0.50000000\nTm 1 0.00000000 0.50000000 0.50000000\nTm 1 0.50000000 0.00000000 0.50000000\nCd 1 0.12500000 0.12500000 0.12500000\nCd 1 0.87500000 0.87500000 0.87500000\nSe 1 0.74238400 0.74238400 0.74238400\nSe 1 0.25761600 0.25761600 0.72623000\nSe 1 0.25761600 0.72623000 0.25761600\nSe 1 0.72623000 0.25761600 0.25761600\nSe 1 0.74238400 0.27377000 0.74238400\nSe 1 0.27377000 0.74238400 0.74238400\nSe 1 0.25761600 0.25761600 0.25761600\nSe 1 0.74238400 0.74238400 0.27377000",
+      "space_group": {
+        "predicted_number": 227,
+        "predicted_symbol": "Fd-3m",
+        "final_cif_number": 227,
+        "final_cif_symbol": "Fd-3m",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 389.31,
+        "final_cif": 389.362165,
+        "relative_error_pct": 0.013397,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Cd": [
+            2
+          ],
+          "Se": [
+            8
+          ],
+          "Tm": [
+            4
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Cd": [
+            2
+          ],
+          "Se": [
+            8
+          ],
+          "Tm": [
+            4
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Cd": 1,
+          "Se": 1,
+          "Tm": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Cd": 1,
+          "Se": 1,
+          "Tm": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Cd": 2,
+          "Se": 8,
+          "Tm": 4
+        },
+        "final_cif_total_atoms": 14
+      },
+      "bond_lengths": [
+        {
+          "pair": "Cd-Se",
+          "predicted_mean_angstrom": 2.65,
+          "final_cif_mean_angstrom": 2.66716,
+          "absolute_error_angstrom": 0.01716,
+          "relative_error_pct": 0.643386,
+          "predicted_values_angstrom": [
+            2.65
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.6625,
+            2.6625,
+            2.6687,
+            2.6687,
+            2.6687,
+            2.6687,
+            2.6687,
+            2.6687
+          ],
+          "final_cif_first_shell_count": 8,
+          "first_shell_cutoff_angstrom": 3.061909,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Se-Tm",
+          "predicted_mean_angstrom": 2.82,
+          "final_cif_mean_angstrom": 2.809859,
+          "absolute_error_angstrom": 0.010141,
+          "relative_error_pct": 0.360898,
+          "predicted_values_angstrom": [
+            2.82
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8072,
+            2.8124,
+            2.8124,
+            2.8124,
+            2.8124,
+            2.8124,
+            2.8124,
+            2.8127,
+            2.8127,
+            2.8127,
+            2.8127,
+            2.8127,
+            2.8127
+          ],
+          "final_cif_first_shell_count": 24,
+          "first_shell_cutoff_angstrom": 3.228269,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -1.767,
+        "real_from_prompt_eV_per_atom": -1.7665,
+        "absolute_error_eV_per_atom": 0.0005,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.007,
+        "metric_pipeline_eV_per_atom": 0.014853
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.07320927549883668,
+          "sum_of_information": 41.43644993234156,
+          "token_num": 566
+        },
+        "gt": {
+          "comp": "Tm2 Cd1 Se4",
+          "mp_id": "mp-14620",
+          "spg": 227
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n8.26963337 8.26963294 8.26963316\n59.9893 59.9893 59.9893\nTm 1 0.50000000 0.50000000 0.00000000\nTm 1 0.50000000 0.50000000 0.50000000\nTm 1 -0.00000000 0.50000000 0.50000000\nTm 1 0.50000000 0.00000000 0.50000000\nCd 1 0.12498464 0.12498464 0.12498464\nCd 1 0.87501536 0.87501536 0.87501536\nSe 1 0.74236164 0.74236164 0.74236164\nSe 1 0.25763843 0.25763842 0.72631881\nSe 1 0.25763842 0.72631881 0.25763842\nSe 1 0.72631881 0.25763842 0.25763842\nSe 1 0.74236158 0.27368119 0.74236157\nSe 1 0.27368119 0.74236158 0.74236158\nSe 1 0.25763836 0.25763835 0.25763836\nSe 1 0.74236158 0.74236158 0.27368119",
+        "energies": -68.674560546875,
+        "energy_above_hull": 0.01485339022321508,
+        "is_stable": true,
+        "is_novel": false,
+        "is_unique": true,
+        "stable_unique_novel": false
+      },
+      "score": 99.713593,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_Tm2CdSe4\n_symmetry_space_group_name_H-M   Fd-3m\n_cell_length_a   11.59145392\n_cell_length_b   11.59145392\n_cell_length_c   11.59145392\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   227\n_chemical_formula_structural   Tm2CdSe4\n_chemical_formula_sum   'Tm16 Cd8 Se32'\n_cell_volume   1557.44865907\n_cell_formula_units_Z   8\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-y+1/4, x+1/4, z+1/4'\n  3  '-x, -y+1/2, z+1/2'\n  4  'y+3/4, -x+1/4, z+3/4'\n  5  'x, -y, -z'\n  6  '-y+1/4, -x+3/4, -z+3/4'\n  7  '-x, y+1/2, -z+1/2'\n  8  'y+3/4, x+3/4, -z+1/4'\n  9  'z, x, y'\n  10  'z+1/4, -y+1/4, x+1/4'\n  11  'z+1/2, -x, -y+1/2'\n  12  'z+3/4, y+3/4, -x+1/4'\n  13  '-z, x, -y'\n  14  '-z+3/4, -y+1/4, -x+3/4'\n  15  '-z+1/2, -x, y+1/2'\n  16  '-z+1/4, y+3/4, x+3/4'\n  17  'y, z, x'\n  18  'x+1/4, z+1/4, -y+1/4'\n  19  '-y+1/2, z+1/2, -x'\n  20  '-x+1/4, z+3/4, y+3/4'\n  21  '-y, -z, x'\n  22  '-x+3/4, -z+3/4, -y+1/4'\n  23  'y+1/2, -z+1/2, -x'\n  24  'x+3/4, -z+1/4, y+3/4'\n  25  '-x+1/4, -y+1/4, -z+1/4'\n  26  'y, -x, -z'\n  27  'x+1/4, y+3/4, -z+3/4'\n  28  '-y+1/2, x, -z+1/2'\n  29  '-x+1/4, y+1/4, z+1/4'\n  30  'y, x+1/2, z+1/2'\n  31  'x+1/4, -y+3/4, z+3/4'\n  32  '-y+1/2, -x+1/2, z'\n  33  '-z+1/4, -x+1/4, -y+1/4'\n  34  '-z, y, -x'\n  35  '-z+3/4, x+1/4, y+3/4'\n  36  '-z+1/2, -y+1/2, x'\n  37  'z+1/4, -x+1/4, y+1/4'\n  38  'z+1/2, y, x+1/2'\n  39  'z+3/4, x+1/4, -y+3/4'\n  40  'z, -y+1/2, -x+1/2'\n  41  '-y+1/4, -z+1/4, -x+1/4'\n  42  '-x, -z, y'\n  43  'y+3/4, -z+3/4, x+1/4'\n  44  'x, -z+1/2, -y+1/2'\n  45  'y+1/4, z+1/4, -x+1/4'\n  46  'x+1/2, z+1/2, y'\n  47  '-y+3/4, z+3/4, x+1/4'\n  48  '-x+1/2, z, -y+1/2'\n  49  'x+1/2, y+1/2, z'\n  50  '-y+3/4, x+3/4, z+1/4'\n  51  '-x+1/2, -y, z+1/2'\n  52  'y+1/4, -x+3/4, z+3/4'\n  53  'x+1/2, -y+1/2, -z'\n  54  '-y+3/4, -x+1/4, -z+3/4'\n  55  '-x+1/2, y, -z+1/2'\n  56  'y+1/4, x+1/4, -z+1/4'\n  57  'z+1/2, x+1/2, y'\n  58  'z+3/4, -y+3/4, x+1/4'\n  59  'z, -x+1/2, -y+1/2'\n  60  'z+1/4, y+1/4, -x+1/4'\n  61  '-z+1/2, x+1/2, -y'\n  62  '-z+1/4, -y+3/4, -x+3/4'\n  63  '-z, -x+1/2, y+1/2'\n  64  '-z+3/4, y+1/4, x+3/4'\n  65  'y+1/2, z+1/2, x'\n  66  'x+3/4, z+3/4, -y+1/4'\n  67  '-y, z, -x'\n  68  '-x+3/4, z+1/4, y+3/4'\n  69  '-y+1/2, -z+1/2, x'\n  70  '-x+1/4, -z+1/4, -y+1/4'\n  71  'y, -z, -x'\n  72  'x+1/4, -z+3/4, y+3/4'\n  73  '-x+3/4, -y+3/4, -z+1/4'\n  74  'y+1/2, -x+1/2, -z'\n  75  'x+3/4, y+1/4, -z+3/4'\n  76  '-y, x+1/2, -z+1/2'\n  77  '-x+3/4, y+3/4, z+1/4'\n  78  'y+1/2, x, z+1/2'\n  79  'x+3/4, -y+1/4, z+3/4'\n  80  '-y, -x, z'\n  81  '-z+3/4, -x+3/4, -y+1/4'\n  82  '-z+1/2, y+1/2, -x'\n  83  '-z+1/4, x+3/4, y+3/4'\n  84  '-z, -y, x'\n  85  'z+3/4, -x+3/4, y+1/4'\n  86  'z, y+1/2, x+1/2'\n  87  'z+1/4, x+3/4, -y+3/4'\n  88  'z+1/2, -y, -x+1/2'\n  89  '-y+3/4, -z+3/4, -x+1/4'\n  90  '-x+1/2, -z+1/2, y'\n  91  'y+1/4, -z+1/4, x+1/4'\n  92  'x+1/2, -z, -y+1/2'\n  93  'y+3/4, z+3/4, -x+1/4'\n  94  'x, z, y'\n  95  '-y+1/4, z+1/4, x+1/4'\n  96  '-x, z+1/2, -y+1/2'\n  97  'x+1/2, y, z+1/2'\n  98  '-y+3/4, x+1/4, z+3/4'\n  99  '-x+1/2, -y+1/2, z'\n  100  'y+1/4, -x+1/4, z+1/4'\n  101  'x+1/2, -y, -z+1/2'\n  102  '-y+3/4, -x+3/4, -z+1/4'\n  103  '-x+1/2, y+1/2, -z'\n  104  'y+1/4, x+3/4, -z+3/4'\n  105  'z+1/2, x, y+1/2'\n  106  'z+3/4, -y+1/4, x+3/4'\n  107  'z, -x, -y'\n  108  'z+1/4, y+3/4, -x+3/4'\n  109  '-z+1/2, x, -y+1/2'\n  110  '-z+1/4, -y+1/4, -x+1/4'\n  111  '-z, -x, y'\n  112  '-z+3/4, y+3/4, x+1/4'\n  113  'y+1/2, z, x+1/2'\n  114  'x+3/4, z+1/4, -y+3/4'\n  115  '-y, z+1/2, -x+1/2'\n  116  '-x+3/4, z+3/4, y+1/4'\n  117  '-y+1/2, -z, x+1/2'\n  118  '-x+1/4, -z+3/4, -y+3/4'\n  119  'y, -z+1/2, -x+1/2'\n  120  'x+1/4, -z+1/4, y+1/4'\n  121  '-x+3/4, -y+1/4, -z+3/4'\n  122  'y+1/2, -x, -z+1/2'\n  123  'x+3/4, y+3/4, -z+1/4'\n  124  '-y, x, -z'\n  125  '-x+3/4, y+1/4, z+3/4'\n  126  'y+1/2, x+1/2, z'\n  127  'x+3/4, -y+3/4, z+1/4'\n  128  '-y, -x+1/2, z+1/2'\n  129  '-z+3/4, -x+1/4, -y+3/4'\n  130  '-z+1/2, y, -x+1/2'\n  131  '-z+1/4, x+1/4, y+1/4'\n  132  '-z, -y+1/2, x+1/2'\n  133  'z+3/4, -x+1/4, y+3/4'\n  134  'z, y, x'\n  135  'z+1/4, x+1/4, -y+1/4'\n  136  'z+1/2, -y+1/2, -x'\n  137  '-y+3/4, -z+1/4, -x+3/4'\n  138  '-x+1/2, -z, y+1/2'\n  139  'y+1/4, -z+3/4, x+3/4'\n  140  'x+1/2, -z+1/2, -y'\n  141  'y+3/4, z+1/4, -x+3/4'\n  142  'x, z+1/2, y+1/2'\n  143  '-y+1/4, z+3/4, x+3/4'\n  144  '-x, z, -y'\n  145  'x, y+1/2, z+1/2'\n  146  '-y+1/4, x+3/4, z+3/4'\n  147  '-x, -y, z'\n  148  'y+3/4, -x+3/4, z+1/4'\n  149  'x, -y+1/2, -z+1/2'\n  150  '-y+1/4, -x+1/4, -z+1/4'\n  151  '-x, y, -z'\n  152  'y+3/4, x+1/4, -z+3/4'\n  153  'z, x+1/2, y+1/2'\n  154  'z+1/4, -y+3/4, x+3/4'\n  155  'z+1/2, -x+1/2, -y'\n  156  'z+3/4, y+1/4, -x+3/4'\n  157  '-z, x+1/2, -y+1/2'\n  158  '-z+3/4, -y+3/4, -x+1/4'\n  159  '-z+1/2, -x+1/2, y'\n  160  '-z+1/4, y+1/4, x+1/4'\n  161  'y, z+1/2, x+1/2'\n  162  'x+1/4, z+3/4, -y+3/4'\n  163  '-y+1/2, z, -x+1/2'\n  164  '-x+1/4, z+1/4, y+1/4'\n  165  '-y, -z+1/2, x+1/2'\n  166  '-x+3/4, -z+1/4, -y+3/4'\n  167  'y+1/2, -z, -x+1/2'\n  168  'x+3/4, -z+3/4, y+1/4'\n  169  '-x+1/4, -y+3/4, -z+3/4'\n  170  'y, -x+1/2, -z+1/2'\n  171  'x+1/4, y+1/4, -z+1/4'\n  172  '-y+1/2, x+1/2, -z'\n  173  '-x+1/4, y+3/4, z+3/4'\n  174  'y, x, z'\n  175  'x+1/4, -y+1/4, z+1/4'\n  176  '-y+1/2, -x, z+1/2'\n  177  '-z+1/4, -x+3/4, -y+3/4'\n  178  '-z, y+1/2, -x+1/2'\n  179  '-z+3/4, x+3/4, y+1/4'\n  180  '-z+1/2, -y, x+1/2'\n  181  'z+1/4, -x+3/4, y+3/4'\n  182  'z+1/2, y+1/2, x'\n  183  'z+3/4, x+3/4, -y+1/4'\n  184  'z, -y, -x'\n  185  '-y+1/4, -z+3/4, -x+3/4'\n  186  '-x, -z+1/2, y+1/2'\n  187  'y+3/4, -z+1/4, x+3/4'\n  188  'x, -z, -y'\n  189  'y+1/4, z+3/4, -x+3/4'\n  190  'x+1/2, z, y+1/2'\n  191  '-y+3/4, z+1/4, x+3/4'\n  192  '-x+1/2, z+1/2, -y'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Tm  Tm0  16  0.12500000  0.12500000  0.12500000  1\n  Cd  Cd1  8  0.00000000  0.00000000  0.50000000  1\n  Se  Se2  32  0.11738400  0.11738400  0.88261600  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 1456,
+      "mp_id": "mp-1030160",
+      "prompt": "Below is a description of a bulk material. The chemical formula is (MoTe2)3WSe2. The formation energy per atom is -0.3346. The spacegroup number is 156. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Te3Mo3WSe2 should have the space group P3m1 (id 156). Te has 6 sites: one site has 1 atoms, one site has 1 atoms, one site has 1 atoms, one site has 1 atoms, one site has 1 atoms, one site has 1 atoms. Mo has 3 sites: one site has 1 atoms, one site has 1 atoms, one site has 1 atoms. W has 1 sites: one site has 1 atoms. Se has 2 sites: one site has 1 atoms, one site has 1 atoms. Second, consider band gaps. (MoTe₂)₃WSe₂ is Molybdenite-derived structured and crystallizes in the trigonal P3m1 space group. The structure is two-dimensional and consists of three MoTe₂ sheets oriented in the (0, 0, 1) direction and one WSe₂ sheet oriented in the (0, 0, 1) direction. In each MoTe₂ sheet, Mo+4.67+ is bonded to six equivalent Te²⁻ atoms to form distorted edge-sharing MoTe₆ pentagonal pyramids. All Mo-Te bond lengths are 2.73 Å. Te²⁻ is bonded in a 3-coordinate geometry to three equivalent Mo+4.67+ atoms. In the WSe₂ sheet, W²⁺ is bonded to six Se²⁻ atoms to form distorted edge-sharing WSe₆ pentagonal pyramids. All W-Se bond lengths are 2.59 Å. There are two inequivalent Se²⁻ sites. In the first Se²⁻ site, Se²⁻ is bonded in a distorted T-shaped geometry to three equivalent W²⁺ atoms. In the second Se²⁻ site, Se²⁻ is bonded in a 3-coordinate geometry to three equivalent W²⁺ atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 416.01 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.010 eV/atom above the convex hull.  The formation energy per atom is -0.335 eV/atom.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 0.573 eV.\n\n## CIF File\n<CIF>P1\n3.49263162 3.49263162 39.49133400\n90 90 120\nTe 1 0.33333300 0.66666700 0.32841000\nTe 1 0.66666700 0.33333300 0.04831600\nTe 1 0.66666700 0.33333300 0.42400300\nTe 1 0.66666700 0.33333300 0.14106000\nTe 1 0.66666700 0.33333300 0.51683600\nTe 1 0.33333300 0.66666700 0.23518100\nMo 1 0.33333300 0.66666700 0.09391800\nMo 1 0.33333300 0.66666700 0.46964600\nMo 1 0.66666700 0.33333300 0.28185800\nW 1 0.66666700 0.33333300 0.65755500\nSe 1 0.33333300 0.66666700 0.69868400\nSe 1 0.33333300 0.66666700 0.61630400</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n3.49263162 3.49263162 39.49133400\n90 90 120\nTe 1 0.33333300 0.66666700 0.32841000\nTe 1 0.66666700 0.33333300 0.04831600\nTe 1 0.66666700 0.33333300 0.42400300\nTe 1 0.66666700 0.33333300 0.14106000\nTe 1 0.66666700 0.33333300 0.51683600\nTe 1 0.33333300 0.66666700 0.23518100\nMo 1 0.33333300 0.66666700 0.09391800\nMo 1 0.33333300 0.66666700 0.46964600\nMo 1 0.66666700 0.33333300 0.28185800\nW 1 0.66666700 0.33333300 0.65755500\nSe 1 0.33333300 0.66666700 0.69868400\nSe 1 0.33333300 0.66666700 0.61630400",
+      "space_group": {
+        "predicted_number": 156,
+        "predicted_symbol": "P3m1",
+        "final_cif_number": 156,
+        "final_cif_symbol": "P3m1",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 416.01,
+        "final_cif": 417.193947,
+        "relative_error_pct": 0.283788,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Mo": [
+            1,
+            1,
+            1
+          ],
+          "Se": [
+            1,
+            1
+          ],
+          "Te": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "W": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Mo": [
+            1,
+            1,
+            1
+          ],
+          "Se": [
+            1,
+            1
+          ],
+          "Te": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "W": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Mo": 3,
+          "Se": 2,
+          "Te": 6,
+          "W": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Mo": 3,
+          "Se": 2,
+          "Te": 6,
+          "W": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Mo": 3,
+          "Se": 2,
+          "Te": 6,
+          "W": 1
+        },
+        "final_cif_total_atoms": 12
+      },
+      "bond_lengths": [
+        {
+          "pair": "Mo-Te",
+          "predicted_mean_angstrom": 2.73,
+          "final_cif_mean_angstrom": 2.726535,
+          "absolute_error_angstrom": 0.003465,
+          "relative_error_pct": 0.127098,
+          "predicted_values_angstrom": [
+            2.73
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.7036,
+            2.7036,
+            2.7036,
+            2.7047,
+            2.7047,
+            2.7047,
+            2.7287,
+            2.7287,
+            2.7287,
+            2.732,
+            2.732,
+            2.732,
+            2.7445,
+            2.7445,
+            2.7445,
+            2.7457,
+            2.7457,
+            2.7458
+          ],
+          "final_cif_first_shell_count": 18,
+          "first_shell_cutoff_angstrom": 3.109114,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Se-W",
+          "predicted_mean_angstrom": 2.59,
+          "final_cif_mean_angstrom": 2.590781,
+          "absolute_error_angstrom": 0.000781,
+          "relative_error_pct": 0.030143,
+          "predicted_values_angstrom": [
+            2.59
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.5893,
+            2.5893,
+            2.5893,
+            2.5923,
+            2.5923,
+            2.5923
+          ],
+          "final_cif_first_shell_count": 6,
+          "first_shell_cutoff_angstrom": 2.977657,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -0.335,
+        "real_from_prompt_eV_per_atom": -0.3346,
+        "absolute_error_eV_per_atom": 0.0004,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.01,
+        "metric_pipeline_eV_per_atom": null
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.21963618793140377,
+          "sum_of_information": 107.62173208638785,
+          "token_num": 490
+        },
+        "gt": {
+          "comp": "Te6 Mo3 W1 Se2",
+          "mp_id": "mp-1030160",
+          "spg": 156
+        },
+        "smact_validity": false,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": null,
+        "relaxed_structures": null,
+        "energies": null,
+        "energy_above_hull": null,
+        "is_stable": null,
+        "is_novel": null,
+        "is_unique": null,
+        "stable_unique_novel": null
+      },
+      "score": 99.673752,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_Te6Mo3WSe2\n_symmetry_space_group_name_H-M   P3m1\n_cell_length_a   3.49263162\n_cell_length_b   3.49263162\n_cell_length_c   39.49133400\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   120.00000000\n_symmetry_Int_Tables_number   156\n_chemical_formula_structural   Te6Mo3WSe2\n_chemical_formula_sum   'Te6 Mo3 W1 Se2'\n_cell_volume   417.19394726\n_cell_formula_units_Z   1\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-y, x-y, z'\n  3  '-x+y, -x, z'\n  4  '-y, -x, z'\n  5  '-x+y, y, z'\n  6  'x, x-y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Te  Te0  1  0.00000000  0.00000000  0.04831600  1\n  Te  Te1  1  0.00000000  0.00000000  0.14106000  1\n  Te  Te2  1  0.00000000  0.00000000  0.42400300  1\n  Te  Te3  1  0.00000000  0.00000000  0.51683600  1\n  Te  Te4  1  0.66666667  0.33333333  0.23518100  1\n  Te  Te5  1  0.66666667  0.33333333  0.32841000  1\n  Mo  Mo6  1  0.00000000  0.00000000  0.28185800  1\n  Mo  Mo7  1  0.66666667  0.33333333  0.09391800  1\n  Mo  Mo8  1  0.66666667  0.33333333  0.46964600  1\n  W  W9  1  0.00000000  0.00000000  0.65755500  1\n  Se  Se10  1  0.66666667  0.33333333  0.61630400  1\n  Se  Se11  1  0.66666667  0.33333333  0.69868400  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 8746,
+      "mp_id": "mp-1104719",
+      "prompt": "Below is a description of a bulk material. The chemical formula is GdFe4Al8. The band gap is 0.0. The formation energy per atom is -0.41. The energy above the convex hull is 0.0. The spacegroup number is 139. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Gd(Al2Fe)4 should have the space group I4/mmm (id 139). Gd has 1 sites: one site has 1 atoms. Al has 2 sites: one site has 4 atoms, one site has 4 atoms. Fe has 1 sites: one site has 4 atoms. Second, consider band gaps. GdFe₄Al₈ crystallizes in the tetragonal I4/mmm space group. Gd is bonded in a 20-coordinate geometry to eight equivalent Fe and twelve Al atoms. All Gd-Fe bond lengths are 3.36 Å. There are four shorter (2.98 Å) and eight longer (3.26 Å) Gd-Al bond lengths. Fe is bonded to two equivalent Gd, two equivalent Fe, and eight Al atoms to form a mixture of distorted corner, edge, and face-sharing FeGd₂Al₈Fe₂ cuboctahedra. Both Fe-Fe bond lengths are 2.53 Å. There are four shorter (2.56 Å) and four longer (2.66 Å) Fe-Al bond lengths. There are two inequivalent Al sites. In the first Al site, Al is bonded in a 10-coordinate geometry to one Gd, four equivalent Fe, and five Al atoms. There are a spread of Al-Al bond distances ranging from 2.74-2.87 Å. In the second Al site, Al is bonded in a 12-coordinate geometry to two equivalent Gd, four equivalent Fe, and six Al atoms. Both Al-Al bond lengths are 2.77 Å. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 197.07 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 7.03 eV.\n\n### Stability\n**Thermodynamic Status:** It is predicted to be thermodynamically stable (on the hull). The formation energy per atom is -0.410 eV/atom.\n\n## CIF File\n<CIF>P1\n5.06128300 6.75470723 6.75470723\n81.5558 67.5646 67.5646\nGd 1 0.00000000 0.00000000 0.00000000\nAl 1 0.00000000 0.66484400 0.33515600\nAl 1 0.00000000 0.33515600 0.66484400\nAl 1 0.66484400 0.33515600 0.33515600\nAl 1 0.33515600 0.66484400 0.66484400\nAl 1 0.50000000 0.77736900 0.22263100\nAl 1 0.50000000 0.22263100 0.77736900\nAl 1 0.72263100 0.77736900 0.77736900\nAl 1 0.27736900 0.22263100 0.22263100\nFe 1 0.00000000 0.00000000 0.50000000\nFe 1 0.50000000 0.00000000 0.50000000\nFe 1 0.50000000 0.50000000 0.00000000\nFe 1 0.00000000 0.50000000 0.00000000</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n5.06128300 6.75470723 6.75470723\n81.5558 67.5646 67.5646\nGd 1 0.00000000 0.00000000 0.00000000\nAl 1 0.00000000 0.66484400 0.33515600\nAl 1 0.00000000 0.33515600 0.66484400\nAl 1 0.66484400 0.33515600 0.33515600\nAl 1 0.33515600 0.66484400 0.66484400\nAl 1 0.50000000 0.77736900 0.22263100\nAl 1 0.50000000 0.22263100 0.77736900\nAl 1 0.72263100 0.77736900 0.77736900\nAl 1 0.27736900 0.22263100 0.22263100\nFe 1 0.00000000 0.00000000 0.50000000\nFe 1 0.50000000 0.00000000 0.50000000\nFe 1 0.50000000 0.50000000 0.00000000\nFe 1 0.00000000 0.50000000 0.00000000",
+      "space_group": {
+        "predicted_number": 139,
+        "predicted_symbol": "I4/mmm",
+        "final_cif_number": 139,
+        "final_cif_symbol": "I4/mmm",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 197.07,
+        "final_cif": 197.291761,
+        "relative_error_pct": 0.112402,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Al": [
+            4,
+            4
+          ],
+          "Fe": [
+            4
+          ],
+          "Gd": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Al": [
+            4,
+            4
+          ],
+          "Fe": [
+            4
+          ],
+          "Gd": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Al": 2,
+          "Fe": 1,
+          "Gd": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Al": 2,
+          "Fe": 1,
+          "Gd": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Al": 8,
+          "Fe": 4,
+          "Gd": 1
+        },
+        "final_cif_total_atoms": 13
+      },
+      "bond_lengths": [
+        {
+          "pair": "Al-Al",
+          "predicted_mean_angstrom": 2.793333,
+          "final_cif_mean_angstrom": 2.794722,
+          "absolute_error_angstrom": 0.001388,
+          "relative_error_pct": 0.049683,
+          "predicted_values_angstrom": [
+            2.74,
+            2.87,
+            2.77
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.7091,
+            2.7091,
+            2.7184,
+            2.7184,
+            2.7184,
+            2.7184,
+            2.7288,
+            2.7288,
+            2.78,
+            2.78,
+            2.78,
+            2.78,
+            2.848,
+            2.848,
+            2.848,
+            2.848,
+            2.85,
+            2.85,
+            2.85,
+            2.85,
+            2.909,
+            2.9132
+          ],
+          "final_cif_first_shell_count": 22,
+          "first_shell_cutoff_angstrom": 3.115412,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Al-Fe",
+          "predicted_mean_angstrom": 2.61,
+          "final_cif_mean_angstrom": 2.604485,
+          "absolute_error_angstrom": 0.005515,
+          "relative_error_pct": 0.211766,
+          "predicted_values_angstrom": [
+            2.56,
+            2.56,
+            2.56,
+            2.56,
+            2.66,
+            2.66,
+            2.66,
+            2.66
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.5455,
+            2.5455,
+            2.5455,
+            2.5455,
+            2.5532,
+            2.5532,
+            2.5532,
+            2.5532,
+            2.5557,
+            2.5557,
+            2.5557,
+            2.5557,
+            2.5689,
+            2.5689,
+            2.5689,
+            2.5689,
+            2.6431,
+            2.6431,
+            2.6431,
+            2.6431,
+            2.6481,
+            2.6481,
+            2.6481,
+            2.6481
+          ],
+          "final_cif_first_shell_count": 32,
+          "first_shell_cutoff_angstrom": 2.927318,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Al-Gd",
+          "predicted_mean_angstrom": 3.166667,
+          "final_cif_mean_angstrom": 3.122739,
+          "absolute_error_angstrom": 0.043928,
+          "relative_error_pct": 1.406699,
+          "predicted_values_angstrom": [
+            2.98,
+            2.98,
+            2.98,
+            2.98,
+            3.26,
+            3.26,
+            3.26,
+            3.26,
+            3.26,
+            3.26,
+            3.26,
+            3.26
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.9572,
+            2.9572,
+            2.9615,
+            2.9615,
+            3.1887,
+            3.1887,
+            3.2036,
+            3.2036,
+            3.2036,
+            3.2036,
+            3.2219,
+            3.2219
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 3.400792,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Fe-Fe",
+          "predicted_mean_angstrom": 2.53,
+          "final_cif_mean_angstrom": 2.530642,
+          "absolute_error_angstrom": 0.000642,
+          "relative_error_pct": 0.025349,
+          "predicted_values_angstrom": [
+            2.53
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.5306,
+            2.5306,
+            2.5306,
+            2.5306
+          ],
+          "final_cif_first_shell_count": 4,
+          "first_shell_cutoff_angstrom": 2.910238,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Fe-Gd",
+          "predicted_mean_angstrom": 3.36,
+          "final_cif_mean_angstrom": 3.368482,
+          "absolute_error_angstrom": 0.008482,
+          "relative_error_pct": 0.251805,
+          "predicted_values_angstrom": [
+            3.36
+          ],
+          "final_cif_first_shell_values_sample": [
+            3.3596,
+            3.3596,
+            3.3596,
+            3.3596,
+            3.3774,
+            3.3774,
+            3.3774,
+            3.3774
+          ],
+          "final_cif_first_shell_count": 8,
+          "first_shell_cutoff_angstrom": 3.863552,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -0.41,
+        "real_from_prompt_eV_per_atom": -0.41,
+        "absolute_error_eV_per_atom": 0.0,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": null,
+        "metric_pipeline_eV_per_atom": 0.416176
+      },
+      "fermi_energy": {
+        "predicted_eV": 7.03,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.12973198837612648,
+          "sum_of_information": 70.18500571148442,
+          "token_num": 541
+        },
+        "gt": {
+          "comp": "Gd1 Al8 Fe4",
+          "mp_id": "mp-1104719",
+          "spg": 139
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n5.02383155 6.64944751 6.64944760\n81.8025 67.815 67.815\nGd 1 0.00000000 -0.00000000 -0.00000000\nAl 1 -0.00000000 0.66414647 0.33585353\nAl 1 -0.00000000 0.33585353 0.66414647\nAl 1 0.66407748 0.33584343 0.33584343\nAl 1 0.33592251 0.66415657 0.66415657\nAl 1 0.50000000 0.77742701 0.22257298\nAl 1 0.50000000 0.22257299 0.77742702\nAl 1 0.72255795 0.77742640 0.77742640\nAl 1 0.27744205 0.22257360 0.22257360\nFe 1 0.00000000 -0.00000000 0.50000000\nFe 1 0.50000000 -0.00000000 0.50000000\nFe 1 0.50000000 0.50000000 0.00000000\nFe 1 -0.00000000 0.50000000 -0.00000000",
+        "energies": -77.44548034667969,
+        "energy_above_hull": 0.41617626564002386,
+        "is_stable": false,
+        "is_novel": true,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.647778,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_Gd(Al2Fe)4\n_symmetry_space_group_name_H-M   I4/mmm\n_cell_length_a   8.82981669\n_cell_length_b   8.82981669\n_cell_length_c   5.06128300\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   139\n_chemical_formula_structural   Gd(Al2Fe)4\n_chemical_formula_sum   'Gd2 Al16 Fe8'\n_cell_volume   394.60628376\n_cell_formula_units_Z   2\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x, -y, -z'\n  3  '-y, x, z'\n  4  'y, -x, -z'\n  5  '-x, -y, z'\n  6  'x, y, -z'\n  7  'y, -x, z'\n  8  '-y, x, -z'\n  9  'x, -y, -z'\n  10  '-x, y, z'\n  11  '-y, -x, -z'\n  12  'y, x, z'\n  13  '-x, y, -z'\n  14  'x, -y, z'\n  15  'y, x, -z'\n  16  '-y, -x, z'\n  17  'x+1/2, y+1/2, z+1/2'\n  18  '-x+1/2, -y+1/2, -z+1/2'\n  19  '-y+1/2, x+1/2, z+1/2'\n  20  'y+1/2, -x+1/2, -z+1/2'\n  21  '-x+1/2, -y+1/2, z+1/2'\n  22  'x+1/2, y+1/2, -z+1/2'\n  23  'y+1/2, -x+1/2, z+1/2'\n  24  '-y+1/2, x+1/2, -z+1/2'\n  25  'x+1/2, -y+1/2, -z+1/2'\n  26  '-x+1/2, y+1/2, z+1/2'\n  27  '-y+1/2, -x+1/2, -z+1/2'\n  28  'y+1/2, x+1/2, z+1/2'\n  29  '-x+1/2, y+1/2, -z+1/2'\n  30  'x+1/2, -y+1/2, z+1/2'\n  31  'y+1/2, x+1/2, -z+1/2'\n  32  '-y+1/2, -x+1/2, z+1/2'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Gd  Gd0  2  0.00000000  0.00000000  0.00000000  1\n  Al  Al1  8  0.00000000  0.22263100  0.50000000  1\n  Al  Al2  8  0.00000000  0.33515600  0.00000000  1\n  Fe  Fe3  8  0.25000000  0.25000000  0.25000000  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 14577,
+      "mp_id": "mp-1212101",
+      "prompt": "Below is a description of a bulk material. The chemical formula is HoIrSb. The formation energy per atom is -0.8889. The spacegroup number is 62. The band gap is 0.0. The energy above the convex hull is 0.0229. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material HoSbIr should have the space group Pnma (id 62). Ho has 1 sites: one site has 4 atoms. Sb has 1 sites: one site has 4 atoms. Ir has 1 sites: one site has 4 atoms. Second, consider band gaps. HoIrSb crystallizes in the orthorhombic Pnma space group. Ho is bonded in a 12-coordinate geometry to six equivalent Ir and six equivalent Sb atoms. There are a spread of Ho-Ir bond distances ranging from 3.04-3.32 Å. There are a spread of Ho-Sb bond distances ranging from 3.13-3.27 Å. Ir is bonded in a 10-coordinate geometry to six equivalent Ho and four equivalent Sb atoms. There are a spread of Ir-Sb bond distances ranging from 2.64-2.79 Å. Sb is bonded in a 10-coordinate geometry to six equivalent Ho and four equivalent Ir atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 250.40 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 7.13 eV.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.023 eV/atom above the convex hull.  The formation energy per atom is -0.889 eV/atom.\n\n## CIF File\n<CIF>P1\n4.53519928 7.15136626 7.72281098\n90 90 90\nHo 1 0.25000000 0.51317706 0.20397480\nHo 1 0.25000000 0.01317706 0.29602520\nHo 1 0.75000000 0.48682294 0.79602520\nHo 1 0.75000000 0.98682294 0.70397480\nSb 1 0.25000000 0.68973398 0.58796058\nSb 1 0.25000000 0.18973398 0.91203942\nSb 1 0.75000000 0.31026602 0.41203942\nSb 1 0.75000000 0.81026602 0.08796058\nIr 1 0.25000000 0.79730083 0.91422105\nIr 1 0.25000000 0.29730083 0.58577895\nIr 1 0.75000000 0.20269917 0.08577895\nIr 1 0.75000000 0.70269917 0.41422105</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n4.53519928 7.15136626 7.72281098\n90 90 90\nHo 1 0.25000000 0.51317706 0.20397480\nHo 1 0.25000000 0.01317706 0.29602520\nHo 1 0.75000000 0.48682294 0.79602520\nHo 1 0.75000000 0.98682294 0.70397480\nSb 1 0.25000000 0.68973398 0.58796058\nSb 1 0.25000000 0.18973398 0.91203942\nSb 1 0.75000000 0.31026602 0.41203942\nSb 1 0.75000000 0.81026602 0.08796058\nIr 1 0.25000000 0.79730083 0.91422105\nIr 1 0.25000000 0.29730083 0.58577895\nIr 1 0.75000000 0.20269917 0.08577895\nIr 1 0.75000000 0.70269917 0.41422105",
+      "space_group": {
+        "predicted_number": 62,
+        "predicted_symbol": "Pnma",
+        "final_cif_number": 62,
+        "final_cif_symbol": "Pnma",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 250.4,
+        "final_cif": 250.472933,
+        "relative_error_pct": 0.029118,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Ho": [
+            4
+          ],
+          "Ir": [
+            4
+          ],
+          "Sb": [
+            4
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Ho": [
+            4
+          ],
+          "Ir": [
+            4
+          ],
+          "Sb": [
+            4
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Ho": 1,
+          "Ir": 1,
+          "Sb": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Ho": 1,
+          "Ir": 1,
+          "Sb": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Ho": 4,
+          "Ir": 4,
+          "Sb": 4
+        },
+        "final_cif_total_atoms": 12
+      },
+      "bond_lengths": [
+        {
+          "pair": "Ho-Ir",
+          "predicted_mean_angstrom": 3.18,
+          "final_cif_mean_angstrom": 3.192861,
+          "absolute_error_angstrom": 0.012861,
+          "relative_error_pct": 0.402818,
+          "predicted_values_angstrom": [
+            3.04,
+            3.32
+          ],
+          "final_cif_first_shell_values_sample": [
+            3.0226,
+            3.0226,
+            3.0226,
+            3.0226,
+            3.1009,
+            3.1009,
+            3.1009,
+            3.1009,
+            3.1009,
+            3.1009,
+            3.1009,
+            3.1009,
+            3.3023,
+            3.3023,
+            3.3023,
+            3.3023,
+            3.3023,
+            3.3023,
+            3.3023,
+            3.3023,
+            3.3283,
+            3.3283,
+            3.3283,
+            3.3283
+          ],
+          "final_cif_first_shell_count": 24,
+          "first_shell_cutoff_angstrom": 3.475944,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Ho-Sb",
+          "predicted_mean_angstrom": 3.2,
+          "final_cif_mean_angstrom": 3.198588,
+          "absolute_error_angstrom": 0.001412,
+          "relative_error_pct": 0.044144,
+          "predicted_values_angstrom": [
+            3.13,
+            3.27
+          ],
+          "final_cif_first_shell_values_sample": [
+            3.1352,
+            3.1352,
+            3.1352,
+            3.1352,
+            3.1352,
+            3.1352,
+            3.1352,
+            3.1352,
+            3.2231,
+            3.2231,
+            3.2231,
+            3.2231,
+            3.2301,
+            3.2301,
+            3.2301,
+            3.2301,
+            3.234,
+            3.234,
+            3.234,
+            3.234,
+            3.234,
+            3.234,
+            3.234,
+            3.234
+          ],
+          "final_cif_first_shell_count": 24,
+          "first_shell_cutoff_angstrom": 3.605506,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Ir-Sb",
+          "predicted_mean_angstrom": 2.715,
+          "final_cif_mean_angstrom": 2.678465,
+          "absolute_error_angstrom": 0.036535,
+          "relative_error_pct": 1.364018,
+          "predicted_values_angstrom": [
+            2.64,
+            2.79
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.6345,
+            2.6345,
+            2.6345,
+            2.6345,
+            2.6365,
+            2.6365,
+            2.6365,
+            2.6365,
+            2.6365,
+            2.6365,
+            2.6365,
+            2.6365,
+            2.8065,
+            2.8065,
+            2.8065,
+            2.8065
+          ],
+          "final_cif_first_shell_count": 16,
+          "first_shell_cutoff_angstrom": 3.029627,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -0.889,
+        "real_from_prompt_eV_per_atom": -0.8889,
+        "absolute_error_eV_per_atom": 0.0001,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.023,
+        "metric_pipeline_eV_per_atom": 0.040094
+      },
+      "fermi_energy": {
+        "predicted_eV": 7.13,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.2867417107493793,
+          "sum_of_information": 141.07692168869463,
+          "token_num": 492
+        },
+        "gt": {
+          "comp": "Ho1 Sb1 Ir1",
+          "mp_id": "mp-1212101",
+          "spg": 62
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n4.57437823 7.12865199 7.83466505\n90 90 90\nHo 1 0.25000001 0.51309374 0.20343939\nHo 1 0.25000001 0.01309374 0.29656061\nHo 1 0.75000000 0.48690626 0.79656061\nHo 1 0.75000000 0.98690626 0.70343939\nSb 1 0.25000002 0.68949415 0.58802707\nSb 1 0.25000002 0.18949415 0.91197293\nSb 1 0.75000000 0.31050583 0.41197294\nSb 1 0.74999999 0.81050584 0.08802706\nIr 1 0.25000002 0.79704465 0.91435472\nIr 1 0.25000002 0.29704466 0.58564527\nIr 1 0.74999995 0.20295536 0.08564529\nIr 1 0.74999996 0.70295536 0.41435473",
+        "energies": -80.46577453613281,
+        "energy_above_hull": 0.04009385198893245,
+        "is_stable": true,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.632162,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_HoSbIr\n_symmetry_space_group_name_H-M   Pnma\n_cell_length_a   7.15136626\n_cell_length_b   4.53519928\n_cell_length_c   7.72281098\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   62\n_chemical_formula_structural   HoSbIr\n_chemical_formula_sum   'Ho4 Sb4 Ir4'\n_cell_volume   250.47293315\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x, -y, -z'\n  3  '-x+1/2, -y, z+1/2'\n  4  'x+1/2, y, -z+1/2'\n  5  'x+1/2, -y+1/2, -z+1/2'\n  6  '-x+1/2, y+1/2, z+1/2'\n  7  '-x, y+1/2, -z'\n  8  'x, -y+1/2, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Ho  Ho0  4  0.01317706  0.25000000  0.70397480  1\n  Sb  Sb1  4  0.18973398  0.25000000  0.08796058  1\n  Ir  Ir2  4  0.20269917  0.75000000  0.91422105  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 13026,
+      "mp_id": "mp-19417",
+      "prompt": "Below is a description of a bulk material. The chemical formula is FeTiO3. The energy above the convex hull is 0.012. The band gap is 2.7436. The formation energy per atom is -2.7177. The spacegroup number is 148. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material TiFeO3 should have the space group R-3 (id 148). Since for Ti, 2=2, for Fe, 2=2, for O, 6=6, 2*(+4)+2*(+2)+6*(-2)=0, the structure is like this: Ti has 1 sites: one site has 2 atoms, oxidation state +4. Fe has 1 sites: one site has 2 atoms, oxidation state +2. O has 1 sites: one site has 6 atoms, oxidation state -2. Second, consider band gaps. FeTiO₃ is Ilmenite structured and crystallizes in the trigonal R̅3 space group. Ti⁴⁺ is bonded to six equivalent O²⁻ atoms to form distorted TiO₆ octahedra that share corners with nine equivalent FeO₆ octahedra, edges with three equivalent TiO₆ octahedra, and  a faceface with one FeO₆ octahedra. The corner-sharing octahedral tilt angles range from 42-60°. There are three shorter (1.90 Å) and three longer (2.11 Å) Ti-O bond lengths. Fe²⁺ is bonded to six equivalent O²⁻ atoms to form FeO₆ octahedra that share corners with nine equivalent TiO₆ octahedra, edges with three equivalent FeO₆ octahedra, and  a faceface with one TiO₆ octahedra. The corner-sharing octahedral tilt angles range from 42-60°. There are three shorter (2.00 Å) and three longer (2.13 Å) Fe-O bond lengths. O²⁻ is bonded in a distorted see-saw-like geometry to two equivalent Ti⁴⁺ and two equivalent Fe²⁺ atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 105.97 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.012 eV/atom above the convex hull.  The formation energy per atom is -2.718 eV/atom.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 2.744 eV.\n\n## CIF File\n<CIF>P1\n5.51233272 5.51233272 5.51233318\n55.4988 55.4988 55.4988\nTi 1 0.63975000 0.63975000 0.63975000\nTi 1 0.36025000 0.36025000 0.36025000\nFe 1 0.84232500 0.84232500 0.84232500\nFe 1 0.15767500 0.15767500 0.15767500\nO 1 0.98371600 0.23988200 0.54585100\nO 1 0.54585100 0.98371600 0.23988200\nO 1 0.23988200 0.54585100 0.98371600\nO 1 0.01628400 0.76011800 0.45414900\nO 1 0.45414900 0.01628400 0.76011800\nO 1 0.76011800 0.45414900 0.01628400</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n5.51233272 5.51233272 5.51233318\n55.4988 55.4988 55.4988\nTi 1 0.63975000 0.63975000 0.63975000\nTi 1 0.36025000 0.36025000 0.36025000\nFe 1 0.84232500 0.84232500 0.84232500\nFe 1 0.15767500 0.15767500 0.15767500\nO 1 0.98371600 0.23988200 0.54585100\nO 1 0.54585100 0.98371600 0.23988200\nO 1 0.23988200 0.54585100 0.98371600\nO 1 0.01628400 0.76011800 0.45414900\nO 1 0.45414900 0.01628400 0.76011800\nO 1 0.76011800 0.45414900 0.01628400",
+      "space_group": {
+        "predicted_number": 148,
+        "predicted_symbol": "R-3",
+        "final_cif_number": 148,
+        "final_cif_symbol": "R-3",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 105.97,
+        "final_cif": 106.060066,
+        "relative_error_pct": 0.08492,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Fe": [
+            2
+          ],
+          "O": [
+            6
+          ],
+          "Ti": [
+            2
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Fe": [
+            2
+          ],
+          "O": [
+            6
+          ],
+          "Ti": [
+            2
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Fe": 1,
+          "O": 1,
+          "Ti": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Fe": 1,
+          "O": 1,
+          "Ti": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Fe": 2,
+          "O": 6,
+          "Ti": 2
+        },
+        "final_cif_total_atoms": 10
+      },
+      "bond_lengths": [
+        {
+          "pair": "Fe-O",
+          "predicted_mean_angstrom": 2.065,
+          "final_cif_mean_angstrom": 2.060637,
+          "absolute_error_angstrom": 0.004363,
+          "relative_error_pct": 0.211731,
+          "predicted_values_angstrom": [
+            2.0,
+            2.0,
+            2.0,
+            2.13,
+            2.13,
+            2.13
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9963,
+            1.9963,
+            1.9963,
+            1.9963,
+            1.9963,
+            1.9963,
+            2.125,
+            2.125,
+            2.125,
+            2.125,
+            2.125,
+            2.125
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 2.29629,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Ti",
+          "predicted_mean_angstrom": 2.005,
+          "final_cif_mean_angstrom": 2.043053,
+          "absolute_error_angstrom": 0.038053,
+          "relative_error_pct": 1.862546,
+          "predicted_values_angstrom": [
+            1.9,
+            1.9,
+            1.9,
+            2.11,
+            2.11,
+            2.11
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.0415,
+            2.0415,
+            2.0415,
+            2.0415,
+            2.0415,
+            2.0415,
+            2.0446,
+            2.0446,
+            2.0446,
+            2.0446,
+            2.0446,
+            2.0446
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 2.347703,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -2.718,
+        "real_from_prompt_eV_per_atom": -2.7177,
+        "absolute_error_eV_per_atom": 0.0003,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.012,
+        "metric_pipeline_eV_per_atom": 0.020478
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.21410821022668594,
+          "sum_of_information": 91.85242218724827,
+          "token_num": 429
+        },
+        "gt": {
+          "comp": "Ti1 Fe1 O3",
+          "mp_id": "mp-19417",
+          "spg": 148
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n5.64727671 5.64727595 5.64727714\n54.0657 54.0657 54.0656\nTi 1 0.64425499 0.64425502 0.64425499\nTi 1 0.35574500 0.35574500 0.35574499\nFe 1 0.85052777 0.85052773 0.85052776\nFe 1 0.14947226 0.14947226 0.14947225\nO 1 0.93160039 0.27948574 0.55865198\nO 1 0.55865198 0.93160037 0.27948575\nO 1 0.27948574 0.55865200 0.93160036\nO 1 0.06839964 0.72051425 0.44134800\nO 1 0.44134799 0.06839964 0.72051425\nO 1 0.72051424 0.44134798 0.06839968",
+        "energies": -80.87713623046875,
+        "energy_above_hull": 0.02047841795312344,
+        "is_stable": true,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.49092,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_TiFeO3\n_symmetry_space_group_name_H-M   R-3\n_cell_length_a   5.13314225\n_cell_length_b   5.13314225\n_cell_length_c   13.94363203\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   120.00000000\n_symmetry_Int_Tables_number   148\n_chemical_formula_structural   TiFeO3\n_chemical_formula_sum   'Ti6 Fe6 O18'\n_cell_volume   318.18019498\n_cell_formula_units_Z   6\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x, -y, -z'\n  3  '-y, x-y, z'\n  4  'y, -x+y, -z'\n  5  '-x+y, -x, z'\n  6  'x-y, x, -z'\n  7  'x+2/3, y+1/3, z+1/3'\n  8  '-x+2/3, -y+1/3, -z+1/3'\n  9  '-y+2/3, x-y+1/3, z+1/3'\n  10  'y+2/3, -x+y+1/3, -z+1/3'\n  11  '-x+y+2/3, -x+1/3, z+1/3'\n  12  'x-y+2/3, x+1/3, -z+1/3'\n  13  'x+1/3, y+2/3, z+2/3'\n  14  '-x+1/3, -y+2/3, -z+2/3'\n  15  '-y+1/3, x-y+2/3, z+2/3'\n  16  'y+1/3, -x+y+2/3, -z+2/3'\n  17  '-x+y+1/3, -x+2/3, z+2/3'\n  18  'x-y+1/3, x+2/3, -z+2/3'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Ti  Ti0  6  0.00000000  0.00000000  0.36025000  1\n  Fe  Fe1  6  0.00000000  0.00000000  0.15767500  1\n  O  O2  18  0.01660100  0.28936800  0.74351700  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 70,
+      "mp_id": "mp-1227742",
+      "prompt": "Below is a description of a bulk material. The chemical formula is BaSr(SnO3)2. The band gap is 0.7131. The formation energy per atom is -2.5884. The energy above the convex hull is 0.0241. The spacegroup number is 123. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material BaSr(SnO3)2 should have the space group P4/mmm (id 123). Since for Ba, 1=1, for Sr, 1=1, for Sn, 2=2, for O, 1+1+4=6, 1*(+2)+1*(+2)+2*(+4)+4*(-2)+1*(-2)+1*(-2)=0, the structure is like this: Ba has 1 sites: one site has 1 atoms, oxidation state +2. Sr has 1 sites: one site has 1 atoms, oxidation state +2. Sn has 1 sites: one site has 2 atoms, oxidation state +4. O has 3 sites: one site has 1 atoms, oxidation state -2, one site has 1 atoms, oxidation state -2, one site has 4 atoms, oxidation state -2. Second, consider band gaps. BaSr(SnO₃)₂ is (Cubic) Perovskite-derived structured and crystallizes in the tetragonal P4/mmm space group. Ba²⁺ is bonded to twelve O²⁻ atoms to form BaO₁₂ cuboctahedra that share corners with four equivalent BaO₁₂ cuboctahedra, corners with eight equivalent SrO₁₂ cuboctahedra, faces with two equivalent SrO₁₂ cuboctahedra, faces with four equivalent BaO₁₂ cuboctahedra, and faces with eight equivalent SnO₆ octahedra. There are four shorter (2.90 Å) and eight longer (2.94 Å) Ba-O bond lengths. Sr²⁺ is bonded to twelve O²⁻ atoms to form SrO₁₂ cuboctahedra that share corners with four equivalent SrO₁₂ cuboctahedra, corners with eight equivalent BaO₁₂ cuboctahedra, faces with two equivalent BaO₁₂ cuboctahedra, faces with four equivalent SrO₁₂ cuboctahedra, and faces with eight equivalent SnO₆ octahedra. There are eight shorter (2.90 Å) and four longer (2.94 Å) Sr-O bond lengths. Sn⁴⁺ is bonded to six O²⁻ atoms to form SnO₆ octahedra that share corners with six equivalent SnO₆ octahedra, faces with four equivalent BaO₁₂ cuboctahedra, and faces with four equivalent SrO₁₂ cuboctahedra. The corner-sharing octahedral tilt angles range from 0-10°. There are a spread of Sn-O bond distances ranging from 2.04-2.06 Å. There are three inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted linear geometry to two equivalent Ba²⁺, two equivalent Sr²⁺, and two equivalent Sn⁴⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a distorted linear geometry to four equivalent Sr²⁺ and two equivalent Sn⁴⁺ atoms. In the third O²⁻ site, O²⁻ is bonded in a distorted linear geometry to four equivalent Ba²⁺ and two equivalent Sn⁴⁺ atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 141.20 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.024 eV/atom above the convex hull.  The formation energy per atom is -2.588 eV/atom.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 0.713 eV.\n\n## CIF File\n<CIF>P1\n4.13673900 4.13673900 8.23598600\n90 90 90\nBa 1 0.00000000 0.00000000 0.00000000\nSr 1 0.00000000 0.00000000 0.50000000\nSn 1 0.50000000 0.50000000 0.25127200\nSn 1 0.50000000 0.50000000 0.74872800\nO 1 0.50000000 0.50000000 0.00000000\nO 1 0.50000000 0.50000000 0.50000000\nO 1 0.50000000 0.00000000 0.24582800\nO 1 0.50000000 0.00000000 0.75417200\nO 1 0.00000000 0.50000000 0.24582800\nO 1 0.00000000 0.50000000 0.75417200</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n4.13673900 4.13673900 8.23598600\n90 90 90\nBa 1 0.00000000 0.00000000 0.00000000\nSr 1 0.00000000 0.00000000 0.50000000\nSn 1 0.50000000 0.50000000 0.25127200\nSn 1 0.50000000 0.50000000 0.74872800\nO 1 0.50000000 0.50000000 0.00000000\nO 1 0.50000000 0.50000000 0.50000000\nO 1 0.50000000 0.00000000 0.24582800\nO 1 0.50000000 0.00000000 0.75417200\nO 1 0.00000000 0.50000000 0.24582800\nO 1 0.00000000 0.50000000 0.75417200",
+      "space_group": {
+        "predicted_number": 123,
+        "predicted_symbol": "P4/mmm",
+        "final_cif_number": 123,
+        "final_cif_symbol": "P4/mmm",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 141.2,
+        "final_cif": 140.939213,
+        "relative_error_pct": 0.185035,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Ba": [
+            1
+          ],
+          "O": [
+            1,
+            1,
+            4
+          ],
+          "Sn": [
+            2
+          ],
+          "Sr": [
+            1
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Ba": [
+            1
+          ],
+          "O": [
+            1,
+            1,
+            4
+          ],
+          "Sn": [
+            2
+          ],
+          "Sr": [
+            1
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Ba": 1,
+          "O": 3,
+          "Sn": 1,
+          "Sr": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Ba": 1,
+          "O": 3,
+          "Sn": 1,
+          "Sr": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Ba": 1,
+          "O": 6,
+          "Sn": 2,
+          "Sr": 1
+        },
+        "final_cif_total_atoms": 10
+      },
+      "bond_lengths": [
+        {
+          "pair": "Ba-O",
+          "predicted_mean_angstrom": 2.926667,
+          "final_cif_mean_angstrom": 2.90461,
+          "absolute_error_angstrom": 0.022057,
+          "relative_error_pct": 0.759362,
+          "predicted_values_angstrom": [
+            2.9,
+            2.9,
+            2.9,
+            2.9,
+            2.94,
+            2.94,
+            2.94,
+            2.94,
+            2.94,
+            2.94,
+            2.94,
+            2.94
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.8944,
+            2.8944,
+            2.8944,
+            2.8944,
+            2.8944,
+            2.8944,
+            2.8944,
+            2.8944,
+            2.9251,
+            2.9251,
+            2.9251,
+            2.9251
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 3.328511,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Sn",
+          "predicted_mean_angstrom": 2.05,
+          "final_cif_mean_angstrom": 2.065569,
+          "absolute_error_angstrom": 0.015569,
+          "relative_error_pct": 0.753744,
+          "predicted_values_angstrom": [
+            2.04,
+            2.06
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.0485,
+            2.0485,
+            2.0689,
+            2.0689,
+            2.0689,
+            2.0689,
+            2.0689,
+            2.0689,
+            2.0689,
+            2.0689,
+            2.0695,
+            2.0695
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 2.355798,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Sr",
+          "predicted_mean_angstrom": 2.913333,
+          "final_cif_mean_angstrom": 2.936931,
+          "absolute_error_angstrom": 0.023597,
+          "relative_error_pct": 0.803474,
+          "predicted_values_angstrom": [
+            2.9,
+            2.9,
+            2.9,
+            2.9,
+            2.9,
+            2.9,
+            2.9,
+            2.9,
+            2.94,
+            2.94,
+            2.94,
+            2.94
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.9251,
+            2.9251,
+            2.9251,
+            2.9251,
+            2.9428,
+            2.9428,
+            2.9428,
+            2.9428,
+            2.9428,
+            2.9428,
+            2.9428,
+            2.9428
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 3.363884,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -2.588,
+        "real_from_prompt_eV_per_atom": -2.5884,
+        "absolute_error_eV_per_atom": 0.0004,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.024,
+        "metric_pipeline_eV_per_atom": 0.030601
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.10924343151591105,
+          "sum_of_information": 45.22678064758718,
+          "token_num": 414
+        },
+        "gt": {
+          "comp": "Ba1 Sr1 Sn2 O6",
+          "mp_id": "mp-1227742",
+          "spg": 123
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n4.15385153 4.15385163 8.30584622\n90 90 90\nBa 1 -0.00000000 -0.00000000 -0.00000000\nSr 1 0.00000000 0.00000000 0.50000000\nSn 1 0.50000000 0.50000000 0.24984200\nSn 1 0.50000000 0.50000000 0.75015800\nO 1 0.50000000 0.50000000 0.00000000\nO 1 0.50000000 0.50000000 0.50000000\nO 1 0.50000000 0.00000000 0.24844150\nO 1 0.50000000 -0.00000000 0.75155850\nO 1 -0.00000000 0.50000000 0.24844150\nO 1 -0.00000000 0.50000000 0.75155850",
+        "energies": -63.014434814453125,
+        "energy_above_hull": 0.030601250304687078,
+        "is_stable": true,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.406812,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_BaSr(SnO3)2\n_symmetry_space_group_name_H-M   P4/mmm\n_cell_length_a   4.13673900\n_cell_length_b   4.13673900\n_cell_length_c   8.23598600\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   123\n_chemical_formula_structural   BaSr(SnO3)2\n_chemical_formula_sum   'Ba1 Sr1 Sn2 O6'\n_cell_volume   140.93921271\n_cell_formula_units_Z   1\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x, -y, -z'\n  3  '-y, x, z'\n  4  'y, -x, -z'\n  5  '-x, -y, z'\n  6  'x, y, -z'\n  7  'y, -x, z'\n  8  '-y, x, -z'\n  9  'x, -y, -z'\n  10  '-x, y, z'\n  11  '-y, -x, -z'\n  12  'y, x, z'\n  13  '-x, y, -z'\n  14  'x, -y, z'\n  15  'y, x, -z'\n  16  '-y, -x, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Ba  Ba0  1  0.00000000  0.00000000  0.00000000  1\n  Sr  Sr1  1  0.00000000  0.00000000  0.50000000  1\n  Sn  Sn2  2  0.50000000  0.50000000  0.25127200  1\n  O  O3  4  0.00000000  0.50000000  0.24582800  1\n  O  O4  1  0.50000000  0.50000000  0.00000000  1\n  O  O5  1  0.50000000  0.50000000  0.50000000  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 7432,
+      "mp_id": "mp-753496",
+      "prompt": "Below is a description of a bulk material. The chemical formula is LiCoSnO4. The spacegroup number is 74. The energy above the convex hull is 0.0578. The formation energy per atom is -1.8429. The band gap is 0.7241. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material LiCoSnO4 should have the space group Imma (id 74). Since for Li, 2=2, for Co, 2=2, for Sn, 2=2, for O, 4+4=8, 2*(+1)+2*(+3)+2*(+4)+4*(-2)+4*(-2)=0, the structure is like this: Li has 1 sites: one site has 2 atoms, oxidation state +1. Co has 1 sites: one site has 2 atoms, oxidation state +3. Sn has 1 sites: one site has 2 atoms, oxidation state +4. O has 2 sites: one site has 4 atoms, oxidation state -2, one site has 4 atoms, oxidation state -2. Second, consider band gaps. LiCoSnO₄ is Spinel-derived structured and crystallizes in the orthorhombic Imma space group. Li¹⁺ is bonded to four O²⁻ atoms to form LiO₄ tetrahedra that share corners with six equivalent CoO₆ octahedra and corners with six equivalent SnO₆ octahedra. The corner-sharing octahedral tilt angles range from 56-62°. There are two shorter (1.97 Å) and two longer (2.00 Å) Li-O bond lengths. Co³⁺ is bonded to six O²⁻ atoms to form CoO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra, edges with two equivalent CoO₆ octahedra, and edges with four equivalent SnO₆ octahedra. There are four shorter (1.95 Å) and two longer (2.12 Å) Co-O bond lengths. Sn⁴⁺ is bonded to six O²⁻ atoms to form SnO₆ octahedra that share corners with six equivalent LiO₄ tetrahedra, edges with two equivalent SnO₆ octahedra, and edges with four equivalent CoO₆ octahedra. There are two shorter (2.05 Å) and four longer (2.10 Å) Sn-O bond lengths. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted rectangular see-saw-like geometry to one Li¹⁺, one Co³⁺, and two equivalent Sn⁴⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a rectangular see-saw-like geometry to one Li¹⁺, two equivalent Co³⁺, and one Sn⁴⁺ atom. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 152.86 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.058 eV/atom above the convex hull.  The formation energy per atom is -1.843 eV/atom.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 0.724 eV.\n\n## CIF File\n<CIF>P1\n6.00141210 6.00141210 6.00141210\n120.766 119.343 90.0059\nLi 1 0.87843500 0.12843500 0.75000000\nLi 1 0.12156500 0.87156500 0.25000000\nCo 1 0.50000000 0.50000000 0.50000000\nCo 1 0.50000000 0.00000000 0.00000000\nSn 1 0.50000000 0.50000000 0.00000000\nSn 1 0.00000000 0.50000000 0.50000000\nO 1 0.25896000 0.24782300 0.01113700\nO 1 0.73059000 0.24782300 0.48886300\nO 1 0.72847500 0.24450800 0.01396700\nO 1 0.72847500 0.71450800 0.48603300\nO 1 0.74104000 0.75217700 0.98886300\nO 1 0.26941000 0.75217700 0.51113700\nO 1 0.27152500 0.75549200 0.98603300\nO 1 0.27152500 0.28549200 0.51396700</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n6.00141210 6.00141210 6.00141210\n120.766 119.343 90.0059\nLi 1 0.87843500 0.12843500 0.75000000\nLi 1 0.12156500 0.87156500 0.25000000\nCo 1 0.50000000 0.50000000 0.50000000\nCo 1 0.50000000 0.00000000 0.00000000\nSn 1 0.50000000 0.50000000 0.00000000\nSn 1 0.00000000 0.50000000 0.50000000\nO 1 0.25896000 0.24782300 0.01113700\nO 1 0.73059000 0.24782300 0.48886300\nO 1 0.72847500 0.24450800 0.01396700\nO 1 0.72847500 0.71450800 0.48603300\nO 1 0.74104000 0.75217700 0.98886300\nO 1 0.26941000 0.75217700 0.51113700\nO 1 0.27152500 0.75549200 0.98603300\nO 1 0.27152500 0.28549200 0.51396700",
+      "space_group": {
+        "predicted_number": 74,
+        "predicted_symbol": "Imma",
+        "final_cif_number": 74,
+        "final_cif_symbol": "Imma",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 152.86,
+        "final_cif": 152.559331,
+        "relative_error_pct": 0.197083,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Co": [
+            2
+          ],
+          "Li": [
+            2
+          ],
+          "O": [
+            4,
+            4
+          ],
+          "Sn": [
+            2
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Co": [
+            2
+          ],
+          "Li": [
+            2
+          ],
+          "O": [
+            4,
+            4
+          ],
+          "Sn": [
+            2
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Co": 1,
+          "Li": 1,
+          "O": 2,
+          "Sn": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Co": 1,
+          "Li": 1,
+          "O": 2,
+          "Sn": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Co": 2,
+          "Li": 2,
+          "O": 8,
+          "Sn": 2
+        },
+        "final_cif_total_atoms": 14
+      },
+      "bond_lengths": [
+        {
+          "pair": "Co-O",
+          "predicted_mean_angstrom": 2.006667,
+          "final_cif_mean_angstrom": 2.025989,
+          "absolute_error_angstrom": 0.019322,
+          "relative_error_pct": 0.9537,
+          "predicted_values_angstrom": [
+            1.95,
+            1.95,
+            1.95,
+            1.95,
+            2.12,
+            2.12
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.9409,
+            1.9409,
+            1.9497,
+            1.9497,
+            2.0488,
+            2.0488,
+            2.0708,
+            2.0708,
+            2.0715,
+            2.0715,
+            2.0743,
+            2.0743
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 2.240899,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Li-O",
+          "predicted_mean_angstrom": 1.985,
+          "final_cif_mean_angstrom": 1.948834,
+          "absolute_error_angstrom": 0.036166,
+          "relative_error_pct": 1.855753,
+          "predicted_values_angstrom": [
+            1.97,
+            1.97,
+            2.0,
+            2.0
+          ],
+          "final_cif_first_shell_values_sample": [
+            1.8783,
+            1.8783,
+            1.8822,
+            1.8822,
+            2.0166,
+            2.0166,
+            2.0182,
+            2.0182
+          ],
+          "final_cif_first_shell_count": 8,
+          "first_shell_cutoff_angstrom": 2.17827,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "O-Sn",
+          "predicted_mean_angstrom": 2.083333,
+          "final_cif_mean_angstrom": 2.097303,
+          "absolute_error_angstrom": 0.01397,
+          "relative_error_pct": 0.666075,
+          "predicted_values_angstrom": [
+            2.05,
+            2.05,
+            2.1,
+            2.1,
+            2.1,
+            2.1
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.0634,
+            2.0634,
+            2.0688,
+            2.0688,
+            2.0697,
+            2.0697,
+            2.0728,
+            2.0728,
+            2.1413,
+            2.1413,
+            2.1678,
+            2.1678
+          ],
+          "final_cif_first_shell_count": 12,
+          "first_shell_cutoff_angstrom": 2.372868,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": -1.843,
+        "real_from_prompt_eV_per_atom": -1.8429,
+        "absolute_error_eV_per_atom": 0.0001,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.058,
+        "metric_pipeline_eV_per_atom": 2.417939
+      },
+      "fermi_energy": {
+        "predicted_eV": null,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.19892365464146347,
+          "sum_of_information": 114.77894872812442,
+          "token_num": 577
+        },
+        "gt": {
+          "comp": "Li1 Co1 Sn1 O4",
+          "mp_id": "mp-753496",
+          "spg": 74
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n5.99016711 5.99002931 5.97773721\n121.789 117.647 90.5916\nLi 1 0.87705793 0.12711274 0.74994063\nLi 1 0.12294206 0.87288726 0.25005937\nCo 1 0.50000000 0.50000000 0.50000000\nCo 1 0.50000000 0.00000000 0.00000001\nSn 1 0.49999999 0.50000000 -0.00000001\nSn 1 -0.00000001 0.50000000 0.49999999\nO 1 0.27258333 0.25061029 0.02092432\nO 1 0.72536567 0.25135161 0.47822684\nO 1 0.72879985 0.24271008 0.01287674\nO 1 0.72943284 0.71603899 0.48759956\nO 1 0.72741668 0.74938971 0.97907568\nO 1 0.27463433 0.74864840 0.52177316\nO 1 0.27120015 0.75728993 0.98712327\nO 1 0.27056717 0.28396101 0.51240045",
+        "energies": -82.6895980834961,
+        "energy_above_hull": 2.4179394079645613,
+        "is_stable": false,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.339864,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_LiCoSnO4\n_symmetry_space_group_name_H-M   Imma\n_cell_length_a   5.93179367\n_cell_length_b   6.06091047\n_cell_length_c   8.48684139\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   90.00000000\n_symmetry_Int_Tables_number   74\n_chemical_formula_structural   LiCoSnO4\n_chemical_formula_sum   'Li4 Co4 Sn4 O16'\n_cell_volume   305.11951851\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x, -y, -z'\n  3  '-x, -y+1/2, z'\n  4  'x, y+1/2, -z'\n  5  'x, -y, -z'\n  6  '-x, y, z'\n  7  '-x, y+1/2, -z'\n  8  'x, -y+1/2, z'\n  9  'x+1/2, y+1/2, z+1/2'\n  10  '-x+1/2, -y+1/2, -z+1/2'\n  11  '-x+1/2, -y, z+1/2'\n  12  'x+1/2, y, -z+1/2'\n  13  'x+1/2, -y+1/2, -z+1/2'\n  14  '-x+1/2, y+1/2, z+1/2'\n  15  '-x+1/2, y, -z+1/2'\n  16  'x+1/2, -y, z+1/2'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Li  Li0  4  0.00000000  0.25000000  0.12843500  1\n  Co  Co1  4  0.25000000  0.25000000  0.75000000  1\n  Sn  Sn2  4  0.00000000  0.00000000  0.50000000  1\n  O  O3  8  0.00000000  0.01113700  0.75217700  1\n  O  O4  8  0.23500000  0.25000000  0.52049200  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    },
+    {
+      "row_index": 14257,
+      "mp_id": "mp-1919",
+      "prompt": "Below is a description of a bulk material. The chemical formula is ZrCr2. The band gap is 0.0. The energy above the convex hull is 0.1884. The spacegroup number is 194. The formation energy per atom is 0.1884. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+      "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material ZrCr2 should have the space group P6_3/mmc (id 194). Zr has 1 sites: one site has 4 atoms. Cr has 2 sites: one site has 2 atoms, one site has 6 atoms. Second, consider band gaps. ZrCr₂ is Hexagonal Laves structured and crystallizes in the hexagonal P6₃/mmc space group. Zr is bonded in a 12-coordinate geometry to twelve Cr atoms. There are a spread of Zr-Cr bond distances ranging from 2.92-3.01 Å. There are two inequivalent Cr sites. In the first Cr site, Cr is bonded to six equivalent Zr and six equivalent Cr atoms to form a mixture of corner, edge, and face-sharing CrZr₆Cr₆ cuboctahedra. All Cr-Cr bond lengths are 2.47 Å. In the second Cr site, Cr is bonded to six equivalent Zr and six Cr atoms to form a mixture of corner, edge, and face-sharing CrZr₆Cr₆ cuboctahedra. There are two shorter (2.45 Å) and two longer (2.58 Å) Cr-Cr bond lengths. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 179.10 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 5.49 eV.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.188 eV/atom above the convex hull.  The formation energy per atom is 0.188 eV/atom.\n\n## CIF File\n<CIF>P1\n5.03616671 5.03616671 8.11254200\n90 90 120\nZr 1 0.33333300 0.66666700 0.06385800\nZr 1 0.66666700 0.33333300 0.56385800\nZr 1 0.66666700 0.33333300 0.93614200\nZr 1 0.33333300 0.66666700 0.43614200\nCr 1 0.00000000 0.00000000 0.00000000\nCr 1 0.00000000 0.00000000 0.50000000\nCr 1 0.83326300 0.16673700 0.25000000\nCr 1 0.83326300 0.66652500 0.25000000\nCr 1 0.33347500 0.16673700 0.25000000\nCr 1 0.16673700 0.83326300 0.75000000\nCr 1 0.16673700 0.33347500 0.75000000\nCr 1 0.66652500 0.83326300 0.75000000</CIF>\n<|im_end|><|endoftext|>",
+      "final_cif": "P1\n5.03616671 5.03616671 8.11254200\n90 90 120\nZr 1 0.33333300 0.66666700 0.06385800\nZr 1 0.66666700 0.33333300 0.56385800\nZr 1 0.66666700 0.33333300 0.93614200\nZr 1 0.33333300 0.66666700 0.43614200\nCr 1 0.00000000 0.00000000 0.00000000\nCr 1 0.00000000 0.00000000 0.50000000\nCr 1 0.83326300 0.16673700 0.25000000\nCr 1 0.83326300 0.66652500 0.25000000\nCr 1 0.33347500 0.16673700 0.25000000\nCr 1 0.16673700 0.83326300 0.75000000\nCr 1 0.16673700 0.33347500 0.75000000\nCr 1 0.66652500 0.83326300 0.75000000",
+      "space_group": {
+        "predicted_number": 194,
+        "predicted_symbol": "P6_3/mmc",
+        "final_cif_number": 194,
+        "final_cif_symbol": "P6_3/mmc",
+        "matched": true
+      },
+      "volume": {
+        "predicted": 179.1,
+        "final_cif": 178.191829,
+        "relative_error_pct": 0.509659,
+        "matched_within_1_pct": true
+      },
+      "site_multiplicities": {
+        "predicted_atoms_per_site_by_element": {
+          "Cr": [
+            2,
+            6
+          ],
+          "Zr": [
+            4
+          ]
+        },
+        "final_cif_atoms_per_site_by_element": {
+          "Cr": [
+            2,
+            6
+          ],
+          "Zr": [
+            4
+          ]
+        },
+        "predicted_num_sites_by_element": {
+          "Cr": 2,
+          "Zr": 1
+        },
+        "final_cif_num_sites_by_element": {
+          "Cr": 2,
+          "Zr": 1
+        },
+        "matched": true
+      },
+      "atom_counts": {
+        "final_cif_atom_count_by_element": {
+          "Cr": 8,
+          "Zr": 4
+        },
+        "final_cif_total_atoms": 12
+      },
+      "bond_lengths": [
+        {
+          "pair": "Cr-Cr",
+          "predicted_mean_angstrom": 2.506,
+          "final_cif_mean_angstrom": 2.506911,
+          "absolute_error_angstrom": 0.000911,
+          "relative_error_pct": 0.036324,
+          "predicted_values_angstrom": [
+            2.47,
+            2.45,
+            2.45,
+            2.58,
+            2.58
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.4957,
+            2.517,
+            2.517,
+            2.517,
+            2.517,
+            2.517,
+            2.517,
+            2.5192,
+            2.5192,
+            2.5192,
+            2.5192,
+            2.5192,
+            2.5192
+          ],
+          "final_cif_first_shell_count": 24,
+          "first_shell_cutoff_angstrom": 2.870097,
+          "matched_within_0_05_angstrom": true
+        },
+        {
+          "pair": "Cr-Zr",
+          "predicted_mean_angstrom": 2.965,
+          "final_cif_mean_angstrom": 2.939366,
+          "absolute_error_angstrom": 0.025634,
+          "relative_error_pct": 0.872109,
+          "predicted_values_angstrom": [
+            2.92,
+            3.01
+          ],
+          "final_cif_first_shell_values_sample": [
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9317,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362,
+            2.9362
+          ],
+          "final_cif_first_shell_count": 48,
+          "first_shell_cutoff_angstrom": 3.371453,
+          "matched_within_0_05_angstrom": true
+        }
+      ],
+      "formation_energy": {
+        "predicted_eV_per_atom": 0.188,
+        "real_from_prompt_eV_per_atom": 0.1884,
+        "absolute_error_eV_per_atom": 0.0004,
+        "matched": true
+      },
+      "energy_above_hull": {
+        "predicted_eV_per_atom": 0.188,
+        "metric_pipeline_eV_per_atom": 0.020772
+      },
+      "fermi_energy": {
+        "predicted_eV": 5.49,
+        "real_eV": null,
+        "note": "The final CIF and conditional+thinking parquet do not contain a real Fermi energy label."
+      },
+      "parquet_metrics": {
+        "extra_args": {
+          "average_of_information": 0.10223492293461917,
+          "sum_of_information": 50.401817006767246,
+          "token_num": 493
+        },
+        "gt": {
+          "comp": "Zr1 Cr2",
+          "mp_id": "mp-1919",
+          "spg": 194
+        },
+        "smact_validity": true,
+        "structure_validity": true,
+        "composition_consistency": true,
+        "spacegroup_consistency": true,
+        "relaxed_structures": "P1\n5.07337861 5.07337842 8.17825558\n90 90 120\nZr 1 0.33333321 0.66666678 0.06206336\nZr 1 0.66666678 0.33333322 0.56206336\nZr 1 0.66666679 0.33333322 0.93793664\nZr 1 0.33333321 0.66666677 0.43793664\nCr 1 -0.00000000 0.00000000 0.00000000\nCr 1 0.00000000 -0.00000000 0.50000000\nCr 1 0.83243682 0.16756317 0.25000000\nCr 1 0.83243674 0.66487283 0.25000000\nCr 1 0.33512721 0.16756329 0.25000000\nCr 1 0.16756318 0.83243682 0.75000000\nCr 1 0.16756328 0.33512719 0.75000000\nCr 1 0.66487278 0.83243671 0.75000000",
+        "energies": -111.55509948730469,
+        "energy_above_hull": 0.02077195939127563,
+        "is_stable": true,
+        "is_novel": false,
+        "is_unique": false,
+        "stable_unique_novel": false
+      },
+      "score": 99.224891,
+      "symmetrized_real_cif": {
+        "generator": "pymatgen",
+        "cif": "# generated using pymatgen\ndata_ZrCr2\n_symmetry_space_group_name_H-M   P6_3/mmc\n_cell_length_a   5.03616671\n_cell_length_b   5.03616671\n_cell_length_c   8.11254200\n_cell_angle_alpha   90.00000000\n_cell_angle_beta   90.00000000\n_cell_angle_gamma   120.00000000\n_symmetry_Int_Tables_number   194\n_chemical_formula_structural   ZrCr2\n_chemical_formula_sum   'Zr4 Cr8'\n_cell_volume   178.19182910\n_cell_formula_units_Z   4\nloop_\n _symmetry_equiv_pos_site_id\n _symmetry_equiv_pos_as_xyz\n  1  'x, y, z'\n  2  '-x, -y, -z'\n  3  'x-y, x, z+1/2'\n  4  '-x+y, -x, -z+1/2'\n  5  '-y, x-y, z'\n  6  'y, -x+y, -z'\n  7  '-x, -y, z+1/2'\n  8  'x, y, -z+1/2'\n  9  '-x+y, -x, z'\n  10  'x-y, x, -z'\n  11  'y, -x+y, z+1/2'\n  12  '-y, x-y, -z+1/2'\n  13  '-y, -x, -z+1/2'\n  14  'y, x, z+1/2'\n  15  '-x, -x+y, -z'\n  16  'x, x-y, z'\n  17  '-x+y, y, -z+1/2'\n  18  'x-y, -y, z+1/2'\n  19  'y, x, -z'\n  20  '-y, -x, z'\n  21  'x, x-y, -z+1/2'\n  22  '-x, -x+y, z+1/2'\n  23  'x-y, -y, -z'\n  24  '-x+y, y, z'\nloop_\n _atom_site_type_symbol\n _atom_site_label\n _atom_site_symmetry_multiplicity\n _atom_site_fract_x\n _atom_site_fract_y\n _atom_site_fract_z\n _atom_site_occupancy\n  Zr  Zr0  4  0.33333333  0.66666667  0.06385800  1\n  Cr  Cr1  6  0.16673700  0.33347400  0.75000000  1\n  Cr  Cr2  2  0.00000000  0.00000000  0.00000000  1\n",
+        "note": "Generated with pymatgen SpacegroupAnalyzer.get_refined_structure() and CifWriter."
+      }
+    }
+  ]
+}

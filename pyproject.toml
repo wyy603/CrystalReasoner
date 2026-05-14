@@ -1,0 +1,32 @@
+[project]
+name = "crysreas"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "verl",
+    "robocrys",
+    "mp_api",
+    "pymatgen",
+    "tyro",
+    "debugpy",
+    "swanlab",
+    "p_tqdm",
+    "icecream",
+    "smact"
+]
+
+[tool.uv.workspace]
+members = ["submodules/verl", "submodules/mattergen"]
+
+[tool.uv.sources]
+verl = { workspace = true }
+mattergen = { workspace = true }
+
+[tool.setuptools]
+packages = ["crysreas"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,467 @@
+[
+  {
+    "mp_id": "mp-1223834",
+    "n_atoms": 8,
+    "prompt": "Below is a description of a bulk material. The chemical formula is Hf2AlSi. The formation energy per atom is -0.6756. The energy above the convex hull is 0.045. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+    "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Hf2AlSi should have the space group I4/mcm (id 140). Hf has 1 sites: one site has 4 atoms. Al has 1 sites: one site has 2 atoms. Si has 1 sites: one site has 2 atoms. Second, consider band gaps. Hf₂AlSi is Khatyrkite-derived structured and crystallizes in the tetragonal I4/mcm space group. Hf is bonded in a 4-coordinate geometry to two equivalent Al and two equivalent Si atoms. Both Hf-Al bond lengths are 2.81 Å. Both Hf-Si bond lengths are 2.74 Å. Al is bonded in a 10-coordinate geometry to eight equivalent Hf and two equivalent Al atoms. Both Al-Al bond lengths are 2.77 Å. Si is bonded in a 10-coordinate geometry to eight equivalent Hf and two equivalent Si atoms. Both Si-Si bond lengths are 2.77 Å. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 121.58 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.045 eV/atom above the convex hull.  The formation energy per atom is -0.676 eV/atom.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 6.14 eV.\n\n## CIF File\n<CIF>P1\n5.53727029 5.53727029 5.53727029\n104.616 104.616 119.477\nHf 1 0.82703500 0.67296500 0.50000000\nHf 1 0.67296500 0.17296500 0.84592900\nHf 1 0.32703500 0.82703500 0.15407100\nHf 1 0.17296500 0.32703500 0.50000000\nAl 1 0.25000000 0.25000000 0.00000000\nAl 1 0.75000000 0.75000000 0.00000000\nSi 1 0.75000000 0.25000000 0.50000000\nSi 1 0.25000000 0.75000000 0.50000000</CIF>\n<|im_end|><|endoftext|>",
+    "ground_truth_response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Hf2AlSi should have the space group Amm2 (id 38). Hf has 2 sites: one site has 1 atoms, one site has 1 atoms. Al has 1 sites: one site has 1 atoms. Si has 1 sites: one site has 1 atoms. Second, consider band gaps. Hf₂AlSi crystallizes in the orthorhombic Amm2 space group. There are two inequivalent Hf sites. In the first Hf site, Hf is bonded in a 7-coordinate geometry to three equivalent Al and four equivalent Si atoms. There is one shorter (2.78 Å) and two longer (2.95 Å) Hf-Al bond lengths. All Hf-Si bond lengths are 2.77 Å. In the second Hf site, Hf is bonded in a 7-coordinate geometry to four equivalent Al and three equivalent Si atoms. All Hf-Al bond lengths are 2.78 Å. There is one shorter (2.77 Å) and two longer (2.96 Å) Hf-Si bond lengths. Al is bonded in a 9-coordinate geometry to seven Hf and two equivalent Si atoms. Both Al-Si bond lengths are 2.48 Å. Si is bonded in a 9-coordinate geometry to seven Hf and two equivalent Al atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 72.96 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.045 eV/atom above the convex hull.  The formation energy per atom is -0.676 eV/atom.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 6.44 eV.\n\n## CIF File\n<CIF>P1\n5.38525543 5.38525543 3.82767800\n90 90 138.906\nHf 1 0.85382100 0.14617900 0.50000000\nHf 1 0.14667000 0.85333000 0.00000000\nAl 1 0.57833700 0.42166300 0.50000000\nSi 1 0.42117200 0.57882800 0.00000000</CIF>\n",
+    "response_ground_truth_similarity": 0.56161728,
+    "response_ground_truth_similarity_rank": "random_1",
+    "response_ground_truth_similarity_subset_size": 128,
+    "selection_method": "random_from_128_unique_mp_id_subset",
+    "selection_seed": 20260505,
+    "consistency_subset_size": 128,
+    "final_cif": "P1\n5.53727029 5.53727029 5.53727029\n104.616 104.616 119.477\nHf 1 0.82703500 0.67296500 0.50000000\nHf 1 0.67296500 0.17296500 0.84592900\nHf 1 0.32703500 0.82703500 0.15407100\nHf 1 0.17296500 0.32703500 0.50000000\nAl 1 0.25000000 0.25000000 0.00000000\nAl 1 0.75000000 0.75000000 0.00000000\nSi 1 0.75000000 0.25000000 0.50000000\nSi 1 0.25000000 0.75000000 0.50000000",
+    "consistency_v2": {
+      "coordination_consistency": [
+        {
+          "absolute_count_difference": 2,
+          "actual_count": 2,
+          "actual_counts_by_center_site_sample": [
+            2,
+            2,
+            2,
+            2
+          ],
+          "center_element": "Hf",
+          "claim_type": "coordinate_geometry",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.48749,
+          "first_shell_min_distance_angstrom": 2.163035,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 4,
+          "source": "Hf is bonded in a 4-coordinate geometry"
+        },
+        {
+          "absolute_count_difference": 0,
+          "actual_count": 10,
+          "actual_counts_by_center_site_sample": [
+            10,
+            10
+          ],
+          "center_element": "Al",
+          "claim_type": "coordinate_geometry",
+          "exact_match": true,
+          "first_shell_cutoff_angstrom": 3.209067,
+          "first_shell_min_distance_angstrom": 2.790493,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 10,
+          "source": "Al is bonded in a 10-coordinate geometry"
+        },
+        {
+          "absolute_count_difference": 6,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4,
+            4
+          ],
+          "center_element": "Si",
+          "claim_type": "coordinate_geometry",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.48749,
+          "first_shell_min_distance_angstrom": 2.163035,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 10,
+          "source": "Si is bonded in a 10-coordinate geometry"
+        }
+      ],
+      "element_pair_presence_consistency": {
+        "matched_pairs": [
+          "Al-Hf",
+          "Hf-Si"
+        ],
+        "mentioned_pairs": [
+          "Al-Hf",
+          "Hf-Si"
+        ],
+        "missing_pairs": [],
+        "pair_presence_precision": 1.0,
+        "present_pairs": [
+          "Al-Al",
+          "Al-Hf",
+          "Al-Si",
+          "Hf-Hf",
+          "Hf-Si",
+          "Si-Si"
+        ]
+      },
+      "volume_consistency": {
+        "absolute_error": 6.358922,
+        "claimed_volume": 121.58,
+        "final_cif_volume": 127.938922,
+        "matched": true,
+        "relative_error_pct": 4.97028
+      }
+    }
+  },
+  {
+    "mp_id": "mp-1218433",
+    "n_atoms": 20,
+    "prompt": "Below is a description of a bulk material. The chemical formula is Sr3PrMn4O12. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+    "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Sr3PrMn4O12 should have the space group Immm (id 71). Since for Sr, 1+2=3, for Pr, 1=1, for Mn, 2+2=4, for O, 2+2+2+2+4=12, 2*(+2)+1*(+2)+1*(+2)+2*(+4)+2*(+3)+2*(-2)+2*(-2)+2*(-2)+2*(-2)+4*(-2)=0, the structure is like this: Sr has 2 sites: one site has 1 atoms, oxidation state +2, one site has 2 atoms, oxidation state +2. Pr has 1 sites: one site has 1 atoms, oxidation state +2. Mn has 2 sites: one site has 2 atoms, oxidation state +4, one site has 2 atoms, oxidation state +3. O has 5 sites: one site has 2 atoms, oxidation state -2, one site has 2 atoms, oxidation state -2, one site has 2 atoms, oxidation state -2, one site has 2 atoms, oxidation state -2, one site has 4 atoms, oxidation state -2. Second, consider band gaps. Sr₃PrMn₄O₁₂ is Orthorhombic Perovskite-derived structured and crystallizes in the orthorhombic Immm space group. There are two inequivalent Sr²⁺ sites. In the first Sr²⁺ site, Sr²⁺ is bonded in a 12-coordinate geometry to twelve O²⁻ atoms. There are a spread of Sr-O bond distances ranging from 2.55-3.05 Å. In the second Sr²⁺ site, Sr²⁺ is bonded in a 12-coordinate geometry to twelve O²⁻ atoms. There are a spread of Sr-O bond distances ranging from 2.53-3.02 Å. Pr²⁺ is bonded in a 12-coordinate geometry to twelve O²⁻ atoms. There are a spread of Pr-O bond distances ranging from 2.53-3.02 Å. Mn³⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with two equivalent MnO₆ octahedra and corners with four equivalent MnO₆ octahedra. The corner-sharing octahedral tilt angles range from 0-23°. There are a spread of Mn-O bond distances ranging from 1.94-2.06 Å. Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share corners with two equivalent MnO₆ octahedra and corners with four equivalent MnO₆ octahedra. The corner-sharing octahedral tilt angles range from 0-23°. There are a spread of Mn-O bond distances ranging from 1.94-2.05 Å. There are five inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to four Sr²⁺, one Pr²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the second O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to four Sr²⁺, one Pr²⁺, one Mn³⁺, and one Mn⁴⁺ atom. In the third O²⁻ site, O²⁻ is bonded in a 5-coordinate geometry to two equivalent Sr²⁺, two equivalent Pr²⁺, and two equivalent Mn³⁺ atoms. In the fourth O²⁻ site, O²⁻ is bonded in a 5-coordinate geometry to two equivalent Sr²⁺, two equivalent Pr²⁺, and two equivalent Mn⁴⁺ atoms. In the fifth O²⁻ site, O²⁻ is bonded in a 2-coordinate geometry to four Sr²⁺, one Pr²⁺, one Mn³⁺, and one Mn⁴⁺ atom. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 236.30 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.020 eV/atom above the convex hull.  The formation energy per atom is -2.708 eV/atom.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 3.62 eV.\n\n## CIF File\n<CIF>P1\n8.22526963 8.22526963 8.22526963\n147.149 104.861 81.0551\nSr 1 0.88698600 0.38698600 0.50000000\nSr 1 0.11301400 0.61301400 0.50000000\nSr 1 0.00000000 0.00000000 0.00000000\nPr 1 0.50000000 0.00000000 0.50000000\nMn 1 0.75055200 0.50000000 0.25055200\nMn 1 0.24944800 0.50000000 0.74944800\nMn 1 0.33269600 0.83269600 0.50000000\nMn 1 0.66730400 0.16730400 0.50000000\nO 1 0.29265200 0.00000000 0.29265200\nO 1 0.70734800 0.00000000 0.70734800\nO 1 0.20778300 0.20778300 0.00000000\nO 1 0.79221700 0.79221700 0.00000000\nO 1 0.45608300 0.69078200 0.76530000\nO 1 0.54391700 0.30921800 0.23470000\nO 1 0.95540000 0.69078200 0.26461800\nO 1 0.04460000 0.30921800 0.73538200\nO 1 0.29637700 0.60439700 0.69197900\nO 1 0.70362300 0.39560300 0.30802100\nO 1 0.20620600 0.39560300 0.80180900\nO 1 0.79379400 0.60439700 0.19819100</CIF>\n<|im_end|><|endoftext|>",
+    "ground_truth_response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Sr3PrMn4O12 should have the space group Im-3m (id 229). Since for Sr, 3=3, for Pr, 1=1, for Mn, 4=4, for O, 12=12, 3*(+2)+1*(+2)+4*(+4)+12*(-2)=0, the structure is like this: Sr has 1 sites: one site has 3 atoms, oxidation state +2. Pr has 1 sites: one site has 1 atoms, oxidation state +2. Mn has 1 sites: one site has 4 atoms, oxidation state +4. O has 1 sites: one site has 12 atoms, oxidation state -2. Second, consider band gaps. Sr₃PrMn₄O₁₂ is (Cubic) Perovskite-derived structured and crystallizes in the cubic Im̅3m space group. Sr²⁺ is bonded to twelve equivalent O²⁻ atoms to form SrO₁₂ cuboctahedra that share corners with four equivalent PrO₁₂ cuboctahedra, corners with eight equivalent SrO₁₂ cuboctahedra, faces with two equivalent PrO₁₂ cuboctahedra, faces with four equivalent SrO₁₂ cuboctahedra, and faces with eight equivalent MnO₆ octahedra. There are eight shorter (2.75 Å) and four longer (2.80 Å) Sr-O bond lengths. Pr²⁺ is bonded to twelve equivalent O²⁻ atoms to form PrO₁₂ cuboctahedra that share corners with twelve equivalent SrO₁₂ cuboctahedra, faces with six equivalent SrO₁₂ cuboctahedra, and faces with eight equivalent MnO₆ octahedra. All Pr-O bond lengths are 2.69 Å. Mn⁴⁺ is bonded to six equivalent O²⁻ atoms to form MnO₆ octahedra that share corners with six equivalent MnO₆ octahedra, faces with two equivalent PrO₁₂ cuboctahedra, and faces with six equivalent SrO₁₂ cuboctahedra. The corner-sharing octahedral tilt angles are 3°. All Mn-O bond lengths are 1.94 Å. O²⁻ is bonded in a distorted linear geometry to three equivalent Sr²⁺, one Pr²⁺, and two equivalent Mn⁴⁺ atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 234.44 is larger than 0.1.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.019 eV/atom above the convex hull.  The formation energy per atom is -2.595 eV/atom.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 3.47 eV.\n\n### Mechanical Properties\nIt exhibits a Bulk Modulus ($K$) of 152.234 GPa, and a Shear Modulus ($G$) of 92.504 GPa.\n\n## CIF File\n<CIF>P1\n6.72794871 6.72794871 6.72794871\n109.471 109.471 109.471\nSr 1 0.50000000 0.50000000 0.00000000\nSr 1 0.00000000 0.50000000 0.50000000\nSr 1 0.50000000 0.00000000 0.50000000\nPr 1 0.00000000 0.00000000 0.00000000\nMn 1 0.00000000 0.00000000 0.50000000\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.50000000 0.00000000 0.00000000\nMn 1 0.00000000 0.50000000 0.00000000\nO 1 0.49036100 0.24518100 0.24518100\nO 1 0.00000000 0.75481900 0.24518100\nO 1 0.00000000 0.24518100 0.75481900\nO 1 0.50963900 0.75481900 0.75481900\nO 1 0.75481900 0.50963900 0.75481900\nO 1 0.24518100 0.00000000 0.75481900\nO 1 0.24518100 0.49036100 0.24518100\nO 1 0.75481900 0.00000000 0.24518100\nO 1 0.75481900 0.75481900 0.50963900\nO 1 0.24518100 0.24518100 0.49036100\nO 1 0.24518100 0.75481900 0.00000000\nO 1 0.75481900 0.24518100 0.00000000</CIF>\n",
+    "response_ground_truth_similarity": 0.27311327,
+    "response_ground_truth_similarity_rank": "random_2",
+    "response_ground_truth_similarity_subset_size": 128,
+    "selection_method": "random_from_128_unique_mp_id_subset",
+    "selection_seed": 20260505,
+    "consistency_subset_size": 128,
+    "final_cif": "P1\n8.22526963 8.22526963 8.22526963\n147.149 104.861 81.0551\nSr 1 0.88698600 0.38698600 0.50000000\nSr 1 0.11301400 0.61301400 0.50000000\nSr 1 0.00000000 0.00000000 0.00000000\nPr 1 0.50000000 0.00000000 0.50000000\nMn 1 0.75055200 0.50000000 0.25055200\nMn 1 0.24944800 0.50000000 0.74944800\nMn 1 0.33269600 0.83269600 0.50000000\nMn 1 0.66730400 0.16730400 0.50000000\nO 1 0.29265200 0.00000000 0.29265200\nO 1 0.70734800 0.00000000 0.70734800\nO 1 0.20778300 0.20778300 0.00000000\nO 1 0.79221700 0.79221700 0.00000000\nO 1 0.45608300 0.69078200 0.76530000\nO 1 0.54391700 0.30921800 0.23470000\nO 1 0.95540000 0.69078200 0.26461800\nO 1 0.04460000 0.30921800 0.73538200\nO 1 0.29637700 0.60439700 0.69197900\nO 1 0.70362300 0.39560300 0.30802100\nO 1 0.20620600 0.39560300 0.80180900\nO 1 0.79379400 0.60439700 0.19819100",
+    "consistency_v2": {
+      "coordination_consistency": [
+        {
+          "absolute_count_difference": 11,
+          "actual_count": 1,
+          "actual_counts_by_center_site_sample": [
+            1,
+            1,
+            0
+          ],
+          "center_element": "Sr",
+          "claim_type": "bonded_to",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.225197,
+          "first_shell_min_distance_angstrom": 1.925197,
+          "neighbor_element": "O",
+          "pair": "O-Sr",
+          "predicted_count": 12,
+          "source": "Sr is bonded in a 12-coordinate geometry to twelve O atoms"
+        },
+        {
+          "absolute_count_difference": 10,
+          "actual_count": 2,
+          "actual_counts_by_center_site_sample": [
+            2
+          ],
+          "center_element": "Pr",
+          "claim_type": "bonded_to",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.391722,
+          "first_shell_min_distance_angstrom": 2.079758,
+          "neighbor_element": "O",
+          "pair": "O-Pr",
+          "predicted_count": 12,
+          "source": "Pr is bonded in a 12-coordinate geometry to twelve O atoms"
+        },
+        {
+          "absolute_count_difference": 4,
+          "actual_count": 2,
+          "actual_counts_by_center_site_sample": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "center_element": "Mn",
+          "claim_type": "bonded_to",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 1.658038,
+          "first_shell_min_distance_angstrom": 1.358038,
+          "neighbor_element": "O",
+          "pair": "Mn-O",
+          "predicted_count": 6,
+          "source": "Mn is bonded to six O atoms"
+        },
+        {
+          "absolute_count_difference": 11,
+          "actual_count": 1,
+          "actual_counts_by_center_site_sample": [
+            1,
+            1,
+            0
+          ],
+          "center_element": "Sr",
+          "claim_type": "coordinate_geometry",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.225197,
+          "first_shell_min_distance_angstrom": 1.925197,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 12,
+          "source": "Sr is bonded in a 12-coordinate geometry"
+        },
+        {
+          "absolute_count_difference": 8,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4
+          ],
+          "center_element": "Pr",
+          "claim_type": "coordinate_geometry",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.391722,
+          "first_shell_min_distance_angstrom": 2.079758,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 12,
+          "source": "Pr is bonded in a 12-coordinate geometry"
+        },
+        {
+          "absolute_count_difference": 2,
+          "actual_count": 0,
+          "actual_counts_by_center_site_sample": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "center_element": "O",
+          "claim_type": "coordinate_geometry",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 1.62593,
+          "first_shell_min_distance_angstrom": 1.32593,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 2,
+          "source": "O is bonded in a 2-coordinate geometry"
+        },
+        {
+          "absolute_count_difference": 5,
+          "actual_count": 0,
+          "actual_counts_by_center_site_sample": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "center_element": "O",
+          "claim_type": "coordinate_geometry",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 1.62593,
+          "first_shell_min_distance_angstrom": 1.32593,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 5,
+          "source": "O is bonded in a 5-coordinate geometry"
+        },
+        {
+          "absolute_count_difference": 4,
+          "actual_count": 2,
+          "actual_counts_by_center_site_sample": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "center_element": "Mn",
+          "claim_type": "polyhedra",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 1.658038,
+          "first_shell_min_distance_angstrom": 1.358038,
+          "neighbor_element": "O",
+          "pair": "Mn-O",
+          "predicted_count": 6,
+          "source": "MnO6 octahedra"
+        }
+      ],
+      "element_pair_presence_consistency": {
+        "matched_pairs": [
+          "Mn-O",
+          "O-Pr",
+          "O-Sr"
+        ],
+        "mentioned_pairs": [
+          "Mn-O",
+          "O-Pr",
+          "O-Sr"
+        ],
+        "missing_pairs": [],
+        "pair_presence_precision": 1.0,
+        "present_pairs": [
+          "Mn-Mn",
+          "Mn-O",
+          "Mn-Pr",
+          "Mn-Sr",
+          "O-O",
+          "O-Pr",
+          "O-Sr",
+          "Pr-Pr",
+          "Pr-Sr",
+          "Sr-Sr"
+        ]
+      },
+      "volume_consistency": {
+        "absolute_error": 53.554261,
+        "claimed_volume": 236.3,
+        "final_cif_volume": 289.854261,
+        "matched": false,
+        "relative_error_pct": 18.476272
+      }
+    }
+  },
+  {
+    "mp_id": "mp-1176451",
+    "n_atoms": 14,
+    "prompt": "Below is a description of a bulk material. The chemical formula is VMn2O6(MnO2)3. The spacegroup number is 12. The energy above the convex hull is 0.0799. The formation energy per atom is -1.8704. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:\n",
+    "response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Mn5VO8 should have the space group C2/m (id 12). Since for Mn, 1+2+2=5, for V, 1=1, for O, 2+2+4=8, 2*(+2)+2*(+3)+1*(+2)+1*(+3)+4*(-2)+2*(-2)+2*(-2)=0, the structure is like this: Mn has 3 sites: one site has 1 atoms, oxidation state +2, one site has 2 atoms, oxidation state +2, one site has 2 atoms, oxidation state +3. V has 1 sites: one site has 1 atoms, oxidation state +3. O has 3 sites: one site has 2 atoms, oxidation state -2, one site has 2 atoms, oxidation state -2, one site has 4 atoms, oxidation state -2. Second, consider band gaps. VMn₂O₆(MnO₂)₃ is trigonal omega-derived structured and crystallizes in the monoclinic C2/m space group. The structure is two-dimensional and consists of one MnO₂ sheet oriented in the (0, 0, 1) direction; one MnO₆ sheet oriented in the (0, 0, 1) direction; and one VMn₂O₆ sheet oriented in the (0, 0, 1) direction. In the MnO₂ sheet, Mn²⁺ is bonded to six equivalent O²⁻ atoms to form edge-sharing MnO₆ octahedra. All Mn-O bond lengths are 2.19 Å. O²⁻ is bonded in a distorted T-shaped geometry to three equivalent Mn²⁺ atoms. In the MnO₆ sheet, Mn²⁺ is bonded in a 3-coordinate geometry to three O²⁻ atoms. All Mn-O bond lengths are 1.92 Å. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted T-shaped geometry to three equivalent Mn²⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a distorted T-shaped geometry to three equivalent Mn²⁺ atoms. In the VMn₂O₆ sheet, V³⁺ is bonded to six equivalent O²⁻ atoms to form VO₆ octahedra that share edges with six equivalent MnO₆ octahedra. All V-O bond lengths are 2.04 Å. Mn³⁺ is bonded in a 3-coordinate geometry to three equivalent O²⁻ atoms. All Mn-O bond lengths are 1.92 Å. O²⁻ is bonded in a distorted T-shaped geometry to one V³⁺ and two equivalent Mn³⁺ atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 173.86 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** This material is classified as a metal, confirmed by its zero band gap and a Fermi energy ($E_F$) of 3.11 eV.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.080 eV/atom above the convex hull.  The formation energy per atom is -1.870 eV/atom.\n\n## CIF File\n<CIF>P1\n4.73280071 5.57719311 6.71271315\n90.1842 89.9968 90.0032\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.00000000 0.50000000 0.00000000\nMn 1 0.50000000 0.50000000 0.00000000\nMn 1 0.00000000 0.00000000 0.50000000\nMn 1 0.50000000 0.00000000 0.00000000\nV 1 0.00000000 0.50000000 0.50000000\nO 1 0.28616900 0.23235500 0.16673200\nO 1 0.71383100 0.76764500 0.83326800\nO 1 0.28620300 0.76776600 0.33314000\nO 1 0.71379700 0.23223400 0.66686000\nO 1 0.70987100 0.73230600 0.33326200\nO 1 0.29012900 0.26769400 0.66673800\nO 1 0.71383800 0.23227100 0.16665200\nO 1 0.28616200 0.76772900 0.83334800</CIF>\n<|im_end|><|endoftext|>",
+    "ground_truth_response": "Let's generate a material report first, according to the given information.\n\n## Material Report:\n\n### Crystal Structure\nFirst, consider space groups and atom numbers. This material Mn5VO12 should have the space group C2/m (id 12). Since for Mn, 1+2+2=5, for V, 1=1, for O, 2+2+4+4=12, 2*(+4)+2*(+4)+1*(+4)+1*(+4)+4*(-2)+4*(-2)+2*(-2)+2*(-2)=0, the structure is like this: Mn has 3 sites: one site has 1 atoms, oxidation state +4, one site has 2 atoms, oxidation state +4, one site has 2 atoms, oxidation state +4. V has 1 sites: one site has 1 atoms, oxidation state +4. O has 4 sites: one site has 2 atoms, oxidation state -2, one site has 2 atoms, oxidation state -2, one site has 4 atoms, oxidation state -2, one site has 4 atoms, oxidation state -2. Second, consider band gaps. VMn₂O₆(MnO₂)₃ is trigonal omega-derived structured and crystallizes in the monoclinic C2/m space group. The structure is two-dimensional and consists of one MnO₂ sheet oriented in the (0, 0, 1) direction and one VMn₂O₆ sheet oriented in the (0, 0, 1) direction. In the MnO₂ sheet, Mn⁴⁺ is bonded to six O²⁻ atoms to form edge-sharing MnO₆ octahedra. There are two shorter (1.94 Å) and four longer (1.95 Å) Mn-O bond lengths. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a distorted trigonal non-coplanar geometry to three equivalent Mn⁴⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a distorted trigonal non-coplanar geometry to three equivalent Mn⁴⁺ atoms. In the VMn₂O₆ sheet, V⁴⁺ is bonded to six O²⁻ atoms to form VO₆ octahedra that share edges with six equivalent MnO₆ octahedra. There are two shorter (1.91 Å) and four longer (1.98 Å) V-O bond lengths. Mn⁴⁺ is bonded to six O²⁻ atoms to form MnO₆ octahedra that share edges with three equivalent VO₆ octahedra and edges with three equivalent MnO₆ octahedra. There are a spread of Mn-O bond distances ranging from 1.92-1.97 Å. There are two inequivalent O²⁻ sites. In the first O²⁻ site, O²⁻ is bonded in a 3-coordinate geometry to one V⁴⁺ and two equivalent Mn⁴⁺ atoms. In the second O²⁻ site, O²⁻ is bonded in a distorted trigonal non-coplanar geometry to one V⁴⁺ and two equivalent Mn⁴⁺ atoms. Third, consider structure validity. The structure is reasonable, because the band lengths are all greater than 0.5, and the structure's volume 212.86 is larger than 0.1.\n\n### Electronic Properties\n**Classification:** It is an semiconductor (narrow/moderate band gap) with a calculated band gap ($E_g$) of 1.104 eV.\n\n### Stability\n**Thermodynamic Status:** It is metastable, lying 0.080 eV/atom above the convex hull.  The formation energy per atom is -1.870 eV/atom.\n\n### Mechanical Properties\nIt exhibits a Bulk Modulus ($K$) of 144.491 GPa, and a Shear Modulus ($G$) of 91.795 GPa.\n\n## CIF File\n<CIF>P1\n5.10128645 5.10128645 9.50076293\n89.9275 89.9275 120.578\nMn 1 0.16670600 0.83329400 0.50000000\nMn 1 0.66770300 0.33229700 0.00000000\nMn 1 0.33229700 0.66770300 0.00000000\nMn 1 0.83329400 0.16670600 0.50000000\nMn 1 0.50000000 0.50000000 0.50000000\nV 1 0.00000000 0.00000000 0.00000000\nO 1 0.33659200 0.99493700 0.10203700\nO 1 0.00506300 0.66340800 0.89796400\nO 1 0.50000700 0.83322200 0.39954000\nO 1 0.83322200 0.50000700 0.39954000\nO 1 0.16677800 0.49999300 0.60046000\nO 1 0.83350600 0.83350600 0.60065000\nO 1 0.49999300 0.16677800 0.60046000\nO 1 0.99493700 0.33659200 0.10203700\nO 1 0.67090900 0.67090900 0.10008600\nO 1 0.66340800 0.00506300 0.89796400\nO 1 0.32909100 0.32909100 0.89991400\nO 1 0.16649400 0.16649400 0.39935000</CIF>\n",
+    "response_ground_truth_similarity": 0.4767689,
+    "response_ground_truth_similarity_rank": "random_3",
+    "response_ground_truth_similarity_subset_size": 128,
+    "selection_method": "random_from_128_unique_mp_id_subset",
+    "selection_seed": 20260505,
+    "consistency_subset_size": 128,
+    "final_cif": "P1\n4.73280071 5.57719311 6.71271315\n90.1842 89.9968 90.0032\nMn 1 0.50000000 0.50000000 0.50000000\nMn 1 0.00000000 0.50000000 0.00000000\nMn 1 0.50000000 0.50000000 0.00000000\nMn 1 0.00000000 0.00000000 0.50000000\nMn 1 0.50000000 0.00000000 0.00000000\nV 1 0.00000000 0.50000000 0.50000000\nO 1 0.28616900 0.23235500 0.16673200\nO 1 0.71383100 0.76764500 0.83326800\nO 1 0.28620300 0.76776600 0.33314000\nO 1 0.71379700 0.23223400 0.66686000\nO 1 0.70987100 0.73230600 0.33326200\nO 1 0.29012900 0.26769400 0.66673800\nO 1 0.71383800 0.23227100 0.16665200\nO 1 0.28616200 0.76772900 0.83334800",
+    "consistency_v2": {
+      "coordination_consistency": [
+        {
+          "absolute_count_difference": 2,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4,
+            0,
+            4,
+            2,
+            4
+          ],
+          "center_element": "Mn",
+          "claim_type": "bonded_to",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.281673,
+          "first_shell_min_distance_angstrom": 1.981673,
+          "neighbor_element": "O",
+          "pair": "Mn-O",
+          "predicted_count": 6,
+          "source": "Mn is bonded to six equivalent O atoms"
+        },
+        {
+          "absolute_count_difference": 1,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4,
+            0,
+            4,
+            2,
+            4
+          ],
+          "center_element": "Mn",
+          "claim_type": "bonded_to",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.281673,
+          "first_shell_min_distance_angstrom": 1.981673,
+          "neighbor_element": "O",
+          "pair": "Mn-O",
+          "predicted_count": 3,
+          "source": "Mn is bonded in a 3-coordinate geometry to three O atoms"
+        },
+        {
+          "absolute_count_difference": 2,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4
+          ],
+          "center_element": "V",
+          "claim_type": "bonded_to",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.526478,
+          "first_shell_min_distance_angstrom": 2.196937,
+          "neighbor_element": "O",
+          "pair": "O-V",
+          "predicted_count": 6,
+          "source": "V is bonded to six equivalent O atoms"
+        },
+        {
+          "absolute_count_difference": 1,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4,
+            0,
+            4,
+            2,
+            4
+          ],
+          "center_element": "Mn",
+          "claim_type": "coordinate_geometry",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.281673,
+          "first_shell_min_distance_angstrom": 1.981673,
+          "neighbor_element": null,
+          "pair": null,
+          "predicted_count": 3,
+          "source": "Mn is bonded in a 3-coordinate geometry"
+        },
+        {
+          "absolute_count_difference": 2,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4,
+            0,
+            4,
+            2,
+            4
+          ],
+          "center_element": "Mn",
+          "claim_type": "polyhedra",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.281673,
+          "first_shell_min_distance_angstrom": 1.981673,
+          "neighbor_element": "O",
+          "pair": "Mn-O",
+          "predicted_count": 6,
+          "source": "MnO6 octahedra"
+        },
+        {
+          "absolute_count_difference": 2,
+          "actual_count": 4,
+          "actual_counts_by_center_site_sample": [
+            4
+          ],
+          "center_element": "V",
+          "claim_type": "polyhedra",
+          "exact_match": false,
+          "first_shell_cutoff_angstrom": 2.526478,
+          "first_shell_min_distance_angstrom": 2.196937,
+          "neighbor_element": "O",
+          "pair": "O-V",
+          "predicted_count": 6,
+          "source": "VO6 octahedra"
+        }
+      ],
+      "element_pair_presence_consistency": {
+        "matched_pairs": [
+          "Mn-O",
+          "O-V"
+        ],
+        "mentioned_pairs": [
+          "Mn-O",
+          "O-V"
+        ],
+        "missing_pairs": [],
+        "pair_presence_precision": 1.0,
+        "present_pairs": [
+          "Mn-O",
+          "Mn-V",
+          "O-O",
+          "O-V",
+          "V-V"
+        ]
+      },
+      "volume_consistency": {
+        "absolute_error": 3.326138,
+        "claimed_volume": 173.86,
+        "final_cif_volume": 177.186138,
+        "matched": true,
+        "relative_error_pct": 1.8772
+      }
+    }
+  }
+]

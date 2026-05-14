@@ -1,0 +1,83 @@
+Before discussing generation, one must understand the constraints of the medium. Unlike organic molecules, which are discrete graphs, crystals are **periodic arrangements** that extend infinitely in 3D space.
+
+The organization of a crystal is governed by its symmetry. There are **230 unique Space Groups** that describe the possible ways atoms can be arranged in a repeating lattice. These symmetries include:
+* **Translational Symmetry:** The core repetition of the unit cell.
+* **Point Group Symmetry:** Rotations, reflections, and inversions within the cell.
+
+A crystal structure is mathematically defined by a tuple $(L, A, X)$:
+* **Lattice ($L$):** A $3 \times 3$ matrix representing the vectors that define the unit cell.
+* **Atomic Species ($A$):** The types of atoms present (represented by atomic numbers).
+* **Coordinates ($X$):** The fractional positions of each atom within the lattice, typically normalized between $[0, 1]$.
+
+A "valid" crystal must reside at a local minimum of the **Gibbs Free Energy** surface. Traditionally, this is calculated using **Density Functional Theory (DFT)**, which solves a simplified version of the Schrödinger equation.
+$$E_{tot} = \min_{\psi} \langle \psi | \hat{H} | \psi \rangle$$
+Generative models aim to bypass or accelerate the exploration of this high-dimensional, rugged energy landscape.
+
+Before deep learning, researchers relied on:
+* **Random Sampling:** Creating random arrangements and relaxing them via DFT.
+* **Evolutionary Algorithms (EA):** Tools like **USPEX** or **CALYPSO** use "survival of the fittest" logic, where structures are mutated and crossed over to find the global energy minimum.
+* **Ab Initio Random Structure Searching (AIRSS):** A high-throughput approach relying on the sheer volume of random starts.
+
+While not "generative" in the sense of creating new coordinates, MLIPs (like DeepMD or MACE) replaced slow DFT calculations with neural networks, allowing for much faster relaxation of generated structures.
+
+The core challenge in crystal generation is **Equivariance**. The model must recognize that rotating a crystal or shifting its origin does not change its physical properties.
+
+Early attempts used Variational Autoencoders (VAEs) and GANs. 
+* **CDVAE (Crystal Diffusion VAE):** One of the first models to successfully generate the lattice and atomic positions simultaneously by treating the lattice as a continuous variable and the atoms as points in a periodic box.
+
+Diffusion models (like **DiffCSP**) have recently set new benchmarks. They work by:
+1.  **Forward Process:** Gradually adding Gaussian noise to the atomic positions and lattice vectors until they become a random distribution.
+2.  **Reverse Process:** Training a neural network to "denoise" the structure, effectively learning the gradients of the crystal's stability distribution.
+
+A surprising recent trend involves treating crystal structures as "text." By representing the unit cell as a **Crystallographic Information File (CIF)**, researchers have fine-tuned LLMs (like GPT variants or Llama) to "predict the next token" in a structure file. This allows the model to learn the "grammar" of chemistry—which elements "like" to be near each other and in what symmetries.
+Crystals are multi-scale: atomic bonds are measured in Angstroms ($\text{\AA}$), but the properties we care about (like elasticity or conductivity) emerge from the macroscale arrangement. Bridging this gap remains a significant challenge for generative models.
+
+The ultimate goal is not just to generate *any* stable crystal, but to generate one with **target properties** (e.g., "Generate a material with a bandgap of $1.5 \text{ eV}$"). This requires **Inverse Design**, where the property is used as a "prompt" or a guide for the generative process.
+
+As the field grows, standardized benchmarks like **MatBench Discovery** are essential to evaluate whether generated structures are truly "novel" or just slight variations of known minerals in the **Materials Project** or **ICSD** databases.
+
+Crystal structure generation is moving from a descriptive science to a prescriptive one. By combining the rigorous physics of symmetry and thermodynamics with the expressive power of Diffusion and Transformers, we are accelerating the discovery of materials that will define the next century—from solid-state batteries to carbon-capture frameworks.
+
+The transition from $O(N^3)$ DFT calculations to $O(1)$ generative inference marks a paradigm shift in how we interact with the building blocks of the physical world.
+
+Before discussing generation, one must understand the constraints of the medium. Unlike organic molecules, which are discrete graphs, crystals are **periodic arrangements** that extend infinitely in 3D space.
+
+The organization of a crystal is governed by its symmetry. There are **230 unique Space Groups** that describe the possible ways atoms can be arranged in a repeating lattice. These symmetries include:
+* **Translational Symmetry:** The core repetition of the unit cell.
+* **Point Group Symmetry:** Rotations, reflections, and inversions within the cell.
+
+A crystal structure is mathematically defined by a tuple $(L, A, X)$:
+* **Lattice ($L$):** A $3 \times 3$ matrix representing the vectors that define the unit cell.
+* **Atomic Species ($A$):** The types of atoms present (represented by atomic numbers).
+* **Coordinates ($X$):** The fractional positions of each atom within the lattice, typically normalized between $[0, 1]$.
+
+A "valid" crystal must reside at a local minimum of the **Gibbs Free Energy** surface. Traditionally, this is calculated using **Density Functional Theory (DFT)**, which solves a simplified version of the Schrödinger equation.
+$$E_{tot} = \min_{\psi} \langle \psi | \hat{H} | \psi \rangle$$
+Generative models aim to bypass or accelerate the exploration of this high-dimensional, rugged energy landscape.
+
+Before deep learning, researchers relied on:
+* **Random Sampling:** Creating random arrangements and relaxing them via DFT.
+* **Evolutionary Algorithms (EA):** Tools like **USPEX** or **CALYPSO** use "survival of the fittest" logic, where structures are mutated and crossed over to find the global energy minimum.
+* **Ab Initio Random Structure Searching (AIRSS):** A high-throughput approach relying on the sheer volume of random starts.
+
+While not "generative" in the sense of creating new coordinates, MLIPs (like DeepMD or MACE) replaced slow DFT calculations with neural networks, allowing for much faster relaxation of generated structures.
+
+The core challenge in crystal generation is **Equivariance**. The model must recognize that rotating a crystal or shifting its origin does not change its physical properties.
+
+Early attempts used Variational Autoencoders (VAEs) and GANs. 
+* **CDVAE (Crystal Diffusion VAE):** One of the first models to successfully generate the lattice and atomic positions simultaneously by treating the lattice as a continuous variable and the atoms as points in a periodic box.
+
+Diffusion models (like **DiffCSP**) have recently set new benchmarks. They work by:
+1.  **Forward Process:** Gradually adding Gaussian noise to the atomic positions and lattice vectors until they become a random distribution.
+2.  **Reverse Process:** Training a neural network to "denoise" the structure, effectively learning the gradients of the crystal's stability distribution.
+
+A surprising recent trend involves treating crystal structures as "text." By representing the unit cell as a **Crystallographic Information File (CIF)**, researchers have fine-tuned LLMs (like GPT variants or Llama) to "predict the next token" in a structure file. This allows the model to learn the "grammar" of chemistry—which elements "like" to be near each other and in what symmetries.
+Crystals are multi-scale: atomic bonds are measured in Angstroms ($\text{\AA}$), but the properties we care about (like elasticity or conductivity) emerge from the macroscale arrangement. Bridging this gap remains a significant challenge for generative models.
+
+The ultimate goal is not just to generate *any* stable crystal, but to generate one with **target properties** (e.g., "Generate a material with a bandgap of $1.5 \text{ eV}$"). This requires **Inverse Design**, where the property is used as a "prompt" or a guide for the generative process.
+
+As the field grows, standardized benchmarks like **MatBench Discovery** are essential to evaluate whether generated structures are truly "novel" or just slight variations of known minerals in the **Materials Project** or **ICSD** databases.
+
+Crystal structure generation is moving from a descriptive science to a prescriptive one. By combining the rigorous physics of symmetry and thermodynamics with the expressive power of Diffusion and Transformers, we are accelerating the discovery of materials that will define the next century—from solid-state batteries to carbon-capture frameworks.
+
+The transition from $O(N^3)$ DFT calculations to $O(1)$ generative inference marks a paradigm shift in how we interact with the building blocks of the physical world.
