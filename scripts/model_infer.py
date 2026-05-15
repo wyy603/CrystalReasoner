@@ -9,18 +9,14 @@ model = AutoModelForCausalLM.from_pretrained(
     model_id,
     config=config,
     torch_dtype=torch.bfloat16,
-    #attn_implementation="flash_attention_2",
     trust_remote_code=True
 )
 
-print(model.device)
-
 messages = [
-    {"role": "user", "content": "Below is a description of a bulk material. The chemical formula is TiMoB2. The bulk_modulus is in [150, 300]. The shear_modulus is greater or equal than 200. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:"},
+    {"role": "user", "content": "Below is a description of a bulk material. The chemical formula is NaCl. The bulk_modulus is about 100 GPa. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:"},
 ]
 
 text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-print(text)
 model_inputs = tokenizer(text, return_tensors="pt").to(model.device)
 
 generated_ids = model.generate(
@@ -31,4 +27,24 @@ generated_ids = model.generate(
     use_cache=True,
 )
 generated_text = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+
+def get_structure(cif_str: str):
+    from pymatgen.core import Lattice, Structure
+
+    lines = cif_str.strip().split('\n')
+    lengths = list(map(float, lines[0].split()))
+    angles = list(map(float, lines[1].split()))
+    lattice = Lattice.from_parameters(*lengths, *angles)
+
+    species = []
+    coords = []
+    for line in lines[2:]:
+        parts = line.split()
+        species.append(parts[0])
+        coords.append([float(parts[2]), float(parts[3]), float(parts[4])])
+
+    structure = Structure(lattice, species, coords)
+    return structure
+
 print(generated_text)
+print(get_structure(generated_text))
