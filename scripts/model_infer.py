@@ -25,7 +25,10 @@ model_inputs = tokenizer(text, return_tensors="pt").to(model.device)
 
 generated_ids = model.generate(
     model_inputs.input_ids,
-    max_new_tokens=2048
+    max_new_tokens=2048,
+    pad_token_id=tokenizer.pad_token_id,
+    eos_token_id=tokenizer.eos_token_id,
+    use_cache=True,
 )
 generated_text = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
 print(generated_text)
