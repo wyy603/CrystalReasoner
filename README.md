@@ -156,37 +156,6 @@ Representative registered jobs include:
 
 See [`doc/TRAINING.md`](doc/TRAINING.md) for training details.
 
-## Figures and Paper Assets
-
-Paper figures and result summaries are generated from `crysreas/experiment/`.
-
-```bash
-# Generate .csv comparison for different experiments
-python crysreas/experiment/make_graph.py
-
-# Make figures from parquets in checkpoints_merged/
-python crysreas/experiment/assets/build_assets.py
-python crysreas/experiment/assets/build_e_hull.py
-```
-
-The DFT energy-above-hull analysis used by the paper is stored under `crysreas/experiment/DFT_new`.
-
-## Repository Layout
-
-```text
-crysreas/
-  data/              Data download, split generation, and dataset utilities.
-  trainer/           SFT, RL/GRPO, generation, and Verl-based training entrypoints.
-  metric_process/    DataFrame-based metric pipeline used for evaluation.
-  mlip/              MatterSim/MatterGen-backed relaxation, energy, elastic, and coefficient of thermal expansion (CTE) utilities.
-  experiment/        Plotting, result export, and paper-figure generation scripts.
-  utils/             Crystal serialization, parsing, and basic evaluation helpers.
-scripts/
-  run.py             Unified experiment runner.
-  config.py          Registry of SFT, RL, generation, merge, and metric jobs.
-doc/                 Installation, dataset, metric, and experiment documentation.
-```
-
 ## Metrics
 
 The preferred evaluation path is `crysreas.metric_process`. `python scripts/run.py run_metric ` is a copy of this command. It is a DataFrame-based pipeline with named metrics, cache-like `ensure_*` helpers, optional multiprocessing for CPU metrics, and serialization helpers for Parquet files containing structures.
