@@ -206,23 +206,21 @@ Use [`doc/METRICS.md`](doc/METRICS.md) as the source of truth for available metr
 
 After training, the checkpoint is genreated in `checkpoints/`. After merging, it is in `checkpoints_merged/`.
 
-Precomputed experiment checkpoints and outputs are available from NYU Box:
+Precomputed experiment checkpoints and outputs are available at huggingface:
 
-https://nyu.app.box.com/folder/361279226287?s=8ufevmo5jlhj4gfwjgzgowo56mftj87g
-
-| Folder name | Model name in the paper | Notes |
+| Folder name in `checkpoints_merged` | Model Name | Notes |
 | --- | --- | --- |
-| `no_thinking` | CrysReas-Base | SFT baseline without thinking traces. |
-| `thinking` | CrysReas-Thinking | SFT baseline with thinking traces. |
-| `rl_no_thinking` | CrysReas-RL | RL from the no-thinking baseline. |
-| `rl_thinking_mix` | CrysReas | Main RL model from the thinking baseline. |
-| `thinking_only_validity` | RL with no energy term | Validity-focused ablation. |
-| `thinking_only_energy` | RL with no validity term | Energy-focused ablation. |
-| `spacegroup_thinking` | CrysReas-space-group | Space-group property specialist. |
-| `rl_elastic_thinking_new` | CrysReas-ElasticProperties | Elastic-property specialist. |
-| `rl_cte_thinking` | CrysReas-ThermalExpansion | Thermal-expansion specialist. |
-| `crystaltextllm` | CrystalTextLLM-style baseline | Prior-work text format reimplementation. |
-| `plaid_wyckoff` | PLaID++ Wyckoff-style baseline | Prior-work Wyckoff representation reimplementation. |
+| `no_thinking` | [🤗 CrysReas-Base](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Base) | SFT baseline without thinking traces. |
+| `thinking` | [🤗 CrysReas-Thinking](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Thinking) | SFT baseline with thinking traces. |
+| `rl_no_thinking` | [🤗 CrysReas-RL](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-RL) | RL from the no-thinking baseline. |
+| `rl_thinking_mix` | [🤗 CrysReas](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas) | Main RL model from the thinking baseline. |
+| `thinking_only_validity` | [🤗 CrysReas-NoEnergyTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoEnergyTerm) | Validity-focused ablation (no energy term). |
+| `thinking_only_energy` | [🤗 CrysReas-NoValidityTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoValidityTerm) | Energy-focused ablation (no validity term). |
+| `spacegroup_thinking` | [🤗 CrysReas-SpaceGroup](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-SpaceGroup) | Space-group property specialist. |
+| `rl_elastic_thinking_new` | [🤗 CrysReas-Elastic](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Elastic) | Elastic-property specialist. |
+| `rl_cte_thinking` | [🤗 CrysReas-ThermalExpansion](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ThermalExpansion) | Thermal-expansion specialist. |
+| `crystaltextllm` | [🤗 CrysReas-CrystalTextLLM](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-CrystalTextLLM) | Prior-work text format reimplementation. |
+| `plaid_wyckoff` | [🤗 CrysReas-PLaIDWyckoff](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-PLaIDWyckoff) | Prior-work Wyckoff representation reimplementation. | 去掉第一列 这个表格为准
 
 See more in [`doc/CHECKPOINTS.md`](doc/CHECKPOINTS.md).
 
