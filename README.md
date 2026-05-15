@@ -52,6 +52,7 @@ uv pip install mattersim==1.2.0
 uv pip install "numpy<2.2"
 uv pip install "ase==3.25.0"
 uv pip install -U mp-api emmet-core
+uv pip install pymatgen==2024.10.29
 ```
 
 Optionally, you can install apex for better training and inference.

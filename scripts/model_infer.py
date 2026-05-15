@@ -26,12 +26,21 @@ generated_ids = model.generate(
     eos_token_id=tokenizer.eos_token_id,
     use_cache=True,
 )
-generated_text = tokenizer.batch_decode(generated_ids, skip_special_tokens=True)[0]
+generated_text = tokenizer.batch_decode(generated_ids, skip_special_tokens=False)[0]
+print(generated_text)
 
-def get_structure(cif_str: str):
+def get_structure(generated_text: str):
+    import re
     from pymatgen.core import Lattice, Structure
 
-    lines = cif_str.strip().split('\n')
+    cif_match = re.search(r'<CIF>(.*?)</CIF>', generated_text, re.DOTALL)
+    if cif_match:
+        generated_text = cif_match.group(1)
+
+    lines = [line.strip() for line in generated_text.strip().split('\n') if line.strip()]
+    if lines and not re.match(r'^[-+0-9.eE\s]+$', lines[0]):
+        lines = lines[1:]
+
     lengths = list(map(float, lines[0].split()))
     angles = list(map(float, lines[1].split()))
     lattice = Lattice.from_parameters(*lengths, *angles)
@@ -46,5 +55,4 @@ def get_structure(cif_str: str):
     structure = Structure(lattice, species, coords)
     return structure
 
-print(generated_text)
 print(get_structure(generated_text))
