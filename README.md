@@ -10,8 +10,18 @@ CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal
 [![Paper](https://img.shields.io/badge/arXiv-2605.14344-blue.svg?logo=arxiv&logoColor=white.svg)](https://arxiv.org/abs/2605.14344)
 </h4>
 
-
 ![](outline.png)
+
+## Resources
+
+| Model Name | Notes |
+| --- | --- |
+| [🤗 Qwen2.5-3B-CrysReas](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas) | Our model with both SFT and RL optimization. |
+| [🤗 Qwen2.5-3B-CrysReas-SpaceGroup](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-SpaceGroup) | Space-group property specialist. |
+| [🤗 Qwen2.5-3B-CrysReas-ElasticProperties](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ElasticProperties) | Elastic-property specialist. |
+| [🤗 Qwen2.5-3B-CrysReas-ThermalExpansion](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ThermalExpansion) | Thermal-expansion specialist. |
+
+The first model is our main model. The subsequent models were optimized for property conditioning. See usage in the huggingface pages.
 
 ## Installation
 
@@ -96,7 +106,7 @@ curl -L -o submodules/mattergen/data-release/alex-mp/reference_MP2020correction.
   https://github.com/microsoft/mattergen/raw/main/data-release/alex-mp/reference_MP2020correction.gz
 ```
 
-## Usage
+## Training, Generation, and Validation
 
 [`scripts/run.py`](scripts/run.py) is the main entrypoint. It reads experiment definitions from [`scripts/config.py`](scripts/config.py).
 
@@ -213,7 +223,7 @@ Precomputed experiment checkpoints are available at huggingface, will the sample
 | `no_thinking` | [🤗 Qwen2.5-3B-CrysReas-Base](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Base) | SFT baseline without thinking traces. |
 | `thinking` | [🤗 Qwen2.5-3B-CrysReas-Thinking](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Thinking) | SFT baseline with thinking traces. |
 | `rl_no_thinking` | [🤗 Qwen2.5-3B-CrysReas-RL](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-RL) | RL from the no-thinking baseline. |
-| `rl_thinking_mix` | [🤗 Qwen2.5-3B-CrysReas](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas) | Main RL model from the thinking baseline. |
+| `rl_thinking_mix` | [🤗 Qwen2.5-3B-CrysReas](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas) | Our model with both SFT and RL optimization. |
 | `thinking_only_validity` | [🤗 Qwen2.5-3B-CrysReas-NoEnergyTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoEnergyTerm) | Validity-focused ablation (no energy term). |
 | `thinking_only_energy` | [🤗 Qwen2.5-3B-CrysReas-NoValidityTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoValidityTerm) | Energy-focused ablation (no validity term). |
 | `spacegroup_thinking` | [🤗 Qwen2.5-3B-CrysReas-SpaceGroup](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-SpaceGroup) | Space-group property specialist. |
