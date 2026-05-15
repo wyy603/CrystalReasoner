@@ -4,6 +4,7 @@ CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal
 
 <h4 align="center">
   
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/wyy603/CrystalReasoner/)
 [![Website](https://img.shields.io/badge/🌐-Project_Website-2ea44f?style=flat-square&logoColor=white)](https://crystalreasoner.github.io/)
 [![Dataset](https://img.shields.io/badge/📊-Checkpoints-005B99?style=flat-square)](https://nyu.app.box.com/folder/361279226287)
 [![Paper](https://img.shields.io/badge/arXiv-2605.14344-blue.svg?logo=arxiv&logoColor=white.svg)](https://arxiv.org/abs/2605.14344)
