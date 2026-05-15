@@ -206,21 +206,21 @@ Use [`doc/METRICS.md`](doc/METRICS.md) as the source of truth for available metr
 
 After training, the checkpoint is genreated in `checkpoints/`. After merging, it is in `checkpoints_merged/`.
 
-Precomputed experiment checkpoints and outputs are available at huggingface:
+Precomputed experiment checkpoints are available at huggingface, will the sample outputs are available in the `checkpoints_merged` folder of this repo. Below is the relation between the parquets in `checkpoints_merged` folder and the huggingface models:
 
 | Folder name in `checkpoints_merged` | Model Name | Notes |
 | --- | --- | --- |
-| `no_thinking` | [🤗 CrysReas-Base](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Base) | SFT baseline without thinking traces. |
-| `thinking` | [🤗 CrysReas-Thinking](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Thinking) | SFT baseline with thinking traces. |
-| `rl_no_thinking` | [🤗 CrysReas-RL](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-RL) | RL from the no-thinking baseline. |
-| `rl_thinking_mix` | [🤗 CrysReas](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas) | Main RL model from the thinking baseline. |
-| `thinking_only_validity` | [🤗 CrysReas-NoEnergyTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoEnergyTerm) | Validity-focused ablation (no energy term). |
-| `thinking_only_energy` | [🤗 CrysReas-NoValidityTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoValidityTerm) | Energy-focused ablation (no validity term). |
-| `spacegroup_thinking` | [🤗 CrysReas-SpaceGroup](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-SpaceGroup) | Space-group property specialist. |
-| `rl_elastic_thinking_new` | [🤗 CrysReas-Elastic](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Elastic) | Elastic-property specialist. |
-| `rl_cte_thinking` | [🤗 CrysReas-ThermalExpansion](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ThermalExpansion) | Thermal-expansion specialist. |
-| `crystaltextllm` | [🤗 CrysReas-CrystalTextLLM](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-CrystalTextLLM) | Prior-work text format reimplementation. |
-| `plaid_wyckoff` | [🤗 CrysReas-PLaIDWyckoff](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-PLaIDWyckoff) | Prior-work Wyckoff representation reimplementation. | 去掉第一列 这个表格为准
+| `no_thinking` | [🤗 Qwen2.5-3B-CrysReas-Base](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Base) | SFT baseline without thinking traces. |
+| `thinking` | [🤗 Qwen2.5-3B-CrysReas-Thinking](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Thinking) | SFT baseline with thinking traces. |
+| `rl_no_thinking` | [🤗 Qwen2.5-3B-CrysReas-RL](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-RL) | RL from the no-thinking baseline. |
+| `rl_thinking_mix` | [🤗 Qwen2.5-3B-CrysReas](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas) | Main RL model from the thinking baseline. |
+| `thinking_only_validity` | [🤗 Qwen2.5-3B-CrysReas-NoEnergyTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoEnergyTerm) | Validity-focused ablation (no energy term). |
+| `thinking_only_energy` | [🤗 Qwen2.5-3B-CrysReas-NoValidityTerm](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-NoValidityTerm) | Energy-focused ablation (no validity term). |
+| `spacegroup_thinking` | [🤗 Qwen2.5-3B-CrysReas-SpaceGroup](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-SpaceGroup) | Space-group property specialist. |
+| `rl_elastic_thinking_new` | [🤗 Qwen2.5-3B-CrysReas-Elastic](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-Elastic) | Elastic-property specialist. |
+| `rl_cte_thinking` | [🤗 Qwen2.5-3B-CrysReas-ThermalExpansion](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ThermalExpansion) | Thermal-expansion specialist. |
+| `crystaltextllm` | [🤗 Qwen2.5-3B-CrysReas-CrystalTextLLM](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-CrystalTextLLM) | Prior-work text format reimplementation. |
+| `plaid_wyckoff` | [🤗 Qwen2.5-3B-CrysReas-PLaIDWyckoff](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-PLaIDWyckoff) | Prior-work Wyckoff representation reimplementation. |
 
 See more in [`doc/CHECKPOINTS.md`](doc/CHECKPOINTS.md).
 
@@ -234,3 +234,17 @@ The default configuration assumes:
 - At least 4 CPUs cores for typical training and evaluation jobs.
 
 Some registered jobs request more CPU memory and CPU cores in [`scripts/config.py`](scripts/config.py), especially elastic and CTE tasks.
+
+## Citation
+
+If you find our work useful, please cite:
+
+```
+@article{wu2026crysreas,
+  title={CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation},
+  author={Yuyang Wu and Stefano Falletta and Delia McGrath and Sherry Yang},
+  year={2026},
+  journal={arXiv preprint arXiv:2605.14344},
+  url={https://arxiv.org/abs/2605.14344}
+}
+```

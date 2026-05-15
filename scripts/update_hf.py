@@ -22,7 +22,7 @@ VARIANT_NAMES = {
     "no_thinking": "Base",
     "thinking": "Thinking",
     "rl_no_thinking": "RL",
-    "rl_thinking_mix": "Main",
+    "rl_thinking_mix": "",
     "thinking_only_validity": "NoEnergyTerm",
     "thinking_only_energy": "NoValidityTerm",
     "spacegroup_thinking": "SpaceGroup",
