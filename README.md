@@ -1,4 +1,7 @@
-# CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation
+<div align="center">
+<h1>CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation<br>
+</h1>
+</div>
 
 CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal structures from natural language instructions. It uses supervised fine-tuning (SFT) to teach crystal-structure generation, thinking traces to introduce crystallographic and physical priors before coordinates, and reinforcement learning (RL) with verifiable rewards to improve validity, stability, and property conditioning. Please see our work at [crystalreasoner.github.io](https://crystalreasoner.github.io/).
 
