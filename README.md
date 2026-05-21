@@ -15,7 +15,7 @@ CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal
 
 ![](outline.png)
 
-## Resources
+## 🔗 Resources
 
 | Model Name | Notes |
 | --- | --- |
@@ -26,7 +26,7 @@ CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal
 
 The first model is our main model. The subsequent models were optimized for property conditioning. See how to use them to inference in the huggingface pages.
 
-## Installation
+## ⚙️ Installation
 
 ### Python Environment
 
@@ -94,7 +94,7 @@ curl -L -o submodules/mattergen/data-release/alex-mp/reference_MP2020correction.
   https://github.com/microsoft/mattergen/raw/main/data-release/alex-mp/reference_MP2020correction.gz
 ```
 
-## Training, Generation, and Validation
+## 🚀 Training, Generation, and Validation
 
 You can follow these instructions to recreate our checkpoints and run our experiments.
 
@@ -146,7 +146,7 @@ Representative registered jobs include:
 
 See [`doc/TRAINING.md`](doc/TRAINING.md) for training details.
 
-## Metrics
+## 📊 Metrics
 
 The preferred evaluation path is `crysreas.metric_process`. `python scripts/run.py run_metric ` is a copy of this command. It is a DataFrame-based pipeline with named metrics, cache-like `ensure_*` helpers, optional multiprocessing for CPU metrics, and serialization helpers for Parquet files containing structures.
 
@@ -171,7 +171,7 @@ Important metric groups include:
 
 Use [`doc/METRICS.md`](doc/METRICS.md) as the source of truth for available metrics, column dependencies, prompt-type configuration, multiprocessing behavior, and Parquet structure serialization.
 
-## Checkpoints and Results
+## 🤗 Checkpoints and Results
 
 After training, the checkpoint is genreated in `checkpoints/`. After merging, it is in `checkpoints_merged/`.
 
@@ -193,7 +193,7 @@ Precomputed experiment checkpoints are available at huggingface, will the sample
 
 See more in [`doc/CHECKPOINTS.md`](doc/CHECKPOINTS.md).
 
-## Hardware Notes
+## 🖥️ Hardware Notes
 
 The default configuration assumes:
 
@@ -204,7 +204,7 @@ The default configuration assumes:
 
 Some registered jobs request more CPU memory and CPU cores in [`scripts/config.py`](scripts/config.py), especially elastic and CTE tasks.
 
-## Citation
+## 📚 Citation
 
 If you find our work useful, please cite:
 

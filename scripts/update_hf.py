@@ -29,7 +29,7 @@ VARIANT_NAMES = {
     # "rl_elastic_thinking_new": "ElasticProperties",
     # "rl_cte_thinking": "ThermalExpansion",
     "plaid_wyckoff": "PLaIDWyckoff",
-    "crystaltextllm": "CrystalTextLLM",
+    #"crystaltextllm": "CrystalTextLLM",
 }
 
 
