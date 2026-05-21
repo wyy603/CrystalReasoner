@@ -24,7 +24,7 @@ CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal
 | [🤗 Qwen2.5-3B-CrysReas-ElasticProperties](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ElasticProperties) | Elastic-property specialist. |
 | [🤗 Qwen2.5-3B-CrysReas-ThermalExpansion](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ThermalExpansion) | Thermal-expansion specialist. |
 
-The first model is our main model. The subsequent models were optimized for property conditioning. See usage in the huggingface pages.
+The first model is our main model. The subsequent models were optimized for property conditioning. See how to use them to inference in the huggingface pages.
 
 ## Installation
 
@@ -81,24 +81,9 @@ APEX_CPP_EXT=1 APEX_CUDA_EXT=1 pip install -v --no-build-isolation .
 
 ### Dataset Preparation
 
-We constructed a shelve database from Materials Project under `assets/MP/` which is not in the github repo. To generate it, please follow the instructions below.
+Please download `assets/MP/MP_shelve.parquet` via Github LFS (`git lfs pull`), and convert it to python `shelve` dataset by `python scripts/parquet_to_shelve.py`, which contains all the data we use in training and inference as ground truth.
 
-1. Set the environment variable `MP_API_KEY` (api key of Materials Project). Notably, you can write `.env` file in the project folder to do this.
-
-2. Download the Materials Project shelve database:
-
-```bash
-python -m crysreas.data.download --args.download_type summary --args.add_new
-python -m crysreas.data.download --args.download_type robocrys
-```
-
-3. Insert MLIP-calculated properties (elasticity, thermal expansion) as ground truth:
-
-```bash
-python -m crysreas.data.mlip.insert_properties
-```
-
-See [`doc/DATASET.md`](doc/DATASET.md) to understand how the physical properties are calculated, and how the split files for different experiments are generated (as these files are already in github repo, it's optional for you to reproduce them). See [`doc/METRICS.md`](doc/METRICS.md) for the metric names and required inputs.
+See [`doc/DATASET.md`](doc/DATASET.md) to understand how this dataset is created from Materials Project. See [`doc/METRICS.md`](doc/METRICS.md) for the metric names and required inputs.
 
 ### MP2020Correction
 
@@ -110,6 +95,8 @@ curl -L -o submodules/mattergen/data-release/alex-mp/reference_MP2020correction.
 ```
 
 ## Training, Generation, and Validation
+
+You can follow these instructions to recreate our checkpoints and run our experiments.
 
 [`scripts/run.py`](scripts/run.py) is the main entrypoint. It reads experiment definitions from [`scripts/config.py`](scripts/config.py).
 

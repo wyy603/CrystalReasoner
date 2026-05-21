@@ -25,7 +25,6 @@ def electrical_info_prompt(elem):
 def stability_status_prompt(elem):
     is_stable = elem.get("is_stable", False)
     energy_above_hull = elem.get("energy_above_hull")
-    decomposition_list = elem.get("decomposes_to")
     formation_energy = elem.get("formation_energy_per_atom")
 
     stability_status = ""

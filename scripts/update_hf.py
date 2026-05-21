@@ -19,15 +19,17 @@ README_PATH = Path("README.md")
 # Stable Hub suffixes for models listed in README.md. The README table remains
 # the source of truth for which checkpoint folders are uploaded.
 VARIANT_NAMES = {
-    "no_thinking": "Base",
-    "thinking": "Thinking",
-    "rl_no_thinking": "RL",
-    "rl_thinking_mix": "",
-    "thinking_only_validity": "NoEnergyTerm",
-    "thinking_only_energy": "NoValidityTerm",
-    "spacegroup_thinking": "SpaceGroup",
-    "rl_elastic_thinking_new": "ElasticProperties",
-    "rl_cte_thinking": "ThermalExpansion",
+    # "no_thinking": "Base",
+    # "thinking": "Thinking",
+    # "rl_no_thinking": "RL",
+    # "rl_thinking_mix": "",
+    # "thinking_only_validity": "NoEnergyTerm",
+    # "thinking_only_energy": "NoValidityTerm",
+    # "spacegroup_thinking": "SpaceGroup",
+    # "rl_elastic_thinking_new": "ElasticProperties",
+    # "rl_cte_thinking": "ThermalExpansion",
+    "plaid_wyckoff": "PLaIDWyckoff",
+    "crystaltextllm": "CrystalTextLLM",
 }
 
 
@@ -76,7 +78,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 messages = [
-    {{"role": "user", "content": "Below is a description of a bulk material. The chemical formula is NaCl. The bulk_modulus is about 100 GPa. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:"}},
+    {"role": "user", "content": "Below is a description of a bulk material. The chemical formula is NaCl. The bulk_modulus is about 100 GPa. Generate a description of the lengths and angles of the lattice vectors and then the element type and coordinates for each atom within the lattice:"},
 ]
 
 text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
@@ -131,23 +133,33 @@ print(structure)
 Check out our [paper](https://arxiv.org/abs/2605.14344) for more details. If you use our dataset or find our work useful, please cite
 
 ```
-@article{{wu2026crysreas,
-  title={{CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation}},
-  author={{Yuyang Wu and Stefano Falletta and Delia McGrath and Sherry Yang}},
-  year={{2026}},
-  journal={{arXiv preprint arXiv:2605.14344}},
-  url={{https://arxiv.org/abs/2605.14344}}
-}}
+@article{wu2026crysreas,
+  title={CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation},
+  author={Yuyang Wu and Stefano Falletta and Delia McGrath and Sherry Yang},
+  year={2026},
+  journal={arXiv preprint arXiv:2605.14344},
+  url={https://arxiv.org/abs/2605.14344}
+}
 ```
 """
 
 
+def model_name_for_variant(variant_name: str) -> str:
+    base_name = "Qwen2.5-3B-CrysReas"
+    if not variant_name:
+        return base_name
+    return f"{base_name}-{variant_name}"
+
+
 def build_readme(variant_name: str) -> str:
-    return README_TEMPLATE.replace("[variant name]", variant_name)
+    return README_TEMPLATE.replace(
+        "Qwen2.5-3B-CrysReas-[variant name]",
+        model_name_for_variant(variant_name),
+    ).replace("[variant name]", variant_name)
 
 
 def repo_id_for_variant(variant_name: str) -> str:
-    return f"{ORG}/Qwen2.5-3B-CrysReas-{variant_name}"
+    return f"{ORG}/{model_name_for_variant(variant_name)}"
 
 
 def has_model_files(path: Path) -> bool:
@@ -166,7 +178,7 @@ def read_readme_model_folders(readme_path: Path) -> list[str]:
     in_checkpoint_table = False
 
     for line in readme_path.read_text(encoding="utf-8").splitlines():
-        if line.startswith("| Folder name |") or line.startswith("| `Folder name` |"):
+        if line.startswith("|") and "Folder name" in line and "Model Name" in line:
             in_checkpoint_table = True
             continue
         if not in_checkpoint_table:
@@ -179,20 +191,11 @@ def read_readme_model_folders(readme_path: Path) -> list[str]:
         match = re.match(r"\| `([^`]+)` \| ([^|]+) \| ([^|]+) \|", line)
         if not match:
             continue
-        folder_name, _paper_name, notes = match.groups()
-        if "prior-work" in notes.lower():
-            continue
+        folder_name, _paper_name, _notes = match.groups()
         rows.append(folder_name)
 
     if not rows:
         raise ValueError(f"No checkpoint rows found in {readme_path}")
-
-    missing_variants = [name for name in rows if name not in VARIANT_NAMES]
-    if missing_variants:
-        raise KeyError(
-            "Missing Hub variant names for README checkpoint folders: "
-            + ", ".join(missing_variants)
-        )
 
     return rows
 
@@ -224,6 +227,11 @@ def parse_args() -> argparse.Namespace:
         help="Skip folders that do not contain a complete Hugging Face model.",
     )
     parser.add_argument(
+        "--readme-only",
+        action="store_true",
+        help="Upload only the generated README.md model cards.",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Print planned uploads without creating repositories or uploading files.",
@@ -235,21 +243,30 @@ def main() -> None:
     args = parse_args()
     api = HfApi()
     readme_folders = read_readme_model_folders(args.readme)
-    selected = args.only or readme_folders
+    selected = args.only or [name for name in readme_folders if name in VARIANT_NAMES]
 
     unknown_names = [name for name in selected if name not in readme_folders]
     if unknown_names:
         raise ValueError(
-            "Requested checkpoint folders are not non-prior-work README models: "
+            "Requested checkpoint folders are not README checkpoint models: "
             + ", ".join(unknown_names)
         )
+    missing_variants = [name for name in selected if name not in VARIANT_NAMES]
+    if missing_variants:
+        raise KeyError(
+            "Missing Hub variant names for selected README checkpoint folders: "
+            + ", ".join(missing_variants)
+        )
+    if not selected:
+        raise ValueError("No README checkpoint rows match the configured Hub variants.")
 
     for folder_name in selected:
         variant_name = VARIANT_NAMES[folder_name]
+        variant_label = variant_name or "main"
         checkpoint_dir = args.checkpoint_root / folder_name
         repo_id = repo_id_for_variant(variant_name)
 
-        if not has_model_files(checkpoint_dir):
+        if not args.readme_only and not has_model_files(checkpoint_dir):
             message = (
                 f"Missing complete model files for {folder_name}: {checkpoint_dir}"
             )
@@ -258,7 +275,10 @@ def main() -> None:
                 continue
             raise FileNotFoundError(message)
 
-        print(f"UPLOAD: {checkpoint_dir} -> {repo_id}")
+        if args.readme_only:
+            print(f"UPLOAD README: {repo_id}")
+        else:
+            print(f"UPLOAD: {checkpoint_dir} -> {repo_id}")
         if args.dry_run:
             continue
 
@@ -268,23 +288,24 @@ def main() -> None:
             private=False,
             exist_ok=True,
         )
-        api.upload_folder(
-            repo_id=repo_id,
-            repo_type="model",
-            folder_path=checkpoint_dir,
-            ignore_patterns=[
-                "*.parquet",
-                "*.filepart",
-                "__pycache__/*",
-            ],
-            commit_message=f"Upload CrysReas {variant_name} checkpoint",
-        )
+        if not args.readme_only:
+            api.upload_folder(
+                repo_id=repo_id,
+                repo_type="model",
+                folder_path=checkpoint_dir,
+                ignore_patterns=[
+                    "*.parquet",
+                    "*.filepart",
+                    "__pycache__/*",
+                ],
+                commit_message=f"Upload CrysReas {variant_label} checkpoint",
+            )
         api.upload_file(
             repo_id=repo_id,
             repo_type="model",
             path_in_repo="README.md",
             path_or_fileobj=build_readme(variant_name).encode("utf-8"),
-            commit_message=f"Add CrysReas {variant_name} model card",
+            commit_message=f"Add CrysReas {variant_label} model card",
         )
 
         print(f"DONE: {repo_id}")

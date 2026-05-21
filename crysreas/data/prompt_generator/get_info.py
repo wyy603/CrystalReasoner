@@ -57,7 +57,7 @@ _ATTR_FORMATTERS: Dict[str, Callable[[Any, Any], str]] = {
     "band_gap": lambda e, c: _part_prompt_numeric(e, c, "band_gap"),
     "energy_above_hull": lambda e, c: _part_prompt_numeric(e, c, "energy_above_hull"),
     "spacegroup.number": lambda e, c: f"{PROMPT_LOOKUP['spacegroup.number']} {c.sga.get_space_group_number()}. ",
-    "formula_pretty": lambda e, c: f"{PROMPT_LOOKUP['formula_pretty']} {e['condensed_structure'].formula}. ",
+    "formula_pretty": lambda e, c: f"{PROMPT_LOOKUP['formula_pretty']} {e['formula_pretty']}. ",
     "bulk_modulus": lambda e, c: (
         f"{PROMPT_LOOKUP['bulk_modulus']} {strseg(getseg(e['bulk_modulus'], [-np.inf, 0, 10, 50, 150, 300, np.inf]))}. "
     ),
