@@ -101,7 +101,7 @@ You can follow these instructions to recreate our checkpoints and run our experi
 [`scripts/run.py`](scripts/run.py) is the main entrypoint. It reads experiment definitions from [`scripts/config.py`](scripts/config.py).
 
 ```bash
-python scripts/run.py <experiment> [extra overrides...]
+python scripts/run.py [-h] [--experiment STR] [--output STR] [--dry_run | --no_dry_run] [extra overrides...]
 ```
 
 It supports SFT, RL/GRPO, generation, checkpoint merge, and evaluating metrics through one registry.
@@ -117,6 +117,7 @@ Common examples:
 python scripts/run.py sft_no_thinking
 python scripts/run.py --output=terminal sft_no_thinking
 python scripts/run.py sft_thinking
+python scripts/run.py sft_thinking gpu=2
 
 # Merge FSDP checkpoints into Hugging Face format
 python scripts/run.py merge \
