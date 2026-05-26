@@ -81,7 +81,7 @@ APEX_CPP_EXT=1 APEX_CUDA_EXT=1 pip install -v --no-build-isolation .
 
 ### Dataset Preparation
 
-Please download `assets/MP/MP_shelve.parquet` via Github LFS (`git lfs pull`), and convert it to python `shelve` dataset by `python scripts/parquet_to_shelve.py`, which contains all the data we use in training and inference as ground truth.
+Please download `assets/MP/MP_shelve.parquet` via Github LFS (`git lfs pull`) or [HF Hub](https://huggingface.co/datasets/CrystalReasoner/CrystalReasoner-MP), and convert it to python `shelve` dataset by `python scripts/parquet_to_shelve.py`, which contains all the data we use in training and inference as ground truth.
 
 See [`doc/DATASET.md`](doc/DATASET.md) to understand how this dataset is created from Materials Project. See [`doc/METRICS.md`](doc/METRICS.md) for the metric names and required inputs.
 
