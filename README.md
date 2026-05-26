@@ -108,7 +108,7 @@ It supports SFT, RL/GRPO, generation, checkpoint merge, and evaluating metrics t
 
 Before training, you must set environment variables `SWANLAB_API_KEY` and `HF_TOKEN`. Notably, you can write `.env` file in the project folder to do this.
 
-In default the output of this script is **located at `logs/{experiment_name}.out`** and will not be printed directly to the command line. To output to the terminal, set `--output=terminal`.
+In default the output of this script is **located at `logs/{experiment_name}.out`** and will not be printed directly to the command line. To output to the terminal, set `--output=terminal`. To use a timestamped log file, set `--output=time`.
 
 Common examples:
 

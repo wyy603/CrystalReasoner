@@ -68,10 +68,15 @@ def _cli_to_hydra(tokens: list[str]) -> list[str]:
     return out
 
 
-def _redirect(output: str) -> Path | None:
+def _redirect(output: str, experiment_name: str) -> Path | None:
     if output == "terminal":
         return None
-    path = ROOT / "logs" / f"{datetime.now():%Y%m%d_%H%M%S}.out" if output == "default" else Path(output)
+    if output == "default":
+        path = ROOT / "logs" / f"{experiment_name}.out"
+    elif output == "time":
+        path = ROOT / "logs" / f"{datetime.now():%Y%m%d_%H%M%S}.out"
+    else:
+        path = Path(output)
     path = path if path.is_absolute() else ROOT / path
     path.parent.mkdir(parents=True, exist_ok=True)
     fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644)
@@ -103,7 +108,7 @@ def _run_with_ray(command: str, dry_run: bool = False) -> None:
 def main() -> None:
     cli, extras = _parse_cli(sys.argv[1:])
     if not cli.experiment:
-        print("Usage: python scripts/run_new.py [--experiment EXPERIMENT] [--output default|terminal|PATH] [--dry_run] [extra overrides...]")
+        print("Usage: python scripts/run.py [--experiment EXPERIMENT] [--output default|time|terminal|PATH] [--dry_run] [extra overrides...]")
         print("\nExperiments:", ", ".join(sorted(EXPERIMENTS)))
         raise SystemExit(1)
     if cli.experiment not in EXPERIMENTS:
@@ -113,8 +118,7 @@ def main() -> None:
     extra_args = extras if base.kind in CLI_KINDS else _cli_to_hydra(extras)
     spec = base | RunSpec(extra_args)
 
-    output = "terminal" if cli.dry_run and cli.output == "default" else cli.output
-    log_path = _redirect(output)
+    log_path = _redirect(cli.output, cli.experiment)
     if log_path:
         print(f"log: {log_path}", flush=True)
 
