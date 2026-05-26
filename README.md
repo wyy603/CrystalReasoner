@@ -24,7 +24,7 @@ CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal
 | [🤗 Qwen2.5-3B-CrysReas-ElasticProperties](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ElasticProperties) | Elastic-property specialist. |
 | [🤗 Qwen2.5-3B-CrysReas-ThermalExpansion](https://huggingface.co/CrystalReasoner/Qwen2.5-3B-CrysReas-ThermalExpansion) | Thermal-expansion specialist. |
 
-The first model is our main model. The subsequent models were optimized for property conditioning. See how to use them to inference in the huggingface pages.
+The first model is our main model. The subsequent models were optimized for property conditioning. **You can directly use them to inference without installing our repo. Our repo is for training and evaluation.** See how to use them to inference in the huggingface pages.
 
 ## ⚙️ Installation
 
@@ -108,13 +108,14 @@ It supports SFT, RL/GRPO, generation, checkpoint merge, and evaluating metrics t
 
 Before training, you must set environment variables `SWANLAB_API_KEY` and `HF_TOKEN`. Notably, you can write `.env` file in the project folder to do this.
 
-Note that the output of this script is located in the `logs/` folder and will not be printed directly to the command line.
+In default the output of this script is **located at `logs/{experiment_name}.out`** and will not be printed directly to the command line. To output to the terminal, set `--output=terminal`.
 
 Common examples:
 
 ```bash
 # Supervised fine-tuning baselines
 python scripts/run.py sft_no_thinking
+python scripts/run.py --output=terminal sft_no_thinking
 python scripts/run.py sft_thinking
 
 # Merge FSDP checkpoints into Hugging Face format

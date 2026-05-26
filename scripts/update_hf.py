@@ -19,17 +19,17 @@ README_PATH = Path("README.md")
 # Stable Hub suffixes for models listed in README.md. The README table remains
 # the source of truth for which checkpoint folders are uploaded.
 VARIANT_NAMES = {
-    # "no_thinking": "Base",
-    # "thinking": "Thinking",
-    # "rl_no_thinking": "RL",
-    # "rl_thinking_mix": "",
-    # "thinking_only_validity": "NoEnergyTerm",
-    # "thinking_only_energy": "NoValidityTerm",
-    # "spacegroup_thinking": "SpaceGroup",
-    # "rl_elastic_thinking_new": "ElasticProperties",
-    # "rl_cte_thinking": "ThermalExpansion",
+    "no_thinking": "Base",
+    "thinking": "Thinking",
+    "rl_no_thinking": "RL",
+    "rl_thinking_mix": "",
+    "thinking_only_validity": "NoEnergyTerm",
+    "thinking_only_energy": "NoValidityTerm",
+    "spacegroup_thinking": "SpaceGroup",
+    "rl_elastic_thinking_new": "ElasticProperties",
+    "rl_cte_thinking": "ThermalExpansion",
     "plaid_wyckoff": "PLaIDWyckoff",
-    #"crystaltextllm": "CrystalTextLLM",
+    "crystaltextllm": "CrystalTextLLM",
 }
 
 
@@ -46,15 +46,7 @@ tags:
 
 # CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation
 
-CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal structures from natural language instructions. It uses supervised fine-tuning (SFT) to teach crystal-structure generation, thinking traces to introduce crystallographic and physical priors before coordinates, and reinforcement learning (RL) with verifiable rewards to improve validity, stability, and property conditioning. Please see our work at [crystalreasoner.github.io](https://crystalreasoner.github.io/).
-
-<h4 align="center">
-  
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github)](https://github.com/wyy603/CrystalReasoner/)
-[![Website](https://img.shields.io/badge/🌐-Project_Website-2ea44f?style=flat-square&logoColor=white)](https://crystalreasoner.github.io/)
-[![Dataset](https://img.shields.io/badge/📊-Checkpoints-005B99?style=flat-square)](https://nyu.app.box.com/folder/361279226287)
-[![Paper](https://img.shields.io/badge/arXiv-2605.14344-blue.svg?logo=arxiv&logoColor=white.svg)](https://arxiv.org/abs/2605.14344)
-</h4>
+CrystalReasoner (CrysReas) is an end-to-end LLM framework for generating crystal structures from natural language instructions. It uses supervised fine-tuning (SFT) to teach crystal-structure generation, thinking traces to introduce crystallographic and physical priors before coordinates, and reinforcement learning (RL) with verifiable rewards to improve validity, stability, and property conditioning.
 
 # Qwen2.5-3B-CrysReas-[variant name]
 
@@ -126,20 +118,6 @@ def get_structure(generated_text: str):
 
 structure = get_structure(generated_text)
 print(structure)
-```
-
-# Citation
-
-Check out our [paper](https://arxiv.org/abs/2605.14344) for more details. If you use our dataset or find our work useful, please cite
-
-```
-@article{wu2026crysreas,
-  title={CrystalReasoner: Reasoning and RL for Property-Conditioned Crystal Structure Generation},
-  author={Yuyang Wu and Stefano Falletta and Delia McGrath and Sherry Yang},
-  year={2026},
-  journal={arXiv preprint arXiv:2605.14344},
-  url={https://arxiv.org/abs/2605.14344}
-}
 ```
 """
 
