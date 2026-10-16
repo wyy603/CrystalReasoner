@@ -164,7 +164,7 @@ structure and writes one column per judgement; `crysreas.experiment.evaluate`
 turns those columns into rates, error bars and tables. Keeping them separate is
 what lets a table be traced back to the rows behind it.
 
-### 1. Generate
+### Generate
 
 ```bash
 python scripts/run.py generate checkpoints_merged/thinking
@@ -182,7 +182,7 @@ python scripts/run.py generate checkpoints_merged/thinking data.n_samples=10
 Sample `j` of every prompt is read as seed `j`, so `n_samples` is the number of
 seeds and each seed is one complete evaluation of the split.
 
-### 2. Score every structure
+### Score every structure
 
 ```bash
 python -m crysreas.metric_process \
@@ -204,62 +204,26 @@ Metric groups:
 - Instruction following: `gt`, `composition_consistency`, `spacegroup_consistency`
 - Relaxation and energy: `relaxed_structures`, `energy_above_hull`, `is_stable`, `is_metastable`
 - Discovery: `stable_unique_novel` (S.U.N.), `spacegroup_stable_unique_novel` (S.S.U.N.)
-
-`stable_unique_novel` also writes the `is_unique` and `is_novel` columns; both
-are outputs, and neither is a name you pass to `--metrics-name`.
 - Property rewards: `energy_reward`, `smooth_energy_reward`, `elastic_reward`, `cte_reward`
 - Property calculations: `fmax`, `elastic_properties`, `cte`
 
-### 3. Produce the results
-
-```bash
-python -m crysreas.experiment.evaluate \
-  checkpoints_merged/thinking/conditional+thinking.parquet \
-  checkpoints_merged/no_thinking/conditional+thinking.parquet \
-  --names CrysReas-Thinking CrysReas-Base
-```
-
-Add `--latex` for a `tabular` ready to paste into a manuscript. From Python,
-`compare`, `to_latex` and `separation` cover the same ground.
-
-Each rate is the mean over seeds of the per-seed rate, and each error bar is the
-standard error across seeds, so the bars report run-to-run variation. They
-exclude the variation that comes from choosing which compositions to evaluate
-on, which makes them incomparable with a per-composition clustered standard
-error. With few seeds a visible gap is often not a separation; call
-`evaluate.separation(a, b, metric)` before claiming one.
-
-### The four judgements
+### Configs of Judgements
 
 S.U.N. and S.S.U.N. rest on four questions, each configurable in
 `crysreas.metric_process.config`:
 
 | Judgement | Key | Default |
 |---|---|---|
-| Is it stable? | `stability_threshold` | `E_hull <= 0` |
-| …metastable (S.S.U.N. only)? | `metastability_threshold` | `E_hull <= 0.1` |
-| Does it carry the requested symmetry? | `spacegroup_criterion` | `subgroup` |
-| Is it novel? | `novelty_reference` | `train` |
-| Is it unique? | `uniqueness_scope` | `seed` |
-
-`mattergen_config()` collects MatterGen's setting for all four. S.U.N. and
-S.S.U.N. sit on different energy windows on purpose, so S.S.U.N. is the larger
-of the two despite carrying one more factor, and the two should not be read
-against each other.
+| stable | `stability_threshold` | `E_hull <= 0` |
+| metastable (S.S.U.N. only) | `metastability_threshold` | `E_hull <= 0.1` |
+| symmetry | `spacegroup_criterion` | `subgroup` |
+| novelty | `novelty_reference` | `train` |
+| uniqueness | `uniqueness_scope` | `seed` |
 
 [`crysreas/experiment/README.md`](crysreas/experiment/README.md) explains what
 each judgement measures and where it misleads.
 [`doc/METRICS.md`](doc/METRICS.md) lists every registered metric with its column
 dependencies and serialization behaviour.
-
-### Checking the implementation
-
-```bash
-python -m crysreas.experiment.verify_equivalence
-```
-
-Re-derives each stored column from the configurable implementation and compares
-it row by row against the evaluation artifacts.
 
 ## 🤗 Checkpoints and Results
 
