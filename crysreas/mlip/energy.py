@@ -13,17 +13,39 @@ from pymatgen.core import Structure
 import ray
 from crysreas.mlip.models import get_reference
 
+def apply_stability_threshold(
+    energy_above_hull: np.ndarray,
+    threshold: float = 0.0,
+    strict: bool = False,
+) -> np.ndarray:
+    """Boolean stability flag from hull distances, NaN counting as unstable.
+
+    ``strict`` selects ``E_hull < threshold`` instead of ``E_hull <= threshold``,
+    which is the form stored artifacts were scored under; see
+    ``crysreas.metric_process.config``.
+    """
+    e = np.asarray(energy_above_hull, dtype=float)
+    with np.errstate(invalid="ignore"):
+        flags = (e < threshold) if strict else (e <= threshold)
+    return np.where(np.isnan(e), False, flags).astype(np.bool_)
+
+
 @ray.remote(num_gpus=0.5)
 def compute_energy_above_hull_batch(
     structures: list[Any],
     relaxed_structures: list[Any],
     energies: list[Any],
     reference: Any | None = None,
+    stability_threshold: float = 0.0,
+    stability_strict: bool = False,
 ) -> tuple[np.ndarray, np.ndarray]:
     """
-    Per-row energy above hull and stability flag (``is_stable``: E_hull < 0.1 eV/atom).
+    Per-row energy above hull and stability flag.
 
-    Rows with ``relaxed_structures[i] is None`` stay NaN / False.
+    ``is_stable`` is ``E_hull <= stability_threshold`` eV/atom; the default
+    ``0.0`` means on or below the hull. Rows with ``relaxed_structures[i] is
+    None`` stay NaN / False. The threshold is applied once at the end, so the
+    flag is always consistent with the hull distances returned alongside it.
     """
     from mattergen.evaluation.metrics.energy import AvgEnergyAboveHullPerAtom
     from mattergen.evaluation.metrics.evaluator import MetricsEvaluator
@@ -50,7 +72,6 @@ def compute_energy_above_hull_batch(
         try:
             metric: AvgEnergyAboveHullPerAtom = evaluator._get_metric(AvgEnergyAboveHullPerAtom)
             energy_above_hull[success_indices] = metric.energy_capability.energy_above_hull
-            is_stable[success_indices] = energy_above_hull[success_indices] < 0.1
         except Exception:
             for j, i in enumerate(success_indices):
                 try:
@@ -66,9 +87,10 @@ def compute_energy_above_hull_batch(
                         m_i.energy_capability.energy_above_hull, dtype=float
                     ).reshape(-1)
                     energy_above_hull[i] = float(hull[0])
-                    is_stable[i] = energy_above_hull[i] < 0.1
                 except Exception:
                     energy_above_hull[i] = None
-                    is_stable[i] = False
 
+    is_stable = apply_stability_threshold(
+        energy_above_hull, stability_threshold, stability_strict
+    )
     return energy_above_hull, is_stable

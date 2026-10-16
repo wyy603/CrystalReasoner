@@ -178,3 +178,42 @@ def df_serialize(df: pd.DataFrame) -> None:
 def df_deserialize(df: pd.DataFrame) -> None:
     for key in df.keys():
         df[key] = df[key].apply(partial(_deserialize_entry, key=key))
+
+
+def spacegroup_matches(
+    requested: Any,
+    detected: Any,
+    criterion: str = "subgroup",
+) -> bool | None:
+    """Does ``detected`` satisfy a request for ``requested``?
+
+    ``"strict"`` requires integer equality, which is what this repository
+    computed before the criterion was pinned down. ``"subgroup"`` additionally
+    accepts a detected group of which the requested one is a proper subgroup,
+    i.e. the structure carries *at least* the requested symmetry. The subgroup
+    reading is one-sided: it can only ever raise the score, so it is an
+    alternative reading, and it rewards over-symmetrisation.
+
+    Returns ``None`` when either number is missing, which the callers propagate
+    as an unscored row.
+    """
+    try:
+        req = int(requested)
+        det = int(detected)
+    except (TypeError, ValueError):
+        return None
+    if req == det:
+        return True
+    if criterion == "strict":
+        return False
+    if criterion != "subgroup":
+        raise ValueError(f"unknown spacegroup_criterion: {criterion!r}")
+    try:
+        from pymatgen.symmetry.groups import SpaceGroup
+
+        return bool(
+            SpaceGroup.from_int_number(req).is_subgroup(SpaceGroup.from_int_number(det))
+        )
+    except Exception as exc:  # pragma: no cover - pymatgen table lookup failure
+        logger.debug("subgroup test failed for %s in %s: %s", req, det, exc)
+        return False

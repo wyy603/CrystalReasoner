@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\color{red}
+\caption{\rev{Performance comparison of model variants: \texttt{\method-Base} (SFT baseline), \texttt{\method-Thinking} (SFT with thinking traces), \texttt{\method-RL} (RL on the base model), and the full \method. Thinking traces and RL each improve almost every metric and the full model leads on all of them. All four columns come from one evaluation of $16{,}282$ generated structures through a single metric pipeline.}}
+\label{tab:overall_performance}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+\textbf{Metric Category} & \textbf{Metric Name} & \textbf{\method-Base} & \textbf{\method-Thinking} & \textbf{\method-RL} & \textbf{\method} \\
+\midrule
+\multirow{2}{*}{Validity} & \textbf{Structural} ($\uparrow$) & 85.11\% $\pm$ 0.32\% & 91.63\% $\pm$ 0.24\% & 91.44\% $\pm$ 0.25\% & \textbf{95.27\%} $\pm$ 0.18\% \\
+ & \textbf{Chemical} ($\uparrow$) & 90.09\% $\pm$ 0.32\% & 91.60\% $\pm$ 0.31\% & 90.99\% $\pm$ 0.31\% & \textbf{91.67\%} $\pm$ 0.30\% \\
+\addlinespace
+\midrule
+\multirow{2}{*}{Instruction Following} & \textbf{Composition} ($\uparrow$) & 91.32\% $\pm$ 0.26\% & 97.52\% $\pm$ 0.15\% & 93.29\% $\pm$ 0.23\% & \textbf{97.56\%} $\pm$ 0.16\% \\
+ & \textbf{Space Group} ($\uparrow$) & 53.35\% $\pm$ 0.49\% & 55.72\% $\pm$ 0.49\% & 55.63\% $\pm$ 0.49\% & \textbf{58.76\%} $\pm$ 0.50\% \\
+\addlinespace
+\midrule
+\multirow{2}{*}{Stability} & \textbf{Stability} ($\uparrow$) & 34.07\% $\pm$ 0.49\% & 39.08\% $\pm$ 0.51\% & 35.78\% $\pm$ 0.50\% & \textbf{41.94\%} $\pm$ 0.52\% \\
+ & \textbf{Energy} ($\downarrow$) & 0.561 $\pm$ 0.013 & 0.503 $\pm$ 0.008 & 0.526 $\pm$ 0.011 & \textbf{0.452} $\pm$ 0.007 \\
+\addlinespace
+\midrule
+\multirow{3}{*}{Discovery} & \textbf{Uniqueness} ($\uparrow$) & 60.37\% $\pm$ 0.37\% & 64.46\% $\pm$ 0.37\% & 63.94\% $\pm$ 0.37\% & \textbf{64.79\%} $\pm$ 0.36\% \\
+ & \textbf{S.U.N.} ($\uparrow$) & 17.86\% $\pm$ 0.28\% & 20.21\% $\pm$ 0.29\% & 18.44\% $\pm$ 0.28\% & \textbf{20.96\%} $\pm$ 0.29\% \\
+ & \textbf{S.S.U.N.} ($\uparrow$) & 15.72\% $\pm$ 0.26\% & 17.31\% $\pm$ 0.27\% & 16.19\% $\pm$ 0.26\% & \textbf{18.12\%} $\pm$ 0.27\% \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

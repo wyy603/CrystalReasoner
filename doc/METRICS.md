@@ -80,19 +80,32 @@ the current process.
 | `structure_validity` | `structure_validity` | Geometric validity checks. |
 | `smact_validity` | `smact_validity` | Chemical validity through SMACT. |
 | `composition_consistency` | `composition_consistency` | Reduced composition match against ground truth. |
-| `spacegroup_consistency` | `spacegroup_consistency` | Space-group match after validity and composition checks. |
+| `spacegroup_consistency` | `spacegroup_consistency` | Does the structure carry the requested symmetry? Gated on both validity checks. The test follows `spacegroup_criterion`: `subgroup` accepts a detected group of which the request is a proper subgroup, `strict` demands integer equality. |
 | `fit_format` | `fit_format` | Output-format check used by reward calculation. |
+| `small_atoms` | `small_atoms` | Flags structures below the atom-count cutoff. |
+| `seed` | `seed` | Index of a sample within its prompt, read as the seed it came from. Each seed value selects one structure per prompt, so it picks out one complete evaluation of the split. |
 
 ## MLIP and Stability Metrics
 
 | Metric | Main columns | Notes |
 | --- | --- | --- |
 | `relaxed_structures` | `relaxed_structures`, `energies` | MatterSim relaxation path. |
+| `relaxed_structures_300` | `relaxed_structures`, `energies` | Same path with a 300-step budget. |
 | `energy_above_hull` | `energy_above_hull`, `is_stable` | MatterGen hull evaluation. |
-| `stable_unique_novel` | `is_novel`, `is_unique`, `stable_unique_novel` | Discovery metric after stability evaluation. |
+| `is_stable` | `is_stable` | `E_hull <= stability_threshold`. Derived from the hull column every time it is requested and never cached, so the flag always matches the distances beside it. A missing hull distance counts as unstable. |
+| `is_metastable` | `is_metastable` | `E_hull <= metastability_threshold`, the wider window S.S.U.N. uses. Derived, never cached. |
+| `stable_unique_novel` | `is_novel`, `is_unique`, `stable_unique_novel` | S.U.N.: stable, unique and novel. Uniqueness follows `uniqueness_scope` and novelty follows `novelty_reference`. |
+| `spacegroup_stable_unique_novel` | `spacegroup_stable_unique_novel` | S.S.U.N.: metastable, unique, novel and space-group consistent. Sits on the wider energy window, so it exceeds S.U.N. despite carrying one more factor; the two are not comparable to each other. |
 | `fmax` | `fmax` | Maximum force norm from relaxed structures. |
 | `elastic_properties` | `elastic_properties` | Elastic tensor and modulus calculation. |
 | `cte` | `cte` | Thermal expansion / QHA path. |
+
+Four of the columns above depend on settings in
+`crysreas.metric_process.config` instead of on the row alone: the two stability
+thresholds, `spacegroup_criterion`, `novelty_reference` and `uniqueness_scope`.
+Passing a different config produces a different column under the same name, so
+record the settings alongside any number taken from these metrics.
+`mattergen_config()` collects MatterGen's setting for all four.
 
 ## Reward Metrics
 
@@ -104,6 +117,8 @@ the current process.
 | `elastic_reward_all` | Elastic-property reward across all valid rows. |
 | `cte_reward` | Thermal-expansion conditioned reward. |
 | `cte_reward_all` | Thermal-expansion reward for full-row evaluation. |
+| `new_elastic_reward` | Range-constraint elastic reward used by the current elastic specialist. |
+| `sn_reward` | Stability-and-novelty reward combining the hull term with the novelty flag. |
 
 ## Prompt-Type Configuration
 

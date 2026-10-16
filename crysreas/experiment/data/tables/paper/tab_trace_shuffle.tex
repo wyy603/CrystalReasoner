@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\color{red}
+\caption{\rev{Ablation on the four segments of the thinking trace. Each segment is replaced by the same-named segment of another randomly drawn sample, so format, style and length distribution stay intact and only the information the segment carries about this material is destroyed. Replacing a segment leaves the mean token count of that condition unchanged, so no drop here is a length effect. Numbers in parentheses are the change from the full trace, in points. All four columns are percentages: structural validity, chemical validity, composition consistency, and space group consistency. The source rows were selected to be correct on all four metrics, which places the baseline above the numbers of Table~\ref{tab:overall_performance}; the drops are what this table measures.}}
+\label{tab:trace_shuffle}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Thinking trace fed to the model} & \textbf{Structural} ($\uparrow$) & \textbf{Chemical} ($\uparrow$) & \textbf{Composition} ($\uparrow$) & \textbf{Space Group} ($\uparrow$) \\
+\midrule
+Full trace & 94.63 $\pm$ 0.88 & 100.00 $\pm$ 0.00 & 99.41 $\pm$ 0.34 & 83.30 $\pm$ 1.67 \\
+\midrule
+Part 1 swapped: symmetry, formula & 76.95 $\pm$ 2.06 (-17.7) & 96.68 $\pm$ 0.93 (-3.3) & 0.39 $\pm$ 0.39 (-99.0) & 25.39 $\pm$ 2.39 (-57.9) \\
+Part 2 swapped: coordination & 84.67 $\pm$ 1.75 (-10.0) & 99.12 $\pm$ 0.51 (-0.9) & 96.48 $\pm$ 1.02 (-2.9) & 35.25 $\pm$ 2.56 (-48.0) \\
+Part 3 swapped: validity check & 93.75 $\pm$ 1.01 (-0.9) & 100.00 $\pm$ 0.00 (+0.0) & 99.22 $\pm$ 0.46 (-0.2) & 80.08 $\pm$ 1.84 (-3.2) \\
+Part 4 swapped: properties & 94.53 $\pm$ 0.94 (-0.1) & 100.00 $\pm$ 0.00 (+0.0) & 99.22 $\pm$ 0.46 (-0.2) & 82.42 $\pm$ 1.74 (-0.9) \\
+All four parts swapped & 79.98 $\pm$ 1.80 (-14.6) & 97.27 $\pm$ 0.94 (-2.7) & 0.00 $\pm$ 0.00 (-99.4) & 23.54 $\pm$ 2.37 (-59.8) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

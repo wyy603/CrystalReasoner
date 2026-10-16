@@ -13,6 +13,21 @@ from crysreas import Config
 from crysreas.metric_process.helpers import df_deserialize
 
 
+def _add_seed_column(df: pd.DataFrame, group: str = "mp_id", column: str = "seed") -> None:
+    """Label each sample of a prompt with the seed it came from.
+
+    ``explode`` above preserves the order in which generation drew the
+    ``n_samples`` completions of a prompt, so the position of a row inside its
+    prompt identifies one draw. Taking one row per prompt at a fixed position
+    therefore yields one complete evaluation of the split. See
+    ``crysreas.metric_process.basic.ensure_seed`` for what the label does and
+    does not mean.
+    """
+    if column in df.columns or group not in df.columns:
+        return
+    df[column] = df.groupby(group).cumcount()
+
+
 def load_metrics_dataframe(path: Path | str) -> pd.DataFrame:
     """Read pickle / parquet / csv and apply the same preprocessing as ``run_metric``."""
     path = Path(path)
@@ -35,6 +50,7 @@ def load_metrics_dataframe(path: Path | str) -> pd.DataFrame:
                     df["extra_args"] = df["extra_args"].apply(
                         lambda x: x[0] if len(x) > 0 else None
                     )
+        _add_seed_column(df)
         df_deserialize(df)
         return df
     if path.suffix == ".csv":

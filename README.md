@@ -81,7 +81,16 @@ APEX_CPP_EXT=1 APEX_CUDA_EXT=1 pip install -v --no-build-isolation .
 
 ### Dataset Preparation
 
-Please download `assets/MP/MP_shelve.parquet` via Github LFS (`git lfs pull`) or [HF Hub](https://huggingface.co/datasets/CrystalReasoner/CrystalReasoner-MP), and convert it to python `shelve` dataset by `python scripts/parquet_to_shelve.py`, which contains all the data we use in training and inference as ground truth.
+Please download `assets/MP/MP_shelve.parquet` via Github LFS (`git lfs pull`) or [HF Hub](https://huggingface.co/datasets/CrystalReasoner/CrystalReasoner-MP), then convert it to the python `shelve` database every other component reads:
+
+```bash
+python scripts/parquet_to_shelve.py --write
+```
+
+The flag is required: without it the script reports what it would restore and
+writes nothing. Add `--overwrite` to replace an existing database. The result,
+`assets/MP/MP_shelve`, holds the ground truth used by training, generation and
+the metric pipeline.
 
 See [`doc/DATASET.md`](doc/DATASET.md) to understand how this dataset is created from Materials Project. See [`doc/METRICS.md`](doc/METRICS.md) for the metric names and required inputs.
 
@@ -148,30 +157,109 @@ Representative registered jobs include:
 
 See [`doc/TRAINING.md`](doc/TRAINING.md) for training details.
 
-## 📊 Metrics
+## 📊 Evaluation
 
-The preferred evaluation path is `crysreas.metric_process`. `python scripts/run.py run_metric ` is a copy of this command. It is a DataFrame-based pipeline with named metrics, cache-like `ensure_*` helpers, optional multiprocessing for CPU metrics, and serialization helpers for Parquet files containing structures.
+Evaluation runs in two stages. `crysreas.metric_process` scores every generated
+structure and writes one column per judgement; `crysreas.experiment.evaluate`
+turns those columns into rates, error bars and tables. Keeping them separate is
+what lets a table be traced back to the rows behind it.
 
-Example:
+### 1. Generate
+
+```bash
+python scripts/run.py generate checkpoints_merged/thinking
+```
+
+This draws `data.n_samples` structures for each of the 1,024 held-out
+compositions in `assets/MP/split_generation.json` and writes
+`checkpoints_merged/thinking/conditional+thinking.parquet`. Override the sample
+count on the command line:
+
+```bash
+python scripts/run.py generate checkpoints_merged/thinking data.n_samples=10
+```
+
+Sample `j` of every prompt is read as seed `j`, so `n_samples` is the number of
+seeds and each seed is one complete evaluation of the split.
+
+### 2. Score every structure
 
 ```bash
 python -m crysreas.metric_process \
   --path checkpoints_merged/thinking/conditional+thinking.parquet \
-  --metrics-name simple_structure structure_validity smact_validity composition_consistency spacegroup_consistency stable_unique_novel \
+  --metrics-name spacegroup_stable_unique_novel \
   --prompt-type conditional+thinking \
-  --num-workers 1 \
-  --forced
+  --num-workers 1
 ```
 
-Important metric groups include:
+Name only the metric you want; dependencies are resolved and run in order. The
+command above pulls in parsing, both validity checks, composition and space
+group consistency, relaxation, hull distance, stability, uniqueness, novelty,
+S.U.N. and S.S.U.N. Use `--num-workers 1` for anything MLIP-backed, and
+`--forced` to recompute columns a previous pass already wrote.
+
+Metric groups:
 
 - Parsing and validity: `simple_structure`, `structure_validity`, `smact_validity`
-- Ground-truth consistency: `gt`, `composition_consistency`, `spacegroup_consistency`
-- Relaxation and stability: `relaxed_structures`, `energy_above_hull`, `stable_unique_novel`
-- Property rewards: `energy_reward`, `smooth_energy_reward`, `elastic_reward`, `elastic_reward_all`
+- Instruction following: `gt`, `composition_consistency`, `spacegroup_consistency`
+- Relaxation and energy: `relaxed_structures`, `energy_above_hull`, `is_stable`, `is_metastable`
+- Discovery: `stable_unique_novel` (S.U.N.), `spacegroup_stable_unique_novel` (S.S.U.N.)
+
+`stable_unique_novel` also writes the `is_unique` and `is_novel` columns; both
+are outputs, and neither is a name you pass to `--metrics-name`.
+- Property rewards: `energy_reward`, `smooth_energy_reward`, `elastic_reward`, `cte_reward`
 - Property calculations: `fmax`, `elastic_properties`, `cte`
 
-Use [`doc/METRICS.md`](doc/METRICS.md) as the source of truth for available metrics, column dependencies, prompt-type configuration, multiprocessing behavior, and Parquet structure serialization.
+### 3. Produce the results
+
+```bash
+python -m crysreas.experiment.evaluate \
+  checkpoints_merged/thinking/conditional+thinking.parquet \
+  checkpoints_merged/no_thinking/conditional+thinking.parquet \
+  --names CrysReas-Thinking CrysReas-Base
+```
+
+Add `--latex` for a `tabular` ready to paste into a manuscript. From Python,
+`compare`, `to_latex` and `separation` cover the same ground.
+
+Each rate is the mean over seeds of the per-seed rate, and each error bar is the
+standard error across seeds, so the bars report run-to-run variation. They
+exclude the variation that comes from choosing which compositions to evaluate
+on, which makes them incomparable with a per-composition clustered standard
+error. With few seeds a visible gap is often not a separation; call
+`evaluate.separation(a, b, metric)` before claiming one.
+
+### The four judgements
+
+S.U.N. and S.S.U.N. rest on four questions, each configurable in
+`crysreas.metric_process.config`:
+
+| Judgement | Key | Default |
+|---|---|---|
+| Is it stable? | `stability_threshold` | `E_hull <= 0` |
+| …metastable (S.S.U.N. only)? | `metastability_threshold` | `E_hull <= 0.1` |
+| Does it carry the requested symmetry? | `spacegroup_criterion` | `subgroup` |
+| Is it novel? | `novelty_reference` | `train` |
+| Is it unique? | `uniqueness_scope` | `seed` |
+
+`mattergen_config()` collects MatterGen's setting for all four. S.U.N. and
+S.S.U.N. sit on different energy windows on purpose, so S.S.U.N. is the larger
+of the two despite carrying one more factor, and the two should not be read
+against each other.
+
+[`crysreas/experiment/README.md`](crysreas/experiment/README.md) explains what
+each judgement measures and where it misleads.
+[`doc/METRICS.md`](doc/METRICS.md) lists every registered metric with its column
+dependencies and serialization behaviour.
+
+### Checking the implementation
+
+```bash
+python -m crysreas.experiment.verify_equivalence
+```
+
+Re-derives each stored column from the configurable implementation and compares
+it row by row against the evaluation artifacts.
 
 ## 🤗 Checkpoints and Results
 

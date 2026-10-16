@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\caption{Ablation on the four segments of the thinking trace. Each segment is replaced by the same-named segment of another randomly drawn sample, so format, style and length distribution stay intact and only the information the segment carries about this material is destroyed. Replacing a segment leaves the mean token count of that condition unchanged. Numbers in parentheses are the change from the full trace. Source rows are generations that were correct on all four metrics, which is why the baseline sits above the numbers of Table~\ref{tab:compare_priors}; read the relative drops.}
+\label{tab:trace_shuffle}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Condition} & \textbf{Structural Validity} ($\uparrow$) & \textbf{Chemical Validity} ($\uparrow$) & \textbf{Composition Consistency} ($\uparrow$) & \textbf{Space Group Consistency} ($\uparrow$) \\
+\midrule
+Full trace (baseline) & 94.63\% $\pm$ 0.88\% & 100.00\% $\pm$ 0.00\% & 99.41\% $\pm$ 0.34\% & 83.30\% $\pm$ 1.67\% \\
+\midrule
+Part 1 shuffled (symmetry, formula) & 76.95\% $\pm$ 2.06\% (-17.68) & 96.68\% $\pm$ 0.93\% (-3.32) & 0.39\% $\pm$ 0.39\% (-99.02) & 25.39\% $\pm$ 2.39\% (-57.91) \\
+Part 2 shuffled (coordination environment) & 84.67\% $\pm$ 1.75\% (-9.96) & 99.12\% $\pm$ 0.51\% (-0.88) & 96.48\% $\pm$ 1.02\% (-2.93) & 35.25\% $\pm$ 2.56\% (-48.05) \\
+Part 3 shuffled (validity statement) & 93.75\% $\pm$ 1.01\% (-0.88) & 100.00\% $\pm$ 0.00\% (+0.00) & 99.22\% $\pm$ 0.46\% (-0.20) & 80.08\% $\pm$ 1.84\% (-3.22) \\
+Part 4 shuffled (predicted properties) & 94.53\% $\pm$ 0.94\% (-0.10) & 100.00\% $\pm$ 0.00\% (+0.00) & 99.22\% $\pm$ 0.46\% (-0.20) & 82.42\% $\pm$ 1.74\% (-0.88) \\
+All four parts shuffled & 79.98\% $\pm$ 1.80\% (-14.65) & 97.27\% $\pm$ 0.94\% (-2.73) & 0.00\% $\pm$ 0.00\% (-99.41) & 23.54\% $\pm$ 2.37\% (-59.77) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

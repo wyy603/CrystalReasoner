@@ -25,6 +25,7 @@ from .helpers import (
     parse_plaid_wyckoff_structure_from_response,
     parse_simple_structure_from_response,
     return_gt_dict,
+    spacegroup_matches,
     spacegroup_number_safe,
     structure_validity,
 )
@@ -243,7 +244,11 @@ def ensure_spacegroup_consistency(df: pd.DataFrame, config: dict[str, Any]) -> N
         if spg is None:
             vals.append(None)
         else:
-            vals.append(spg == gt["spg"])
+            vals.append(
+                spacegroup_matches(
+                    gt["spg"], spg, config.get("spacegroup_criterion", "subgroup")
+                )
+            )
     df["spacegroup_consistency"] = vals
 
 
@@ -370,31 +375,175 @@ def ensure_energy_above_hull(df: pd.DataFrame, config: dict[str, Any]) -> None:
     energies = df.loc[index]["energies"].tolist()
 
     e_hull, is_stable = ray.get(
-        compute_energy_above_hull_batch.remote(structures, relaxed_structures, energies)
+        compute_energy_above_hull_batch.remote(
+            structures,
+            relaxed_structures,
+            energies,
+            stability_threshold=config.get("stability_threshold", 0.0),
+            stability_strict=config.get("stability_strict", False),
+        )
     )
     df.loc[index, "energy_above_hull"] = e_hull
     df.loc[index, "is_stable"] = is_stable
 
 
+def ensure_seed(df: pd.DataFrame, config: dict[str, Any]) -> None:
+    """Index of the sample within its prompt, read as the seed it came from.
+
+    Generation draws ``n_samples`` completions per prompt in one call and the
+    loader explodes them in order, so the samples of a prompt are exchangeable
+    and the position of a row inside its prompt is as good a seed label as any.
+    Each value of ``seed`` therefore selects exactly one structure per prompt,
+    i.e. one complete evaluation of the split. The labels are *not* aligned
+    across models: seed 3 of one model is not the same random seed as seed 3 of
+    another, so seeds must not be paired between runs.
+    """
+    column = config.get("seed_column", "seed")
+    if column in df.columns:
+        return
+    group = config.get("group_column", "mp_id")
+    if group not in df.columns:
+        df[column] = 0
+        return
+    df[column] = df.groupby(group).cumcount()
+
+
+def _threshold_flag(df: pd.DataFrame, threshold: float, strict: bool) -> np.ndarray:
+    from crysreas.mlip.energy import apply_stability_threshold
+
+    e_hull = pd.to_numeric(df["energy_above_hull"], errors="coerce").to_numpy(dtype=float)
+    return apply_stability_threshold(e_hull, threshold, strict)
+
+
+def ensure_is_stable(df: pd.DataFrame, config: dict[str, Any]) -> None:
+    """Stability flag, always re-derived from ``energy_above_hull``.
+
+    This deliberately does *not* cache. The flag is a pure function of the hull
+    distances and the configured threshold, so caching it would let a stored
+    column from an older threshold survive a config change and silently
+    contradict the hull distances sitting next to it. Recomputing is a vectorised
+    comparison and costs nothing.
+    """
+    _ensure_registered_dependencies(df, "is_stable", config)
+    df["is_stable"] = _threshold_flag(
+        df,
+        config.get("stability_threshold", 0.0),
+        config.get("stability_strict", False),
+    )
+
+
+def ensure_is_metastable(df: pd.DataFrame, config: dict[str, Any]) -> None:
+    """The wider window used by S.S.U.N. only. Derived, not cached, as above."""
+    _ensure_registered_dependencies(df, "is_metastable", config)
+    df["is_metastable"] = _threshold_flag(
+        df, config.get("metastability_threshold", 0.1), strict=False
+    )
+
+
 def ensure_stable_unique_novel(df: pd.DataFrame, config: dict[str, Any]) -> None:
+    """``is_novel``, ``is_unique`` and S.U.N. under the configured protocol.
+
+    Uniqueness and novelty are both set-level judgements, so each depends on a
+    choice that lives in the config: which set a structure is deduplicated
+    against (``uniqueness_scope``) and which corpus it must be absent from
+    (``novelty_reference``). ``uniqueness_scope="pooled"`` with
+    ``novelty_reference="mp_alexandria"`` routes through MatterGen's combined
+    evaluator, which is the combination stored artifacts were scored under; see
+    ``crysreas.experiment.verify_equivalence``.
+    """
     if "stable_unique_novel" in df.columns:
         return
     _ensure_registered_dependencies(df, "stable_unique_novel", config)
 
-    from crysreas.mlip.sun import coerce_bool_array, compute_stable_unique_novel_batch
-
-    index = df[df["relaxed_structures"].notna()].index
-    structures = df.loc[index]["simple_structure"].tolist()
-    relaxed_structures = df.loc[index]["relaxed_structures"].tolist()
-    energies = df.loc[index]["energies"].tolist()
-    is_stable = coerce_bool_array(df.loc[index]["is_stable"], len(index), "is_stable")
-
-    is_novel, is_unique, sun = compute_stable_unique_novel_batch(
-        structures, relaxed_structures, energies, is_stable
+    from crysreas.mlip.sun import (
+        build_training_reference,
+        coerce_bool_array,
+        compute_stable_unique_novel_batch,
+        compute_uniqueness,
+        novelty_vs_training,
     )
-    df.loc[index, "is_novel"] = is_novel
-    df.loc[index, "is_unique"] = is_unique
-    df.loc[index, "stable_unique_novel"] = sun
+
+    scope = config.get("uniqueness_scope", "seed")
+    reference = config.get("novelty_reference", "train")
+    ensure_is_stable(df, config)
+    is_stable = coerce_bool_array(df["is_stable"], len(df), "is_stable")
+
+    if scope == "pooled" and reference == "mp_alexandria":
+        # One MatterGen evaluator produces both flags in a single pass.
+        index = df[df["relaxed_structures"].notna()].index
+        is_novel_sub, is_unique_sub, _ = compute_stable_unique_novel_batch(
+            df.loc[index]["simple_structure"].tolist(),
+            df.loc[index]["relaxed_structures"].tolist(),
+            df.loc[index]["energies"].tolist(),
+            coerce_bool_array(df.loc[index]["is_stable"], len(index), "is_stable"),
+        )
+        is_novel = np.full((len(df),), False, dtype=np.bool_)
+        is_unique = np.full((len(df),), False, dtype=np.bool_)
+        positions = df.index.get_indexer(index)
+        is_novel[positions] = is_novel_sub
+        is_unique[positions] = is_unique_sub
+    else:
+        relaxed = df["relaxed_structures"].tolist()
+        relaxed = [None if _is_fail(r) else r for r in relaxed]
+
+        if scope == "seed":
+            ensure_seed(df, config)
+            seeds = df[config.get("seed_column", "seed")].to_numpy()
+        else:
+            seeds = None
+        is_unique = compute_uniqueness(relaxed, seeds=seeds, scope=scope)
+
+        if reference == "train":
+            index_by_formula = config.get("_training_reference")
+            if index_by_formula is None:
+                index_by_formula = build_training_reference(
+                    config.get("train_split_path"), config.get("train_shelve_path")
+                )
+                config["_training_reference"] = index_by_formula
+            is_novel = novelty_vs_training(relaxed, index_by_formula)
+        elif reference == "mp_alexandria":
+            idx = df[df["relaxed_structures"].notna()].index
+            novel_sub, _, _ = compute_stable_unique_novel_batch(
+                df.loc[idx]["simple_structure"].tolist(),
+                df.loc[idx]["relaxed_structures"].tolist(),
+                df.loc[idx]["energies"].tolist(),
+                coerce_bool_array(df.loc[idx]["is_stable"], len(idx), "is_stable"),
+            )
+            is_novel = np.full((len(df),), False, dtype=np.bool_)
+            is_novel[df.index.get_indexer(idx)] = novel_sub
+        else:
+            raise ValueError(f"unknown novelty_reference: {reference!r}")
+
+    df["is_novel"] = is_novel
+    df["is_unique"] = is_unique
+    df["stable_unique_novel"] = is_stable & is_unique & is_novel
+
+
+def ensure_spacegroup_stable_unique_novel(
+    df: pd.DataFrame, config: dict[str, Any]
+) -> None:
+    """S.S.U.N.: unique, novel, space-group consistent and *metastable*.
+
+    The two rates sit on different energy scales on purpose, following
+    PLaID++: S.U.N. counts structures on or below the hull while S.S.U.N. uses
+    the 0.1 eV/atom metastability window. S.S.U.N. is therefore the larger of
+    the two despite carrying one more factor, and the two are not meant to be
+    read against each other.
+    """
+    if "spacegroup_stable_unique_novel" in df.columns:
+        return
+    _ensure_registered_dependencies(df, "spacegroup_stable_unique_novel", config)
+
+    from crysreas.mlip.sun import coerce_bool_array
+
+    n = len(df)
+    sgc = coerce_bool_array(df["spacegroup_consistency"], n, "spacegroup_consistency")
+    df["spacegroup_stable_unique_novel"] = (
+        coerce_bool_array(df["is_metastable"], n, "is_metastable")
+        & coerce_bool_array(df["is_unique"], n, "is_unique")
+        & coerce_bool_array(df["is_novel"], n, "is_novel")
+        & sgc
+    )
 
 
 def ensure_energy_reward(df: pd.DataFrame, config: dict[str, Any]) -> None:
@@ -917,7 +1066,7 @@ def metric_energy_above_hull(df: pd.DataFrame, config: dict[str, Any]) -> pd.Dat
 
 
 @register(
-    "stable_unique_novel", topo=6, tags=_HEAVY, dependencies=("energy_above_hull",)
+    "stable_unique_novel", topo=6, tags=_HEAVY, dependencies=("is_stable",)
 )
 def metric_stable_unique_novel(df: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
     ensure_stable_unique_novel(df, config)
@@ -1051,4 +1200,41 @@ def metric_cte_reward(df: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
 )
 def metric_cte_reward_all(df: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
     ensure_cte_reward_all(df, config)
+    return df
+
+
+@register("seed", topo=0, dependencies=())
+def metric_seed(df: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
+    ensure_seed(df, config)
+    return df
+
+
+@register("is_stable", topo=5, tags=_HEAVY, dependencies=("energy_above_hull",))
+def metric_is_stable(df: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
+    ensure_is_stable(df, config)
+    return df
+
+
+@register(
+    "is_metastable", topo=5, tags=_HEAVY, dependencies=("energy_above_hull",)
+)
+def metric_is_metastable(df: pd.DataFrame, config: dict[str, Any]) -> pd.DataFrame:
+    ensure_is_metastable(df, config)
+    return df
+
+
+@register(
+    "spacegroup_stable_unique_novel",
+    topo=7,
+    tags=_HEAVY,
+    dependencies=(
+        "stable_unique_novel",
+        "is_metastable",
+        "spacegroup_consistency",
+    ),
+)
+def metric_spacegroup_stable_unique_novel(
+    df: pd.DataFrame, config: dict[str, Any]
+) -> pd.DataFrame:
+    ensure_spacegroup_stable_unique_novel(df, config)
     return df

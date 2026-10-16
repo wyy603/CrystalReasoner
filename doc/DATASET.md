@@ -18,10 +18,25 @@ there.
 
 ## Build the Materials Project Shelve
 
+The released database ships as `assets/MP/MP_shelve.parquet`. Restore it with:
+
+```bash
+python scripts/parquet_to_shelve.py --write
+```
+
+`--write` is required; without it the script reports what it would restore and
+creates nothing. Pass `--overwrite` to replace an existing database. The output
+lands at `assets/MP/MP_shelve`, which is the path every consumer reads.
+
+To rebuild the database from the Materials Project API instead of restoring it:
+
 ```bash
 python -m crysreas.data.download --args.download_type summary --args.add_new
 python -m crysreas.data.download --args.download_type robocrys
 ```
+
+`scripts/shelve_to_parquet.py` goes the other way and produces the released
+parquet from a local shelve.
 
 The shelve entries are later read by:
 

@@ -1,13 +1,32 @@
-robocrys
-mp_api
-pymatgen
-tyro
-debugpy
-swanlab
-fire
-p_tqdm
-icecream
-smact
-pydantic
-phono3py
-munch
+# Versions pinned to the environment that produced the reported numbers.
+#
+# The first block decides the metrics themselves. pymatgen and spglib set the
+# detected space group, smact decides chemical validity, and MatterGen's
+# structure matcher (through pymatgen) decides uniqueness and novelty. Moving
+# any of them shifts the numbers with no error and no warning, so treat a change
+# here as a change to the protocol and re-run
+# `python -m crysreas.experiment.verify_equivalence` afterwards.
+pymatgen==2024.10.29
+spglib==2.7.0
+smact==2.5.5
+ase==3.25.0
+numpy==1.26.4
+pandas==2.3.3
+
+# Materials Project access and derived descriptions.
+mp_api==0.46.5
+robocrys==0.2.13
+
+# Phonon / thermal-expansion properties.
+phono3py==4.5.0
+
+# Training and tooling.
+torch==2.8.0
+pydantic==2.13.5
+tyro==1.0.16
+fire==0.7.1
+munch==4.0.0
+p_tqdm==1.4.2
+swanlab==0.10.1
+icecream==2.2.0
+debugpy==1.8.22

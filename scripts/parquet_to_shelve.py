@@ -21,7 +21,7 @@ except Exception:  # pragma: no cover - optional compatibility fallback
 
 
 DEFAULT_SOURCE = Path("assets/MP/MP_shelve.parquet")
-DEFAULT_OUTPUT = Path("assets/MP/MP_shelve_recreated")
+DEFAULT_OUTPUT = Path("assets/MP/MP_shelve")
 JSON_STRING_COLUMNS = frozenset(("bulk_modulus", "shear_modulus"))
 
 

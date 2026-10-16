@@ -1,0 +1,93 @@
+\begin{table}[t]
+\centering
+\caption{Comparison against two prior LLM-based works, re-implemented in the \method pipeline with the same dataset, base model and hyperparameters. All three models are evaluated on the same $16{,}282$ generated structures ($8{,}141$ held-out compositions $\times$ $2$ samples). Here \textbf{PLAID++ Wyckoff} means that only the representation of PLAID++ is used, without its DPO stage. Space group consistency counts a structure when it carries at least the requested symmetry; S.U.N. and S.S.U.N. are defined in Section~\ref{sec:eval1}.}
+\label{tab:compare_priors}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{\method} & \textbf{CrystalTextLLM} & \textbf{PLAID++ Wyckoff} \\
+\midrule
+Structural Validity ($\uparrow$) & \textbf{95.27\%} $\pm$ 0.18\% & 90.99\% $\pm$ 0.25\% & 88.93\% $\pm$ 0.28\% \\
+Chemical Validity ($\uparrow$) & \textbf{91.67\%} $\pm$ 0.30\% & 91.55\% $\pm$ 0.30\% & 91.26\% $\pm$ 0.31\% \\
+Composition Consistency ($\uparrow$) & \textbf{97.56\%} $\pm$ 0.16\% & 95.47\% $\pm$ 0.21\% & 97.27\% $\pm$ 0.16\% \\
+Space Group Consistency ($\uparrow$) & \textbf{58.76\%} $\pm$ 0.50\% & 31.70\% $\pm$ 0.46\% & 50.57\% $\pm$ 0.49\% \\
+Stability ($\uparrow$) & \textbf{41.94\%} $\pm$ 0.52\% & 25.99\% $\pm$ 0.46\% & 32.47\% $\pm$ 0.49\% \\
+Uniqueness ($\uparrow$) & 64.79\% $\pm$ 0.36\% & \textbf{68.50\%} $\pm$ 0.37\% & 64.74\% $\pm$ 0.37\% \\
+Energy (eV/atom) ($\downarrow$) & \textbf{0.452} $\pm$ 0.007 & 0.588 $\pm$ 0.007 & 0.564 $\pm$ 0.009 \\
+S.U.N. ($\uparrow$) & \textbf{20.96\%} $\pm$ 0.29\% & 13.11\% $\pm$ 0.25\% & 16.90\% $\pm$ 0.27\% \\
+S.S.U.N. ($\uparrow$) & \textbf{18.12\%} $\pm$ 0.27\% & 9.34\% $\pm$ 0.22\% & 14.40\% $\pm$ 0.25\% \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Performance comparison of model variants: \texttt{\method-Base} (SFT baseline), \texttt{\method-Thinking} (SFT with thinking traces), \texttt{\method-RL} (RL on the base model), and the full \method. Thinking traces and RL each improve almost every metric, and the two are complementary. All four columns come from one evaluation of $16{,}282$ generated structures through a single metric pipeline.}
+\label{tab:overall_performance}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Metric} & \textbf{\texttt{\method-Base}} & \textbf{\texttt{\method-Thinking}} & \textbf{\texttt{\method-RL}} & \textbf{\method} \\
+\midrule
+Structural Validity ($\uparrow$) & 85.11\% $\pm$ 0.32\% & 91.63\% $\pm$ 0.24\% & 91.44\% $\pm$ 0.25\% & \textbf{95.27\%} $\pm$ 0.18\% \\
+Chemical Validity ($\uparrow$) & 90.09\% $\pm$ 0.32\% & 91.60\% $\pm$ 0.31\% & 90.99\% $\pm$ 0.31\% & \textbf{91.67\%} $\pm$ 0.30\% \\
+Composition Consistency ($\uparrow$) & 91.32\% $\pm$ 0.26\% & 97.52\% $\pm$ 0.15\% & 93.29\% $\pm$ 0.23\% & \textbf{97.56\%} $\pm$ 0.16\% \\
+Space Group Consistency ($\uparrow$) & 53.35\% $\pm$ 0.49\% & 55.72\% $\pm$ 0.49\% & 55.63\% $\pm$ 0.49\% & \textbf{58.76\%} $\pm$ 0.50\% \\
+Stability ($\uparrow$) & 34.07\% $\pm$ 0.49\% & 39.08\% $\pm$ 0.51\% & 35.78\% $\pm$ 0.50\% & \textbf{41.94\%} $\pm$ 0.52\% \\
+Uniqueness ($\uparrow$) & 60.37\% $\pm$ 0.37\% & 64.46\% $\pm$ 0.37\% & 63.94\% $\pm$ 0.37\% & \textbf{64.79\%} $\pm$ 0.36\% \\
+Energy (eV/atom) ($\downarrow$) & 0.561 $\pm$ 0.013 & 0.503 $\pm$ 0.008 & 0.526 $\pm$ 0.011 & \textbf{0.452} $\pm$ 0.007 \\
+S.U.N. ($\uparrow$) & 17.86\% $\pm$ 0.28\% & 20.21\% $\pm$ 0.29\% & 18.44\% $\pm$ 0.28\% & \textbf{20.96\%} $\pm$ 0.29\% \\
+S.S.U.N. ($\uparrow$) & 15.72\% $\pm$ 0.26\% & 17.31\% $\pm$ 0.27\% & 16.19\% $\pm$ 0.26\% & \textbf{18.12\%} $\pm$ 0.27\% \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Ablation of reward designs: Validity Only (structural and chemical validity, $\alpha_{\text{validity}}=1, \alpha_{\text{stability}}=0$), Energy Only ($\alpha_{\text{validity}}=0, \alpha_{\text{stability}}=10$) and Mixed Reward ($\alpha_{\text{validity}}=1, \alpha_{\text{stability}}=10$, the full \method). Each configuration leads on the metric it optimizes, and the mixed reward is the only one that stays competitive on validity and on stability alike.}
+\label{tab:reward_comparison}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{Validity Only} & \textbf{Energy Only} & \textbf{\method} \\
+\midrule
+Structural Validity ($\uparrow$) & \textbf{96.03\%} $\pm$ 0.16\% & 95.82\% $\pm$ 0.17\% & 95.27\% $\pm$ 0.18\% \\
+Chemical Validity ($\uparrow$) & 91.63\% $\pm$ 0.31\% & \textbf{91.67\%} $\pm$ 0.31\% & \textbf{91.67\%} $\pm$ 0.30\% \\
+Composition Consistency ($\uparrow$) & \textbf{97.75\%} $\pm$ 0.15\% & 97.68\% $\pm$ 0.15\% & 97.56\% $\pm$ 0.16\% \\
+Space Group Consistency ($\uparrow$) & 55.52\% $\pm$ 0.50\% & \textbf{58.91\%} $\pm$ 0.50\% & 58.76\% $\pm$ 0.50\% \\
+Stability ($\uparrow$) & 39.44\% $\pm$ 0.51\% & 41.46\% $\pm$ 0.52\% & \textbf{41.94\%} $\pm$ 0.52\% \\
+Uniqueness ($\uparrow$) & \textbf{67.79\%} $\pm$ 0.36\% & 65.41\% $\pm$ 0.36\% & 64.79\% $\pm$ 0.36\% \\
+Energy (eV/atom) ($\downarrow$) & 0.495 $\pm$ 0.007 & 0.456 $\pm$ 0.007 & \textbf{0.452} $\pm$ 0.007 \\
+S.U.N. ($\uparrow$) & 20.21\% $\pm$ 0.29\% & 20.76\% $\pm$ 0.29\% & \textbf{20.96\%} $\pm$ 0.29\% \\
+S.S.U.N. ($\uparrow$) & 17.23\% $\pm$ 0.27\% & 17.79\% $\pm$ 0.27\% & \textbf{18.12\%} $\pm$ 0.27\% \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Ablation on the four segments of the thinking trace. Each segment is replaced by the same-named segment of another randomly drawn sample, so format, style and length distribution stay intact and only the information the segment carries about this material is destroyed. Replacing a segment leaves the mean token count of that condition unchanged. Numbers in parentheses are the change from the full trace. Source rows are generations that were correct on all four metrics, which is why the baseline sits above the numbers of Table~\ref{tab:compare_priors}; read the relative drops.}
+\label{tab:trace_shuffle}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Condition} & \textbf{Structural Validity} ($\uparrow$) & \textbf{Chemical Validity} ($\uparrow$) & \textbf{Composition Consistency} ($\uparrow$) & \textbf{Space Group Consistency} ($\uparrow$) \\
+\midrule
+Full trace (baseline) & 94.63\% $\pm$ 0.88\% & 100.00\% $\pm$ 0.00\% & 99.41\% $\pm$ 0.34\% & 83.30\% $\pm$ 1.67\% \\
+\midrule
+Part 1 shuffled (symmetry, formula) & 76.95\% $\pm$ 2.06\% (-17.68) & 96.68\% $\pm$ 0.93\% (-3.32) & 0.39\% $\pm$ 0.39\% (-99.02) & 25.39\% $\pm$ 2.39\% (-57.91) \\
+Part 2 shuffled (coordination environment) & 84.67\% $\pm$ 1.75\% (-9.96) & 99.12\% $\pm$ 0.51\% (-0.88) & 96.48\% $\pm$ 1.02\% (-2.93) & 35.25\% $\pm$ 2.56\% (-48.05) \\
+Part 3 shuffled (validity statement) & 93.75\% $\pm$ 1.01\% (-0.88) & 100.00\% $\pm$ 0.00\% (+0.00) & 99.22\% $\pm$ 0.46\% (-0.20) & 80.08\% $\pm$ 1.84\% (-3.22) \\
+Part 4 shuffled (predicted properties) & 94.53\% $\pm$ 0.94\% (-0.10) & 100.00\% $\pm$ 0.00\% (+0.00) & 99.22\% $\pm$ 0.46\% (-0.20) & 82.42\% $\pm$ 1.74\% (-0.88) \\
+All four parts shuffled & 79.98\% $\pm$ 1.80\% (-14.65) & 97.27\% $\pm$ 0.94\% (-2.73) & 0.00\% $\pm$ 0.00\% (-99.41) & 23.54\% $\pm$ 2.37\% (-59.77) \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

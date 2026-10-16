@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Comparison against two prior LLM-based works, re-implemented in the \method pipeline with the same dataset, base model and hyperparameters. All three models are evaluated on the same $16{,}282$ generated structures ($8{,}141$ held-out compositions $\times$ $2$ samples). Here \textbf{PLAID++ Wyckoff} means that only the representation of PLAID++ is used, without its DPO stage. Space group consistency counts a structure when it carries at least the requested symmetry; S.U.N. and S.S.U.N. are defined in Section~\ref{sec:eval1}.}
+\label{tab:compare_priors}
+\small
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{\method} & \textbf{CrystalTextLLM} & \textbf{PLAID++ Wyckoff} \\
+\midrule
+Structural Validity ($\uparrow$) & \textbf{95.27\%} $\pm$ 0.18\% & 90.99\% $\pm$ 0.25\% & 88.93\% $\pm$ 0.28\% \\
+Chemical Validity ($\uparrow$) & \textbf{91.67\%} $\pm$ 0.30\% & 91.55\% $\pm$ 0.30\% & 91.26\% $\pm$ 0.31\% \\
+Composition Consistency ($\uparrow$) & \textbf{97.56\%} $\pm$ 0.16\% & 95.47\% $\pm$ 0.21\% & 97.27\% $\pm$ 0.16\% \\
+Space Group Consistency ($\uparrow$) & \textbf{58.76\%} $\pm$ 0.50\% & 31.70\% $\pm$ 0.46\% & 50.57\% $\pm$ 0.49\% \\
+Stability ($\uparrow$) & \textbf{41.94\%} $\pm$ 0.52\% & 25.99\% $\pm$ 0.46\% & 32.47\% $\pm$ 0.49\% \\
+Uniqueness ($\uparrow$) & 64.79\% $\pm$ 0.36\% & \textbf{68.50\%} $\pm$ 0.37\% & 64.74\% $\pm$ 0.37\% \\
+Energy (eV/atom) ($\downarrow$) & \textbf{0.452} $\pm$ 0.007 & 0.588 $\pm$ 0.007 & 0.564 $\pm$ 0.009 \\
+S.U.N. ($\uparrow$) & \textbf{20.96\%} $\pm$ 0.29\% & 13.11\% $\pm$ 0.25\% & 16.90\% $\pm$ 0.27\% \\
+S.S.U.N. ($\uparrow$) & \textbf{18.12\%} $\pm$ 0.27\% & 9.34\% $\pm$ 0.22\% & 14.40\% $\pm$ 0.25\% \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

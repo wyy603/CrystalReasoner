@@ -1,1 +1,16 @@
+# Large binary assets are stored through Git LFS. A rule here applies only to
+# commits made after it exists: a file already committed as a plain blob stays
+# one until the history is rewritten with `git lfs migrate`.
 assets/MP/MP_shelve.parquet filter=lfs diff=lfs merge=lfs -text
+
+# Evaluation artifacts. Generated structures, relaxations and per-row metric
+# columns, reproducible from crysreas/experiment/pipeline but expensive to
+# regenerate, so they are versioned instead of ignored.
+crysreas/experiment/data/**/*.parquet filter=lfs diff=lfs merge=lfs -text
+crysreas/experiment/data/**/*.pkl     filter=lfs diff=lfs merge=lfs -text
+crysreas/experiment/data/*.parquet    filter=lfs diff=lfs merge=lfs -text
+crysreas/experiment/data/*.pkl        filter=lfs diff=lfs merge=lfs -text
+
+# Split definitions and summary tables stay plain text so they remain diffable.
+crysreas/experiment/data/splits/**  -filter -diff -merge text=auto
+crysreas/experiment/data/tables/**.md -filter -diff -merge text=auto
